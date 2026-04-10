@@ -597,11 +597,46 @@
           </div>
           <div class="ans">Ответ: <span data-tex="-1"></span></div>
         </div>
-      </section>
+
+      <div class="problem">
+        <span class="ptag">Задача 5 <span class="difficulty easy">базовая</span></span>
+        <div class="ptext">Разложите на множители: <span data-tex="6x^2 - 7x - 3"></span></div>
+        <div class="psteps">
+          <div class="step"><div class="stepn">1</div>Ищем два числа, произведение которых равно <span data-tex="6 \cdot (-3) = -18"></span>, а сумма равна <span data-tex="-7"></span>: это <span data-tex="-9"></span> и <span data-tex="2"></span></div>
+          <div class="step"><div class="stepn">2</div>Раскладываем средний член: <span data-tex="6x^2 - 9x + 2x - 3"></span></div>
+          <div class="step"><div class="stepn">3</div>Группируем: <span data-tex="3x(2x-3) + 1(2x-3) = (3x+1)(2x-3)"></span></div>
+        </div>
+        <div class="ans">Ответ: <span data-tex="(3x+1)(2x-3)"></span></div>
+      </div>
+
+      <div class="problem">
+        <span class="ptag">Задача 6 <span class="difficulty medium">средняя</span></span>
+        <div class="ptext">Упростите: <span data-tex="\dfrac{1}{x+2} + \dfrac{1}{x-2} - \dfrac{4}{x^2-4}"></span></div>
+        <div class="psteps">
+          <div class="step"><div class="stepn">1</div>Замечаем, что <span data-tex="x^2-4=(x+2)(x-2)"></span> — общий знаменатель</div>
+          <div class="step"><div class="stepn">2</div>Приводим к общему знаменателю: <span data-tex="\dfrac{(x-2)+(x+2)-4}{(x+2)(x-2)}"></span></div>
+          <div class="step"><div class="stepn">3</div>Упрощаем числитель: <span data-tex="x-2+x+2-4 = 2x-4 = 2(x-2)"></span></div>
+          <div class="step"><div class="stepn">4</div>Сокращаем: <span data-tex="\dfrac{2(x-2)}{(x+2)(x-2)} = \dfrac{2}{x+2}"></span></div>
+        </div>
+        <div class="ans">Ответ: <span data-tex="\dfrac{2}{x+2}"></span></div>
+      </div>
+
+      <div class="problem">
+        <span class="ptag">Задача 7 <span class="difficulty hard">сложная</span></span>
+        <div class="ptext">Упростите: <span data-tex="\dfrac{2+\sqrt{3}}{2-\sqrt{3}} - \dfrac{2-\sqrt{3}}{2+\sqrt{3}}"></span></div>
+        <div class="psteps">
+          <div class="step"><div class="stepn">1</div>Приводим к общему знаменателю <span data-tex="(2-\sqrt{3})(2+\sqrt{3}) = 4-3 = 1"></span></div>
+          <div class="step"><div class="stepn">2</div>Числитель: <span data-tex="(2+\sqrt{3})^2 - (2-\sqrt{3})^2"></span></div>
+          <div class="step"><div class="stepn">3</div>По формуле разности квадратов: <span data-tex="[(2+\sqrt{3})-(2-\sqrt{3})]\cdot[(2+\sqrt{3})+(2-\sqrt{3})] = 2\sqrt{3}\cdot 4 = 8\sqrt{3}"></span></div>
+          <div class="step"><div class="stepn">4</div>Итого: <span data-tex="\dfrac{8\sqrt{3}}{1} = 8\sqrt{3}"></span></div>
+        </div>
+        <div class="ans">Ответ: <span data-tex="8\sqrt{3}"></span></div>
+      </div>
 
       <!-- ════════════════════════════════════════
            SECTION s_check: Чек-лист к ЦТ
            ════════════════════════════════════════ -->
+      </section>
       <section class="sec" id="s_check">
         <div class="sec-head">
           <h1>✓ Чек-лист «Что знать к ЦТ»</h1>

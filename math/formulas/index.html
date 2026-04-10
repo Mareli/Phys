@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Все формулы — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+:root{
+  --acc:#dc2626;--acc-bg:#fef2f2;--acc-border:#fecaca;
+  --acc-dim:#b91c1c;--acc-glow:rgba(220,38,38,.35);
+  --t01:#dc2626;--t02:#ea580c;--t03:#16a34a;--t04:#2563eb;
+  --t05:#7c3aed;--t06:#b45309;--t07:#0e7490;--t08:#be185d;
+  --t09:#059669;--t10:#4338ca;--t11:#0369a1;
+}
+body{background:var(--bg)}
+.fml-topbar .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:-.02em;text-decoration:none;color:#fff;cursor:pointer}
+.fml-topbar .brand .logo{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#dc2626,#ea580c);display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 0 20px rgba(220,38,38,.4)}
+.fml-topbar .brand b{font-weight:800}
+.fml-topbar .brand em{font-style:normal;color:#f97316;font-weight:700;margin-left:2px}
+.fml-topbar .brand .crumb{color:rgba(255,255,255,.4);margin:0 8px;font-weight:400}
+.fml-topbar .brand .topic{color:rgba(255,255,255,.9);font-weight:600}
+.fml-topbar .actions{display:flex;align-items:center;gap:6px}
+.palette{position:fixed;inset:0;z-index:950;background:rgba(15,23,42,.5);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding-top:14vh}
+.palette.open{display:flex}
+.palette-box{width:min(560px,92vw);background:#fff;border-radius:18px;box-shadow:0 24px 64px rgba(15,23,42,.3);overflow:hidden}
+.palette-input{width:100%;padding:18px 22px;border:none;outline:none;font-family:inherit;font-size:1rem;color:#0f172a;border-bottom:1px solid #e2e8f0}
+.palette-input::placeholder{color:#94a3b8}
+.palette-list{max-height:50vh;overflow-y:auto;padding:8px 0}
+.palette-item{display:flex;align-items:center;gap:12px;padding:12px 22px;cursor:pointer;transition:background .12s}
+.palette-item:hover,.palette-item.sel{background:#fef2f2}
+.pi-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:#fef2f2;color:#dc2626}
+.pi-text{flex:1;min-width:0}
+.pi-title{font-size:.92rem;font-weight:600;color:#0f172a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pi-sub{font-size:.76rem;color:#94a3b8;margin-top:2px}
+.palette-empty{padding:24px;text-align:center;color:#94a3b8;font-size:.88rem}
+.fml-divider{border:none;border-top:1px dashed var(--border);margin:16px 0}
+</style>
+</head>
+<body>
+
+<!-- ─── TOPBAR ─── -->
+<nav class="fml-topbar topbar">
+  <a class="brand" href="../../index.html">
+    <span class="logo">📋</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Все формулы</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="Математика">📐</a>
+    <a class="tb-btn icon" href="../../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<!-- ─── MAIN ─── -->
+<div class="fml-page">
+<div class="fml-content">
+
+  <!-- ─── TOPIC NAVIGATION ─── -->
+  <nav class="fml-topic-nav" id="topicNav">
+    <a class="fml-nav-btn t01" style="--tc:var(--t01)" href="#t01">🔢 Числа</a>
+    <a class="fml-nav-btn t02" style="--tc:var(--t02)" href="#t02">📐 Выражения</a>
+    <a class="fml-nav-btn t03" style="--tc:var(--t03)" href="#t03">⚖️ Уравнения</a>
+    <a class="fml-nav-btn t04" style="--tc:var(--t04)" href="#t04">📊 Неравенства</a>
+    <a class="fml-nav-btn t05" style="--tc:var(--t05)" href="#t05">📈 Функции</a>
+    <a class="fml-nav-btn t06" style="--tc:var(--t06)" href="#t06">🌀 Тригонометрия</a>
+    <a class="fml-nav-btn t07" style="--tc:var(--t07)" href="#t07">🔬 Лог/Степени</a>
+    <a class="fml-nav-btn t08" style="--tc:var(--t08)" href="#t08">🔗 Прогрессии</a>
+    <a class="fml-nav-btn t09" style="--tc:var(--t09)" href="#t09">📐 Планиметрия</a>
+    <a class="fml-nav-btn t10" style="--tc:var(--t10)" href="#t10">🧊 Стереометрия</a>
+    <a class="fml-nav-btn t11" style="--tc:var(--t11)" href="#t11">📝 Задачи</a>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       01 ЧИСЛА И ВЫЧИСЛЕНИЯ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t01" style="--tc:var(--t01)">
+    <h2>
+      <span class="fml-topic-icon">🔢</span>
+      01 &nbsp;Числа и вычисления
+      <a class="fml-topic-link" href="../theory/01_chisla.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Степени</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Произведение степеней</div><div class="chip-formula" data-tex="a^m \cdot a^n = a^{m+n}"></div></div>
+      <div class="fchip"><div class="chip-name">Частное степеней</div><div class="chip-formula" data-tex="\dfrac{a^m}{a^n} = a^{m-n}"></div></div>
+      <div class="fchip"><div class="chip-name">Степень степени</div><div class="chip-formula" data-tex="(a^m)^n = a^{mn}"></div></div>
+      <div class="fchip"><div class="chip-name">Степень произведения</div><div class="chip-formula" data-tex="(ab)^n = a^n b^n"></div></div>
+      <div class="fchip"><div class="chip-name">Степень дроби</div><div class="chip-formula" data-tex="\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}"></div></div>
+      <div class="fchip"><div class="chip-name">Нулевая степень</div><div class="chip-formula" data-tex="a^0 = 1 \quad (a \neq 0)"></div></div>
+      <div class="fchip"><div class="chip-name">Отрицательная степень</div><div class="chip-formula" data-tex="a^{-n} = \dfrac{1}{a^n}"></div></div>
+      <div class="fchip"><div class="chip-name">Дробная степень</div><div class="chip-formula" data-tex="a^{\frac{m}{n}} = \sqrt[n]{a^m}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Корни</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Корень произведения</div><div class="chip-formula" data-tex="\sqrt{ab} = \sqrt{a}\cdot\sqrt{b}"></div></div>
+      <div class="fchip"><div class="chip-name">Корень дроби</div><div class="chip-formula" data-tex="\sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{a}}{\sqrt{b}}"></div></div>
+      <div class="fchip"><div class="chip-name">Степень корня</div><div class="chip-formula" data-tex="(\sqrt[n]{a})^m = \sqrt[n]{a^m}"></div></div>
+      <div class="fchip"><div class="chip-name">Корень квадрата</div><div class="chip-formula" data-tex="\sqrt{a^2} = |a|"></div></div>
+      <div class="fchip"><div class="chip-name">Вложенные корни</div><div class="chip-formula" data-tex="\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}"></div></div>
+      <div class="fchip"><div class="chip-name">Корень n-й степени</div><div class="chip-formula" data-tex="\sqrt[n]{a^n} = |a| \quad (\text{чётное } n)"></div></div>
+    </div>
+
+    <div class="fml-subsection">Формулы сокращённого умножения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Полный квадрат суммы</div><div class="chip-formula" data-tex="(a+b)^2 = a^2 + 2ab + b^2"></div></div>
+      <div class="fchip"><div class="chip-name">Полный квадрат разности</div><div class="chip-formula" data-tex="(a-b)^2 = a^2 - 2ab + b^2"></div></div>
+      <div class="fchip"><div class="chip-name">Разность квадратов ★</div><div class="chip-formula" data-tex="a^2 - b^2 = (a+b)(a-b)"></div></div>
+      <div class="fchip"><div class="chip-name">Куб суммы</div><div class="chip-formula" data-tex="(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3"></div></div>
+      <div class="fchip"><div class="chip-name">Куб разности</div><div class="chip-formula" data-tex="(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3"></div></div>
+      <div class="fchip"><div class="chip-name">Сумма кубов ★</div><div class="chip-formula" data-tex="a^3 + b^3 = (a+b)(a^2 - ab + b^2)"></div></div>
+      <div class="fchip"><div class="chip-name">Разность кубов ★</div><div class="chip-formula" data-tex="a^3 - b^3 = (a-b)(a^2 + ab + b^2)"></div></div>
+    </div>
+
+    <div class="fml-subsection">Проценты</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Часть от целого</div><div class="chip-formula" data-tex="x = \dfrac{p}{100} \cdot a"></div></div>
+      <div class="fchip"><div class="chip-name">Процент от числа</div><div class="chip-formula" data-tex="p = \dfrac{x}{a} \cdot 100\%"></div></div>
+      <div class="fchip"><div class="chip-name">Увеличение на p%</div><div class="chip-formula" data-tex="a' = a\left(1 + \dfrac{p}{100}\right)"></div></div>
+      <div class="fchip"><div class="chip-name">Уменьшение на p%</div><div class="chip-formula" data-tex="a' = a\left(1 - \dfrac{p}{100}\right)"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       02 АЛГЕБРАИЧЕСКИЕ ВЫРАЖЕНИЯ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t02" style="--tc:var(--t02)">
+    <h2>
+      <span class="fml-topic-icon">📐</span>
+      02 &nbsp;Алгебраические выражения
+      <a class="fml-topic-link" style="color:var(--t02);border-color:var(--t02)" href="../theory/02_vyrazheniya.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Дробно-рациональные выражения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Умножение дробей</div><div class="chip-formula" data-tex="\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}"></div></div>
+      <div class="fchip"><div class="chip-name">Деление дробей</div><div class="chip-formula" data-tex="\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{ad}{bc}"></div></div>
+      <div class="fchip"><div class="chip-name">Сложение (общий знаменатель)</div><div class="chip-formula" data-tex="\dfrac{a}{c} + \dfrac{b}{c} = \dfrac{a+b}{c}"></div></div>
+      <div class="fchip"><div class="chip-name">Сложение (разные знаменатели)</div><div class="chip-formula" data-tex="\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + bc}{bd}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Иррациональные выражения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Корень произведения</div><div class="chip-formula" data-tex="\sqrt[n]{ab} = \sqrt[n]{a}\cdot\sqrt[n]{b}"></div></div>
+      <div class="fchip"><div class="chip-name">Корень частного</div><div class="chip-formula" data-tex="\sqrt[n]{\dfrac{a}{b}} = \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}"></div></div>
+      <div class="fchip"><div class="chip-name">Вложенные корни</div><div class="chip-formula" data-tex="\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}"></div></div>
+      <div class="fchip"><div class="chip-name">Переход к дробной степени</div><div class="chip-formula" data-tex="\sqrt[n]{a^m} = a^{\frac{m}{n}}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Сопряжённые выражения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Рационализация знаменателя</div><div class="chip-formula" data-tex="\dfrac{1}{\sqrt{a}-\sqrt{b}} = \dfrac{\sqrt{a}+\sqrt{b}}{a - b}"></div></div>
+      <div class="fchip"><div class="chip-name">Разность квадратных корней</div><div class="chip-formula" data-tex="(\sqrt{a}-\sqrt{b})(\sqrt{a}+\sqrt{b}) = a - b"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       03 УРАВНЕНИЯ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t03" style="--tc:var(--t03)">
+    <h2>
+      <span class="fml-topic-icon">⚖️</span>
+      03 &nbsp;Уравнения
+      <a class="fml-topic-link" style="color:var(--t03);border-color:var(--t03)" href="../theory/03_uravneniya.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Линейное уравнение</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Решение ★</div><div class="chip-formula" data-tex="ax + b = 0 \;\Rightarrow\; x = -\dfrac{b}{a}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Квадратное уравнение (ax² + bx + c = 0)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Дискриминант ★</div><div class="chip-formula" data-tex="D = b^2 - 4ac"></div></div>
+      <div class="fchip"><div class="chip-name">Формула корней ★</div><div class="chip-formula" data-tex="x_{1,2} = \dfrac{-b \pm \sqrt{D}}{2a}"></div></div>
+      <div class="fchip"><div class="chip-name">Теорема Виета (сумма)</div><div class="chip-formula" data-tex="x_1 + x_2 = -\dfrac{b}{a}"></div></div>
+      <div class="fchip"><div class="chip-name">Теорема Виета (произведение)</div><div class="chip-formula" data-tex="x_1 \cdot x_2 = \dfrac{c}{a}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Уравнения с модулями</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">|x| = a  (a ≥ 0)</div><div class="chip-formula" data-tex="x = \pm a"></div></div>
+      <div class="fchip"><div class="chip-name">|x| &lt; a</div><div class="chip-formula" data-tex="-a < x < a"></div></div>
+      <div class="fchip"><div class="chip-name">|x| &gt; a</div><div class="chip-formula" data-tex="x < -a \text{ или } x > a"></div></div>
+      <div class="fchip"><div class="chip-name">|x − c| = r</div><div class="chip-formula" data-tex="x = c \pm r"></div></div>
+    </div>
+
+    <div class="fml-subsection">Иррациональные уравнения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">√f(x) = g(x)</div><div class="chip-formula" data-tex="\sqrt{f(x)} = g(x) \;\Leftrightarrow\; \begin{cases} f(x) = [g(x)]^2 \\ g(x) \geq 0 \end{cases}"></div></div>
+      <div class="fchip"><div class="chip-name">√f(x) = √g(x)</div><div class="chip-formula" data-tex="\sqrt{f(x)} = \sqrt{g(x)} \;\Leftrightarrow\; \begin{cases} f(x) = g(x) \\ f(x) \geq 0 \end{cases}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Система уравнений (sum/product)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">По сумме и произведению</div><div class="chip-formula" data-tex="\begin{cases} x + y = s \\ x \cdot y = p \end{cases} \;\Rightarrow\; t^2 - st + p = 0"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       04 НЕРАВЕНСТВА
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t04" style="--tc:var(--t04)">
+    <h2>
+      <span class="fml-topic-icon">📊</span>
+      04 &nbsp;Неравенства
+      <a class="fml-topic-link" style="color:var(--t04);border-color:var(--t04)" href="../theory/04_neravenstva.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Неравенства с модулями</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">|x| &lt; a</div><div class="chip-formula" data-tex="-a < x < a"></div></div>
+      <div class="fchip"><div class="chip-name">|x| ≤ a</div><div class="chip-formula" data-tex="-a \leq x \leq a"></div></div>
+      <div class="fchip"><div class="chip-name">|x| &gt; a</div><div class="chip-formula" data-tex="x < -a \text{ или } x > a"></div></div>
+      <div class="fchip"><div class="chip-name">|x − c| &lt; r</div><div class="chip-formula" data-tex="c - r < x < c + r"></div></div>
+    </div>
+
+    <div class="fml-subsection">Квадратное неравенство (метод интервалов)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">ax² + bx + c &gt; 0 (a &gt; 0, D &gt; 0)</div><div class="chip-formula" data-tex="x < x_1 \text{ или } x > x_2"></div></div>
+      <div class="fchip"><div class="chip-name">ax² + bx + c &lt; 0 (a &gt; 0, D &gt; 0)</div><div class="chip-formula" data-tex="x_1 < x < x_2"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       05 ФУНКЦИИ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t05" style="--tc:var(--t05)">
+    <h2>
+      <span class="fml-topic-icon">📈</span>
+      05 &nbsp;Функции
+      <a class="fml-topic-link" style="color:var(--t05);border-color:var(--t05)" href="../theory/05_funktsii.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Квадратичная функция y = ax² + bx + c</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Вершина параболы (x)</div><div class="chip-formula" data-tex="x_0 = -\dfrac{b}{2a}"></div></div>
+      <div class="fchip"><div class="chip-name">Вершина параболы (y)</div><div class="chip-formula" data-tex="y_0 = -\dfrac{D}{4a} = c - \dfrac{b^2}{4a}"></div></div>
+      <div class="fchip"><div class="chip-name">Форма с вершиной</div><div class="chip-formula" data-tex="y = a(x - x_0)^2 + y_0"></div></div>
+    </div>
+
+    <div class="fml-subsection">Основные функции</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Степенная</div><div class="chip-formula" data-tex="y = x^n"></div></div>
+      <div class="fchip"><div class="chip-name">Квадратный корень</div><div class="chip-formula" data-tex="y = \sqrt{x}, \quad x \geq 0"></div></div>
+      <div class="fchip"><div class="chip-name">Обратная пропорциональность</div><div class="chip-formula" data-tex="y = \dfrac{k}{x}, \quad x \neq 0"></div></div>
+      <div class="fchip"><div class="chip-name">Модуль</div><div class="chip-formula" data-tex="y = |x|"></div></div>
+    </div>
+
+    <div class="fml-subsection">Преобразования графиков</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Сдвиг по Y</div><div class="chip-formula" data-tex="y = f(x) + c"></div></div>
+      <div class="fchip"><div class="chip-name">Сдвиг по X</div><div class="chip-formula" data-tex="y = f(x + c)"></div></div>
+      <div class="fchip"><div class="chip-name">Отражение от X</div><div class="chip-formula" data-tex="y = -f(x)"></div></div>
+      <div class="fchip"><div class="chip-name">Отражение от Y</div><div class="chip-formula" data-tex="y = f(-x)"></div></div>
+      <div class="fchip"><div class="chip-name">Растяжение по Y</div><div class="chip-formula" data-tex="y = k \cdot f(x)"></div></div>
+      <div class="fchip"><div class="chip-name">Растяжение по X</div><div class="chip-formula" data-tex="y = f\!\left(\dfrac{x}{k}\right)"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       06 ТРИГОНОМЕТРИЯ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t06" style="--tc:var(--t06)">
+    <h2>
+      <span class="fml-topic-icon">🌀</span>
+      06 &nbsp;Тригонометрия
+      <a class="fml-topic-link" style="color:var(--t06);border-color:var(--t06)" href="../theory/06_trigonometriya.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Основные тождества</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Основное тождество ★</div><div class="chip-formula" data-tex="\sin^2\alpha + \cos^2\alpha = 1"></div></div>
+      <div class="fchip"><div class="chip-name">Связь tg и sin/cos</div><div class="chip-formula" data-tex="\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}"></div></div>
+      <div class="fchip"><div class="chip-name">Связь ctg и sin/cos</div><div class="chip-formula" data-tex="\cot\alpha = \dfrac{\cos\alpha}{\sin\alpha}"></div></div>
+      <div class="fchip"><div class="chip-name">Тождество с tg</div><div class="chip-formula" data-tex="1 + \tan^2\alpha = \dfrac{1}{\cos^2\alpha}"></div></div>
+      <div class="fchip"><div class="chip-name">Тождество с ctg</div><div class="chip-formula" data-tex="1 + \cot^2\alpha = \dfrac{1}{\sin^2\alpha}"></div></div>
+      <div class="fchip"><div class="chip-name">Произведение tg и ctg</div><div class="chip-formula" data-tex="\tan\alpha \cdot \cot\alpha = 1"></div></div>
+    </div>
+
+    <div class="fml-subsection">Формулы сложения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">sin(α + β)</div><div class="chip-formula" data-tex="\sin(\alpha+\beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta"></div></div>
+      <div class="fchip"><div class="chip-name">sin(α − β)</div><div class="chip-formula" data-tex="\sin(\alpha-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta"></div></div>
+      <div class="fchip"><div class="chip-name">cos(α + β)</div><div class="chip-formula" data-tex="\cos(\alpha+\beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta"></div></div>
+      <div class="fchip"><div class="chip-name">cos(α − β)</div><div class="chip-formula" data-tex="\cos(\alpha-\beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta"></div></div>
+      <div class="fchip"><div class="chip-name">tg(α + β)</div><div class="chip-formula" data-tex="\tan(\alpha+\beta) = \dfrac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}"></div></div>
+      <div class="fchip"><div class="chip-name">tg(α − β)</div><div class="chip-formula" data-tex="\tan(\alpha-\beta) = \dfrac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Двойной угол</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">sin 2α ★</div><div class="chip-formula" data-tex="\sin 2\alpha = 2\sin\alpha\cos\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">cos 2α (форма 1)</div><div class="chip-formula" data-tex="\cos 2\alpha = \cos^2\alpha - \sin^2\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">cos 2α (форма 2)</div><div class="chip-formula" data-tex="\cos 2\alpha = 2\cos^2\alpha - 1"></div></div>
+      <div class="fchip"><div class="chip-name">cos 2α (форма 3)</div><div class="chip-formula" data-tex="\cos 2\alpha = 1 - 2\sin^2\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">tg 2α</div><div class="chip-formula" data-tex="\tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Понижение степени</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">sin²α</div><div class="chip-formula" data-tex="\sin^2\alpha = \dfrac{1 - \cos 2\alpha}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">cos²α</div><div class="chip-formula" data-tex="\cos^2\alpha = \dfrac{1 + \cos 2\alpha}{2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Суммы и разности</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">sin α + sin β</div><div class="chip-formula" data-tex="\sin\alpha + \sin\beta = 2\sin\dfrac{\alpha+\beta}{2}\cos\dfrac{\alpha-\beta}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">sin α − sin β</div><div class="chip-formula" data-tex="\sin\alpha - \sin\beta = 2\cos\dfrac{\alpha+\beta}{2}\sin\dfrac{\alpha-\beta}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">cos α + cos β</div><div class="chip-formula" data-tex="\cos\alpha + \cos\beta = 2\cos\dfrac{\alpha+\beta}{2}\cos\dfrac{\alpha-\beta}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">cos α − cos β</div><div class="chip-formula" data-tex="\cos\alpha - \cos\beta = -2\sin\dfrac{\alpha+\beta}{2}\sin\dfrac{\alpha-\beta}{2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Основные уравнения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">sin x = a</div><div class="chip-formula" data-tex="x = (-1)^n \arcsin a + \pi n, \quad n \in \mathbb{Z}"></div></div>
+      <div class="fchip"><div class="chip-name">cos x = a</div><div class="chip-formula" data-tex="x = \pm\arccos a + 2\pi n, \quad n \in \mathbb{Z}"></div></div>
+      <div class="fchip"><div class="chip-name">tg x = a</div><div class="chip-formula" data-tex="x = \arctan a + \pi n, \quad n \in \mathbb{Z}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       07 ПОКАЗАТЕЛЬНАЯ И ЛОГАРИФМЫ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t07" style="--tc:var(--t07)">
+    <h2>
+      <span class="fml-topic-icon">🔬</span>
+      07 &nbsp;Показательная функция и логарифмы
+      <a class="fml-topic-link" style="color:var(--t07);border-color:var(--t07)" href="../theory/07_pokazatelnaya_log.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Свойства степеней</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Отрицательный показатель</div><div class="chip-formula" data-tex="a^{-n} = \dfrac{1}{a^n}"></div></div>
+      <div class="fchip"><div class="chip-name">Дробный показатель</div><div class="chip-formula" data-tex="a^{m/n} = \sqrt[n]{a^m}"></div></div>
+      <div class="fchip"><div class="chip-name">Произведение степеней</div><div class="chip-formula" data-tex="a^m \cdot a^n = a^{m+n}"></div></div>
+      <div class="fchip"><div class="chip-name">Деление степеней</div><div class="chip-formula" data-tex="\dfrac{a^m}{a^n} = a^{m-n}"></div></div>
+      <div class="fchip"><div class="chip-name">Степень степени</div><div class="chip-formula" data-tex="(a^m)^n = a^{mn}"></div></div>
+      <div class="fchip"><div class="chip-name">Степень произведения</div><div class="chip-formula" data-tex="(ab)^n = a^n b^n"></div></div>
+    </div>
+
+    <div class="fml-subsection">Определение и свойства логарифма</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Определение ★</div><div class="chip-formula" data-tex="\log_a b = c \;\Leftrightarrow\; a^c = b"></div></div>
+      <div class="fchip"><div class="chip-name">Логарифм произведения</div><div class="chip-formula" data-tex="\log_a(bc) = \log_a b + \log_a c"></div></div>
+      <div class="fchip"><div class="chip-name">Логарифм частного</div><div class="chip-formula" data-tex="\log_a\!\dfrac{b}{c} = \log_a b - \log_a c"></div></div>
+      <div class="fchip"><div class="chip-name">Логарифм степени</div><div class="chip-formula" data-tex="\log_a b^n = n \log_a b"></div></div>
+      <div class="fchip"><div class="chip-name">Логарифм единицы</div><div class="chip-formula" data-tex="\log_a 1 = 0"></div></div>
+      <div class="fchip"><div class="chip-name">Логарифм основания</div><div class="chip-formula" data-tex="\log_a a = 1"></div></div>
+      <div class="fchip"><div class="chip-name">Формула перехода</div><div class="chip-formula" data-tex="\log_a b = \dfrac{\log_c b}{\log_c a} = \dfrac{\ln b}{\ln a}"></div></div>
+      <div class="fchip"><div class="chip-name">Степень основания</div><div class="chip-formula" data-tex="a^{\log_a b} = b"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       08 ПРОГРЕССИИ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t08" style="--tc:var(--t08)">
+    <h2>
+      <span class="fml-topic-icon">🔗</span>
+      08 &nbsp;Прогрессии
+      <a class="fml-topic-link" style="color:var(--t08);border-color:var(--t08)" href="../theory/08_progressii.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Арифметическая прогрессия</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Разность</div><div class="chip-formula" data-tex="d = a_{n+1} - a_n"></div></div>
+      <div class="fchip"><div class="chip-name">n-й член ★</div><div class="chip-formula" data-tex="a_n = a_1 + (n-1)d"></div></div>
+      <div class="fchip"><div class="chip-name">n-й через k-й</div><div class="chip-formula" data-tex="a_n = a_k + (n-k)d"></div></div>
+      <div class="fchip"><div class="chip-name">Сумма (через крайние) ★</div><div class="chip-formula" data-tex="S_n = \dfrac{n(a_1 + a_n)}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Сумма (через d) ★</div><div class="chip-formula" data-tex="S_n = \dfrac{n\bigl(2a_1 + (n-1)d\bigr)}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Свойство членов</div><div class="chip-formula" data-tex="a_n = \dfrac{a_{n-1} + a_{n+1}}{2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Геометрическая прогрессия</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Знаменатель</div><div class="chip-formula" data-tex="q = \dfrac{b_{n+1}}{b_n}"></div></div>
+      <div class="fchip"><div class="chip-name">n-й член ★</div><div class="chip-formula" data-tex="b_n = b_1 \cdot q^{n-1}"></div></div>
+      <div class="fchip"><div class="chip-name">Сумма первых n ★</div><div class="chip-formula" data-tex="S_n = \dfrac{b_1(q^n - 1)}{q - 1} \quad (q \neq 1)"></div></div>
+      <div class="fchip"><div class="chip-name">Сумма бесконечной (|q| &lt; 1)</div><div class="chip-formula" data-tex="S = \dfrac{b_1}{1 - q}"></div></div>
+      <div class="fchip"><div class="chip-name">Свойство членов</div><div class="chip-formula" data-tex="b_n^2 = b_{n-1} \cdot b_{n+1}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Средние значения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Среднее арифметическое</div><div class="chip-formula" data-tex="A = \dfrac{a+b}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Среднее геометрическое</div><div class="chip-formula" data-tex="G = \sqrt{ab}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       09 ПЛАНИМЕТРИЯ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t09" style="--tc:var(--t09)">
+    <h2>
+      <span class="fml-topic-icon">📐</span>
+      09 &nbsp;Планиметрия
+      <a class="fml-topic-link" style="color:var(--t09);border-color:var(--t09)" href="../theory/09_planimetriya.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Треугольник — основные формулы</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Полупериметр</div><div class="chip-formula" data-tex="p = \dfrac{a+b+c}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Площадь (основание × высота)</div><div class="chip-formula" data-tex="S = \dfrac{1}{2}\,a \cdot h_a"></div></div>
+      <div class="fchip"><div class="chip-name">Площадь (две стороны и угол) ★</div><div class="chip-formula" data-tex="S = \dfrac{1}{2}\,ab\sin C"></div></div>
+      <div class="fchip"><div class="chip-name">Формула Герона ★</div><div class="chip-formula" data-tex="S = \sqrt{p(p-a)(p-b)(p-c)}"></div></div>
+      <div class="fchip"><div class="chip-name">Площадь через описанную окружность</div><div class="chip-formula" data-tex="S = \dfrac{abc}{4R}"></div></div>
+      <div class="fchip"><div class="chip-name">Медиана</div><div class="chip-formula" data-tex="m_a^2 = \dfrac{2b^2 + 2c^2 - a^2}{4}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Теоремы синусов и косинусов</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Теорема синусов ★</div><div class="chip-formula" data-tex="\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R"></div></div>
+      <div class="fchip"><div class="chip-name">Теорема косинусов ★</div><div class="chip-formula" data-tex="a^2 = b^2 + c^2 - 2bc\cos A"></div></div>
+      <div class="fchip"><div class="chip-name">Теорема Пифагора ★</div><div class="chip-formula" data-tex="a^2 + b^2 = c^2"></div></div>
+    </div>
+
+    <div class="fml-subsection">Прямоугольный треугольник</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">sin α</div><div class="chip-formula" data-tex="\sin\alpha = \dfrac{a}{c}"></div></div>
+      <div class="fchip"><div class="chip-name">cos α</div><div class="chip-formula" data-tex="\cos\alpha = \dfrac{b}{c}"></div></div>
+      <div class="fchip"><div class="chip-name">tg α</div><div class="chip-formula" data-tex="\tan\alpha = \dfrac{a}{b}"></div></div>
+      <div class="fchip"><div class="chip-name">Медиана к гипотенузе</div><div class="chip-formula" data-tex="m_c = \dfrac{c}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Высота из прямого угла</div><div class="chip-formula" data-tex="h^2 = a' \cdot b'"></div></div>
+    </div>
+
+    <div class="fml-subsection">Четырёхугольники</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Параллелограмм</div><div class="chip-formula" data-tex="S = a \cdot h = ab\sin\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">Прямоугольник</div><div class="chip-formula" data-tex="S = ab, \quad d = \sqrt{a^2 + b^2}"></div></div>
+      <div class="fchip"><div class="chip-name">Ромб</div><div class="chip-formula" data-tex="S = a^2\sin\alpha = \dfrac{d_1 d_2}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Квадрат</div><div class="chip-formula" data-tex="S = a^2 = \dfrac{d^2}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Трапеция ★</div><div class="chip-formula" data-tex="S = \dfrac{(a+b)}{2}\cdot h"></div></div>
+      <div class="fchip"><div class="chip-name">Средняя линия трапеции</div><div class="chip-formula" data-tex="m = \dfrac{a + b}{2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Окружность и круг</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Длина окружности</div><div class="chip-formula" data-tex="C = 2\pi R"></div></div>
+      <div class="fchip"><div class="chip-name">Площадь круга</div><div class="chip-formula" data-tex="S = \pi R^2"></div></div>
+      <div class="fchip"><div class="chip-name">Длина дуги</div><div class="chip-formula" data-tex="l = \dfrac{\pi R \alpha}{180^\circ} = R\varphi"></div></div>
+      <div class="fchip"><div class="chip-name">Площадь сектора</div><div class="chip-formula" data-tex="S_\text{сект} = \dfrac{\pi R^2 \alpha}{360^\circ} = \dfrac{1}{2}R^2\varphi"></div></div>
+    </div>
+
+    <div class="fml-subsection">Вписанная и описанная окружности</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Вписанная (радиус)</div><div class="chip-formula" data-tex="r = \dfrac{S}{p}"></div></div>
+      <div class="fchip"><div class="chip-name">Описанная (радиус)</div><div class="chip-formula" data-tex="R = \dfrac{abc}{4S} = \dfrac{a}{2\sin A}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Координатная геометрия</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Расстояние между точками</div><div class="chip-formula" data-tex="d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}"></div></div>
+      <div class="fchip"><div class="chip-name">Уравнение окружности</div><div class="chip-formula" data-tex="(x - a)^2 + (y - b)^2 = R^2"></div></div>
+      <div class="fchip"><div class="chip-name">Расстояние от точки до прямой</div><div class="chip-formula" data-tex="d = \dfrac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       10 СТЕРЕОМЕТРИЯ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t10" style="--tc:var(--t10)">
+    <h2>
+      <span class="fml-topic-icon">🧊</span>
+      10 &nbsp;Стереометрия
+      <a class="fml-topic-link" style="color:var(--t10);border-color:var(--t10)" href="../theory/10_stereometriya.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Призма и параллелепипед</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Объём призмы ★</div><div class="chip-formula" data-tex="V = S_\text{осн} \cdot h"></div></div>
+      <div class="fchip"><div class="chip-name">Боковая поверхность</div><div class="chip-formula" data-tex="S_\text{бок} = P_\text{осн} \cdot h"></div></div>
+      <div class="fchip"><div class="chip-name">Диагональ параллелепипеда</div><div class="chip-formula" data-tex="d^2 = a^2 + b^2 + c^2"></div></div>
+    </div>
+
+    <div class="fml-subsection">Пирамида</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Объём ★</div><div class="chip-formula" data-tex="V = \dfrac{1}{3}\, S_\text{осн} \cdot h"></div></div>
+      <div class="fchip"><div class="chip-name">Боковая поверхность</div><div class="chip-formula" data-tex="S_\text{бок} = \dfrac{1}{2}\, P_\text{осн} \cdot a"></div></div>
+      <div class="fchip"><div class="chip-name">Усечённая пирамида</div><div class="chip-formula" data-tex="V = \dfrac{h}{3}(S_1 + S_2 + \sqrt{S_1 S_2})"></div></div>
+    </div>
+
+    <div class="fml-subsection">Цилиндр</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Объём ★</div><div class="chip-formula" data-tex="V = \pi R^2 h"></div></div>
+      <div class="fchip"><div class="chip-name">Боковая поверхность</div><div class="chip-formula" data-tex="S_\text{бок} = 2\pi R h"></div></div>
+      <div class="fchip"><div class="chip-name">Полная поверхность</div><div class="chip-formula" data-tex="S_\text{полн} = 2\pi R(h + R)"></div></div>
+    </div>
+
+    <div class="fml-subsection">Конус</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Объём ★</div><div class="chip-formula" data-tex="V = \dfrac{1}{3}\pi R^2 h"></div></div>
+      <div class="fchip"><div class="chip-name">Образующая</div><div class="chip-formula" data-tex="l = \sqrt{R^2 + h^2}"></div></div>
+      <div class="fchip"><div class="chip-name">Боковая поверхность</div><div class="chip-formula" data-tex="S_\text{бок} = \pi R l"></div></div>
+      <div class="fchip"><div class="chip-name">Полная поверхность</div><div class="chip-formula" data-tex="S_\text{полн} = \pi R(l + R)"></div></div>
+    </div>
+
+    <div class="fml-subsection">Шар и сфера</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Объём шара ★</div><div class="chip-formula" data-tex="V = \dfrac{4}{3}\pi R^3"></div></div>
+      <div class="fchip"><div class="chip-name">Площадь сферы ★</div><div class="chip-formula" data-tex="S = 4\pi R^2"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       11 ТЕКСТОВЫЕ ЗАДАЧИ
+       ════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t11" style="--tc:var(--t11)">
+    <h2>
+      <span class="fml-topic-icon">📝</span>
+      11 &nbsp;Текстовые задачи
+      <a class="fml-topic-link" style="color:var(--t11);border-color:var(--t11)" href="../theory/11_tekstovye.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Задачи на движение</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Встреча (навстречу) ★</div><div class="chip-formula" data-tex="(v_1 + v_2)\cdot t = S"></div></div>
+      <div class="fchip"><div class="chip-name">Погоня (в одну сторону)</div><div class="chip-formula" data-tex="(v_1 - v_2)\cdot t = S_0"></div></div>
+      <div class="fchip"><div class="chip-name">По течению</div><div class="chip-formula" data-tex="v_\text{по теч} = v_\text{соб} + v_\text{теч}"></div></div>
+      <div class="fchip"><div class="chip-name">Против течения</div><div class="chip-formula" data-tex="v_\text{пр теч} = v_\text{соб} - v_\text{теч}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Задачи на работу</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Производительность</div><div class="chip-formula" data-tex="A = p \cdot t"></div></div>
+      <div class="fchip"><div class="chip-name">Совместная работа ★</div><div class="chip-formula" data-tex="\dfrac{1}{t_1} + \dfrac{1}{t_2} = \dfrac{1}{t}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Смеси и концентрации</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Концентрация</div><div class="chip-formula" data-tex="c = \dfrac{m_\text{вещества}}{m_\text{раствора}} \cdot 100\%"></div></div>
+      <div class="fchip"><div class="chip-name">Смешивание</div><div class="chip-formula" data-tex="c_1 m_1 + c_2 m_2 = c(m_1 + m_2)"></div></div>
+    </div>
+  </section>
+
+</div><!-- /fml-content -->
+</div><!-- /fml-page -->
+
+<!-- ─── COMMAND PALETTE ─── -->
+<div class="palette" id="palette">
+  <div class="palette-box">
+    <input class="palette-input" id="palInput" type="text" placeholder="Поиск формулы или темы..." />
+    <div class="palette-list" id="palList"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});renderPageMath()"></script>
+<script>
+(function(){
+  'use strict';
+
+  window.renderPageMath = function(){
+    if(typeof katex==='undefined')return;
+    document.querySelectorAll('[data-tex]').forEach(function(el){
+      try{
+        katex.render(el.getAttribute('data-tex'),el,{
+          throwOnError:false,
+          displayMode:el.classList.contains('chip-formula')
+        });
+      }catch(e){}
+    });
+  };
+
+  var pal=document.getElementById('palette');
+  var palInput=document.getElementById('palInput');
+  var palList=document.getElementById('palList');
+  var openBtn=document.getElementById('openSearch');
+
+  var idx=[];
+  document.querySelectorAll('.fml-topic-section').forEach(function(sec){
+    var h2=sec.querySelector('h2');
+    var link=sec.querySelector('.fml-topic-link');
+    var topicTxt=h2?h2.textContent.replace('Открыть тему →','').trim():'';
+    var topicHref=link?link.getAttribute('href'):'';
+    sec.querySelectorAll('.fchip').forEach(function(chip){
+      var nm=chip.querySelector('.chip-name');
+      var fm=chip.querySelector('.chip-formula');
+      if(!nm)return;
+      idx.push({
+        title:nm.textContent.trim(),
+        sub:topicTxt,
+        href:topicHref,
+        anchor:'#'+sec.id,
+        tex:fm?fm.getAttribute('data-tex'):''
+      });
+    });
+    idx.push({title:topicTxt,sub:'Тема',href:topicHref,anchor:'#'+sec.id,tex:''});
+  });
+
+  function escHtml(s){return (s||'').replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]})}
+
+  function renderPal(q){
+    q=(q||'').toLowerCase().trim();
+    var filt=q===''?idx.slice(0,28):idx.filter(function(i){
+      return (i.title+' '+i.sub+' '+i.tex).toLowerCase().indexOf(q)>=0;
+    }).slice(0,35);
+    if(!filt.length){palList.innerHTML='<div class="palette-empty">Ничего не найдено</div>';return;}
+    palList.innerHTML=filt.map(function(i,n){
+      return '<div class="palette-item'+(n===0?' sel':'')+'" data-href="'+(i.href||'')+'" data-anchor="'+(i.anchor||'')+'">'+
+        '<div class="pi-icon">ƒ</div>'+
+        '<div class="pi-text"><div class="pi-title">'+escHtml(i.title)+'</div>'+
+        '<div class="pi-sub">'+escHtml(i.sub)+'</div></div></div>';
+    }).join('');
+  }
+
+  function openPal(){pal.classList.add('open');renderPal('');palInput.value='';setTimeout(function(){palInput.focus()},10);}
+  function closePal(){pal.classList.remove('open');}
+
+  if(openBtn)openBtn.addEventListener('click',openPal);
+  document.addEventListener('keydown',function(e){
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPal();}
+    if(e.key==='Escape')closePal();
+    if(pal.classList.contains('open')&&(e.key==='ArrowDown'||e.key==='ArrowUp'||e.key==='Enter')){
+      e.preventDefault();
+      var all=Array.from(palList.querySelectorAll('.palette-item'));
+      var sel=palList.querySelector('.palette-item.sel');
+      var idx2=all.indexOf(sel);
+      if(e.key==='Enter'&&sel){navigate(sel);closePal();return;}
+      if(e.key==='ArrowDown')idx2=Math.min(all.length-1,idx2+1);
+      if(e.key==='ArrowUp')idx2=Math.max(0,idx2-1);
+      all.forEach(function(x){x.classList.remove('sel')});
+      if(all[idx2]){all[idx2].classList.add('sel');all[idx2].scrollIntoView({block:'nearest'});}
+    }
+  });
+  palInput.addEventListener('input',function(){renderPal(this.value);});
+  pal.addEventListener('click',function(e){
+    if(e.target===pal){closePal();return;}
+    var it=e.target.closest('.palette-item');if(it){navigate(it);closePal();}
+  });
+
+  function navigate(el){
+    var href=el.dataset.href,anchor=el.dataset.anchor;
+    if(href&&href!==window.location.href.split('#')[0]){
+      window.location.href=href+(anchor?anchor:'');
+    } else if(anchor){
+      var t=document.querySelector(anchor);
+      if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }
+
+  var navBtns=Array.from(document.querySelectorAll('.fml-nav-btn'));
+  var sections=Array.from(document.querySelectorAll('.fml-topic-section'));
+  window.addEventListener('scroll',function(){
+    var fromTop=window.scrollY+120;
+    var cur=null;
+    sections.forEach(function(s){if(s.offsetTop<=fromTop)cur=s.id;});
+    navBtns.forEach(function(b){b.classList.toggle('active',b.getAttribute('href')==='#'+cur);});
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

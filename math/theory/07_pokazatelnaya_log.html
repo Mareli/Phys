@@ -603,11 +603,48 @@
           </div>
           <div class="ans">Ответ: <span data-tex="x = 5,\; x = -1"></span>.</div>
         </div>
-      </section>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Вычислите: <span data-tex="\log_2 8 + \log_2 \dfrac{1}{2}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\log_2 8 = \log_2 2^3 = 3"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\log_2 \dfrac{1}{2} = \log_2 2^{-1} = -1"></span></div>
+            <div class="step"><div class="stepn">3</div>Сумма: <span data-tex="3 + (-1) = 2"></span></div>
+          </div>
+          <div class="ans">Ответ: 2</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Решите уравнение: <span data-tex="\log_3(x-1)+\log_3(x+1)=2"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>ОДЗ: <span data-tex="x>1"></span></div>
+            <div class="step"><div class="stepn">2</div>По свойству логарифма: <span data-tex="\log_3[(x-1)(x+1)]=2"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="(x-1)(x+1)=3^2=9 \Rightarrow x^2-1=9 \Rightarrow x^2=10"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="x=\sqrt{10}"></span> (отрицательный корень не входит в ОДЗ)</div>
+            <div class="step"><div class="stepn">5</div>Проверка: <span data-tex="\sqrt{10}>1"></span> ✓</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x=\sqrt{10}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">сложная</span></span>
+          <div class="ptext">Решите уравнение: <span data-tex="9^x - 4\cdot 3^x - 45 = 0"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Замена: <span data-tex="t = 3^x,\; t>0"></span>. Тогда <span data-tex="9^x=(3^x)^2=t^2"></span></div>
+            <div class="step"><div class="stepn">2</div>Уравнение принимает вид: <span data-tex="t^2-4t-45=0"></span></div>
+            <div class="step"><div class="stepn">3</div>Дискриминант: <span data-tex="D=16+180=196,\; \sqrt{D}=14"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="t_1=\dfrac{4+14}{2}=9,\quad t_2=\dfrac{4-14}{2}=-5<0"></span> — не подходит</div>
+            <div class="step"><div class="stepn">5</div><span data-tex="3^x=9=3^2 \Rightarrow x=2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x=2"></span></div>
+        </div>
 
       <!-- ══════════════════════════════════════
            SECTION s_check: Чек-лист
            ══════════════════════════════════════ -->
+      </section>
       <section class="sec" id="s_check">
         <div class="sec-head">
           <h1>✓ Чек-лист «Что знать к ЦТ»</h1>

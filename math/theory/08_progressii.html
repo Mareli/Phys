@@ -539,11 +539,47 @@
           </div>
           <div class="ans">Ответ: <span data-tex="x = 6"></span> или <span data-tex="x = -6"></span>.</div>
         </div>
-      </section>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Первые члены арифметической прогрессии: 2, 5, 8, 11, ... Найдите <span data-tex="a_{10}"></span> и <span data-tex="S_{10}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Разность прогрессии: <span data-tex="d=5-2=3"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="a_{10}=a_1+(10-1)d=2+9\cdot 3=29"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="S_{10}=\dfrac{10(a_1+a_{10})}{2}=\dfrac{10(2+29)}{2}=155"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="a_{10}=29,\quad S_{10}=155"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Сумма первых <span data-tex="n"></span> членов АП задаётся формулой <span data-tex="S_n=3n^2-2n"></span>. Найдите <span data-tex="a_5"></span> и разность <span data-tex="d"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="a_5 = S_5 - S_4 = (75-10)-(48-8) = 65-40 = 25"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="a_1 = S_1 = 3-2=1"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="d = \dfrac{a_5-a_1}{4}=\dfrac{24}{4}=6"></span></div>
+            <div class="step"><div class="stepn">4</div>Проверка: <span data-tex="a_5=1+4\cdot 6=25"></span> ✓</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="a_5=25,\quad d=6"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">сложная</span></span>
+          <div class="ptext">Сумма первых двух членов бесконечной убывающей геометрической прогрессии равна 6, а сумма всех её членов равна 8. Найдите прогрессию.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Система: <span data-tex="\begin{cases}b_1+b_1 q=6\\[4pt]\dfrac{b_1}{1-q}=8\end{cases}"></span></div>
+            <div class="step"><div class="stepn">2</div>Из второго уравнения: <span data-tex="b_1=8(1-q)"></span></div>
+            <div class="step"><div class="stepn">3</div>Подставляем в первое: <span data-tex="8(1-q)(1+q)=6 \Rightarrow 8(1-q^2)=6 \Rightarrow q^2=\dfrac{1}{4}"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="q=\dfrac{1}{2}"></span> (берём <span data-tex="|q|<1"></span>): <span data-tex="b_1=8\cdot\dfrac{1}{2}=4"></span>; или <span data-tex="q=-\dfrac{1}{2}"></span>: <span data-tex="b_1=12"></span></div>
+            <div class="step"><div class="stepn">5</div>Проверка: <span data-tex="4+2=6"></span> ✓ и <span data-tex="12-6=6"></span> ✓</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="b_1=4,\;q=\tfrac{1}{2}"></span> или <span data-tex="b_1=12,\;q=-\tfrac{1}{2}"></span></div>
+        </div>
 
       <!-- ══════════════════════════════════════
            SECTION s_check: Чек-лист
            ══════════════════════════════════════ -->
+      </section>
       <section class="sec" id="s_check">
         <div class="sec-head">
           <h1>✓ Чек-лист «Что знать к ЦТ»</h1>

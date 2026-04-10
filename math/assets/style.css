@@ -270,10 +270,11 @@ body{
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--radius-sm);padding:14px 16px;
   transition:all .2s;position:relative;
+  min-width:0;overflow:hidden;
 }
 .fchip:hover{border-color:var(--acc);box-shadow:0 4px 14px var(--acc-glow);transform:translateY(-1px)}
 .fchip .chip-name{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
-.fchip .chip-formula{font-family:'JetBrains Mono',monospace;font-size:.96rem;color:var(--text);font-weight:500}
+.fchip .chip-formula{font-family:'JetBrains Mono',monospace;font-size:.96rem;color:var(--text);font-weight:500;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .fchip .chip-desc{font-size:.74rem;color:var(--text2);margin-top:6px;line-height:1.5}
 
 /* ─── CARDS ──────────────────────────────────────── */
