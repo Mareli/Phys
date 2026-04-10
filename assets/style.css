@@ -6,7 +6,7 @@
 html{scroll-behavior:smooth;font-size:16px}
 body{
   font-family:'Inter','Cambria Math','STIX Two Math',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,'Segoe UI Symbol','Segoe UI Emoji',sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.7;
+  background:var(--bg);color:var(--text);line-height:1.8;
   -webkit-font-smoothing:antialiased;
 }
 
@@ -191,7 +191,7 @@ body{
 
 /* ─── HEADINGS ───────────────────────────────────── */
 .content-inner h2{
-  font-size:1.25rem;font-weight:800;color:var(--text);
+  font-size:1.3rem;font-weight:800;color:var(--text);
   letter-spacing:-.02em;margin:32px 0 14px;
   display:flex;align-items:center;gap:10px;
 }
@@ -201,14 +201,14 @@ body{
 }
 .content-inner h2:first-child{margin-top:0}
 .content-inner h3{
-  font-size:1rem;font-weight:700;color:var(--text);
+  font-size:1.05rem;font-weight:700;color:var(--text);
   margin:22px 0 10px;
 }
 .content-inner h3:first-child{margin-top:0}
-.content-inner p{margin:10px 0;color:var(--text2);font-size:.93rem;line-height:1.75}
-.content-inner p strong,.content-inner li strong{color:var(--text);font-weight:600}
+.content-inner p{margin:10px 0;color:var(--text2);font-size:.93rem;line-height:1.8}
+.content-inner p strong,.content-inner li strong{color:var(--text);font-weight:700}
 .content-inner ul,.content-inner ol{padding-left:22px;margin:10px 0;color:var(--text2);font-size:.92rem}
-.content-inner li{margin-bottom:5px;line-height:1.7}
+.content-inner li{margin-bottom:5px;line-height:1.75}
 
 /* ─── DEFINITION ─────────────────────────────────── */
 .def{
@@ -265,16 +265,16 @@ body{
 /* Grid of small formula chips */
 .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:14px 0}
 .fchip{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius-sm);padding:14px 16px;
-  transition:all .2s;position:relative;
+  background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--acc);
+  border-radius:var(--radius-sm);padding:14px 16px 14px 13px;
+  transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;
   min-width:0;overflow:hidden;
 }
-.fchip:hover{border-color:var(--acc);box-shadow:0 4px 14px var(--acc-glow);transform:translateY(-1px)}
-.fchip .chip-name{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.fchip:hover{border-color:var(--acc);box-shadow:0 8px 24px var(--acc-glow);transform:translateY(-3px)}
+.fchip .chip-name{font-size:10px;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
 .fchip .chip-formula{font-family:'JetBrains Mono',monospace;font-size:.96rem;color:var(--text);font-weight:500;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .fchip .chip-formula .katex-display{display:inline-block!important;margin:0!important;text-align:left}
-.fchip .chip-desc{font-size:.74rem;color:var(--text2);margin-top:6px;line-height:1.5}
+.fchip .chip-desc{font-size:.74rem;color:var(--text2);margin-top:6px;line-height:1.6}
 
 /* ─── CARDS ──────────────────────────────────────── */
 .card{
