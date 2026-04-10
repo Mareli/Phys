@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Квантовая физика — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t11">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">⚛️</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Квантовая физика</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 11</span>
+      <h2>Квантовая физика</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Кванты света</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">💡</span>Фотон. Энергия и импульс</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">⚡</span>Фотоэффект</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">⚛</span>Постулаты Бора</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Ядерная физика</div>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">⚛</span>Состав ядра</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">🔗</span>Энергия связи</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">☢</span>Радиоактивность</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">⏰</span>Закон распада</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">💥</span>Ядерные реакции</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">СТО</div>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">⏳</span>Постулаты СТО</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">∞</span>Релятивистская динамика</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1 ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Фотон. Энергия и импульс кванта</h1>
+          <p class="lead">Свет состоит из частиц-квантов — фотонов. Это идея Планка-Эйнштейна, лежащая в основе квантовой физики.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Фотон</div>
+          <div class="text"><b>Фотон</b> — квант (частица) электромагнитного излучения. Не имеет массы покоя, всегда движется со скоростью света c. Обладает энергией и импульсом.</div>
+        </div>
+
+        <div class="fcard" id="f-Eph">
+          <div class="flabel">Энергия фотона</div>
+          <div class="formula" data-tex="E = h\nu = \dfrac{h c}{\lambda}"></div>
+          <div class="fdesc">h ≈ 6,63·10⁻³⁴ Дж·с — постоянная Планка, ν — частота, λ — длина волны</div>
+        </div>
+
+        <div class="fcard" id="f-pph">
+          <div class="flabel">Импульс фотона</div>
+          <div class="formula" data-tex="p = \dfrac{E}{c} = \dfrac{h\nu}{c} = \dfrac{h}{\lambda}"></div>
+          <div class="fdesc">Импульс фотона мал, но не нулевой! На этом основано «световое давление».</div>
+        </div>
+
+        <h2 id="h-debroglie">Длина волны де Бройля</h2>
+        <div class="def acc">
+          <div class="label">Гипотеза де Бройля</div>
+          <div class="text">Каждой частице с импульсом p соответствует волна с определённой длиной (волновые свойства частиц). Это основа квантовой механики.</div>
+        </div>
+
+        <div class="fcard" id="f-debroglie">
+          <div class="flabel">Длина волны де Бройля</div>
+          <div class="formula" data-tex="\lambda = \dfrac{h}{p} = \dfrac{h}{m\,v}"></div>
+          <div class="fdesc">⭐ Универсальная формула: работает и для фотонов, и для частиц с массой</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Постоянная Планка <b>h = 6,63·10⁻³⁴ Дж·с</b> — фундаментальная константа квантовой физики. Часто используется приведённая постоянная ℏ = h/(2π).<br>
+          Для электрона при U = 100 В λ ≈ 0,12 нм — сравнимо с межатомным расстоянием. Поэтому электронные пучки дифрагируют на кристаллах.</div>
+        </div>
+      </section>
+
+      <!-- ════ S2: Фотоэффект ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Фотоэффект</h1>
+          <p class="lead">Вырывание электронов из вещества под действием света. Открыт Герцем, объяснён Эйнштейном.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Внешний фотоэффект</div>
+          <div class="text"><b>Внешний фотоэффект</b> — испускание электронов с поверхности металла при облучении его светом. Каждый фотон может выбить один электрон, если его энергии достаточно для преодоления работы выхода.</div>
+        </div>
+
+        <div class="fcard" id="f-photo">
+          <div class="flabel">Уравнение Эйнштейна для фотоэффекта</div>
+          <div class="formula" data-tex="h\nu = A_{вых} + \left(\dfrac{m v^2}{2}\right)_{max}"></div>
+          <div class="fdesc">⭐ Закон сохранения энергии: энергия фотона = работа выхода + макс. кинетическая энергия фотоэлектрона</div>
+        </div>
+
+        <div class="fcard" id="f-Awork">
+          <div class="flabel">Красная граница фотоэффекта</div>
+          <div class="formula" data-tex="A_{вых} = h\nu_{min} = \dfrac{h c}{\lambda_{кр}}"></div>
+          <div class="fdesc">При ν &lt; ν<sub>min</sub> (или λ &gt; λ<sub>кр</sub>) фотоэффект невозможен, какой бы интенсивной ни была подсветка</div>
+        </div>
+
+        <div class="fcard" id="f-Ustop">
+          <div class="flabel">Задерживающее напряжение</div>
+          <div class="formula" data-tex="\left(\dfrac{m v^2}{2}\right)_{max} = e\,U_{з}"></div>
+          <div class="fdesc">U<sub>з</sub> — напряжение, при котором фототок прекращается</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Законы фотоэффекта</div>
+          <div class="text">
+          <b>1.</b> Сила фототока пропорциональна интенсивности света.<br>
+          <b>2.</b> Максимальная кинетическая энергия фотоэлектронов зависит только от частоты света и не зависит от интенсивности.<br>
+          <b>3.</b> Существует красная граница (минимальная частота), ниже которой фотоэффекта нет.
+          </div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Металл</th><th>A<sub>вых</sub>, эВ</th><th>λ<sub>кр</sub>, нм</th></tr>
+            <tr><td>Цезий</td><td>1,9</td><td>650</td></tr>
+            <tr><td>Калий</td><td>2,2</td><td>560</td></tr>
+            <tr><td>Натрий</td><td>2,3</td><td>540</td></tr>
+            <tr><td>Цинк</td><td>4,0</td><td>310</td></tr>
+            <tr><td>Платина</td><td>5,3</td><td>234</td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>1 эВ = 1,6·10⁻¹⁹ Дж — энергия, которую приобретает электрон, проходя разность потенциалов 1 В. Используется в атомной физике для удобства.</div>
+        </div>
+      </section>
+
+      <!-- ════ S3: Бор ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Постулаты Бора. Атом водорода</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">I постулат Бора (стационарных состояний)</div>
+          <div class="text">В атоме существуют стационарные состояния, в которых электрон не излучает энергию. В этих состояниях электрон движется по определённым (разрешённым) орбитам.</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">II постулат Бора (правило частот)</div>
+          <div class="text">При переходе атома из одного стационарного состояния в другое излучается или поглощается фотон с энергией, равной разности энергий этих состояний.</div>
+        </div>
+
+        <div class="fcard" id="f-bohr2">
+          <div class="flabel">Правило частот Бора</div>
+          <div class="formula" data-tex="h\nu_{nm} = |E_n - E_m|"></div>
+          <div class="fdesc">При переходе с уровня n на уровень m (с меньшей энергией) — излучение, наоборот — поглощение</div>
+        </div>
+
+        <h2 id="h-H">Атом водорода</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Радиус орбиты</div>
+            <div class="chip-formula" data-tex="R_n = R_1 \cdot n^2"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Скорость на орбите</div>
+            <div class="chip-formula" data-tex="v_n = \dfrac{v_1}{n}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Энергия на орбите</div>
+            <div class="chip-formula" data-tex="E_n = \dfrac{E_1}{n^2}"></div>
+            <div class="chip-desc">E₁ ≈ −13,6 эВ</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Кинетическая энергия</div>
+            <div class="chip-formula" data-tex="K_n = -E_n"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Потенциальная энергия</div>
+            <div class="chip-formula" data-tex="\Pi_n = 2E_n"></div>
+            <div class="chip-desc">П_n отрицательна и вдвое больше по модулю</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>В атоме водорода энергия отрицательна (электрон связан с ядром). На бесконечности E = 0. Чем ближе электрон к ядру, тем меньше (более отрицательна) его энергия.</div>
+        </div>
+
+        <h2 id="h-rydberg">Спектральные серии водорода</h2>
+        <div class="fcard" id="f-rydberg">
+          <div class="flabel">Формула Ридберга</div>
+          <div class="formula" data-tex="\dfrac{1}{\lambda} = R\left(\dfrac{1}{n^2} - \dfrac{1}{m^2}\right)"></div>
+          <div class="fdesc">R ≈ 1,097·10⁷ м⁻¹ — постоянная Ридберга. n — нижний уровень, m — верхний (m &gt; n)</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Серия</th><th>n</th><th>Диапазон</th><th>Применение</th></tr>
+            <tr><td>Лаймана</td><td>1</td><td>УФ</td><td>Квантовая электроника</td></tr>
+            <tr><td>Бальмера</td><td>2</td><td>Видимый</td><td>Астрономия (Hα)</td></tr>
+            <tr><td>Пашена</td><td>3</td><td>ИК</td><td>—</td></tr>
+            <tr><td>Брэкета</td><td>4</td><td>Дальний ИК</td><td>—</td></tr>
+          </table>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Серия Бальмера — самая известная: даёт линии в видимом диапазоне, благодаря чему водород был впервые отождествлён по спектру звёзд. Линия Hα (n: 3→2) — красная, λ = 656 нм.</div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Состав ядра ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Состав атомного ядра</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Ядро</div>
+          <div class="text">Атомное ядро состоит из <b>протонов</b> (Z штук) и <b>нейтронов</b> (N штук). Протоны и нейтроны объединяются под общим названием <b>нуклоны</b>.</div>
+        </div>
+
+        <div class="fcard" id="f-A">
+          <div class="flabel">Массовое число</div>
+          <div class="formula" data-tex="A = Z + N"></div>
+          <div class="fdesc">A — массовое число (число нуклонов), Z — зарядовое число (число протонов = № в таблице), N — число нейтронов</div>
+        </div>
+
+        <p>Запись ядра: <span data-tex="^{A}_{Z}X"></span>, например, <span data-tex="^{16}_{8}O"></span> — кислород.</p>
+
+        <div class="def">
+          <div class="label">Изотопы</div>
+          <div class="text"><b>Изотопы</b> — ядра одного и того же химического элемента (одинаковое Z), но с разным числом нейтронов (разные A). Пример: <sup>1</sup>H, <sup>2</sup>H (дейтерий), <sup>3</sup>H (тритий).</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Частица</th><th>Заряд</th><th>Масса, а.е.м.</th></tr>
+            <tr><td>Протон p</td><td>+e</td><td>1,00728</td></tr>
+            <tr><td>Нейтрон n</td><td>0</td><td>1,00867</td></tr>
+            <tr><td>Электрон e⁻</td><td>−e</td><td>1/1836 ≈ 0,00055</td></tr>
+          </table>
+        </div>
+
+        <p><b>1 а.е.м. = 1,66·10⁻²⁷ кг ≈ 931,5 МэВ/c²</b></p>
+      </section>
+
+      <!-- ════ S5: Энергия связи ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Дефект массы. Энергия связи</h1>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Дефект массы</div>
+          <div class="text">Масса ядра <b>меньше</b> суммы масс свободных нуклонов, из которых оно состоит. Эту разность называют <b>дефектом массы</b>.</div>
+        </div>
+
+        <div class="fcard" id="f-dM">
+          <div class="flabel">Дефект массы</div>
+          <div class="formula" data-tex="\Delta M = Z\,m_p + N\,m_n - M_{я}"></div>
+          <div class="fdesc">m<sub>p</sub>, m<sub>n</sub> — массы протона и нейтрона, M<sub>я</sub> — масса ядра</div>
+        </div>
+
+        <div class="fcard" id="f-Ebind">
+          <div class="flabel">Энергия связи ядра</div>
+          <div class="formula" data-tex="E_{св} = \Delta M \cdot c^2"></div>
+          <div class="fdesc">⭐ Энергия, нужная для разделения ядра на нуклоны</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Энергия связи в МэВ</div>
+          <div class="formula" data-tex="E_{св} = \Delta m \cdot 931{,}5\;\text{МэВ}"></div>
+          <div class="fdesc">Если Δm в атомных единицах массы (а.е.м.)</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Удельная энергия связи (на один нуклон) максимальна для ядер железа (~ 8,8 МэВ/нуклон). Поэтому энергия выделяется и при делении тяжёлых ядер, и при синтезе лёгких — оба процесса сдвигают систему ближе к железу.</div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Радиоактивность ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Радиоактивность</h1>
+          <p class="lead">Самопроизвольное превращение нестабильных ядер с испусканием частиц.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h4>α-распад</h4>
+            <p>Излучается ядро гелия <sup>4</sup>He. Заряд ядра уменьшается на 2, масса на 4.</p>
+            <p><span data-tex="^A_Z X \to {}^{A-4}_{Z-2}Y + {}^4_2 He"></span></p>
+          </div>
+          <div class="card">
+            <h4>β⁻-распад</h4>
+            <p>Излучается электрон. Один нейтрон превращается в протон. Заряд +1, масса не меняется.</p>
+            <p><span data-tex="^A_Z X \to {}^{A}_{Z+1}Y + {}^{0}_{-1}e"></span></p>
+          </div>
+          <div class="card">
+            <h4>γ-излучение</h4>
+            <p>Излучается фотон высокой энергии. Состав ядра не меняется. Часто сопровождает α/β-распады.</p>
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="label">Свойства излучений</div>
+          <div class="text">
+          <b>α</b> — большие массы, малый пробег (несколько см в воздухе, лист бумаги).<br>
+          <b>β</b> — лёгкие электроны, пробег несколько метров в воздухе, тонкий металл.<br>
+          <b>γ</b> — фотоны, самые проникающие, нужны толстые слои свинца или бетона.
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ S7: Закон распада ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Закон радиоактивного распада</h1>
+        </div>
+
+        <div class="fcard" id="f-decay">
+          <div class="flabel">Закон радиоактивного распада</div>
+          <div class="formula" data-tex="N(t) = N_0 \cdot 2^{-t/T}"></div>
+          <div class="fdesc">N₀ — начальное число ядер, T — <b>период полураспада</b> (время, за которое распадается половина ядер)</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Период полураспада</div>
+          <div class="text"><b>Период полураспада T</b> — время, за которое распадается ровно половина имевшихся ядер. У каждого изотопа своё значение T.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Изотоп</th><th>T</th></tr>
+            <tr><td>Уран-238</td><td>4,5 млрд лет</td></tr>
+            <tr><td>Углерод-14</td><td>5730 лет</td></tr>
+            <tr><td>Радий-226</td><td>1600 лет</td></tr>
+            <tr><td>Иод-131</td><td>8 дней</td></tr>
+            <tr><td>Полоний-214</td><td>1,6·10⁻⁴ с</td></tr>
+          </table>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Закон распада <b>статистический</b>. Невозможно предсказать, когда распадётся конкретный атом, но для большого числа атомов формула работает точно.</div>
+        </div>
+      </section>
+
+      <!-- ════ S8: Ядерные реакции ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Ядерные реакции</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Законы сохранения</div>
+          <div class="text">При любой ядерной реакции <span data-tex="^{A_1}_{Z_1}X + {}^{A_2}_{Z_2}Y \to {}^{A_3}_{Z_3}P + {}^{A_4}_{Z_4}Q"></span> выполняются:<br>
+          <b>1.</b> Сохранение заряда: <span data-tex="Z_1 + Z_2 = Z_3 + Z_4"></span><br>
+          <b>2.</b> Сохранение массового числа: <span data-tex="A_1 + A_2 = A_3 + A_4"></span><br>
+          <b>3.</b> Сохранение энергии и импульса.
+          </div>
+        </div>
+
+        <div class="fcard" id="f-Q">
+          <div class="flabel">Энергетический выход реакции</div>
+          <div class="formula" data-tex="Q = (M_{нач} - M_{кон})\cdot c^2 = \Delta M\cdot c^2"></div>
+          <div class="fdesc">Q &gt; 0 — энергия выделяется (экзоэнергетическая), Q &lt; 0 — поглощается (эндоэнергетическая)</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Деление ядер</h4>
+            <p>Тяжёлое ядро (например, <sup>235</sup>U) делится на два более лёгких. Освобождается ~200 МэВ на каждое деление. Используется в АЭС.</p>
+          </div>
+          <div class="card">
+            <h4>Синтез ядер</h4>
+            <p>Лёгкие ядра (H, He) сливаются в более тяжёлые. Идёт в звёздах и термоядерных реакторах. Энергия в 4-5 раз больше, чем при делении (на нуклон).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ S9: СТО постулаты ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Специальная теория относительности</h1>
+          <p class="lead">При скоростях, сравнимых со скоростью света, классическая механика неприменима. Нужна СТО Эйнштейна.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Постулаты Эйнштейна</div>
+          <div class="text">
+          <b>1. Принцип относительности.</b> Все законы природы одинаковы во всех инерциальных системах отсчёта.<br>
+          <b>2. Постоянство скорости света.</b> Скорость света в вакууме одинакова во всех инерциальных СО, не зависит от движения источника или наблюдателя.
+          </div>
+        </div>
+
+        <h2 id="h-effects">Релятивистские эффекты</h2>
+
+        <div class="fcard" id="f-time">
+          <div class="flabel">Релятивистское замедление времени</div>
+          <div class="formula" data-tex="\tau = \dfrac{\tau_0}{\sqrt{1 - v^2/c^2}}"></div>
+          <div class="fdesc">τ₀ — собственное время (в СО, где событие неподвижно). Движущиеся часы идут медленнее.</div>
+        </div>
+
+        <div class="fcard" id="f-length">
+          <div class="flabel">Релятивистское сокращение длины</div>
+          <div class="formula" data-tex="L = L_0\,\sqrt{1 - v^2/c^2}"></div>
+          <div class="fdesc">L₀ — собственная длина (в СО, где тело неподвижно). Движущиеся тела укорачиваются вдоль направления движения.</div>
+        </div>
+
+        <div class="fcard" id="f-velsum">
+          <div class="flabel">Релятивистский закон сложения скоростей</div>
+          <div class="formula" data-tex="V = \dfrac{V_1 + V_2}{1 + \dfrac{V_1 V_2}{c^2}}"></div>
+          <div class="fdesc">Заменяет классическое V = V₁ + V₂. Никогда не превышает c.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>При v ≪ c релятивистские формулы сводятся к классическим. Поэтому в обычной жизни мы не замечаем релятивистских эффектов.</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: Релятивистская динамика ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Релятивистская динамика. E = mc²</h1>
+        </div>
+
+        <div class="fcard" id="f-mass">
+          <div class="flabel">Релятивистская масса</div>
+          <div class="formula" data-tex="m = \dfrac{m_0}{\sqrt{1 - v^2/c^2}}"></div>
+          <div class="fdesc">m₀ — масса покоя. Движущееся тело имеет «бóльшую» массу (инертность).</div>
+        </div>
+
+        <div class="fcard" id="f-E0">
+          <div class="flabel">Энергия покоя</div>
+          <div class="formula" data-tex="E_0 = m_0\,c^2"></div>
+          <div class="fdesc">⭐ Самая знаменитая формула физики. Показывает, что масса — это форма энергии.</div>
+        </div>
+
+        <div class="fcard" id="f-Etot">
+          <div class="flabel">Полная энергия</div>
+          <div class="formula" data-tex="E = m\,c^2 = \dfrac{m_0\,c^2}{\sqrt{1 - v^2/c^2}}"></div>
+        </div>
+
+        <div class="fcard" id="f-Ek">
+          <div class="flabel">Кинетическая энергия</div>
+          <div class="formula" data-tex="E_к = E - E_0 = (m - m_0)\,c^2"></div>
+          <div class="fdesc">Не равно mv²/2 при больших скоростях!</div>
+        </div>
+
+        <div class="fcard" id="f-Ep">
+          <div class="flabel">Связь энергии и импульса</div>
+          <div class="formula" data-tex="E^2 = E_0^2 + (p\,c)^2"></div>
+          <div class="fdesc">Для фотона (m₀ = 0): E = pc. Для покоящегося тела (p = 0): E = E₀ = m₀c²</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Эквивалентность массы и энергии E = mc² объясняет источник энергии Солнца (синтез) и АЭС (деление). Малое уменьшение массы (дефект масс) даёт огромную энергию из-за множителя c².</div>
+        </div>
+      </section>
+
+      <!-- ════ S11: Разбор задач ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head"><h1>★ Разбор задач</h1></div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Найти энергию фотона зелёного света с длиной волны <span data-tex="500\text{ нм}"></span>. (<span data-tex="h = 6{,}63\cdot10^{-34}\text{ Дж·с}"></span>, <span data-tex="c = 3\cdot10^8\text{ м/с}"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="E = \dfrac{hc}{\lambda} = \dfrac{6{,}63\cdot10^{-34}\cdot3\cdot10^8}{5\cdot10^{-7}}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="E = \dfrac{1{,}989\cdot10^{-25}}{5\cdot10^{-7}} \approx 3{,}98\cdot10^{-19}\text{ Дж} \approx 2{,}5\text{ эВ}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\approx 3{,}98\cdot10^{-19}\text{ Дж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Работа выхода для металла <span data-tex="A_\text{вых} = 2\text{ эВ}"></span>. Найти красную границу фотоэффекта.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="A = 2\cdot1{,}6\cdot10^{-19} = 3{,}2\cdot10^{-19}\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\lambda_\text{кр} = \dfrac{hc}{A} = \dfrac{1{,}989\cdot10^{-25}}{3{,}2\cdot10^{-19}} \approx 6{,}2\cdot10^{-7}\text{ м} = 620\text{ нм}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\lambda_\text{кр} \approx 620\text{ нм}"></span> (красный)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">На цинк (<span data-tex="A_\text{вых} = 4\text{ эВ}"></span>) падает свет с энергией фотона <span data-tex="6\text{ эВ}"></span>. Найти максимальную кинетическую энергию фотоэлектронов.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="E_{\text{к}\,max} = h\nu - A = 6 - 4 = 2\text{ эВ}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="2\text{ эВ} \approx 3{,}2\cdot10^{-19}\text{ Дж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Период полураспада изотопа <span data-tex="20\text{ лет}"></span>. Какая часть атомов останется через <span data-tex="60\text{ лет}"></span>?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\dfrac{t}{T} = \dfrac{60}{20} = 3"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\dfrac{N}{N_0} = 2^{-3} = \dfrac{1}{8} = 12{,}5\%"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\dfrac{1}{8}"></span> (12,5%)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Радий-226 испытывает α-распад. Какое ядро образуется?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Заряд: <span data-tex="88 - 2 = 86"></span> (радон)</div>
+            <div class="step"><div class="stepn">2</div>Масса: <span data-tex="226 - 4 = 222"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="^{226}_{88}Ra \to {}^{222}_{86}Rn + {}^4_2 He"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="^{222}_{86}Rn"></span> (радон)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Найти энергию связи ядра гелия <span data-tex="^4\text{He}"></span>. (<span data-tex="m_p = 1{,}00728"></span>, <span data-tex="m_n = 1{,}00867"></span>, <span data-tex="m_\text{He} = 4{,}00260\text{ а.е.м.}"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\Delta M = 2\cdot1{,}00728 + 2\cdot1{,}00867 - 4{,}00260 = 4{,}03190 - 4{,}00260 = 0{,}0303\text{ а.е.м.}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="E_\text{св} = 0{,}0303\cdot931{,}5 \approx 28{,}2\text{ МэВ}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\approx 28\text{ МэВ}"></span> (≈ 7 МэВ на нуклон)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Стержень собственной длины <span data-tex="L_0 = 1\text{ м}"></span> летит со скоростью <span data-tex="v = 0{,}8c"></span>. Найти его длину в неподвижной СО.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\sqrt{1 - 0{,}64} = \sqrt{0{,}36} = 0{,}6"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="L = L_0\cdot0{,}6 = 0{,}6\text{ м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="L = 0{,}6\text{ м}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S12: Чек-лист ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+        <h2 id="h-must">Формулы наизусть</h2>
+        <ul>
+          <li>Энергия фотона: <span data-tex="E = h\nu = \dfrac{hc}{\lambda}"></span></li>
+          <li>Импульс фотона: <span data-tex="p = \dfrac{h}{\lambda}"></span></li>
+          <li>Длина волны де Бройля: <span data-tex="\lambda = \dfrac{h}{mv}"></span></li>
+          <li>Формула Ридберга: <span data-tex="\dfrac{1}{\lambda} = R\!\left(\dfrac{1}{n^2} - \dfrac{1}{m^2}\right)"></span></li>
+          <li>Уравнение фотоэффекта: <span data-tex="h\nu = A_\text{вых} + \dfrac{mv^2}{2}"></span></li>
+          <li>Красная граница: <span data-tex="\lambda_\text{кр} = \dfrac{hc}{A_\text{вых}}"></span></li>
+          <li>Постулат Бора: <span data-tex="h\nu = |E_n - E_m|"></span></li>
+          <li>Атом водорода: <span data-tex="R_n = R_1 n^2,\quad E_n = E_1/n^2"></span></li>
+          <li>Дефект массы: <span data-tex="\Delta M = Z m_p + N m_n - M_\text{я}"></span></li>
+          <li>Энергия связи: <span data-tex="E_\text{св} = \Delta M \cdot c^2 = \Delta m \cdot 931{,}5\text{ МэВ}"></span></li>
+          <li>Закон распада: <span data-tex="N(t) = N_0 \cdot 2^{-t/T}"></span></li>
+          <li>Сокращение длины: <span data-tex="L = L_0\sqrt{1 - v^2/c^2}"></span></li>
+          <li>Замедление времени: <span data-tex="\tau = \dfrac{\tau_0}{\sqrt{1 - v^2/c^2}}"></span></li>
+          <li>Энергия покоя: <span data-tex="E_0 = m_0 c^2"></span></li>
+          <li><span data-tex="E^2 = E_0^2 + (pc)^2"></span></li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Подставлять в формулу фотоэффекта частоту в Гц без h.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Думать, что усиление интенсивности света увеличивает <span data-tex="E_\text{к}"></span> электронов. Нет — увеличивает только число электронов.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать ΔM (дефект массы) и Δm (изменение массы при реакции).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>В законе распада брать число распавшихся вместо оставшихся.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Применять mv²/2 для частиц с релятивистской скоростью.</div></div>
+        <div class="topic-pager">
+          <div class="tp-info">
+            <div class="tp-label">Поздравляем!</div>
+            <div class="tp-title">Это последний раздел справочника</div>
+            <div class="tp-desc">Все 11 тем по физике для ЦТ изучены</div>
+          </div>
+          <a class="tp-btn" href="../index.html">⌂ К главной →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы квантовой физики</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-Eph"><div class="ri-name">Энергия фотона</div><div class="ri-formula">E = hν = hc/λ</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-pph"><div class="ri-name">Импульс фотона</div><div class="ri-formula">p = h/λ</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-debroglie"><div class="ri-name">Длина волны де Бройля</div><div class="ri-formula">λ = h/(mv)</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-photo"><div class="ri-name">Уравнение фотоэффекта</div><div class="ri-formula">hν = A + mv²/2</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-Awork"><div class="ri-name">Красная граница</div><div class="ri-formula">λ_кр = hc/A_вых</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-Ustop"><div class="ri-name">Задерживающее напряжение</div><div class="ri-formula">eU_з = mv²/2</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-bohr2"><div class="ri-name">Постулат Бора</div><div class="ri-formula">hν = |E_n − E_m|</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-rydberg"><div class="ri-name">Формула Ридберга</div><div class="ri-formula">1/λ = R(1/n² − 1/m²)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-A"><div class="ri-name">Массовое число</div><div class="ri-formula">A = Z + N</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-dM"><div class="ri-name">Дефект массы</div><div class="ri-formula">ΔM = Zm_p + Nm_n − M_я</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-Ebind"><div class="ri-name">Энергия связи</div><div class="ri-formula">E_св = ΔM·c²</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-decay"><div class="ri-name">Закон распада</div><div class="ri-formula">N = N₀·2⁻ᵗ/ᵀ</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-Q"><div class="ri-name">Энергия ядерной реакции</div><div class="ri-formula">Q = ΔM·c²</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-time"><div class="ri-name">Замедление времени</div><div class="ri-formula">τ = τ₀/√(1−v²/c²)</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-length"><div class="ri-name">Сокращение длины</div><div class="ri-formula">L = L₀√(1−v²/c²)</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-velsum"><div class="ri-name">Сложение скоростей</div><div class="ri-formula">V = (V₁+V₂)/(1+V₁V₂/c²)</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-mass"><div class="ri-name">Релятивистская масса</div><div class="ri-formula">m = m₀/√(1−v²/c²)</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-E0"><div class="ri-name">Энергия покоя</div><div class="ri-formula">E₀ = m₀c²</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-Ep"><div class="ri-name">Связь E и импульса</div><div class="ri-formula">E² = E₀² + (pc)²</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-Etot"><div class="ri-name">Полная энергия</div><div class="ri-formula">E = mc²</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-Ep"><div class="ri-name">Связь E и p</div><div class="ri-formula">E² = E₀² + (pc)²</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

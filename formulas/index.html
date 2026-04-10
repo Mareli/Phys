@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Все формулы — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+/* ─── page-level overrides ─── */
+body{background:var(--bg)}
+.fml-topbar .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:-.02em;text-decoration:none;color:#fff;cursor:pointer}
+.fml-topbar .brand .logo{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#6366f1);display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 0 20px rgba(59,130,246,.4)}
+.fml-topbar .brand b{font-weight:800}
+.fml-topbar .brand em{font-style:normal;color:#3b82f6;font-weight:700;margin-left:2px}
+.fml-topbar .brand .crumb{color:rgba(255,255,255,.4);margin:0 8px;font-weight:400}
+.fml-topbar .brand .topic{color:rgba(255,255,255,.9);font-weight:600}
+.fml-topbar .actions{display:flex;align-items:center;gap:6px}
+/* palette */
+.palette{position:fixed;inset:0;z-index:950;background:rgba(15,23,42,.5);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding-top:14vh}
+.palette.open{display:flex}
+.palette-box{width:min(560px,92vw);background:#fff;border-radius:18px;box-shadow:0 24px 64px rgba(15,23,42,.3);overflow:hidden}
+.palette-input{width:100%;padding:18px 22px;border:none;outline:none;font-family:inherit;font-size:1rem;color:#0f172a;border-bottom:1px solid #e2e8f0}
+.palette-input::placeholder{color:#94a3b8}
+.palette-list{max-height:50vh;overflow-y:auto;padding:8px 0}
+.palette-item{display:flex;align-items:center;gap:12px;padding:12px 22px;cursor:pointer;transition:background .12s}
+.palette-item:hover,.palette-item.sel{background:#eff6ff}
+.pi-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:#eff6ff;color:#3b82f6}
+.pi-text{flex:1;min-width:0}
+.pi-title{font-size:.92rem;font-weight:600;color:#0f172a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pi-sub{font-size:.76rem;color:#94a3b8;margin-top:2px}
+.palette-empty{padding:24px;text-align:center;color:#94a3b8;font-size:.88rem}
+/* fml-topic-section hr */
+.fml-divider{border:none;border-top:1px dashed var(--border);margin:16px 0}
+</style>
+</head>
+<body>
+
+<!-- ─── TOPBAR ─── -->
+<nav class="fml-topbar topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">📋</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Все формулы</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<!-- ─── MAIN ─── -->
+<div class="fml-page">
+<div class="fml-content">
+
+  <!-- ─── TOPIC NAVIGATION ─── -->
+  <nav class="fml-topic-nav" id="topicNav">
+    <a class="fml-nav-btn t01" style="--tc:var(--t01)" href="#t01">🏃 Кинематика</a>
+    <a class="fml-nav-btn t02" style="--tc:var(--t02)" href="#t02">⚙️ Динамика</a>
+    <a class="fml-nav-btn t03" style="--tc:var(--t03)" href="#t03">⚖️ Статика</a>
+    <a class="fml-nav-btn t04" style="--tc:var(--t04)" href="#t04">💥 Сохранение</a>
+    <a class="fml-nav-btn t05" style="--tc:var(--t05)" href="#t05">🌡️ МКТ/Термо</a>
+    <a class="fml-nav-btn t06" style="--tc:var(--t06)" href="#t06">⚡ Электростатика</a>
+    <a class="fml-nav-btn t07" style="--tc:var(--t07)" href="#t07">🔌 Ток</a>
+    <a class="fml-nav-btn t08" style="--tc:var(--t08)" href="#t08">🧲 Магнетизм</a>
+    <a class="fml-nav-btn t09" style="--tc:var(--t09)" href="#t09">🌊 Колебания</a>
+    <a class="fml-nav-btn t10" style="--tc:var(--t10)" href="#t10">💡 Оптика</a>
+    <a class="fml-nav-btn t11" style="--tc:var(--t11)" href="#t11">⚛️ Квантовая</a>
+  </nav>
+
+  <!-- ════════════════════════════════════════════
+       01 КИНЕМАТИКА
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t01" style="--tc:var(--t01)">
+    <h2>
+      <span class="fml-topic-icon">🏃</span>
+      01 &nbsp;Кинематика
+      <a class="fml-topic-link" href="../theory/01_kinematika.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Равномерное движение</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Закон движения</div><div class="chip-formula" data-tex="x = x_0 + v \cdot t"></div></div>
+      <div class="fchip"><div class="chip-name">Средняя скорость</div><div class="chip-formula" data-tex="\langle v \rangle = \dfrac{s}{t}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Равноускоренное движение (a = const)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Скорость</div><div class="chip-formula" data-tex="v = v_0 + a t"></div></div>
+      <div class="fchip"><div class="chip-name">Координата</div><div class="chip-formula" data-tex="x = x_0 + v_0 t + \tfrac{a t^2}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Без времени ★</div><div class="chip-formula" data-tex="v^2 - v_0^2 = 2a\,\Delta x"></div></div>
+      <div class="fchip"><div class="chip-name">Через среднюю</div><div class="chip-formula" data-tex="\Delta x = \dfrac{v + v_0}{2}\cdot t"></div></div>
+    </div>
+
+    <div class="fml-subsection">Свободное падение (g = 10 м/с²)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Скорость при падении</div><div class="chip-formula" data-tex="v = g t"></div></div>
+      <div class="fchip"><div class="chip-name">Высота падения</div><div class="chip-formula" data-tex="h = \dfrac{g t^2}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Скорость у земли</div><div class="chip-formula" data-tex="v = \sqrt{2gh}"></div></div>
+      <div class="fchip"><div class="chip-name">Время падения</div><div class="chip-formula" data-tex="t = \sqrt{\dfrac{2h}{g}}"></div></div>
+      <div class="fchip"><div class="chip-name">Макс. высота (бросок ↑)</div><div class="chip-formula" data-tex="H = \dfrac{v_0^2}{2g}"></div></div>
+      <div class="fchip"><div class="chip-name">Время подъёма</div><div class="chip-formula" data-tex="t_\text{под} = \dfrac{v_0}{g}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Движение по окружности</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Угловая скорость</div><div class="chip-formula" data-tex="\omega = \dfrac{2\pi}{T} = 2\pi\nu"></div></div>
+      <div class="fchip"><div class="chip-name">Линейная скорость</div><div class="chip-formula" data-tex="v = \omega R"></div></div>
+      <div class="fchip"><div class="chip-name">Центростр. ускорение</div><div class="chip-formula" data-tex="a_\text{ц} = \dfrac{v^2}{R} = \omega^2 R"></div></div>
+      <div class="fchip"><div class="chip-name">Длина дуги</div><div class="chip-formula" data-tex="s = R\varphi\;(\varphi\text{ в рад})"></div></div>
+    </div>
+
+    <div class="fml-subsection">Бросок под углом к горизонту</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Время полёта</div><div class="chip-formula" data-tex="t_\text{пол} = \dfrac{2v_0\sin\alpha}{g}"></div></div>
+      <div class="fchip"><div class="chip-name">Дальность ★</div><div class="chip-formula" data-tex="L = \dfrac{v_0^2\sin 2\alpha}{g}"></div></div>
+      <div class="fchip"><div class="chip-name">Макс. высота</div><div class="chip-formula" data-tex="H = \dfrac{v_0^2\sin^2\alpha}{2g}"></div></div>
+      <div class="fchip"><div class="chip-name">Бросок горизонтально</div><div class="chip-formula" data-tex="L = v_0\sqrt{\dfrac{2h}{g}}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Кинематика: разложение ускорения</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Тангенциальное</div><div class="chip-formula" data-tex="a_\tau = \dfrac{\Delta v}{\Delta t}"></div></div>
+      <div class="fchip"><div class="chip-name">Нормальное</div><div class="chip-formula" data-tex="a_n = \dfrac{v^2}{R}"></div></div>
+      <div class="fchip"><div class="chip-name">Полное</div><div class="chip-formula" data-tex="a = \sqrt{a_\tau^2 + a_n^2}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       02 ДИНАМИКА
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t02" style="--tc:var(--t02)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t02)">⚙️</span>
+      02 &nbsp;Динамика
+      <a class="fml-topic-link" style="color:var(--t02);border-color:var(--t02)" href="../theory/02_dinamika.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Законы Ньютона</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">II закон Ньютона ★</div><div class="chip-formula" data-tex="\vec{F} = m\vec{a}"></div></div>
+      <div class="fchip"><div class="chip-name">III закон Ньютона</div><div class="chip-formula" data-tex="\vec{F}_{12} = -\vec{F}_{21}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Основные силы</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Сила тяжести</div><div class="chip-formula" data-tex="F_g = mg"></div></div>
+      <div class="fchip"><div class="chip-name">Сила трения скольжения</div><div class="chip-formula" data-tex="F_\text{тр} = \mu N"></div></div>
+      <div class="fchip"><div class="chip-name">Вес в лифте (↑)</div><div class="chip-formula" data-tex="N = m(g + a)"></div></div>
+      <div class="fchip"><div class="chip-name">Вес в лифте (↓)</div><div class="chip-formula" data-tex="N = m(g - a)"></div></div>
+      <div class="fchip"><div class="chip-name">Закон Гравитации</div><div class="chip-formula" data-tex="F = G\dfrac{m_1 m_2}{r^2}"></div></div>
+      <div class="fchip"><div class="chip-name">Центростремительная</div><div class="chip-formula" data-tex="F_\text{ц} = \dfrac{mv^2}{R} = m\omega^2 R"></div></div>
+      <div class="fchip"><div class="chip-name">Упругость (Гук)</div><div class="chip-formula" data-tex="F_\text{упр} = kx"></div></div>
+      <div class="fchip"><div class="chip-name">G через g</div><div class="chip-formula" data-tex="g = \dfrac{GM}{R_\text{пл}^2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Наклонная плоскость (без трения)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Ускорение</div><div class="chip-formula" data-tex="a = g\sin\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">Нормальная реакция</div><div class="chip-formula" data-tex="N = mg\cos\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">С трением</div><div class="chip-formula" data-tex="a = g(\sin\alpha - \mu\cos\alpha)"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       03 СТАТИКА И ГИДРОСТАТИКА
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t03" style="--tc:var(--t03)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t03)">⚖️</span>
+      03 &nbsp;Статика и гидростатика
+      <a class="fml-topic-link" style="color:var(--t03);border-color:var(--t03)" href="../theory/03_statika_gidrostatika.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Статика</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Условие равновесия (сила)</div><div class="chip-formula" data-tex="\sum \vec{F}_i = 0"></div></div>
+      <div class="fchip"><div class="chip-name">Условие равновесия (момент)</div><div class="chip-formula" data-tex="\sum M_i = 0"></div></div>
+      <div class="fchip"><div class="chip-name">Момент силы</div><div class="chip-formula" data-tex="M = F \cdot d"></div><div class="chip-desc">d — плечо (⊥ расстояние до оси)</div></div>
+      <div class="fchip"><div class="chip-name">Правило рычага</div><div class="chip-formula" data-tex="F_1 l_1 = F_2 l_2"></div></div>
+    </div>
+
+    <div class="fml-subsection">Гидростатика</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Давление</div><div class="chip-formula" data-tex="p = \dfrac{F}{S}"></div></div>
+      <div class="fchip"><div class="chip-name">Давление столба жидкости</div><div class="chip-formula" data-tex="p = \rho g h"></div></div>
+      <div class="fchip"><div class="chip-name">Сила Архимеда ★</div><div class="chip-formula" data-tex="F_A = \rho_\text{ж} g V_\text{тела}"></div></div>
+      <div class="fchip"><div class="chip-name">Условие плавания</div><div class="chip-formula" data-tex="\rho_\text{тела} \le \rho_\text{жидкости}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       04 ЗАКОНЫ СОХРАНЕНИЯ
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t04" style="--tc:var(--t04)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t04)">💥</span>
+      04 &nbsp;Законы сохранения
+      <a class="fml-topic-link" style="color:var(--t04);border-color:var(--t04)" href="../theory/04_zakony_sohraneniya.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Импульс</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Импульс тела</div><div class="chip-formula" data-tex="\vec{p} = m\vec{v}"></div></div>
+      <div class="fchip"><div class="chip-name">ЗСИ (замкнутая система)</div><div class="chip-formula" data-tex="\vec{p}_1 + \vec{p}_2 = \vec{p}_1' + \vec{p}_2'"></div></div>
+      <div class="fchip"><div class="chip-name">Импульс силы</div><div class="chip-formula" data-tex="\vec{F}\Delta t = \Delta\vec{p}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Работа и мощность</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Работа</div><div class="chip-formula" data-tex="A = F s \cos\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">Мощность</div><div class="chip-formula" data-tex="P = \dfrac{A}{t} = Fv"></div></div>
+      <div class="fchip"><div class="chip-name">КПД</div><div class="chip-formula" data-tex="\eta = \dfrac{A_\text{пол}}{A_\text{затр}}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Энергия</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Кинетическая ★</div><div class="chip-formula" data-tex="E_k = \dfrac{mv^2}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Потенциальная (гравит.)</div><div class="chip-formula" data-tex="E_п = mgh"></div></div>
+      <div class="fchip"><div class="chip-name">Потенциальная (упругая)</div><div class="chip-formula" data-tex="E_\text{упр} = \dfrac{kx^2}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Теорема о кин. энергии</div><div class="chip-formula" data-tex="A_\text{рез} = \Delta E_k"></div></div>
+      <div class="fchip"><div class="chip-name">ЗСЭ (без трения)</div><div class="chip-formula" data-tex="E_k + E_п = \text{const}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       05 МКТ И ТЕРМОДИНАМИКА
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t05" style="--tc:var(--t05)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t05)">🌡️</span>
+      05 &nbsp;МКТ и термодинамика
+      <a class="fml-topic-link" style="color:var(--t05);border-color:var(--t05)" href="../theory/05_mkt_termodinamika.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">МКТ</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Число Авогадро</div><div class="chip-formula" data-tex="N_A = 6{,}02\cdot10^{23}\text{ моль}^{-1}"></div></div>
+      <div class="fchip"><div class="chip-name">Кол-во вещества</div><div class="chip-formula" data-tex="\nu = \dfrac{N}{N_A} = \dfrac{m}{M}"></div></div>
+      <div class="fchip"><div class="chip-name">Связь шкал температур</div><div class="chip-formula" data-tex="T = t + 273\text{ К}"></div></div>
+      <div class="fchip"><div class="chip-name">Средняя кин. энергия</div><div class="chip-formula" data-tex="\bar{E}_k = \dfrac{3}{2}kT"></div></div>
+      <div class="fchip"><div class="chip-name">Среднеквадр. скорость</div><div class="chip-formula" data-tex="v_\text{кв} = \sqrt{\dfrac{3RT}{M}}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Уравнение идеального газа ★</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Менделеева–Клапейрона</div><div class="chip-formula" data-tex="pV = \nu RT = \dfrac{m}{M}RT"></div></div>
+      <div class="fchip"><div class="chip-name">Объед. газовый закон</div><div class="chip-formula" data-tex="\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}"></div></div>
+      <div class="fchip"><div class="chip-name">Плотность газа</div><div class="chip-formula" data-tex="\rho = \dfrac{pM}{RT}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Изопроцессы</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Изотерма (T=const)</div><div class="chip-formula" data-tex="p_1V_1 = p_2V_2"></div></div>
+      <div class="fchip"><div class="chip-name">Изобара (p=const)</div><div class="chip-formula" data-tex="\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}"></div></div>
+      <div class="fchip"><div class="chip-name">Изохора (V=const)</div><div class="chip-formula" data-tex="\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Термодинамика</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">I начало термодинамики ★</div><div class="chip-formula" data-tex="Q = \Delta U + A"></div></div>
+      <div class="fchip"><div class="chip-name">Внутренняя энергия</div><div class="chip-formula" data-tex="U = \dfrac{3}{2}\nu RT = \dfrac{3}{2}NkT"></div></div>
+      <div class="fchip"><div class="chip-name">Работа газа</div><div class="chip-formula" data-tex="A = p\Delta V"></div></div>
+      <div class="fchip"><div class="chip-name">КПД теплового двигателя</div><div class="chip-formula" data-tex="\eta = \dfrac{A}{Q_1} = 1 - \dfrac{Q_2}{Q_1}"></div></div>
+      <div class="fchip"><div class="chip-name">КПД цикла Карно</div><div class="chip-formula" data-tex="\eta_\text{max} = 1 - \dfrac{T_2}{T_1}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Калориметрия</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Теплообмен</div><div class="chip-formula" data-tex="Q = mc\Delta t"></div></div>
+      <div class="fchip"><div class="chip-name">Плавление/кристаллизация</div><div class="chip-formula" data-tex="Q = \lambda m"></div></div>
+      <div class="fchip"><div class="chip-name">Испарение/конденсация</div><div class="chip-formula" data-tex="Q = Lm"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       06 ЭЛЕКТРОСТАТИКА
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t06" style="--tc:var(--t06)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t06)">⚡</span>
+      06 &nbsp;Электростатика
+      <a class="fml-topic-link" style="color:var(--t06);border-color:var(--t06)" href="../theory/06_elektrostatika.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Заряд и взаимодействие</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Закон Кулона ★</div><div class="chip-formula" data-tex="F = k\dfrac{|q_1 q_2|}{\varepsilon r^2}"></div><div class="chip-desc">k ≈ 9·10⁹ Н·м²/Кл²</div></div>
+      <div class="fchip"><div class="chip-name">Элементарный заряд</div><div class="chip-formula" data-tex="e = 1{,}6\cdot10^{-19}\text{ Кл}"></div></div>
+      <div class="fchip"><div class="chip-name">Заряд тела</div><div class="chip-formula" data-tex="q = Ne"></div></div>
+    </div>
+
+    <div class="fml-subsection">Электрическое поле</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Напряжённость</div><div class="chip-formula" data-tex="E = \dfrac{F}{q}"></div></div>
+      <div class="fchip"><div class="chip-name">Поле точечного заряда</div><div class="chip-formula" data-tex="E = k\dfrac{|Q|}{\varepsilon r^2}"></div></div>
+      <div class="fchip"><div class="chip-name">Поле плоского конд.</div><div class="chip-formula" data-tex="E = \dfrac{U}{d}"></div></div>
+      <div class="fchip"><div class="chip-name">Сила в поле</div><div class="chip-formula" data-tex="F = qE"></div></div>
+    </div>
+
+    <div class="fml-subsection">Потенциал и работа</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Потенциал точечного заряда</div><div class="chip-formula" data-tex="\varphi = k\dfrac{Q}{\varepsilon r}"></div></div>
+      <div class="fchip"><div class="chip-name">Работа поля ★</div><div class="chip-formula" data-tex="A = q(\varphi_1 - \varphi_2) = qU"></div></div>
+      <div class="fchip"><div class="chip-name">Связь E и U</div><div class="chip-formula" data-tex="E = \dfrac{U}{d}\;(\text{однород. поле})"></div></div>
+      <div class="fchip"><div class="chip-name">Напряжение</div><div class="chip-formula" data-tex="U = \varphi_1 - \varphi_2"></div></div>
+    </div>
+
+    <div class="fml-subsection">Конденсаторы</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Электроёмкость</div><div class="chip-formula" data-tex="C = \dfrac{q}{U}"></div></div>
+      <div class="fchip"><div class="chip-name">Плоский конденсатор</div><div class="chip-formula" data-tex="C = \dfrac{\varepsilon_0\varepsilon S}{d}"></div></div>
+      <div class="fchip"><div class="chip-name">Параллельное соединение</div><div class="chip-formula" data-tex="C_\parallel = C_1 + C_2"></div></div>
+      <div class="fchip"><div class="chip-name">Последовательное</div><div class="chip-formula" data-tex="\dfrac{1}{C_\text{посл}} = \dfrac{1}{C_1} + \dfrac{1}{C_2}"></div></div>
+      <div class="fchip"><div class="chip-name">Энергия конденсатора ★</div><div class="chip-formula" data-tex="W = \dfrac{CU^2}{2} = \dfrac{q^2}{2C} = \dfrac{qU}{2}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       07 ЭЛЕКТРИЧЕСКИЙ ТОК
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t07" style="--tc:var(--t07)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t07)">🔌</span>
+      07 &nbsp;Электрический ток
+      <a class="fml-topic-link" style="color:var(--t07);border-color:var(--t07)" href="../theory/07_elektricheskij_tok.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Основные законы</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Сила тока</div><div class="chip-formula" data-tex="I = \dfrac{q}{t}"></div></div>
+      <div class="fchip"><div class="chip-name">Закон Ома (участок) ★</div><div class="chip-formula" data-tex="I = \dfrac{U}{R}"></div></div>
+      <div class="fchip"><div class="chip-name">Закон Ома (полная цепь)</div><div class="chip-formula" data-tex="I = \dfrac{\varepsilon}{R + r}"></div></div>
+      <div class="fchip"><div class="chip-name">Напряжение на зажимах</div><div class="chip-formula" data-tex="U = \varepsilon - Ir"></div></div>
+      <div class="fchip"><div class="chip-name">КПД источника</div><div class="chip-formula" data-tex="\eta = \dfrac{R}{R + r}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Соединения резисторов</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Последовательное</div><div class="chip-formula" data-tex="R = R_1 + R_2 + \ldots"></div></div>
+      <div class="fchip"><div class="chip-name">Параллельное</div><div class="chip-formula" data-tex="\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}"></div></div>
+      <div class="fchip"><div class="chip-name">Два параллельных</div><div class="chip-formula" data-tex="R = \dfrac{R_1 R_2}{R_1 + R_2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Мощность и работа</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Мощность ★</div><div class="chip-formula" data-tex="P = UI = I^2R = \dfrac{U^2}{R}"></div></div>
+      <div class="fchip"><div class="chip-name">Работа тока</div><div class="chip-formula" data-tex="A = UIt = I^2Rt"></div></div>
+      <div class="fchip"><div class="chip-name">Закон Джоуля–Ленца</div><div class="chip-formula" data-tex="Q = I^2Rt"></div></div>
+    </div>
+
+    <div class="fml-subsection">Сопротивление проводника</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Удельное сопротивление</div><div class="chip-formula" data-tex="R = \dfrac{\rho l}{S}"></div></div>
+      <div class="fchip"><div class="chip-name">Темп. зависимость</div><div class="chip-formula" data-tex="R = R_0(1 + \alpha\Delta t)"></div></div>
+    </div>
+
+    <div class="fml-subsection">Электролиз</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">I закон Фарадея</div><div class="chip-formula" data-tex="m = kIt"></div></div>
+      <div class="fchip"><div class="chip-name">Электрохим. эквивалент</div><div class="chip-formula" data-tex="k = \dfrac{M}{nF}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       08 МАГНЕТИЗМ
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t08" style="--tc:var(--t08)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t08)">🧲</span>
+      08 &nbsp;Магнетизм
+      <a class="fml-topic-link" style="color:var(--t08);border-color:var(--t08)" href="../theory/08_magnetizm.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Силы в магнитном поле</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Сила Ампера ★</div><div class="chip-formula" data-tex="F = BIL\sin\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">Сила Лоренца ★</div><div class="chip-formula" data-tex="F = qvB\sin\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">Радиус орбиты заряда</div><div class="chip-formula" data-tex="r = \dfrac{mv}{qB}"></div></div>
+      <div class="fchip"><div class="chip-name">Период обращения</div><div class="chip-formula" data-tex="T = \dfrac{2\pi m}{qB}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Электромагнитная индукция</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Магнитный поток ★</div><div class="chip-formula" data-tex="\Phi = BS\cos\alpha"></div></div>
+      <div class="fchip"><div class="chip-name">ЭДС индукции ★</div><div class="chip-formula" data-tex="\varepsilon = -\dfrac{\Delta\Phi}{\Delta t}"></div></div>
+      <div class="fchip"><div class="chip-name">ЭДС движущегося проводника</div><div class="chip-formula" data-tex="\varepsilon = BLv"></div></div>
+      <div class="fchip"><div class="chip-name">Самоиндукция</div><div class="chip-formula" data-tex="\varepsilon_L = -L\dfrac{\Delta I}{\Delta t}"></div></div>
+      <div class="fchip"><div class="chip-name">Индуктивность катушки</div><div class="chip-formula" data-tex="L = \mu_0\mu\dfrac{N^2 S}{l}"></div></div>
+      <div class="fchip"><div class="chip-name">Энергия магнитного поля</div><div class="chip-formula" data-tex="W = \dfrac{LI^2}{2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Параллельные проводники</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Сила между проводниками</div><div class="chip-formula" data-tex="\dfrac{F}{l} = \dfrac{\mu_0 I_1 I_2}{2\pi d}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       09 КОЛЕБАНИЯ И ВОЛНЫ
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t09" style="--tc:var(--t09)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t09)">🌊</span>
+      09 &nbsp;Колебания и волны
+      <a class="fml-topic-link" style="color:var(--t09);border-color:var(--t09)" href="../theory/09_kolebaniya_volny.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Гармонические колебания</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Уравнение колебания</div><div class="chip-formula" data-tex="x = A\cos(\omega t + \varphi_0)"></div></div>
+      <div class="fchip"><div class="chip-name">Связь ω, T, ν</div><div class="chip-formula" data-tex="\omega = 2\pi\nu = \dfrac{2\pi}{T}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Маятники</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Пружинный маятник ★</div><div class="chip-formula" data-tex="T = 2\pi\sqrt{\dfrac{m}{k}}"></div></div>
+      <div class="fchip"><div class="chip-name">Математический маятник ★</div><div class="chip-formula" data-tex="T = 2\pi\sqrt{\dfrac{l}{g}}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Волны и звук</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Длина волны</div><div class="chip-formula" data-tex="\lambda = vT = \dfrac{v}{\nu}"></div></div>
+      <div class="fchip"><div class="chip-name">Скорость волны</div><div class="chip-formula" data-tex="v = \lambda\nu"></div></div>
+    </div>
+
+    <div class="fml-subsection">Переменный ток</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Действующее значение</div><div class="chip-formula" data-tex="I = \dfrac{I_m}{\sqrt{2}},\quad U = \dfrac{U_m}{\sqrt{2}}"></div></div>
+      <div class="fchip"><div class="chip-name">Мощность переменного тока</div><div class="chip-formula" data-tex="P = UI\cos\varphi"></div></div>
+      <div class="fchip"><div class="chip-name">Индуктивное сопротивление</div><div class="chip-formula" data-tex="X_L = \omega L"></div></div>
+      <div class="fchip"><div class="chip-name">Ёмкостное сопротивление</div><div class="chip-formula" data-tex="X_C = \dfrac{1}{\omega C}"></div></div>
+      <div class="fchip"><div class="chip-name">Резонансная частота</div><div class="chip-formula" data-tex="\omega_0 = \dfrac{1}{\sqrt{LC}}"></div></div>
+      <div class="fchip"><div class="chip-name">Трансформатор</div><div class="chip-formula" data-tex="\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Электромагнитные волны</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Скорость света в вакууме</div><div class="chip-formula" data-tex="c = 3\cdot10^8\text{ м/с}"></div></div>
+      <div class="fchip"><div class="chip-name">λ электромагн. волны</div><div class="chip-formula" data-tex="\lambda = \dfrac{c}{\nu}"></div></div>
+      <div class="fchip"><div class="chip-name">Собственная длина волны LC</div><div class="chip-formula" data-tex="\lambda_0 = 2\pi c\sqrt{LC}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       10 ОПТИКА
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t10" style="--tc:var(--t10)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t10)">💡</span>
+      10 &nbsp;Оптика
+      <a class="fml-topic-link" style="color:var(--t10);border-color:var(--t10)" href="../theory/10_optika.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Геометрическая оптика</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Закон отражения</div><div class="chip-formula" data-tex="\alpha = \beta"></div></div>
+      <div class="fchip"><div class="chip-name">Закон Снеллиуса (преломление) ★</div><div class="chip-formula" data-tex="n_1\sin\alpha = n_2\sin\beta"></div></div>
+      <div class="fchip"><div class="chip-name">Относит. показатель преломл.</div><div class="chip-formula" data-tex="n_{21} = \dfrac{n_2}{n_1} = \dfrac{v_1}{v_2}"></div></div>
+      <div class="fchip"><div class="chip-name">Угол полного отражения</div><div class="chip-formula" data-tex="\sin\alpha_\text{пр} = \dfrac{n_2}{n_1}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Линзы ★</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Формула тонкой линзы</div><div class="chip-formula" data-tex="\dfrac{1}{F} = \dfrac{1}{d} + \dfrac{1}{f}"></div></div>
+      <div class="fchip"><div class="chip-name">Оптическая сила</div><div class="chip-formula" data-tex="D = \dfrac{1}{F}\text{ (дптр)}"></div></div>
+      <div class="fchip"><div class="chip-name">Увеличение</div><div class="chip-formula" data-tex="\Gamma = \dfrac{f}{d} = \dfrac{y'}{y}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Волновая оптика</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Максимум интерференции</div><div class="chip-formula" data-tex="\Delta = m\lambda"></div></div>
+      <div class="fchip"><div class="chip-name">Минимум интерференции</div><div class="chip-formula" data-tex="\Delta = (2m-1)\dfrac{\lambda}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Ширина полосы (опыт Юнга)</div><div class="chip-formula" data-tex="h = \dfrac{\lambda L}{d}"></div></div>
+      <div class="fchip"><div class="chip-name">Дифракц. решётка ★</div><div class="chip-formula" data-tex="d\sin\varphi = m\lambda"></div></div>
+      <div class="fchip"><div class="chip-name">Период решётки</div><div class="chip-formula" data-tex="d = \dfrac{1}{N}\text{ (N — штрихов/мм)}"></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       11 КВАНТОВАЯ И ЯДЕРНАЯ ФИЗИКА
+       ════════════════════════════════════════════ -->
+  <section class="fml-topic-section" id="t11" style="--tc:var(--t11)">
+    <h2>
+      <span class="fml-topic-icon" style="background:var(--t11)">⚛️</span>
+      11 &nbsp;Квантовая и ядерная физика
+      <a class="fml-topic-link" style="color:var(--t11);border-color:var(--t11)" href="../theory/11_kvantovaya.html">Открыть тему →</a>
+    </h2>
+
+    <div class="fml-subsection">Квант света (фотон)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Энергия фотона ★</div><div class="chip-formula" data-tex="E = h\nu = \dfrac{hc}{\lambda}"></div><div class="chip-desc">h = 6,63·10⁻³⁴ Дж·с</div></div>
+      <div class="fchip"><div class="chip-name">Импульс фотона</div><div class="chip-formula" data-tex="p = \dfrac{h}{\lambda} = \dfrac{h\nu}{c}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Фотоэффект</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Уравнение Эйнштейна ★</div><div class="chip-formula" data-tex="h\nu = A + \dfrac{mv^2_\text{max}}{2}"></div></div>
+      <div class="fchip"><div class="chip-name">Красная граница</div><div class="chip-formula" data-tex="\nu_\text{кр} = \dfrac{A}{h}"></div></div>
+      <div class="fchip"><div class="chip-name">Задерживающий потенциал</div><div class="chip-formula" data-tex="eU_\text{зад} = \dfrac{mv^2_\text{max}}{2}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Модель атома Бора</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Квантование орбит</div><div class="chip-formula" data-tex="mv_n r_n = n\dfrac{h}{2\pi}"></div></div>
+      <div class="fchip"><div class="chip-name">Излучение / поглощение</div><div class="chip-formula" data-tex="h\nu = E_n - E_m"></div></div>
+      <div class="fchip"><div class="chip-name">Радиус Бора (H, n=1)</div><div class="chip-formula" data-tex="r_1 = 0{,}053\text{ нм}"></div></div>
+    </div>
+
+    <div class="fml-subsection">Ядерная физика</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Масс-дефект</div><div class="chip-formula" data-tex="\Delta m = Zm_p + (A{-}Z)m_n - M_\text{ядра}"></div></div>
+      <div class="fchip"><div class="chip-name">Энергия связи ★</div><div class="chip-formula" data-tex="E_\text{св} = \Delta m \cdot c^2"></div></div>
+      <div class="fchip"><div class="chip-name">Закон радиоакт. распада</div><div class="chip-formula" data-tex="N = N_0\cdot 2^{-t/T_{1/2}}"></div></div>
+      <div class="fchip"><div class="chip-name">Период полураспада</div><div class="chip-formula" data-tex="T_{1/2} = \dfrac{\ln 2}{\lambda}"></div></div>
+    </div>
+
+    <div class="fml-subsection">СТО (специальная теория относительности)</div>
+    <div class="fgrid">
+      <div class="fchip"><div class="chip-name">Энергия покоя ★</div><div class="chip-formula" data-tex="E_0 = mc^2"></div></div>
+      <div class="fchip"><div class="chip-name">Полная энергия</div><div class="chip-formula" data-tex="E^2 = E_0^2 + (pc)^2"></div></div>
+      <div class="fchip"><div class="chip-name">Замедление времени</div><div class="chip-formula" data-tex="\Delta t' = \dfrac{\Delta t}{\sqrt{1 - v^2/c^2}}"></div></div>
+      <div class="fchip"><div class="chip-name">Сокращение длины</div><div class="chip-formula" data-tex="l' = l\sqrt{1 - v^2/c^2}"></div></div>
+    </div>
+  </section>
+
+  <footer class="landing-footer" style="max-width:100%;margin-top:40px">
+    Все формулы · Физика ЦТ/ЦЭ · По программе Республики Беларусь
+  </footer>
+
+</div><!-- /fml-content -->
+</div><!-- /fml-page -->
+
+<!-- ─── COMMAND PALETTE ─── -->
+<div class="palette" id="palette">
+  <div class="palette-box">
+    <input class="palette-input" id="palInput" type="text" placeholder="Поиск формулы или темы..." />
+    <div class="palette-list" id="palList"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});renderPageMath()"></script>
+<script>
+(function(){
+  'use strict';
+
+  // ─── KaTeX render ────────────────────────────────
+  window.renderPageMath = function(){
+    if(typeof katex==='undefined')return;
+    document.querySelectorAll('[data-tex]').forEach(function(el){
+      try{
+        katex.render(el.getAttribute('data-tex'),el,{
+          throwOnError:false,
+          displayMode:el.classList.contains('chip-formula')
+        });
+      }catch(e){}
+    });
+  };
+
+  // ─── Palette search ──────────────────────────────
+  var pal=document.getElementById('palette');
+  var palInput=document.getElementById('palInput');
+  var palList=document.getElementById('palList');
+  var openBtn=document.getElementById('openSearch');
+
+  // Build index from chip-name + section heading
+  var idx=[];
+  document.querySelectorAll('.fml-topic-section').forEach(function(sec){
+    var topicH=sec.querySelector('h2');
+    var topicTxt=topicH?topicH.textContent.trim().replace(/\s+/g,' '):'';
+    var href=sec.querySelector('.fml-topic-link');
+    var topicHref=href?href.href:'';
+    sec.querySelectorAll('.fchip').forEach(function(chip){
+      var nm=chip.querySelector('.chip-name');
+      var fm=chip.querySelector('.chip-formula');
+      if(!nm)return;
+      idx.push({
+        title:nm.textContent.trim(),
+        sub:topicTxt,
+        href:topicHref,
+        anchor:'#'+sec.id,
+        tex:fm?fm.getAttribute('data-tex'):''
+      });
+    });
+    // also add topic itself
+    idx.push({title:topicTxt,sub:'Тема',href:topicHref,anchor:'#'+sec.id,tex:''});
+  });
+
+  function escHtml(s){return (s||'').replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]})}
+
+  function renderPal(q){
+    q=(q||'').toLowerCase().trim();
+    var filt=q===''?idx.slice(0,28):idx.filter(function(i){
+      return (i.title+' '+i.sub+' '+i.tex).toLowerCase().indexOf(q)>=0;
+    }).slice(0,35);
+    if(!filt.length){palList.innerHTML='<div class="palette-empty">Ничего не найдено</div>';return;}
+    palList.innerHTML=filt.map(function(i,n){
+      return '<div class="palette-item'+(n===0?' sel':'')+'" data-href="'+(i.href||'')+'" data-anchor="'+(i.anchor||'')+'">'+
+        '<div class="pi-icon">ƒ</div>'+
+        '<div class="pi-text"><div class="pi-title">'+escHtml(i.title)+'</div>'+
+        '<div class="pi-sub">'+escHtml(i.sub)+'</div></div></div>';
+    }).join('');
+  }
+
+  function openPal(){pal.classList.add('open');renderPal('');palInput.value='';setTimeout(function(){palInput.focus()},10);}
+  function closePal(){pal.classList.remove('open');}
+
+  if(openBtn)openBtn.addEventListener('click',openPal);
+  document.addEventListener('keydown',function(e){
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPal();}
+    if(e.key==='Escape')closePal();
+    if(pal.classList.contains('open')&&(e.key==='ArrowDown'||e.key==='ArrowUp'||e.key==='Enter')){
+      e.preventDefault();
+      var all=Array.from(palList.querySelectorAll('.palette-item'));
+      var sel=palList.querySelector('.palette-item.sel');
+      var idx2=all.indexOf(sel);
+      if(e.key==='Enter'&&sel){navigate(sel);closePal();return;}
+      if(e.key==='ArrowDown')idx2=Math.min(all.length-1,idx2+1);
+      if(e.key==='ArrowUp')idx2=Math.max(0,idx2-1);
+      all.forEach(function(x){x.classList.remove('sel')});
+      if(all[idx2]){all[idx2].classList.add('sel');all[idx2].scrollIntoView({block:'nearest'});}
+    }
+  });
+  palInput.addEventListener('input',function(){renderPal(this.value);});
+  pal.addEventListener('click',function(e){
+    if(e.target===pal){closePal();return;}
+    var it=e.target.closest('.palette-item');if(it){navigate(it);closePal();}
+  });
+
+  function navigate(el){
+    var href=el.dataset.href,anchor=el.dataset.anchor;
+    if(href&&href!==window.location.href.split('#')[0]){
+      window.location.href=href+(anchor?anchor:'');
+    } else if(anchor){
+      var t=document.querySelector(anchor);
+      if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }
+
+  // ─── Highlight active nav btn on scroll ──────────
+  var navBtns=Array.from(document.querySelectorAll('.fml-nav-btn'));
+  var sections=Array.from(document.querySelectorAll('.fml-topic-section'));
+  window.addEventListener('scroll',function(){
+    var fromTop=window.scrollY+120;
+    var cur=null;
+    sections.forEach(function(s){if(s.offsetTop<=fromTop)cur=s.id;});
+    navBtns.forEach(function(b){b.classList.toggle('active',b.getAttribute('href')==='#'+cur);});
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

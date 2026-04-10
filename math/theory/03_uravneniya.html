@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Уравнения — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t03">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">⚖️</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Уравнения</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 03</span>
+      <h2>Уравнения</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">—</span>Линейные уравнения</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">∪</span>Квадратные уравнения</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">÷</span>Рациональные уравнения</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">|·|</span>Уравнения с модулями</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">√</span>Иррациональные уравнения</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">{ }</span>Системы уравнений</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════════════════════════════════════════
+           SECTION 1: Линейные уравнения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Линейные уравнения</h1>
+          <p class="lead">Уравнение вида ax + b = 0. Три случая в зависимости от значения коэффициента a.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База</span>
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Линейное уравнение</b> — уравнение первой степени относительно неизвестного: <span data-tex="ax + b = 0"></span>, где <span data-tex="a"></span> и <span data-tex="b"></span> — числа.</div>
+        </div>
+
+        <div class="fcard" id="f-linear">
+          <div class="flabel">Решение линейного уравнения</div>
+          <div class="formula" data-tex="ax + b = 0 \;\Rightarrow\; x = -\dfrac{b}{a}, \quad a \neq 0"></div>
+          <div class="fdesc">Переносим b в правую часть, делим на a</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Случай</th><th>Условие</th><th>Вывод</th></tr>
+            <tr><td>Единственный корень</td><td><span data-tex="a \neq 0"></span></td><td><span data-tex="x = -b/a"></span></td></tr>
+            <tr><td>Нет корней</td><td><span data-tex="a = 0,\; b \neq 0"></span></td><td>противоречие: <span data-tex="b = 0"></span> — ложь</td></tr>
+            <tr><td>Бесконечно много</td><td><span data-tex="a = 0,\; b = 0"></span></td><td>тождество: <span data-tex="0 = 0"></span></td></tr>
+          </table>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Допустимые преобразования:</b> прибавить/вычесть одно и то же к обеим частям; умножить/разделить на ненулевое число. <b>Недопустимо:</b> делить на выражение, равное нулю.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 2: Квадратные уравнения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Квадратные уравнения</h1>
+          <p class="lead">Дискриминант, формулы корней, теорема Виета. Самый важный тип уравнений на ЦТ.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Знать наизусть</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Квадратное уравнение</b>: <span data-tex="ax^2 + bx + c = 0"></span>, где <span data-tex="a \neq 0"></span>. Неполные виды: <span data-tex="ax^2 = 0"></span>, <span data-tex="ax^2 + c = 0"></span>, <span data-tex="ax^2 + bx = 0"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-discriminant">
+          <div class="flabel">Дискриминант</div>
+          <div class="formula" data-tex="D = b^2 - 4ac"></div>
+          <div class="fdesc">Определяет число корней квадратного уравнения</div>
+        </div>
+
+        <div class="fcard" id="f-quad-formula">
+          <div class="flabel">Формула корней квадратного уравнения</div>
+          <div class="formula" data-tex="x_{1,2} = \dfrac{-b \pm \sqrt{D}}{2a} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}"></div>
+          <div class="fdesc">Работает при любом D. При D &lt; 0 действительных корней нет.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>D</th><th>Число действительных корней</th><th>Вид корней</th></tr>
+            <tr><td><span data-tex="D &gt; 0"></span></td><td>2 различных корня</td><td><span data-tex="x_1 \neq x_2"></span></td></tr>
+            <tr><td><span data-tex="D = 0"></span></td><td>1 (двукратный) корень</td><td><span data-tex="x_1 = x_2 = -\tfrac{b}{2a}"></span></td></tr>
+            <tr><td><span data-tex="D &lt; 0"></span></td><td>нет действительных корней</td><td>—</td></tr>
+          </table>
+        </div>
+
+        <!-- Diagram Q1: Three discriminant cases -->
+        <div class="diagrams-row">
+          <!-- D > 0: two roots -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 150 130" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- axes -->
+              <line x1="10" y1="90" x2="140" y2="90" stroke="#94a3b8" stroke-width="1.2"/>
+              <line x1="75" y1="15" x2="75" y2="100" stroke="#94a3b8" stroke-width="1.2"/>
+              <!-- parabola crossing x-axis at ~40 and ~110 (vertex at x=75, y=55) -->
+              <!-- Using quadratic bezier: M 28,90 Q 75,20 122,90 -->
+              <path d="M 28,90 Q 75,20 122,90" stroke="#16a34a" stroke-width="2.5" fill="none"/>
+              <!-- fill tint between parabola and axis -->
+              <path d="M 28,90 Q 75,20 122,90 Z" fill="#bbf7d0" fill-opacity="0.4"/>
+              <!-- x1 and x2 dots -->
+              <circle cx="28" cy="90" r="4" fill="#16a34a"/>
+              <text x="22" y="105" font-size="9" fill="#15803d" text-anchor="middle">x₁</text>
+              <circle cx="122" cy="90" r="4" fill="#16a34a"/>
+              <text x="122" y="105" font-size="9" fill="#15803d" text-anchor="middle">x₂</text>
+              <!-- label -->
+              <text x="75" y="12" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a">D &gt; 0</text>
+              <text x="75" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#15803d">2 корня</text>
+            </svg>
+          </div>
+          <!-- D = 0: one root -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 150 130" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <line x1="10" y1="90" x2="140" y2="90" stroke="#94a3b8" stroke-width="1.2"/>
+              <line x1="75" y1="15" x2="75" y2="100" stroke="#94a3b8" stroke-width="1.2"/>
+              <!-- parabola touching x-axis at vertex. For vertex at (75,90), control pt = 2*vertex - midpoint of endpoints = (75, 2*90-27.5)=(75,152.5) but that opens downward. For upward opening: M 25,50 Q 75,90 125,50 gives vertex at (75,(50+2*90)/4... let's use symmetric: the vertex of quadratic bezier M x0,y0 Q cx,cy x1,y1 is at t=0.5: P = 0.25*x0 + 0.5*cx + 0.25*x1, 0.25*y0 + 0.5*cy + 0.25*y1. We want vertex at y=90, so 0.25*y0 + 0.5*cy + 0.25*y1 = 90 with y0=y1=30: 0.5*30 + 0.5*cy = 90, cy = 150. -->
+              <path d="M 20,30 Q 75,150 130,30" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+              <!-- x0 dot at vertex -->
+              <circle cx="75" cy="90" r="4" fill="#f59e0b"/>
+              <text x="75" y="105" font-size="9" fill="#b45309" text-anchor="middle">x₀</text>
+              <text x="75" y="12" text-anchor="middle" font-size="12" font-weight="700" fill="#f59e0b">D = 0</text>
+              <text x="75" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#b45309">1 корень</text>
+            </svg>
+          </div>
+          <!-- D < 0: no roots -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 150 130" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <line x1="10" y1="90" x2="140" y2="90" stroke="#94a3b8" stroke-width="1.2"/>
+              <line x1="75" y1="15" x2="75" y2="100" stroke="#94a3b8" stroke-width="1.2"/>
+              <!-- parabola entirely above x-axis (vertex at y=55) -->
+              <path d="M 25,82 Q 75,25 125,82" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+              <text x="75" y="12" text-anchor="middle" font-size="12" font-weight="700" fill="#ef4444">D &lt; 0</text>
+              <text x="75" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#ef4444">нет корней</text>
+            </svg>
+          </div>
+        </div>
+
+        <h2 id="h-vieta">Теорема Виета</h2>
+        <div class="fcard" id="f-vieta">
+          <div class="flabel">Теорема Виета</div>
+          <div class="formula" data-tex="x_1 + x_2 = -\dfrac{b}{a}, \qquad x_1 \cdot x_2 = \dfrac{c}{a}"></div>
+          <div class="fdesc">Для приведённого уравнения <span data-tex="x^2+px+q=0"></span>: <span data-tex="x_1+x_2=-p,\;x_1 x_2=q"></span></div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>Использование теоремы Виета «в обратную»:</b> если нужно составить уравнение с корнями <span data-tex="x_1, x_2"></span>, пишем <span data-tex="x^2 - (x_1+x_2)x + x_1 x_2 = 0"></span>. Пример: корни 3 и −5: <span data-tex="x^2 + 2x - 15 = 0"></span>.</div>
+        </div>
+
+        <h2 id="h-incomplete-quad">Неполные квадратные уравнения</h2>
+        <div class="grid-2">
+          <div class="fcard">
+            <div class="flabel">ax² = 0</div>
+            <div class="formula" data-tex="x = 0"></div>
+            <div class="fdesc">Единственный корень x = 0</div>
+          </div>
+          <div class="fcard">
+            <div class="flabel">ax² + c = 0</div>
+            <div class="formula" data-tex="x^2 = -\dfrac{c}{a} \;\Rightarrow\; x = \pm\sqrt{-\tfrac{c}{a}}"></div>
+            <div class="fdesc">Два корня при −c/a > 0, нет корней при −c/a &lt; 0</div>
+          </div>
+          <div class="fcard">
+            <div class="flabel">ax² + bx = 0</div>
+            <div class="formula" data-tex="x(ax + b) = 0 \;\Rightarrow\; x_1 = 0,\; x_2 = -\tfrac{b}{a}"></div>
+            <div class="fdesc">Выносим x за скобку — всегда два корня</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Формула для чётного b:</b> если <span data-tex="b = 2k"></span>, то удобнее использовать <span data-tex="D' = k^2 - ac"></span>, и тогда <span data-tex="x_{1,2} = \dfrac{-k \pm \sqrt{D'}}{a}"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 3: Рациональные уравнения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Рациональные уравнения</h1>
+          <p class="lead">Уравнения с дробями: приведение к общему знаменателю, ОДЗ и проверка посторонних корней.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ОДЗ обязательна</span></div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">⚠️</div>
+          <div class="kc-text">
+            <small>Главное правило</small>
+            При умножении обеих частей на знаменатель могут появиться <b>посторонние корни</b>. Обязательно проверь каждый найденный корень в ОДЗ!
+          </div>
+        </div>
+
+        <div class="fcard" id="f-rational-eq">
+          <div class="flabel">Алгоритм решения дробного рационального уравнения</div>
+          <div class="formula" data-tex="\dfrac{P(x)}{Q(x)} = \dfrac{R(x)}{S(x)}"></div>
+          <div class="fdesc">1. Найти ОДЗ: Q(x) ≠ 0 и S(x) ≠ 0. 2. Умножить на НОЗ. 3. Решить целое уравнение. 4. Исключить из ответа значения вне ОДЗ.</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="20" width="100" height="80" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="60" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="#1d4ed8">Найти ОДЗ</text>
+            <text x="60" y="70" text-anchor="middle" font-size="10" fill="#3b82f6">знаменатели ≠ 0</text>
+            <line x1="110" y1="60" x2="140" y2="60" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+            <rect x="140" y="20" width="100" height="80" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+            <text x="190" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="#15803d">Умножить</text>
+            <text x="190" y="70" text-anchor="middle" font-size="10" fill="#16a34a">на НОЗ</text>
+            <line x1="240" y1="60" x2="270" y2="60" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+            <rect x="270" y="20" width="100" height="80" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="320" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">Решить целое</text>
+            <text x="320" y="70" text-anchor="middle" font-size="10" fill="#b45309">уравнение</text>
+            <line x1="370" y1="60" x2="400" y2="60" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+            <rect x="400" y="20" width="72" height="80" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+            <text x="436" y="55" text-anchor="middle" font-size="11" font-weight="600" fill="#b91c1c">Проверить</text>
+            <text x="436" y="70" text-anchor="middle" font-size="10" fill="#dc2626">ОДЗ</text>
+            <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#64748b"/></marker></defs>
+          </svg>
+          <div class="caption">Алгоритм решения дробного рационального уравнения</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Посторонние корни.</b> Если при умножении на <span data-tex="(x-2)"></span> получился корень <span data-tex="x=2"></span> — это посторонний корень, он не входит в ОДЗ и <b>не является</b> решением исходного уравнения.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 4: Уравнения с модулями
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Уравнения с модулями</h1>
+          <p class="lead">Раскрытие модуля по определению и решение методом разбора случаев.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение модуля</div>
+          <div class="text"><span data-tex="|a| = \begin{cases} a, & a \geq 0 \\ -a, & a &lt; 0 \end{cases}"></span>. Геометрически: расстояние от a до 0 на числовой прямой.</div>
+        </div>
+
+        <div class="fcard" id="f-abs-basic">
+          <div class="flabel">|f(x)| = a, где a ≥ 0</div>
+          <div class="formula" data-tex="|f(x)| = a \;\Leftrightarrow\; f(x) = a \;\text{ или }\; f(x) = -a"></div>
+          <div class="fdesc">При a &lt; 0 решений нет</div>
+        </div>
+
+        <div class="fcard" id="f-abs-func">
+          <div class="flabel">|f(x)| = g(x)</div>
+          <div class="formula" data-tex="|f(x)| = g(x) \;\Leftrightarrow\; \begin{cases} f(x) = g(x) \\ g(x) \geq 0 \end{cases} \text{ или } \begin{cases} f(x) = -g(x) \\ g(x) \geq 0 \end{cases}"></div>
+          <div class="fdesc">Необходимое условие: g(x) ≥ 0</div>
+        </div>
+
+        <h2 id="h-abs-method">Метод раскрытия по определению</h2>
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Алгоритм:</b> 1) Найти «критические» точки, где выражение под модулем обращается в 0. 2) Разбить числовую прямую на промежутки. 3) На каждом промежутке раскрыть модуль без знака (+ или −). 4) Решить на каждом промежутке. 5) Объединить ответы.</div>
+        </div>
+
+        <!-- Diagram Q3: Absolute value function graph -->
+        <div class="diagram">
+          <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- axes origin at (130, 140) -->
+            <line x1="10" y1="140" x2="250" y2="140" stroke="#475569" stroke-width="1.5"/>
+            <line x1="130" y1="10" x2="130" y2="150" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="250,140 243,136 243,144" fill="#475569"/>
+            <polygon points="130,10 126,18 134,18" fill="#475569"/>
+            <text x="252" y="144" font-size="10" fill="#64748b">x</text>
+            <text x="123" y="10" font-size="10" fill="#64748b">y</text>
+            <text x="132" y="153" font-size="10" fill="#94a3b8">O</text>
+            <!-- y = |x|: left ray going upper-left (45°), right ray going upper-right (45°) -->
+            <line x1="130" y1="140" x2="30" y2="40" stroke="#16a34a" stroke-width="2.5"/>
+            <line x1="130" y1="140" x2="230" y2="40" stroke="#16a34a" stroke-width="2.5"/>
+            <!-- g(x) = const dashed horizontal line at y = 80 (height 60 above axis) -->
+            <line x1="10" y1="80" x2="250" y2="80" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="7" y="78" font-size="9" fill="#64748b" text-anchor="start">g(x)</text>
+            <!-- Intersection points: at y=80, left ray: x= 130-(140-80)=70, right ray: x= 130+(140-80)=190 -->
+            <circle cx="70" cy="80" r="4" fill="#16a34a"/>
+            <circle cx="190" cy="80" r="4" fill="#16a34a"/>
+            <!-- vertical dotted lines to x-axis -->
+            <line x1="70" y1="80" x2="70" y2="140" stroke="#16a34a" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="190" y1="80" x2="190" y2="140" stroke="#16a34a" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="70" y="153" font-size="9" fill="#15803d" text-anchor="middle">x₁</text>
+            <text x="190" y="153" font-size="9" fill="#15803d" text-anchor="middle">x₂</text>
+            <!-- branch labels -->
+            <text x="52" y="115" font-size="8.5" fill="#16a34a" transform="rotate(-45,52,115)">y = −x при x&lt;0</text>
+            <text x="175" y="95" font-size="8.5" fill="#16a34a" transform="rotate(45,175,95)">y = x при x≥0</text>
+            <!-- caption formula -->
+            <text x="130" y="170" text-anchor="middle" font-size="11" font-weight="600" fill="#0f172a">|f(x)| = g(x)  ⟺  f(x) = ±g(x)</text>
+          </svg>
+          <div class="diagram-label">График y = |x| и геометрический смысл уравнения с модулем</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">|x| = a (a ≥ 0)</div>
+            <div class="chip-formula" data-tex="x = \pm a"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">|x| &lt; a</div>
+            <div class="chip-formula" data-tex="-a &lt; x &lt; a"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">|x| &gt; a</div>
+            <div class="chip-formula" data-tex="x &lt; -a \text{ или } x &gt; a"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">|x − c| = r</div>
+            <div class="chip-formula" data-tex="x = c \pm r"></div>
+            <div class="chip-desc">расстояние от c равно r</div>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Типичная ошибка:</b> при раскрытии <span data-tex="|2x - 3| = x + 1"></span> брать <span data-tex="2x - 3 = x + 1"></span> и <span data-tex="2x - 3 = -(x+1)"></span>, но забывать проверять, что <span data-tex="x + 1 \geq 0"></span>. Обязательно проверяй найденные значения!</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 5: Иррациональные уравнения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Иррациональные уравнения</h1>
+          <p class="lead">Уравнения с переменной под знаком корня. Возведение в степень и обязательная проверка.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Проверка обязательна</span></div>
+        </div>
+
+        <div class="fcard" id="f-irrat-basic">
+          <div class="flabel">Основной метод: возведение в квадрат</div>
+          <div class="formula" data-tex="\sqrt{f(x)} = g(x) \;\Leftrightarrow\; \begin{cases} f(x) = [g(x)]^2 \\ g(x) \geq 0 \end{cases}"></div>
+          <div class="fdesc">Оба условия одновременно обязательны</div>
+        </div>
+
+        <div class="fcard" id="f-irrat-double">
+          <div class="flabel">Два корня в уравнении</div>
+          <div class="formula" data-tex="\sqrt{f(x)} = \sqrt{g(x)} \;\Leftrightarrow\; \begin{cases} f(x) = g(x) \\ f(x) \geq 0 \end{cases}"></div>
+          <div class="fdesc">Корни равны тогда и только тогда, когда их подкоренные выражения равны (и неотрицательны)</div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">⚠️</div>
+          <div class="kc-text">
+            <small>Важно</small>
+            Возведение в чётную степень — <b>необратимая операция</b>: из <span data-tex="A^2 = B^2"></span> не следует <span data-tex="A = B"></span>. Поэтому после возведения в степень <b>обязательна проверка</b> в исходном уравнении.
+          </div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>Схема для ЦТ:</b> <span data-tex="\sqrt{f(x)} = g(x)"></span>:
+          1) ОДЗ: <span data-tex="f(x) \geq 0"></span>, <span data-tex="g(x) \geq 0"></span>.
+          2) Возвести обе части в квадрат: <span data-tex="f(x) = g^2(x)"></span>.
+          3) Решить. 4) Проверить в ОДЗ.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 6: Системы уравнений
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Системы уравнений</h1>
+          <p class="lead">Метод подстановки, метод сложения/вычитания, графический метод. Системы с нелинейными уравнениями.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag green">Важно</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Метод подстановки</h4>
+            <p>1. Выразить одну переменную через другую из одного уравнения.</p>
+            <p>2. Подставить в другое уравнение.</p>
+            <p>3. Решить полученное уравнение с одной переменной.</p>
+          </div>
+          <div class="card">
+            <h4>Метод сложения</h4>
+            <p>1. Умножить уравнения на подходящие числа.</p>
+            <p>2. Сложить уравнения так, чтобы одна переменная сократилась.</p>
+            <p>3. Решить и найти вторую переменную.</p>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-system-linear">
+          <div class="flabel">Система линейных уравнений</div>
+          <div class="formula" data-tex="\begin{cases} a_1 x + b_1 y = c_1 \\ a_2 x + b_2 y = c_2 \end{cases}"></div>
+          <div class="fdesc">Решается подстановкой или методом сложения</div>
+        </div>
+
+        <h2 id="h-nonlinear">Системы с нелинейными уравнениями</h2>
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Типичная система на ЦТ:</b> одно уравнение линейное, другое — квадратное. Из линейного выражаем y = f(x), подставляем в квадратное. Получаем квадратное уравнение относительно x.</div>
+        </div>
+
+        <div class="fcard" id="f-system-subst">
+          <div class="flabel">Симметричная система</div>
+          <div class="formula" data-tex="\begin{cases} x + y = s \\ x \cdot y = p \end{cases} \;\Rightarrow\; x, y \text{ — корни } t^2 - st + p = 0"></div>
+          <div class="fdesc">Сумма и произведение — сразу применяем теорему Виета</div>
+        </div>
+
+        <h2 id="h-geom-interp">Геометрический смысл системы</h2>
+        <div class="def">
+          <div class="label">Геометрическая интерпретация</div>
+          <div class="text">Решение системы — это координаты точек пересечения графиков обоих уравнений. Нет решений → графики не пересекаются. Бесконечно много → графики совпадают.</div>
+        </div>
+
+        <!-- Diagram Q2: Geometric interpretation of line-parabola systems -->
+        <div class="diagrams-row">
+          <!-- 2 solutions -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 150 130" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <line x1="10" y1="95" x2="140" y2="95" stroke="#94a3b8" stroke-width="1"/>
+              <line x1="75" y1="10" x2="75" y2="100" stroke="#94a3b8" stroke-width="1"/>
+              <!-- parabola: M 25,90 Q 75,20 125,90 -->
+              <path d="M 25,90 Q 75,20 125,90" stroke="#16a34a" stroke-width="2" fill="none"/>
+              <!-- line cutting through at 2 points: y = -0.3x + 80 roughly -->
+              <line x1="15" y1="75" x2="135" y2="55" stroke="#0369a1" stroke-width="2"/>
+              <!-- intersection points approx at x=35,y=72 and x=115,y=58 -->
+              <circle cx="35" cy="72" r="4" fill="#16a34a"/>
+              <circle cx="115" cy="60" r="4" fill="#16a34a"/>
+              <text x="75" y="11" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">2 решения</text>
+              <text x="75" y="120" text-anchor="middle" font-size="9" fill="#64748b">прямая пересекает</text>
+              <text x="75" y="130" text-anchor="middle" font-size="9" fill="#64748b">параболу в 2 точках</text>
+            </svg>
+          </div>
+          <!-- 1 solution -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 150 130" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <line x1="10" y1="95" x2="140" y2="95" stroke="#94a3b8" stroke-width="1"/>
+              <line x1="75" y1="10" x2="75" y2="100" stroke="#94a3b8" stroke-width="1"/>
+              <!-- parabola -->
+              <path d="M 25,90 Q 75,20 125,90" stroke="#16a34a" stroke-width="2" fill="none"/>
+              <!-- tangent line: touches vertex at (75,20), horizontal line y=20 from x=10 to x=140 - but parabola vertex is ~y=20, so horizontal tangent -->
+              <line x1="10" y1="40" x2="140" y2="40" stroke="#0369a1" stroke-width="2"/>
+              <!-- tangent point: where parabola y=40? from bezier, at approx x=42 and x=108 - actually a horizontal line is secant. Let's use a slanted tangent instead -->
+              <!-- Using tangent at a point on the right arm: touch at about (108, 55) -->
+              <!-- Actually simpler: draw a tangent at vertex (75,20): a horizontal line at y=20 -->
+              <line x1="10" y1="20" x2="140" y2="20" stroke="#0369a1" stroke-width="2"/>
+              <circle cx="75" cy="20" r="4" fill="#16a34a"/>
+              <text x="75" y="11" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">1 решение</text>
+              <text x="75" y="120" text-anchor="middle" font-size="9" fill="#64748b">касательная</text>
+              <text x="75" y="130" text-anchor="middle" font-size="9" fill="#64748b">к параболе</text>
+            </svg>
+          </div>
+          <!-- 0 solutions -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 150 130" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <line x1="10" y1="95" x2="140" y2="95" stroke="#94a3b8" stroke-width="1"/>
+              <line x1="75" y1="10" x2="75" y2="100" stroke="#94a3b8" stroke-width="1"/>
+              <!-- parabola -->
+              <path d="M 25,90 Q 75,20 125,90" stroke="#16a34a" stroke-width="2" fill="none"/>
+              <!-- line below the parabola: y=10 never touched -->
+              <line x1="10" y1="10" x2="140" y2="10" stroke="#ef4444" stroke-width="2"/>
+              <text x="75" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="#ef4444">нет решений</text>
+              <text x="75" y="120" text-anchor="middle" font-size="9" fill="#64748b">прямая выше</text>
+              <text x="75" y="130" text-anchor="middle" font-size="9" fill="#64748b">параболы</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION s_tasks: Разбор задач
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор типовых задач ЦТ</h1>
+          <p class="lead">Задачи на все типы уравнений с подробным решением и разбором типичных ошибок.</p>
+          <div class="tags"><span class="tag acc">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Решите квадратное уравнение: <span data-tex="2x^2 - 5x + 3 = 0"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Находим дискриминант: <span data-tex="D = 25 - 4 \cdot 2 \cdot 3 = 25 - 24 = 1 &gt; 0"></span></div>
+            <div class="step"><div class="stepn">2</div>Два корня: <span data-tex="x_{1,2} = \dfrac{5 \pm \sqrt{1}}{4}"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="x_1 = \dfrac{5+1}{4} = \dfrac{6}{4} = \dfrac{3}{2},\quad x_2 = \dfrac{5-1}{4} = \dfrac{4}{4} = 1"></span></div>
+            <div class="step"><div class="stepn">4</div>Проверка по теореме Виета: <span data-tex="x_1 + x_2 = \tfrac{3}{2}+1 = \tfrac{5}{2} = -\tfrac{b}{a}"></span> ✓</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x_1 = \dfrac{3}{2},\; x_2 = 1"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Решите: <span data-tex="|2x - 3| = x + 1"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>ОДЗ: правая часть ≥ 0, т.е. <span data-tex="x \geq -1"></span></div>
+            <div class="step"><div class="stepn">2</div>Случай 1: <span data-tex="2x - 3 = x + 1 \Rightarrow x = 4"></span>. Проверка: <span data-tex="4 \geq -1"></span> ✓</div>
+            <div class="step"><div class="stepn">3</div>Случай 2: <span data-tex="2x - 3 = -(x+1) \Rightarrow 3x = 2 \Rightarrow x = \tfrac{2}{3}"></span>. Проверка: <span data-tex="\tfrac{2}{3} \geq -1"></span> ✓</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x = 4,\; x = \dfrac{2}{3}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Решите: <span data-tex="\sqrt{x + 5} = x - 1"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>ОДЗ: <span data-tex="x + 5 \geq 0 \Rightarrow x \geq -5"></span>; правая часть <span data-tex="x - 1 \geq 0 \Rightarrow x \geq 1"></span>. Итого: <span data-tex="x \geq 1"></span></div>
+            <div class="step"><div class="stepn">2</div>Возводим в квадрат: <span data-tex="x + 5 = (x-1)^2 = x^2 - 2x + 1"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="x^2 - 3x - 4 = 0 \Rightarrow (x-4)(x+1) = 0 \Rightarrow x = 4 \text{ или } x = -1"></span></div>
+            <div class="step"><div class="stepn">4</div>Проверка по ОДЗ: <span data-tex="x = 4 \geq 1"></span> ✓; <span data-tex="x = -1 &lt; 1"></span> — посторонний корень, отбрасываем</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x = 4"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Решите систему: <span data-tex="\begin{cases} x + y = 5 \\ x^2 + y^2 = 13 \end{cases}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Из первого уравнения: <span data-tex="y = 5 - x"></span></div>
+            <div class="step"><div class="stepn">2</div>Подставляем: <span data-tex="x^2 + (5-x)^2 = 13 \Rightarrow x^2 + 25 - 10x + x^2 = 13"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="2x^2 - 10x + 12 = 0 \Rightarrow x^2 - 5x + 6 = 0 \Rightarrow (x-2)(x-3) = 0"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="x = 2 \Rightarrow y = 3"></span>; <span data-tex="x = 3 \Rightarrow y = 2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="(2;\,3)"></span> и <span data-tex="(3;\,2)"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION s_check: Чек-лист к ЦТ
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Ключевые формулы и алгоритмы раздела «Уравнения».</p>
+        </div>
+
+        <div class="summary">
+          <h4>Квадратные уравнения — знать наизусть</h4>
+          <ul>
+            <li>Дискриминант: <span data-tex="D = b^2 - 4ac"></span></li>
+            <li>Формула корней: <span data-tex="x_{1,2} = \dfrac{-b \pm \sqrt{D}}{2a}"></span></li>
+            <li>Теорема Виета: <span data-tex="x_1+x_2 = -\tfrac{b}{a}"></span>, <span data-tex="x_1 x_2 = \tfrac{c}{a}"></span></li>
+            <li>При D &lt; 0 — нет вещественных корней</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Рациональные уравнения</h4>
+          <ul>
+            <li>Найти ОДЗ до решения</li>
+            <li>Умножить на НОЗ, проверить посторонние корни</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Уравнения с модулями</h4>
+          <ul>
+            <li><span data-tex="|f(x)| = a \Leftrightarrow f(x) = \pm a"></span> (при a ≥ 0)</li>
+            <li>Метод разбора случаев: критические точки → промежутки</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Иррациональные уравнения</h4>
+          <ul>
+            <li>ОДЗ: подкоренное выражение ≥ 0</li>
+            <li>Условие: правая часть ≥ 0 при возведении в квадрат</li>
+            <li>Проверка обязательна!</li>
+          </ul>
+        </div>
+
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Забывать про ОДЗ в дробных уравнениях и принимать посторонние корни за ответ.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>При уравнении с модулем <span data-tex="|f(x)| = g(x)"></span> не проверять, что <span data-tex="g(x) \geq 0"></span>.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>При возведении иррационального уравнения в квадрат не проверять корни в исходном уравнении.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="02_vyrazheniya.html">← Выражения</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">04 Неравенства</div>
+            <div class="tp-desc">Линейные, квадратные, метод интервалов, с модулями</div>
+          </div>
+          <a class="tp-btn" href="04_neravenstva.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- Floating reference panel -->
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list"></div>
+</div>
+
+<!-- Search palette -->
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

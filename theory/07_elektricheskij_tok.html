@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Электрический ток — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t07">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🔌</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Электрический ток</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 07</span>
+      <h2>Электрический ток</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Основы</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">⚡</span>Сила тока</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">📊</span>Плотность тока</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">📐</span>Закон Ома</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">🔌</span>Сопротивление</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">🔋</span>ЭДС. Закон Ома для полной цепи</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Цепи</div>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">🔄</span>Соединения проводников</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">🛠</span>Сложные цепи</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Энергия</div>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">💡</span>Работа и мощность</button>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">🔥</span>Закон Джоуля-Ленца</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">📈</span>КПД и согласование</button>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">⚗</span>Электролиз. Закон Фарадея</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s13"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1: Сила тока ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Электрический ток. Сила тока</h1>
+          <p class="lead">Электрический ток — упорядоченное движение заряженных частиц.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Электрический ток</div>
+          <div class="text"><b>Электрический ток</b> — упорядоченное (направленное) движение заряженных частиц. За направление тока принимают направление движения положительных зарядов.</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Условия существования тока</div>
+          <div class="text">
+          <b>1.</b> Наличие свободных носителей заряда (электроны в металлах, ионы в растворах).<br>
+          <b>2.</b> Наличие электрического поля внутри проводника (источник напряжения).<br>
+          <b>3.</b> Замкнутая цепь.
+          </div>
+        </div>
+
+        <div class="fcard" id="f-I">
+          <div class="flabel">Сила тока (постоянного)</div>
+          <div class="formula" data-tex="I = \dfrac{q}{t}"></div>
+          <div class="fdesc">q — заряд, прошедший через сечение проводника за время t. Единица: <b>1 А = 1 Кл/с</b></div>
+        </div>
+
+      </section>
+
+      <!-- ════ S2: Плотность тока ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Плотность тока. Скорость носителей</h1>
+        </div>
+
+        <div class="fcard" id="f-j">
+          <div class="flabel">Плотность тока</div>
+          <div class="formula" data-tex="j = \dfrac{I}{S}"></div>
+          <div class="fdesc">S — площадь поперечного сечения проводника</div>
+        </div>
+
+        <div class="fcard" id="f-jvn">
+          <div class="flabel">Связь с микропараметрами</div>
+          <div class="formula" data-tex="j = q_0\,n\,v_{уп}"></div>
+          <div class="fdesc">q₀ — заряд носителя, n — концентрация, v<sub>уп</sub> — скорость упорядоченного движения (≪ скорости теплового движения)</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>В металлах скорость упорядоченного движения электронов очень мала (~ мм/с), но <b>сигнал</b> распространяется со скоростью света — это потому, что электрическое поле включает все электроны в проводе почти одновременно.</div>
+        </div>
+      </section>
+
+      <!-- ════ S3: Закон Ома ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Закон Ома для участка цепи</h1>
+          <p class="lead">Сила тока в участке цепи прямо пропорциональна напряжению и обратно пропорциональна сопротивлению.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="fcard" id="f-ohm">
+          <div class="flabel">Закон Ома для участка цепи</div>
+          <div class="formula" data-tex="I = \dfrac{U}{R}"></div>
+          <div class="fdesc">U = φ₁ − φ₂ — напряжение между концами проводника, R — его сопротивление</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Напряжение</div>
+          <div class="text"><b>Напряжение U</b> — разность потенциалов на концах участка. Единица: <b>1 В = 1 Дж/Кл</b>. Численно равно работе, совершаемой полем над зарядом 1 Кл при перемещении.</div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Сопротивление ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Сопротивление проводника</h1>
+        </div>
+
+        <div class="fcard" id="f-R">
+          <div class="flabel">Сопротивление проводника</div>
+          <div class="formula" data-tex="R = \rho\,\dfrac{l}{S}"></div>
+          <div class="fdesc">ρ — удельное сопротивление (Ом·м), l — длина, S — площадь поперечного сечения</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Зависимость от температуры</div>
+          <div class="formula" data-tex="\rho = \rho_0\,(1 + \alpha\,t)"></div>
+          <div class="fdesc">α — температурный коэффициент сопротивления (для металлов α &gt; 0)</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Материал</th><th>ρ, Ом·м</th></tr>
+            <tr><td>Серебро</td><td>1,6·10⁻⁸</td></tr>
+            <tr><td>Медь</td><td>1,7·10⁻⁸</td></tr>
+            <tr><td>Алюминий</td><td>2,8·10⁻⁸</td></tr>
+            <tr><td>Железо</td><td>10⁻⁷</td></tr>
+            <tr><td>Нихром</td><td>≈ 10⁻⁶</td></tr>
+            <tr><td>Графит</td><td>≈ 10⁻⁵</td></tr>
+          </table>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Для металлов R растёт с температурой (α &gt; 0). Для полупроводников и электролитов — наоборот, R уменьшается с ростом T.</div>
+        </div>
+      </section>
+
+      <!-- ════ S5: ЭДС. Полная цепь ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. ЭДС. Закон Ома для полной цепи</h1>
+          <p class="lead">ЭДС — характеристика источника тока, равная работе сторонних сил по перемещению единичного заряда.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">ЭДС (электродвижущая сила)</div>
+          <div class="text"><b>ЭДС ε</b> — отношение работы сторонних сил источника по перемещению заряда внутри источника к величине этого заряда.</div>
+        </div>
+
+        <div class="fcard" id="f-emf">
+          <div class="flabel">Определение ЭДС</div>
+          <div class="formula" data-tex="\varepsilon = \dfrac{A_{стор}}{q}"></div>
+          <div class="fdesc">Единица: <b>1 В</b>. ЭДС батарейки 1,5 В означает, что сторонние силы совершают работу 1,5 Дж при переносе 1 Кл</div>
+        </div>
+
+        <div class="fcard" id="f-ohm-full">
+          <div class="flabel">Закон Ома для полной цепи</div>
+          <div class="formula" data-tex="I = \dfrac{\varepsilon}{R + r}"></div>
+          <div class="fdesc">R — внешнее сопротивление (нагрузка), r — внутреннее сопротивление источника</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Напряжение на зажимах источника</div>
+          <div class="formula" data-tex="U = \varepsilon - I\,r"></div>
+          <div class="fdesc">При увеличении тока (короткое замыкание) напряжение на источнике падает</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Ток короткого замыкания</div>
+          <div class="formula" data-tex="I_{кз} = \dfrac{\varepsilon}{r}"></div>
+          <div class="fdesc">При R → 0. Может быть очень большим — отсюда опасность КЗ.</div>
+        </div>
+
+        <div class="fcard" id="f-ohm-emf">
+          <div class="flabel">Закон Ома для участка цепи с ЭДС</div>
+          <div class="formula" data-tex="I\,R = \varphi_1 - \varphi_2 + \varepsilon"></div>
+          <div class="fdesc">⭐ Используется при наличии ЭДС в неполной цепи. ε &gt; 0 если источник направляет ток по обходу 1→2</div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Соединения ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Соединения проводников</h1>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card accent">
+            <h4>Последовательное</h4>
+            <p>Сила тока одинакова во всех элементах:</p>
+            <p><span data-tex="I_1 = I_2 = \ldots = I"></span></p>
+            <p>Напряжения складываются:</p>
+            <p><span data-tex="U = U_1 + U_2 + \ldots"></span></p>
+            <p>Общее сопротивление:</p>
+            <p><span data-tex="R_{общ} = R_1 + R_2 + \ldots"></span></p>
+          </div>
+          <div class="card accent">
+            <h4>Параллельное</h4>
+            <p>Напряжение одинаково на всех элементах:</p>
+            <p><span data-tex="U_1 = U_2 = \ldots = U"></span></p>
+            <p>Силы тока складываются:</p>
+            <p><span data-tex="I = I_1 + I_2 + \ldots"></span></p>
+            <p>Обратные сопротивления складываются:</p>
+            <p><span data-tex="\dfrac{1}{R_{общ}} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \ldots"></span></p>
+          </div>
+        </div>
+
+        <h2 id="h-special">Частные случаи</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>N одинаковых R последовательно</h4>
+            <p><span data-tex="R_{общ} = N\,R"></span></p>
+          </div>
+          <div class="card">
+            <h4>N одинаковых R параллельно</h4>
+            <p><span data-tex="R_{общ} = \dfrac{R}{N}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Два R₁ и R₂ параллельно</h4>
+            <p><span data-tex="R_{общ} = \dfrac{R_1 R_2}{R_1 + R_2}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Сравнение с конденсаторами</h4>
+            <p>Резисторы и конденсаторы соединяются <b>наоборот</b>: где у резисторов сложение, у конденсаторов — обратное.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ S7: Сложные цепи ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Сложные цепи и приборы</h1>
+        </div>
+
+        <h2 id="h-meters">Амперметр и вольтметр</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>A Амперметр</h4>
+            <p>Включается <b>последовательно</b> с измеряемым элементом. Имеет <b>малое сопротивление</b> R<sub>A</sub> ≈ 0.</p>
+          </div>
+          <div class="card">
+            <h4>V Вольтметр</h4>
+            <p>Включается <b>параллельно</b> измеряемому элементу. Имеет <b>большое сопротивление</b> R<sub>V</sub> → ∞.</p>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Если включить амперметр параллельно — будет почти короткое замыкание (амперметр сгорит). Если вольтметр последовательно — он практически разорвёт цепь.</div>
+        </div>
+
+        <h2 id="h-rheostat">Реостат и потенциометр</h2>
+        <p><b>Реостат</b> — переменное сопротивление, включается последовательно (для регулировки тока).<br>
+        <b>Потенциометр</b> — переменный делитель напряжения (для регулировки U).</p>
+      </section>
+
+      <!-- ════ S8: Работа и мощность ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Работа и мощность тока</h1>
+        </div>
+
+        <div class="fcard" id="f-A">
+          <div class="flabel">Работа тока (для участка без ЭДС)</div>
+          <div class="formula" data-tex="A = U\,I\,t = I^2 R t = \dfrac{U^2}{R}\,t"></div>
+          <div class="fdesc">Единица: <b>1 Дж</b>. На счётчике электроэнергии — кВт·ч (1 кВт·ч = 3,6 МДж)</div>
+        </div>
+
+        <div class="fcard" id="f-N">
+          <div class="flabel">Мощность тока</div>
+          <div class="formula" data-tex="N = U\,I = I^2 R = \dfrac{U^2}{R}"></div>
+          <div class="fdesc">Единица: <b>1 Вт = 1 Дж/с = 1 В·А</b>. Три эквивалентные формы — выбирай ту, где известны нужные величины.</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Работа сторонних сил источника</div>
+          <div class="formula" data-tex="A_{стор} = \varepsilon\,I\,t"></div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Мощность источника</div>
+          <div class="formula" data-tex="N_{ист} = \varepsilon\,I"></div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>На лампочке пишут «220 В, 100 Вт» — это <b>номинальные</b> значения. Если включить такую лампу в сеть 220 В, через неё пойдёт ток I = N/U ≈ 0,45 А, а её сопротивление R = U²/N ≈ 484 Ом.</div>
+        </div>
+      </section>
+
+      <!-- ════ S9: Джоуль-Ленц ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Закон Джоуля–Ленца</h1>
+          <p class="lead">Количество теплоты, выделяющееся в проводнике, пропорционально квадрату силы тока, сопротивлению и времени.</p>
+        </div>
+
+        <div class="fcard" id="f-jl">
+          <div class="flabel">Закон Джоуля–Ленца</div>
+          <div class="formula" data-tex="Q = I^2 R t"></div>
+          <div class="fdesc">Это работа сил поля, превращённая в теплоту. На участке без ЭДС: Q = A.</div>
+        </div>
+
+        <p>Альтернативные формы:</p>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-formula" data-tex="Q = U I t"></div>
+            <div class="chip-desc">Через U и I</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-formula" data-tex="Q = \dfrac{U^2}{R}\,t"></div>
+            <div class="chip-desc">Через U и R</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Закон Джоуля–Ленца — основа всех нагревательных приборов: утюг, чайник, лампа накаливания, тёплый пол.</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: КПД ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. КПД источника тока</h1>
+        </div>
+
+        <div class="fcard" id="f-eta">
+          <div class="flabel">КПД источника</div>
+          <div class="formula" data-tex="\eta = \dfrac{N_{нагр}}{N_{ист}} = \dfrac{U}{\varepsilon} = \dfrac{R}{R + r}"></div>
+          <div class="fdesc">Чем больше внешнее сопротивление R по сравнению с внутренним r — тем выше КПД</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Условие максимальной мощности на нагрузке</div>
+          <div class="text">Максимальная мощность выделяется на внешнем сопротивлении при условии: <span data-tex="R = r"></span>. При этом КПД равен 50%.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Условие «максимальная мощность» (R = r) и условие «максимальный КПД» (R ≫ r) — <b>разные</b>! Это любимый вопрос ЦТ.</div>
+        </div>
+      </section>
+
+      <!-- ════ S11: Электролиз ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>11. Электролиз. Закон Фарадея</h1>
+          <p class="lead">При прохождении тока через электролит на электродах выделяется вещество. Масса вещества пропорциональна заряду.</p>
+        </div>
+
+        <div class="fcard" id="f-faraday">
+          <div class="flabel">Закон Фарадея</div>
+          <div class="formula" data-tex="m = k\,I\,t = k\,q"></div>
+          <div class="fdesc">k — электрохимический эквивалент вещества (зависит от вида ионов)</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Электрохимический эквивалент</div>
+          <div class="formula" data-tex="k = \dfrac{M}{Z\,e\,N_A} = \dfrac{M}{Z\,F}"></div>
+          <div class="fdesc">M — молярная масса, Z — валентность ионов, F = e·N<sub>A</sub> ≈ 96 500 Кл/моль — постоянная Фарадея</div>
+        </div>
+
+        <p>Применения: гальваностегия, рафинирование меди, получение алюминия, аккумуляторы.</p>
+      </section>
+
+      <!-- ════ S12: Разбор задач ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head"><h1>★ Разбор задач</h1></div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">К проводнику сопротивлением <span data-tex="20\text{ Ом}"></span> приложено напряжение <span data-tex="10\text{ В}"></span>. Найти силу тока.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="I = \dfrac{U}{R} = \dfrac{10}{20} = 0{,}5\text{ А}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="I = 0{,}5\text{ А}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Найти сопротивление медного провода длиной <span data-tex="100\text{ м}"></span> и сечением <span data-tex="2\text{ мм}^2"></span>. (<span data-tex="\rho_\text{Cu} = 1{,}7\cdot10^{-8}\text{ Ом·м}"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="S = 2\cdot10^{-6}\text{ м}^2"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="R = \dfrac{\rho l}{S} = \dfrac{1{,}7\cdot10^{-8}\cdot100}{2\cdot10^{-6}} = \dfrac{1{,}7\cdot10^{-6}}{2\cdot10^{-6}} = 0{,}85\text{ Ом}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="R \approx 0{,}85\text{ Ом}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">К источнику с ЭДС <span data-tex="12\text{ В}"></span> и внутренним сопротивлением <span data-tex="1\text{ Ом}"></span> подключили резистор <span data-tex="5\text{ Ом}"></span>. Найти ток в цепи и напряжение на резисторе.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="I = \dfrac{\varepsilon}{R+r} = \dfrac{12}{5+1} = 2\text{ А}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="U = IR = 2\cdot5 = 10\text{ В}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="I = 2\text{ А},\quad U = 10\text{ В}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Три резистора по <span data-tex="6\text{ Ом}"></span> соединены параллельно. Найти общее сопротивление.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="R_\text{общ} = \dfrac{R}{N} = \dfrac{6}{3} = 2\text{ Ом}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="R_\text{общ} = 2\text{ Ом}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Электрический чайник <span data-tex="2\text{ кВт}"></span> работает от сети <span data-tex="220\text{ В}"></span>. Найти ток через нагреватель и его сопротивление.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="I = \dfrac{N}{U} = \dfrac{2000}{220} \approx 9{,}1\text{ А}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="R = \dfrac{U^2}{N} = \dfrac{220^2}{2000} = \dfrac{48400}{2000} \approx 24{,}2\text{ Ом}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="I \approx 9{,}1\text{ А},\quad R \approx 24{,}2\text{ Ом}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Через нагреватель сопротивлением <span data-tex="50\text{ Ом}"></span> идёт ток <span data-tex="2\text{ А}"></span> в течение <span data-tex="10\text{ минут}"></span>. Сколько теплоты выделилось?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="t = 600\text{ с}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="Q = I^2 R t = 4\cdot50\cdot600 = 120000\text{ Дж} = 120\text{ кДж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="Q = 120\text{ кДж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">ЭДС источника <span data-tex="4{,}5\text{ В}"></span>, внутреннее сопротивление <span data-tex="0{,}5\text{ Ом}"></span>, нагрузка <span data-tex="4\text{ Ом}"></span>. Найти КПД.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\eta = \dfrac{R}{R+r} = \dfrac{4}{4{,}5} \approx 0{,}889 = 89\%"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\eta \approx 89\%"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S13: Чек-лист ════ -->
+      <section class="sec" id="s13">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+        <h2 id="h-must">Формулы наизусть</h2>
+        <ul>
+          <li>Сила тока: I = q/t</li>
+          <li>Закон Ома: I = U/R</li>
+          <li>Сопротивление: R = ρl/S</li>
+          <li>Закон Ома для полной цепи: <span data-tex="I = \varepsilon/(R+r)"></span></li>
+          <li>Напряжение на источнике: U = ε − Ir</li>
+          <li>Последовательно: R = R₁ + R₂; параллельно: 1/R = 1/R₁ + 1/R₂</li>
+          <li>Работа тока: A = UIt = I²Rt = U²t/R</li>
+          <li>Мощность тока: N = UI = I²R = U²/R</li>
+          <li>Джоуль–Ленц: Q = I²Rt</li>
+          <li>КПД: η = U/ε = R/(R+r)</li>
+          <li>Условие максимальной мощности: R = r</li>
+          <li>Закон Фарадея: m = kIt</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Забывать про внутреннее сопротивление r при подсчёте тока в цепи.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Складывать обратные сопротивления при последовательном соединении.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать «максимум мощности» (R = r) и «максимум КПД» (R ≫ r).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать, что вольтметр идеальный, когда у него конечное R<sub>V</sub>.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Подставлять в формулу мощности неподходящие переменные (например, U сети, когда нужно U на резисторе).</div></div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">08 Магнетизм</div>
+            <div class="tp-desc">Сила Лоренца, сила Ампера, индукция</div>
+          </div>
+          <a class="tp-btn" href="08_magnetizm.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы электрического тока</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-I"><div class="ri-name">Сила тока</div><div class="ri-formula">I = q/t</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-j"><div class="ri-name">Плотность тока</div><div class="ri-formula">j = I/S</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-jvn"><div class="ri-name">j через скорость носителей</div><div class="ri-formula">j = q₀·n·v</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-ohm"><div class="ri-name">Закон Ома (участок)</div><div class="ri-formula">I = U/R</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-R"><div class="ri-name">Сопротивление</div><div class="ri-formula">R = ρl/S</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-emf"><div class="ri-name">ЭДС</div><div class="ri-formula">ε = A_стор/q</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-ohm-full"><div class="ri-name">Закон Ома (полная цепь)</div><div class="ri-formula">I = ε/(R+r)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-ohm-full"><div class="ri-name">Напряжение на источнике</div><div class="ri-formula">U = ε − Ir</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-ohm-emf"><div class="ri-name">Закон Ома (участок с ЭДС)</div><div class="ri-formula">IR = φ₁ − φ₂ + ε</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="h-special"><div class="ri-name">Последовательно</div><div class="ri-formula">R = R₁ + R₂</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="h-special"><div class="ri-name">Параллельно</div><div class="ri-formula">1/R = 1/R₁ + 1/R₂</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-A"><div class="ri-name">Работа тока</div><div class="ri-formula">A = UIt</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-N"><div class="ri-name">Мощность тока</div><div class="ri-formula">N = UI = I²R = U²/R</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-jl"><div class="ri-name">Закон Джоуля–Ленца</div><div class="ri-formula">Q = I²Rt</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-eta"><div class="ri-name">КПД источника</div><div class="ri-formula">η = R/(R+r)</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-eta"><div class="ri-name">Условие макс. мощности</div><div class="ri-formula">R = r</div></div>
+    <div class="ref-item" data-section="s11" data-anchor="f-faraday"><div class="ri-name">Закон Фарадея</div><div class="ri-formula">m = kIt</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

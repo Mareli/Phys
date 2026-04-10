@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Текстовые задачи — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t11">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">📝</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Текстовые задачи</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 11</span>
+      <h2>Текстовые задачи</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">🚗</span>Задачи на движение</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">⚙️</span>Совместная работа</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">🧪</span>Смеси и сплавы</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">💰</span>Проценты и концентрации</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">📈</span>Прогрессии в тексте</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">📋</span>Алгоритм решения</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════════════════════════════════════════
+           SECTION 1: Задачи на движение
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Задачи на движение</h1>
+          <p class="lead">Основная формула, встречное и попутное движение, движение по течению — база задач ЦТ.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag amber">★ ЦТ</span>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-motion">
+          <div class="flabel">Основная формула движения</div>
+          <div class="formula" data-tex="s = v \cdot t, \qquad v = \dfrac{s}{t}, \qquad t = \dfrac{s}{v}"></div>
+          <div class="fdesc">s — путь (расстояние), v — скорость, t — время.</div>
+        </div>
+
+        <h2 id="h-meet">Встречное движение и погоня</h2>
+        <div class="fgrid">
+          <div class="fchip" id="fc-meet">
+            <div class="chip-name">Встреча (навстречу)</div>
+            <div class="chip-formula" data-tex="s_1 + s_2 = S, \quad (v_1 + v_2)\cdot t = S"></div>
+            <div class="chip-desc">Оба движутся навстречу, суммарное расстояние равно S</div>
+          </div>
+          <div class="fchip" id="fc-chase">
+            <div class="chip-name">Погоня (в одну сторону)</div>
+            <div class="chip-formula" data-tex="s_1 - s_2 = S_0, \quad (v_1 - v_2)\cdot t = S_0"></div>
+            <div class="chip-desc">Первый догоняет второго, S₀ — начальное отставание</div>
+          </div>
+          <div class="fchip" id="fc-current">
+            <div class="chip-name">По течению</div>
+            <div class="chip-formula" data-tex="v_\text{по теч} = v_\text{соб} + v_\text{теч}"></div>
+            <div class="chip-desc">Скорость лодки по течению = собственная + скорость течения</div>
+          </div>
+          <div class="fchip" id="fc-against">
+            <div class="chip-name">Против течения</div>
+            <div class="chip-formula" data-tex="v_\text{пр теч} = v_\text{соб} - v_\text{теч}"></div>
+            <div class="chip-desc">Скорость лодки против течения = собственная – скорость течения</div>
+          </div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Тип</th><th>Уравнение</th><th>Что ищем</th></tr>
+            <tr><td>Встреча</td><td><span data-tex="(v_1+v_2)\cdot t=S"></span></td><td>время встречи или расстояние</td></tr>
+            <tr><td>Погоня</td><td><span data-tex="(v_1-v_2)\cdot t=S_0"></span></td><td>время, за которое первый догонит второго</td></tr>
+            <tr><td>Один путь в два конца</td><td><span data-tex="\dfrac{s}{v_1}+\dfrac{s}{v_2}=t_\text{общ}"></span></td><td>общее время</td></tr>
+            <tr><td>Средняя скорость</td><td><span data-tex="v_\text{ср}=\dfrac{2v_1 v_2}{v_1+v_2}"></span></td><td>при равных расстояниях туда/обратно</td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Типичная ошибка:</b> Средняя скорость при равных путях (туда v₁, обратно v₂) — это <b>не</b> (v₁+v₂)/2, а гармоническое среднее: <span data-tex="v_\text{ср} = \dfrac{2v_1 v_2}{v_1 + v_2}"></span>.</div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">🚗</div>
+          <div class="kc-text">
+            <small>Золотое правило</small>
+            Для задач на движение всегда составляй <b>таблицу «скорость — время — путь»</b>. Заполни известное, вырази неизвестное через переменную x.
+          </div>
+        </div>
+
+        <!-- Diagram T1: Head-on motion -->
+        <div class="diagram">
+          <svg width="380" height="120" viewBox="0 0 380 120" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L6,4 L0,8 Z" fill="#0369a1"/>
+              </marker>
+              <marker id="arr-red" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto-start-reverse">
+                <path d="M8,0 L2,4 L8,8 Z" fill="#ef4444"/>
+              </marker>
+            </defs>
+            <!-- Object A (blue rect, left) -->
+            <rect x="10" y="40" width="52" height="28" rx="5" fill="#0369a1"/>
+            <text x="36" y="59" text-anchor="middle" font-size="13" fill="white" font-weight="700">A</text>
+            <!-- Object B (red rect, right) -->
+            <rect x="318" y="40" width="52" height="28" rx="5" fill="#ef4444"/>
+            <text x="344" y="59" text-anchor="middle" font-size="13" fill="white" font-weight="700">B</text>
+            <!-- Distance brace above -->
+            <line x1="62" y1="22" x2="318" y2="22" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="62" y1="22" x2="62" y2="30" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="318" y1="22" x2="318" y2="30" stroke="#94a3b8" stroke-width="1.5"/>
+            <text x="190" y="17" text-anchor="middle" font-size="13" fill="#475569" font-weight="600">D</text>
+            <!-- Arrow A → right -->
+            <line x1="65" y1="54" x2="140" y2="54" stroke="#0369a1" stroke-width="2" marker-end="url(#arr-blue)"/>
+            <text x="102" y="70" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="600">v₁ →</text>
+            <!-- Arrow B ← left -->
+            <line x1="315" y1="54" x2="240" y2="54" stroke="#ef4444" stroke-width="2" marker-end="url(#arr-red)"/>
+            <text x="278" y="70" text-anchor="middle" font-size="11" fill="#ef4444" font-weight="600">← v₂</text>
+            <!-- Meeting point dot -->
+            <circle cx="190" cy="54" r="6" fill="#475569"/>
+            <text x="190" y="46" text-anchor="middle" font-size="11" fill="#475569">?</text>
+            <!-- Formula -->
+            <text x="190" y="95" text-anchor="middle" font-size="12" fill="#475569">D = v₁·t + v₂·t = (v₁+v₂)·t</text>
+          </svg>
+        </div>
+
+        <!-- Diagram T2: Chase problem -->
+        <div class="diagram">
+          <svg width="380" height="100" viewBox="0 0 380 100" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="arr-chase" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L6,4 L0,8 Z" fill="#0369a1"/>
+              </marker>
+            </defs>
+            <!-- Object B (fast, left, chasing) -->
+            <rect x="10" y="28" width="64" height="28" rx="5" fill="#0369a1"/>
+            <text x="42" y="46" text-anchor="middle" font-size="11" fill="white" font-weight="700">быстрый</text>
+            <!-- Object A (slow, ahead) -->
+            <rect x="200" y="28" width="64" height="28" rx="5" fill="#7c3aed"/>
+            <text x="232" y="46" text-anchor="middle" font-size="11" fill="white" font-weight="700">медленный</text>
+            <!-- Arrows both right -->
+            <line x1="76" y1="42" x2="130" y2="42" stroke="#0369a1" stroke-width="2" marker-end="url(#arr-chase)"/>
+            <line x1="266" y1="42" x2="320" y2="42" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr-chase)"/>
+            <!-- Gap brace S₀ -->
+            <line x1="76" y1="20" x2="200" y2="20" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="76" y1="20" x2="76" y2="27" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="200" y1="20" x2="200" y2="27" stroke="#94a3b8" stroke-width="1.5"/>
+            <text x="138" y="15" text-anchor="middle" font-size="12" fill="#475569" font-weight="600">S₀ (фора)</text>
+            <!-- Formula -->
+            <text x="190" y="82" text-anchor="middle" font-size="12" fill="#475569">Нагоняет через t = S₀ / (v_B − v_A)</text>
+          </svg>
+        </div>
+
+        <!-- Diagram T6: Motion table template -->
+        <div class="diagram">
+          <svg width="380" height="110" viewBox="0 0 380 110" font-family="'Inter',sans-serif">
+            <!-- Table outer border -->
+            <rect x="10" y="8" width="340" height="88" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+            <!-- Header row background -->
+            <rect x="10" y="8" width="340" height="26" fill="#eff6ff"/>
+            <!-- Column dividers (vertical lines) -->
+            <!-- Col 1 width: 90, col 2: 80, col 3: 80, col 4: 90 -->
+            <line x1="100" y1="8" x2="100" y2="96" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="180" y1="8" x2="180" y2="96" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="260" y1="8" x2="260" y2="96" stroke="#94a3b8" stroke-width="1"/>
+            <!-- Row dividers (horizontal lines) -->
+            <line x1="10" y1="34" x2="350" y2="34" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="10" y1="62" x2="350" y2="62" stroke="#94a3b8" stroke-width="1"/>
+            <!-- Header text -->
+            <text x="55" y="25" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="700"></text>
+            <text x="140" y="25" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="700">Скорость v</text>
+            <text x="220" y="25" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="700">Время t</text>
+            <text x="305" y="25" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="700">Расстояние s</text>
+            <!-- Row 1 -->
+            <text x="55" y="52" text-anchor="middle" font-size="12" fill="#475569">Объект 1</text>
+            <text x="140" y="52" text-anchor="middle" font-size="13" fill="#475569">v₁</text>
+            <text x="220" y="52" text-anchor="middle" font-size="13" fill="#475569">t</text>
+            <text x="305" y="52" text-anchor="middle" font-size="13" fill="#475569">v₁t</text>
+            <!-- Row 2 -->
+            <text x="55" y="81" text-anchor="middle" font-size="12" fill="#475569">Объект 2</text>
+            <text x="140" y="81" text-anchor="middle" font-size="13" fill="#475569">v₂</text>
+            <text x="220" y="81" text-anchor="middle" font-size="13" fill="#475569">t</text>
+            <text x="305" y="81" text-anchor="middle" font-size="13" fill="#475569">v₂t</text>
+            <!-- s = v·t note -->
+            <text x="360" y="52" font-size="11" fill="#0369a1" font-weight="600">s = v·t</text>
+            <!-- Caption -->
+            <text x="180" y="108" text-anchor="middle" font-size="11" fill="#475569">Таблица для задачи на движение</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 2: Совместная работа
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Задачи на совместную работу</h1>
+          <p class="lead">Производительность, совместная работа, задачи с трубами.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-work">
+          <div class="flabel">Производительность и совместная работа</div>
+          <div class="formula" data-tex="\text{За 1 ч: } \dfrac{1}{T}, \qquad \text{Вместе: } \dfrac{1}{T_1} + \dfrac{1}{T_2} = \dfrac{1}{T_\text{совм}}"></div>
+          <div class="fdesc"><span data-tex="T_1,\,T_2"></span> — время каждого в одиночку, <span data-tex="T_\text{совм}"></span> — время совместной работы.</div>
+        </div>
+
+        <h2 id="h-work-formula">Основная формула работы</h2>
+        <div class="def acc">
+          <div class="label">Принцип</div>
+          <div class="text">Если первый выполняет работу за <span data-tex="T_1"></span> часов, то за 1 час он делает <span data-tex="\tfrac{1}{T_1}"></span> всей работы. За t часов совместной работы сделано:<br>
+          <span data-tex="\dfrac{t}{T_1} + \dfrac{t}{T_2} = 1"></span> (вся работа)</div>
+        </div>
+
+        <div class="fcard" id="f-work-time">
+          <div class="flabel">Время совместной работы двух</div>
+          <div class="formula" data-tex="T_\text{совм} = \dfrac{T_1 \cdot T_2}{T_1 + T_2}"></div>
+          <div class="fdesc">Частный случай: два исполнителя работают совместно от начала до конца.</div>
+        </div>
+
+        <h2 id="h-pipes">Задачи с трубами</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Две трубы наполняют</h4>
+            <p>Труба 1 наполняет за <span data-tex="T_1"></span>, труба 2 — за <span data-tex="T_2"></span>. Вместе:</p>
+            <p><span data-tex="T = \dfrac{T_1 T_2}{T_1 + T_2}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Одна наполняет, другая сливает</h4>
+            <p>Наполнение — <span data-tex="T_1"></span>, слив — <span data-tex="T_2"></span>. Итоговое время наполнения:</p>
+            <p><span data-tex="T = \dfrac{T_1 T_2}{T_2 - T_1}"></span> (при <span data-tex="T_1 &lt; T_2"></span>)</p>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>В задачах с трубами «слив» даёт <b>отрицательную</b> производительность: 1/T₁ − 1/T₂. Если T₂ < T₁, бак никогда не наполнится!</div>
+        </div>
+
+        <!-- Diagram T3: Work problem diagram -->
+        <div class="diagram">
+          <svg width="360" height="130" viewBox="0 0 360 130" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="arr-work" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L6,4 L0,8 Z" fill="#0369a1"/>
+              </marker>
+            </defs>
+            <!-- Worker boxes (left side) -->
+            <rect x="10" y="10" width="90" height="28" rx="6" fill="#eff6ff" stroke="#0369a1" stroke-width="1.5"/>
+            <text x="55" y="29" text-anchor="middle" font-size="12" fill="#0369a1" font-weight="600">Исполнитель 1</text>
+            <rect x="10" y="48" width="90" height="28" rx="6" fill="#eff6ff" stroke="#0369a1" stroke-width="1.5"/>
+            <text x="55" y="67" text-anchor="middle" font-size="12" fill="#0369a1" font-weight="600">Исполнитель 2</text>
+            <rect x="10" y="86" width="90" height="28" rx="6" fill="#eff6ff" stroke="#0369a1" stroke-width="1.5"/>
+            <text x="55" y="105" text-anchor="middle" font-size="12" fill="#0369a1" font-weight="600">Исполнитель 3</text>
+            <!-- Arrows with labels -->
+            <line x1="102" y1="24" x2="228" y2="58" stroke="#0369a1" stroke-width="1.5" marker-end="url(#arr-work)"/>
+            <text x="148" y="32" font-size="10" fill="#0369a1" font-weight="600">1/t₁ за 1 ч</text>
+            <line x1="102" y1="62" x2="228" y2="65" stroke="#0369a1" stroke-width="1.5" marker-end="url(#arr-work)"/>
+            <text x="148" y="58" font-size="10" fill="#0369a1" font-weight="600">1/t₂ за 1 ч</text>
+            <line x1="102" y1="100" x2="228" y2="72" stroke="#0369a1" stroke-width="1.5" marker-end="url(#arr-work)"/>
+            <text x="148" y="100" font-size="10" fill="#0369a1" font-weight="600">1/t₃ за 1 ч</text>
+            <!-- Result box -->
+            <rect x="230" y="44" width="110" height="42" rx="8" fill="#0369a1"/>
+            <text x="285" y="62" text-anchor="middle" font-size="13" fill="white" font-weight="700">РЕЗУЛЬТАТ</text>
+            <text x="285" y="79" text-anchor="middle" font-size="11" fill="#bfdbfe">1 работа</text>
+            <!-- Formula below -->
+            <text x="180" y="122" text-anchor="middle" font-size="11" fill="#475569">Совместно за T: 1/t₁ + 1/t₂ + … = 1/T</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 3: Смеси и сплавы
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Задачи на смеси и сплавы</h1>
+          <p class="lead">Уравнение смешивания, метод пропорции, правило «весов».</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="fcard" id="f-mixture">
+          <div class="flabel">Уравнение смешивания</div>
+          <div class="formula" data-tex="c_1 m_1 + c_2 m_2 = c \cdot (m_1 + m_2)"></div>
+          <div class="fdesc"><span data-tex="c_1,\,c_2"></span> — концентрации (доли) компонента в каждой части; <span data-tex="m_1,\,m_2"></span> — массы частей; c — концентрация в смеси.</div>
+        </div>
+
+        <h2 id="h-mix-method">Методы решения</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Метод уравнения</h4>
+            <p>Обозначь неизвестную массу за x. Составь уравнение по закону сохранения вещества.</p>
+            <p>Пример: x кг раствора концентрации <span data-tex="c_1"></span> смешали с y кг концентрации <span data-tex="c_2"></span> → конечная концентрация c.</p>
+          </div>
+          <div class="card">
+            <h4>Правило «весов» (метод крест)</h4>
+            <p>Если нужно смешать два раствора с концентрациями <span data-tex="c_1"></span> и <span data-tex="c_2"></span>, чтобы получить c:</p>
+            <p><span data-tex="\dfrac{m_1}{m_2} = \dfrac{c_2 - c}{c - c_1}"></span></p>
+          </div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>ЦТ-подсказка:</b> В задачах на сплавы всегда сохраняется <b>масса каждого металла</b>. Процент × масса = масса металла. Запиши это для каждого компонента.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Действие</th><th>Масса раствора</th><th>Масса вещества</th></tr>
+            <tr><td>Исходный раствор 1</td><td><span data-tex="m_1"></span></td><td><span data-tex="c_1\cdot m_1"></span></td></tr>
+            <tr><td>Исходный раствор 2</td><td><span data-tex="m_2"></span></td><td><span data-tex="c_2\cdot m_2"></span></td></tr>
+            <tr><td>Смесь</td><td><span data-tex="m_1+m_2"></span></td><td><span data-tex="c\cdot(m_1+m_2)"></span></td></tr>
+          </table>
+        </div>
+
+        <!-- Diagram T4: Mixture diagram -->
+        <div class="diagram">
+          <svg width="380" height="150" viewBox="0 0 380 150" font-family="'Inter',sans-serif">
+            <!-- Beaker 1 (left) -->
+            <rect x="16" y="30" width="72" height="80" rx="4" fill="none" stroke="#0369a1" stroke-width="2"/>
+            <!-- Liquid fill 1 (c1=30%) -->
+            <rect x="17" y="78" width="70" height="31" rx="0" fill="#bfdbfe"/>
+            <text x="52" y="95" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="600">30%</text>
+            <!-- Label top -->
+            <text x="52" y="24" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="700">V₁ л, c₁%</text>
+            <!-- Bottom label -->
+            <text x="52" y="122" text-anchor="middle" font-size="10" fill="#475569">V₁ = 3</text>
+            <!-- Plus sign -->
+            <text x="108" y="75" text-anchor="middle" font-size="26" fill="#475569" font-weight="300">+</text>
+            <!-- Beaker 2 (middle) -->
+            <rect x="130" y="30" width="72" height="80" rx="4" fill="none" stroke="#0369a1" stroke-width="2"/>
+            <!-- Liquid fill 2 (c2=70%) higher level -->
+            <rect x="131" y="54" width="70" height="55" rx="0" fill="#93c5fd"/>
+            <text x="166" y="86" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="600">70%</text>
+            <text x="166" y="24" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="700">V₂ л, c₂%</text>
+            <text x="166" y="122" text-anchor="middle" font-size="10" fill="#475569">V₂ = 1</text>
+            <!-- Equals sign -->
+            <text x="224" y="75" text-anchor="middle" font-size="26" fill="#475569" font-weight="300">=</text>
+            <!-- Beaker result (right) -->
+            <rect x="244" y="30" width="100" height="80" rx="4" fill="none" stroke="#0369a1" stroke-width="2.5"/>
+            <!-- Liquid fill result (c=40%) -->
+            <rect x="245" y="72" width="98" height="37" rx="0" fill="#dbeafe"/>
+            <text x="294" y="95" text-anchor="middle" font-size="12" fill="#0369a1" font-weight="700">c%</text>
+            <text x="294" y="24" text-anchor="middle" font-size="11" fill="#0369a1" font-weight="700">V₁+V₂ л, c%</text>
+            <text x="294" y="122" text-anchor="middle" font-size="10" fill="#475569">V₁+V₂ = 4</text>
+            <!-- Formula below -->
+            <text x="190" y="142" text-anchor="middle" font-size="11" fill="#475569">c = (V₁c₁ + V₂c₂) / (V₁+V₂)</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 4: Проценты и концентрации
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Задачи на проценты и концентрации</h1>
+          <p class="lead">Простые и сложные проценты, кредиты, вклады, рост/убыль.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-simple-interest">
+          <div class="flabel">Простые проценты</div>
+          <div class="formula" data-tex="S = P\left(1 + \dfrac{r \cdot n}{100}\right)"></div>
+          <div class="fdesc">P — начальная сумма, r — годовая ставка (%), n — число лет.</div>
+        </div>
+
+        <div class="fcard" id="f-compound-interest">
+          <div class="flabel">Сложные проценты (начисление 1 раз в год)</div>
+          <div class="formula" data-tex="S = P\left(1 + \dfrac{r}{100}\right)^n"></div>
+          <div class="fdesc">P — начальная сумма, r — годовая ставка (%), n — число лет. Классика банковских вкладов.</div>
+        </div>
+
+        <div class="fcard" id="f-compound-k">
+          <div class="flabel">Сложные проценты (k раз в год)</div>
+          <div class="formula" data-tex="S = P\left(1 + \dfrac{r}{100k}\right)^{kn}"></div>
+          <div class="fdesc">k — число начислений в год (например, k=12 — ежемесячно).</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Тип</th><th>Формула</th><th>Характеристика</th></tr>
+            <tr><td>Простые %</td><td><span data-tex="S = P(1 + rn/100)"></span></td><td>Проценты начисляются только на начальную сумму</td></tr>
+            <tr><td>Сложные % (1/год)</td><td><span data-tex="S = P(1 + r/100)^n"></span></td><td>Проценты начисляются на накопленную сумму</td></tr>
+            <tr><td>Рост на p%</td><td>умножить на (1 + p/100)</td><td>Новое = Старое × (100+p)/100</td></tr>
+            <tr><td>Скидка на p%</td><td>умножить на (1 − p/100)</td><td>Новое = Старое × (100−p)/100</td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Частая ошибка:</b> «Цена выросла на 20%, потом упала на 20%» — это НЕ то же самое, что «цена не изменилась». Итог: 1,2 × 0,8 = 0,96, то есть цена <b>снизилась на 4%</b>!</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 5: Прогрессии в тексте
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Задачи на прогрессии в тексте</h1>
+          <p class="lead">Вкладные схемы как геометрическая прогрессия, ежегодный рост и убыль.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-gp-growth">
+          <div class="flabel">Ежегодный рост (геометрическая прогрессия)</div>
+          <div class="formula" data-tex="a_n = a_1 \cdot q^{n-1}, \qquad q = 1 + \dfrac{p}{100}"></div>
+          <div class="fdesc"><span data-tex="a_1"></span> — начальное значение, p — процент роста в год, n — номер года. q — знаменатель прогрессии.</div>
+        </div>
+
+        <div class="fcard" id="f-gp-decay">
+          <div class="flabel">Ежегодное уменьшение</div>
+          <div class="formula" data-tex="a_n = a_1 \cdot \left(1 - \dfrac{p}{100}\right)^{n-1}"></div>
+          <div class="fdesc">Амортизация, убыль населения, радиоактивный распад (в упрощённом виде).</div>
+        </div>
+
+        <div class="fcard" id="f-annuity">
+          <div class="flabel">Сумма банковского вклада с ежегодным пополнением</div>
+          <div class="formula" data-tex="S = a \cdot \dfrac{q^n - 1}{q - 1} \cdot q"></div>
+          <div class="fdesc">a — ежегодный взнос, q = 1 + r/100, n — число лет. Это сумма геометрической прогрессии × q.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>«Каждый год вырастает на p%» — это геометрическая прогрессия с q = (100+p)/100. «Каждый год убывает на p%» — геометрическая прогрессия с q = (100−p)/100.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Задача о населении</h4>
+            <p>Население 1 млн чел., ежегодный прирост 2%. Через n лет:</p>
+            <p><span data-tex="N = 10^6 \cdot 1{,}02^n"></span></p>
+          </div>
+          <div class="card">
+            <h4>Задача о вкладе</h4>
+            <p>Вложено P рублей под r% годовых. Через n лет:</p>
+            <p><span data-tex="S = P \cdot \left(1 + \dfrac{r}{100}\right)^n"></span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 6: Алгоритм решения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Универсальный алгоритм решения текстовых задач</h1>
+          <p class="lead">Пять шагов, которые помогут решить любую текстовую задачу на ЦТ.</p>
+          <div class="tags"><span class="tag acc">Метод</span><span class="tag green">Стратегия</span></div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">📋</div>
+          <div class="kc-text">
+            <small>Алгоритм решения</small>
+            5 шагов: Прочитать → Переменная → Таблица → Уравнение → Ответ + Проверка
+          </div>
+        </div>
+
+        <!-- Diagram T5: Algorithm flowchart -->
+        <div class="diagram">
+          <svg width="280" height="380" viewBox="0 0 280 380" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="arr-flow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="#475569"/>
+              </marker>
+            </defs>
+            <!-- Box 1: Прочитай условие (accent blue) -->
+            <rect x="30" y="10" width="220" height="55" rx="10" ry="10" fill="#0369a1"/>
+            <text x="140" y="35" text-anchor="middle" font-size="14" fill="white" font-weight="700">1. Прочитай</text>
+            <text x="140" y="54" text-anchor="middle" font-size="12" fill="#bfdbfe">условие задачи</text>
+            <!-- Arrow 1→2 -->
+            <line x1="140" y1="65" x2="140" y2="83" stroke="#475569" stroke-width="2" marker-end="url(#arr-flow)"/>
+            <!-- Box 2: Введи переменную x -->
+            <rect x="30" y="85" width="220" height="55" rx="10" ry="10" fill="#0ea5e9"/>
+            <text x="140" y="110" text-anchor="middle" font-size="14" fill="white" font-weight="700">2. Введи</text>
+            <text x="140" y="129" text-anchor="middle" font-size="12" fill="#e0f2fe">переменную x</text>
+            <!-- Arrow 2→3 -->
+            <line x1="140" y1="140" x2="140" y2="158" stroke="#475569" stroke-width="2" marker-end="url(#arr-flow)"/>
+            <!-- Box 3: Составь таблицу -->
+            <rect x="30" y="160" width="220" height="55" rx="10" ry="10" fill="#38bdf8"/>
+            <text x="140" y="185" text-anchor="middle" font-size="14" fill="white" font-weight="700">3. Составь</text>
+            <text x="140" y="204" text-anchor="middle" font-size="12" fill="#e0f2fe">таблицу / схему</text>
+            <!-- Arrow 3→4 -->
+            <line x1="140" y1="215" x2="140" y2="233" stroke="#475569" stroke-width="2" marker-end="url(#arr-flow)"/>
+            <!-- Box 4: Реши уравнение -->
+            <rect x="30" y="235" width="220" height="55" rx="10" ry="10" fill="#7dd3fc"/>
+            <text x="140" y="260" text-anchor="middle" font-size="14" fill="#0c4a6e" font-weight="700">4. Реши</text>
+            <text x="140" y="279" text-anchor="middle" font-size="12" fill="#0c4a6e">уравнение</text>
+            <!-- Arrow 4→5 -->
+            <line x1="140" y1="290" x2="140" y2="308" stroke="#475569" stroke-width="2" marker-end="url(#arr-flow)"/>
+            <!-- Box 5: Проверь и ответ (green) -->
+            <rect x="30" y="310" width="220" height="55" rx="10" ry="10" fill="#059669"/>
+            <text x="140" y="335" text-anchor="middle" font-size="14" fill="white" font-weight="700">5. Проверь</text>
+            <text x="140" y="354" text-anchor="middle" font-size="12" fill="#a7f3d0">и запиши ответ</text>
+            <!-- Caption (fits within viewBox at y=378) -->
+            <text x="140" y="378" text-anchor="middle" font-size="10" fill="#94a3b8">Алгоритм решения текстовой задачи</text>
+          </svg>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Шаг 1. Внимательно прочитай</h4>
+            <p>Выдели <b>что дано</b> и <b>что найти</b>. Отметь ключевые слова: «навстречу», «совместно», «смесь», «под процент».</p>
+          </div>
+          <div class="card">
+            <h4>Шаг 2. Введи переменную</h4>
+            <p>Обозначь <b>одно неизвестное</b> через x. Остальные неизвестные выражай через x.</p>
+          </div>
+          <div class="card">
+            <h4>Шаг 3. Составь таблицу</h4>
+            <p>Для задач на движение: «скорость — время — путь». Для работы: «производительность — время — объём». Для смесей: «концентрация — масса — масса вещества».</p>
+          </div>
+          <div class="card">
+            <h4>Шаг 4. Составь уравнение</h4>
+            <p>Приравняй <b>одинаковые величины</b> из разных строк таблицы. Или используй закон сохранения (расстояния, вещества, суммы).</p>
+          </div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Шаг 5. Ответ и проверка</div>
+          <div class="text">
+            • Проверь, что ответ удовлетворяет <b>физическому смыслу</b> (скорость > 0, время > 0, концентрация от 0 до 100%).<br>
+            • Для уравнений степени ≥ 2 могут быть два корня — отбери подходящий.<br>
+            • Запиши ответ <b>с единицами измерения</b>.
+          </div>
+        </div>
+
+        <h2 id="h-tables">Таблицы для типовых задач</h2>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th colspan="4">Движение</th></tr>
+            <tr><th></th><th>Скорость</th><th>Время</th><th>Путь</th></tr>
+            <tr><td>Объект 1</td><td><span data-tex="v_1"></span></td><td><span data-tex="t_1"></span></td><td><span data-tex="s_1=v_1 t_1"></span></td></tr>
+            <tr><td>Объект 2</td><td><span data-tex="v_2"></span></td><td><span data-tex="t_2"></span></td><td><span data-tex="s_2=v_2 t_2"></span></td></tr>
+          </table>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th colspan="4">Смеси</th></tr>
+            <tr><th></th><th>Концентрация</th><th>Масса</th><th>Масса вещества</th></tr>
+            <tr><td>Часть 1</td><td><span data-tex="c_1"></span></td><td><span data-tex="m_1"></span></td><td><span data-tex="c_1 m_1"></span></td></tr>
+            <tr><td>Часть 2</td><td><span data-tex="c_2"></span></td><td><span data-tex="m_2"></span></td><td><span data-tex="c_2 m_2"></span></td></tr>
+            <tr><td>Смесь</td><td><span data-tex="c"></span></td><td><span data-tex="m_1+m_2"></span></td><td><span data-tex="c(m_1+m_2)"></span></td></tr>
+          </table>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th colspan="4">Совместная работа</th></tr>
+            <tr><th></th><th>Производительность (1/T)</th><th>Время (t)</th><th>Доля работы</th></tr>
+            <tr><td>Исполнитель 1</td><td><span data-tex="\tfrac{1}{T_1}"></span></td><td>t</td><td><span data-tex="\tfrac{t}{T_1}"></span></td></tr>
+            <tr><td>Исполнитель 2</td><td><span data-tex="\tfrac{1}{T_2}"></span></td><td>t</td><td><span data-tex="\tfrac{t}{T_2}"></span></td></tr>
+            <tr><td>Итого</td><td><span data-tex="\tfrac{1}{T_1}+\tfrac{1}{T_2}"></span></td><td>t</td><td>1 (вся работа)</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION: Разбор задач
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор типовых задач ЦТ</h1>
+          <p class="lead">Шаблонные задачи по всем типам с пошаговым решением.</p>
+          <div class="tags"><span class="tag acc">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 — Движение <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Два города разделяет <b>360 км</b>. Из первого города выехал автобус со скоростью <b>60 км/ч</b>, а через <b>1 час</b> навстречу ему выехал второй со скоростью <b>80 км/ч</b>. На каком расстоянии от первого города они встретятся?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>За 1 ч до выезда второго первый автобус проехал: <span data-tex="60 \cdot 1 = 60\text{ км}"></span>. Осталось: <span data-tex="360 - 60 = 300\text{ км}"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Теперь оба едут навстречу. Время до встречи: <span data-tex="t = \dfrac{300}{60 + 80} = \dfrac{300}{140} = \dfrac{15}{7} \approx 2{,}14\text{ ч}"></span></div>
+            <div class="step"><div class="stepn">3</div>Расстояние от первого города: <span data-tex="s = 60 \cdot\left(1 + \dfrac{15}{7}\right) = 60\cdot\dfrac{22}{7} = \dfrac{1320}{7} \approx 188{,}6\text{ км}"></span></div>
+          </div>
+          <div class="ans">Ответ: примерно <span data-tex="\dfrac{1320}{7} \approx 188{,}6\text{ км}"></span> от первого города</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 — Смеси <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Имеется два сплава: первый содержит <b>30% меди</b>, второй — <b>70% меди</b>. Сколько граммов каждого сплава нужно взять, чтобы получить <b>400 г</b> сплава с <b>40% меди</b>?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Пусть масса первого сплава x г, тогда второго — (400 − x) г.</div>
+            <div class="step"><div class="stepn">2</div>Уравнение по содержанию меди: <span data-tex="0{,}3x + 0{,}7(400 - x) = 0{,}4 \cdot 400"></span></div>
+            <div class="step"><div class="stepn">3</div>Раскрываем: <span data-tex="0{,}3x + 280 - 0{,}7x = 160 \Rightarrow -0{,}4x = -120 \Rightarrow x = 300\text{ г}"></span></div>
+            <div class="step"><div class="stepn">4</div>Второго сплава: <span data-tex="400 - 300 = 100\text{ г}"></span></div>
+            <div class="step"><div class="stepn">5</div><b>Проверка:</b> <span data-tex="0{,}3\cdot 300 + 0{,}7\cdot 100 = 90 + 70 = 160 = 0{,}4\cdot 400"></span> ✓</div>
+          </div>
+          <div class="ans">Ответ: первого сплава <b>300 г</b>, второго <b>100 г</b></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 — Проценты <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Вклад в банке: <b>50 000 руб.</b> под <b>8% годовых</b> (сложные проценты). Какая сумма будет на счёте через <b>3 года</b>? На сколько процентов вырастет вклад за это время?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Сумма через 3 года: <span data-tex="S = 50\,000 \cdot \left(1 + \dfrac{8}{100}\right)^3 = 50\,000 \cdot 1{,}08^3"></span></div>
+            <div class="step"><div class="stepn">2</div>Вычислим: <span data-tex="1{,}08^3 = 1{,}08 \cdot 1{,}08 \cdot 1{,}08 = 1{,}1664 \cdot 1{,}08 \approx 1{,}2597"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="S \approx 50\,000 \cdot 1{,}2597 = 62\,985\text{ руб.}"></span></div>
+            <div class="step"><div class="stepn">4</div>Прирост: <span data-tex="\dfrac{S - 50\,000}{50\,000}\cdot 100\% = (1{,}2597 - 1)\cdot 100\% \approx 25{,}97\%"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="S \approx 62\,985\text{ руб.}"></span>, прирост ≈ 25,97%</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 — Совместная работа <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Первый кран наполняет бак за <b>4 часа</b>, второй — за <b>6 часов</b>. Третий кран сливает полный бак за <b>12 часов</b>. За сколько часов наполнится бак, если открыты все три крана?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Производительность в час: первый <span data-tex="\frac{1}{4}"></span>, второй <span data-tex="\frac{1}{6}"></span>, третий (слив) <span data-tex="-\frac{1}{12}"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Суммарная производительность: <span data-tex="\dfrac{1}{4} + \dfrac{1}{6} - \dfrac{1}{12} = \dfrac{3}{12} + \dfrac{2}{12} - \dfrac{1}{12} = \dfrac{4}{12} = \dfrac{1}{3}"></span></div>
+            <div class="step"><div class="stepn">3</div>Время наполнения: <span data-tex="t = \dfrac{1}{\frac{1}{3}} = 3\text{ ч}"></span></div>
+          </div>
+          <div class="ans">Ответ: бак наполнится за <b>3 часа</b></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 — Движение по течению <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Катер прошёл вниз по течению <b>120 км</b> и вернулся обратно. Скорость течения <b>4 км/ч</b>. Полное время в пути <b>10 часов</b>. Найдите собственную скорость катера.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Пусть собственная скорость катера — v км/ч. Скорость по течению: (v+4), против — (v−4).</div>
+            <div class="step"><div class="stepn">2</div>Уравнение по времени: <span data-tex="\dfrac{120}{v+4} + \dfrac{120}{v-4} = 10"></span></div>
+            <div class="step"><div class="stepn">3</div>Умножим на (v+4)(v−4): <span data-tex="120(v-4) + 120(v+4) = 10(v^2 - 16)"></span></div>
+            <div class="step"><div class="stepn">4</div>Упрощаем: <span data-tex="240v = 10v^2 - 160 \Rightarrow 10v^2 - 240v - 160 = 0 \Rightarrow v^2 - 24v - 16 = 0"></span></div>
+            <div class="step"><div class="stepn">5</div>Дискриминант: <span data-tex="D = 576 + 64 = 640,\quad \sqrt{640} = 8\sqrt{10}"></span>; <span data-tex="v = \dfrac{24 + 8\sqrt{10}}{2} = 12 + 4\sqrt{10} \approx 24{,}65\text{ км/ч}"></span> (отрицательный корень отбрасываем)</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v = 12 + 4\sqrt{10} \approx 24{,}65\text{ км/ч}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION: Чек-лист
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Минимальный набор формул и навыков по текстовым задачам.</p>
+        </div>
+
+        <div class="summary">
+          <h4>Движение</h4>
+          <ul>
+            <li><span data-tex="s = v \cdot t"></span> — основная формула</li>
+            <li>Встреча: <span data-tex="(v_1+v_2)\cdot t = S"></span></li>
+            <li>Погоня: <span data-tex="(v_1-v_2)\cdot t = S_0"></span></li>
+            <li>По течению: <span data-tex="v_1 = v + u"></span>; против: <span data-tex="v_2 = v - u"></span></li>
+            <li>Средняя скорость (равные участки): <span data-tex="v_\text{ср} = 2v_1 v_2/(v_1+v_2)"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Работа и смеси</h4>
+          <ul>
+            <li>За 1 ч делает <span data-tex="1/T"></span> работы</li>
+            <li>Совместно: <span data-tex="1/T_1 + 1/T_2 = 1/T_\text{совм}"></span></li>
+            <li>Смешивание: <span data-tex="c_1 m_1 + c_2 m_2 = c(m_1+m_2)"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Проценты и прогрессии</h4>
+          <ul>
+            <li>Простые: <span data-tex="S = P(1 + rn/100)"></span></li>
+            <li>Сложные: <span data-tex="S = P(1 + r/100)^n"></span></li>
+            <li>Рост на p%: умножить на (1 + p/100)</li>
+            <li>Ежегодный рост — геометрическая прогрессия с q = (100+p)/100</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Алгоритм</h4>
+          <ul>
+            <li>Введи <b>одну</b> переменную x</li>
+            <li>Составь таблицу (движение/работа/смеси)</li>
+            <li>Запиши уравнение из условия равенства</li>
+            <li>Проверь физический смысл ответа</li>
+          </ul>
+        </div>
+
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Средняя скорость при равных расстояниях туда/обратно — <b>не</b> среднее арифметическое скоростей, а гармоническое: <span data-tex="v_\text{ср} = 2v_1 v_2/(v_1+v_2)"></span>.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Рост на 20% и затем снижение на 20% — <b>не</b> возврат к исходной цене. Результат: ×1,2 × ×0,8 = ×0,96 (снижение на 4%).</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>В задачах на смеси концентрация — это доля (0–1) или процент (0–100%). Не перемешивай единицы в одном уравнении.</div>
+        </div>
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет к ЦТ:</b> При решении текстовой задачи сначала нарисуй схему или составь таблицу — это помогает правильно написать уравнение и не запутаться в данных.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Раздел завершён</div>
+            <div class="tp-title">Все разделы</div>
+            <div class="tp-desc">Вернись на главную страницу для выбора другой темы</div>
+          </div>
+          <a class="tp-btn" href="../index.html">На главную →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-motion"><div class="ri-name">Основная формула движения</div><div class="ri-formula">s = v·t</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="fc-meet"><div class="ri-name">Встречное движение</div><div class="ri-formula">(v₁+v₂)·t = S</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="fc-chase"><div class="ri-name">Погоня</div><div class="ri-formula">(v₁−v₂)·t = S₀</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="fc-current"><div class="ri-name">По течению</div><div class="ri-formula">v_по теч = v_соб + v_теч</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="fc-against"><div class="ri-name">Против течения</div><div class="ri-formula">v_пр теч = v_соб − v_теч</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-work"><div class="ri-name">Производительность</div><div class="ri-formula">1/T₁ + 1/T₂ = 1/T_совм</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-work-time"><div class="ri-name">Время совместной работы</div><div class="ri-formula">T = T₁T₂/(T₁+T₂)</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-mixture"><div class="ri-name">Уравнение смешивания</div><div class="ri-formula">c₁m₁ + c₂m₂ = c·(m₁+m₂)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-simple-interest"><div class="ri-name">Простые проценты</div><div class="ri-formula">S = P(1 + rn/100)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-compound-interest"><div class="ri-name">Сложные проценты</div><div class="ri-formula">S = P(1 + r/100)ⁿ</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-gp-growth"><div class="ri-name">Ежегодный рост</div><div class="ri-formula">a_n = a₁·(1+p/100)^(n−1)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-annuity"><div class="ri-name">Вклад с ежегодным пополнением</div><div class="ri-formula">S = a·(qⁿ−1)/(q−1)·q</div></div>
+  </div>
+</div>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

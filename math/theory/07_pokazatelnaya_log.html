@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Показательная и логарифмы — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t07">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🔬</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Показательная и логарифмы</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 07</span>
+      <h2>Показательная и логарифмы</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">📐</span>Свойства степеней</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">📈</span>Показательная функция</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">⚖️</span>Показ. уравнения</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">🔑</span>Логарифм</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">📉</span>Логарифм. функция</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">⚙️</span>Лог. уравнения</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">📊</span>Лог. неравенства</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ══════════════════════════════════════
+           SECTION 1: Свойства степеней
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Свойства степеней</h1>
+          <p class="lead">Отрицательные и дробные показатели — обязательный фундамент для показательных уравнений.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">Повторение</span>
+          </div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-neg-exp">
+            <div class="chip-name">Отрицательный показатель</div>
+            <div class="chip-formula" data-tex="a^{-n} = \dfrac{1}{a^n}"></div>
+            <div class="chip-desc"><span data-tex="a \neq 0"></span></div>
+          </div>
+          <div class="fchip" id="fc-frac-exp">
+            <div class="chip-name">Дробный показатель</div>
+            <div class="chip-formula" data-tex="a^{m/n} = \sqrt[n]{a^m}"></div>
+            <div class="chip-desc"><span data-tex="a &gt; 0"></span>, <span data-tex="n \in \mathbb{N}"></span></div>
+          </div>
+          <div class="fchip" id="fc-mult-exp">
+            <div class="chip-name">Произведение степеней</div>
+            <div class="chip-formula" data-tex="a^m \cdot a^n = a^{m+n}"></div>
+            <div class="chip-desc">Основания одинаковые — показатели складываем</div>
+          </div>
+          <div class="fchip" id="fc-div-exp">
+            <div class="chip-name">Деление степеней</div>
+            <div class="chip-formula" data-tex="\dfrac{a^m}{a^n} = a^{m-n}"></div>
+            <div class="chip-desc">Показатели вычитаем</div>
+          </div>
+          <div class="fchip" id="fc-pow-pow">
+            <div class="chip-name">Степень степени</div>
+            <div class="chip-formula" data-tex="(a^m)^n = a^{mn}"></div>
+            <div class="chip-desc">Показатели перемножаем</div>
+          </div>
+          <div class="fchip" id="fc-prod-pow">
+            <div class="chip-name">Степень произведения</div>
+            <div class="chip-formula" data-tex="(ab)^n = a^n b^n"></div>
+            <div class="chip-desc">Показатель распределяется</div>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>При решении уравнений вида <span data-tex="a^{f(x)} = b^{g(x)}"></span> нужно свести к одному основанию. Без одинакового основания логарифмирование обязательно.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 2: Показательная функция
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Показательная функция</h1>
+          <p class="lead">Функция <span data-tex="y=a^x"></span>: область значений строго положительна, при <span data-tex="x=0"></span> всегда равна 1.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-exp-func">
+          <div class="flabel">Показательная функция</div>
+          <div class="formula" data-tex="y = a^x, \quad a &gt; 0,\; a \neq 1"></div>
+          <div class="fdesc">ОДЗ: <span data-tex="\mathbb{R}"></span>. Область значений: <span data-tex="(0;+\infty)"></span>. При <span data-tex="x=0"></span>: <span data-tex="y = 1"></span>.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>📈 a &gt; 1 — возрастание</h4>
+            <p>Чем больше x, тем больше y. При <span data-tex="x \to -\infty"></span>: <span data-tex="y \to 0"></span>. При <span data-tex="x \to +\infty"></span>: <span data-tex="y \to +\infty"></span>.</p>
+          </div>
+          <div class="card">
+            <h4>📉 0 &lt; a &lt; 1 — убывание</h4>
+            <p>Чем больше x, тем меньше y. При <span data-tex="x \to -\infty"></span>: <span data-tex="y \to +\infty"></span>. При <span data-tex="x \to +\infty"></span>: <span data-tex="y \to 0"></span>.</p>
+          </div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- axes -->
+            <line x1="40" y1="190" x2="340" y2="190" stroke="#475569" stroke-width="1.5"/>
+            <line x1="180" y1="10" x2="180" y2="195" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="340,190 332,186 332,194" fill="#475569"/>
+            <polygon points="180,10 176,18 184,18" fill="#475569"/>
+            <text x="344" y="194" font-size="11" fill="#64748b">x</text>
+            <text x="173" y="10" font-size="11" fill="#64748b">y</text>
+            <text x="183" y="204" font-size="11" fill="#94a3b8">O</text>
+            <!-- y=2^x curve (a>1) -->
+            <path d="M 60 183 Q 140 165, 180 155 Q 220 145, 260 95 Q 280 65, 300 30" stroke="#0e7490" stroke-width="2.5" fill="none"/>
+            <text x="302" y="28" font-size="12" fill="#0e7490" font-weight="600">a&gt;1</text>
+            <!-- y=(1/2)^x curve (0<a<1) -->
+            <path d="M 60 30 Q 100 65, 140 95 Q 180 145, 220 155 Q 260 165, 320 183" stroke="#b45309" stroke-width="2.5" fill="none"/>
+            <text x="52" y="28" font-size="12" fill="#b45309" font-weight="600">0&lt;a&lt;1</text>
+            <!-- y=1 mark -->
+            <line x1="175" y1="155" x2="185" y2="155" stroke="#94a3b8" stroke-width="1"/>
+            <text x="186" y="158" font-size="10" fill="#94a3b8">1</text>
+            <!-- x=0 intersection mark -->
+            <circle cx="180" cy="155" r="3" fill="#64748b"/>
+          </svg>
+          <div class="caption">При a &gt; 1 — возрастающая. При 0 &lt; a &lt; 1 — убывающая. Обе проходят через (0; 1).</div>
+        </div>
+
+        <!-- Diagram L1: Exponential function two detailed panels -->
+        <div class="diagrams-row">
+          <!-- Panel a>1 -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- axes -->
+              <line x1="10" y1="130" x2="190" y2="130" stroke="#475569" stroke-width="1.2"/>
+              <line x1="60" y1="10" x2="60" y2="135" stroke="#475569" stroke-width="1.2"/>
+              <polygon points="190,130 183,126 183,134" fill="#475569"/>
+              <polygon points="60,10 56,18 64,18" fill="#475569"/>
+              <text x="193" y="134" font-size="9" fill="#64748b">x</text>
+              <text x="53" y="10" font-size="9" fill="#64748b">y</text>
+              <text x="62" y="143" font-size="9" fill="#94a3b8">O</text>
+              <!-- asymptote y=0 (x-axis) dashed -->
+              <line x1="10" y1="130" x2="55" y2="130" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+              <!-- y=2^x: calc points. origin (60,130), scale: x_svg = 60 + 20*x, y_svg = 130 - 35*(2^x-1)/(2^1) approx -->
+              <!-- Let's use polyline with points: x from -3 to 4 -->
+              <!-- x=-3: 2^-3=0.125, x_svg=0, y_svg=130-0.125*40=124.9 -->
+              <!-- x=-2: 0.25, x_svg=20, y_svg=130-10=120 -->
+              <!-- x=-1: 0.5, x_svg=40, y_svg=130-20=110 -->
+              <!-- x=0: 1, x_svg=60, y_svg=130-40=90 -->
+              <!-- x=1: 2, x_svg=80, y_svg=130-80=50 -->
+              <!-- x=1.5: 2.83, x_svg=90, y_svg=130-113=17 -->
+              <!-- x=2: 4, x_svg=100, y_svg=130-160=-30 (clip) -->
+              <polyline points="0,125 20,120 40,110 60,90 80,50 90,17" stroke="#0e7490" stroke-width="2.5" fill="none"/>
+              <!-- (0,1) dot -->
+              <circle cx="60" cy="90" r="3.5" fill="#0e7490"/>
+              <text x="65" y="88" font-size="8.5" fill="#0e7490">(0;1)</text>
+              <!-- arrow hints -->
+              <text x="100" y="15" font-size="8" fill="#0e7490">x→∞</text>
+              <text x="100" y="25" font-size="8" fill="#0e7490">y→∞</text>
+              <text x="5" y="118" font-size="7.5" fill="#ef4444">y→0</text>
+              <!-- title -->
+              <text x="100" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#0e7490">a &gt; 1: возрастает</text>
+            </svg>
+          </div>
+          <!-- Panel 0<a<1 -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <line x1="10" y1="130" x2="190" y2="130" stroke="#475569" stroke-width="1.2"/>
+              <line x1="60" y1="10" x2="60" y2="135" stroke="#475569" stroke-width="1.2"/>
+              <polygon points="190,130 183,126 183,134" fill="#475569"/>
+              <polygon points="60,10 56,18 64,18" fill="#475569"/>
+              <text x="193" y="134" font-size="9" fill="#64748b">x</text>
+              <text x="53" y="10" font-size="9" fill="#64748b">y</text>
+              <text x="62" y="143" font-size="9" fill="#94a3b8">O</text>
+              <!-- asymptote -->
+              <line x1="65" y1="130" x2="190" y2="130" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+              <!-- y=(1/2)^x: x=-1.5: 2.83, x=0:1, x=1:0.5, x=2:0.25, x=3:0.125 -->
+              <!-- x_svg = 60+20*x, y_svg = 130-40*(0.5^x) -->
+              <!-- x=-3: 0.5^-3=8, x_svg=0, y_svg=130-320 < 0 clip -->
+              <!-- x=-1.5: 2.83, x_svg=30, y_svg=130-113=17 -->
+              <!-- x=-1: 2, x_svg=40, y_svg=130-80=50 -->
+              <!-- x=0: 1, x_svg=60, y_svg=130-40=90 -->
+              <!-- x=1: 0.5, x_svg=80, y_svg=130-20=110 -->
+              <!-- x=2: 0.25, x_svg=100, y_svg=130-10=120 -->
+              <!-- x=3: 0.125, x_svg=120, y_svg=130-5=125 -->
+              <!-- x=4: x_svg=140, y_svg=127.5 -->
+              <polyline points="30,17 40,50 60,90 80,110 100,120 120,125 140,127 160,128.5" stroke="#b45309" stroke-width="2.5" fill="none"/>
+              <!-- (0,1) dot -->
+              <circle cx="60" cy="90" r="3.5" fill="#b45309"/>
+              <text x="65" y="88" font-size="8.5" fill="#b45309">(0;1)</text>
+              <text x="5" y="18" font-size="8" fill="#b45309">y→∞</text>
+              <text x="155" y="118" font-size="7.5" fill="#ef4444">y→0</text>
+              <text x="100" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">0 &lt; a &lt; 1: убывает</text>
+            </svg>
+          </div>
+        </div>
+        <div class="diagram-label" style="text-align:center;margin-top:4px;font-size:12px;color:#475569;">Показательная функция y = aˣ</div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 3: Показательные уравнения
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Показательные уравнения и неравенства</h1>
+          <p class="lead">Главный метод — свести к одному основанию. Если невозможно — вводить замену переменной.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="fcard" id="f-exp-eq">
+          <div class="flabel">Метод одинакового основания</div>
+          <div class="formula" data-tex="a^{f(x)} = a^{g(x)} \Leftrightarrow f(x) = g(x)"></div>
+          <div class="fdesc">Работает при <span data-tex="a &gt; 0,\; a \neq 1"></span>.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Замена переменной:</b> Уравнение типа <span data-tex="4^x - 3 \cdot 2^x + 2 = 0"></span> решается заменой <span data-tex="t = 2^x &gt; 0"></span>, получается квадратное уравнение относительно t.</div>
+        </div>
+
+        <h2 id="h-exp-ineq">Показательные неравенства</h2>
+        <div class="grid-2">
+          <div class="def">
+            <div class="label">a &gt; 1: знак сохраняется</div>
+            <div class="text"><span data-tex="a^{f(x)} &gt; a^{g(x)} \Leftrightarrow f(x) &gt; g(x)"></span></div>
+          </div>
+          <div class="def acc">
+            <div class="label">0 &lt; a &lt; 1: знак меняется!</div>
+            <div class="text"><span data-tex="a^{f(x)} &gt; a^{g(x)} \Leftrightarrow f(x) &lt; g(x)"></span></div>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Знак неравенства при переходе к показателям <b>меняется</b> при основании <span data-tex="0 &lt; a &lt; 1"></span>. Это самая частая ошибка на ЦТ!</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 4: Логарифм
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Логарифм и его свойства</h1>
+          <p class="lead">Логарифм — показатель степени, в которую нужно возвести основание, чтобы получить данное число.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Наизусть</span></div>
+        </div>
+
+        <div class="fcard" id="f-log-def">
+          <div class="flabel">Определение логарифма</div>
+          <div class="formula" data-tex="\log_a b = c \;\Leftrightarrow\; a^c = b"></div>
+          <div class="fdesc"><span data-tex="a &gt; 0, a \neq 1, b &gt; 0"></span>. Пример: <span data-tex="\log_2 8 = 3"></span>, так как <span data-tex="2^3 = 8"></span>.</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-log-prod">
+            <div class="chip-name">Логарифм произведения</div>
+            <div class="chip-formula" data-tex="\log_a(bc) = \log_a b + \log_a c"></div>
+            <div class="chip-desc"><span data-tex="b &gt; 0, c &gt; 0"></span></div>
+          </div>
+          <div class="fchip" id="fc-log-quot">
+            <div class="chip-name">Логарифм частного</div>
+            <div class="chip-formula" data-tex="\log_a\!\dfrac{b}{c} = \log_a b - \log_a c"></div>
+            <div class="chip-desc"><span data-tex="b &gt; 0, c &gt; 0"></span></div>
+          </div>
+          <div class="fchip" id="fc-log-pow">
+            <div class="chip-name">Логарифм степени</div>
+            <div class="chip-formula" data-tex="\log_a b^n = n \log_a b"></div>
+            <div class="chip-desc">Показатель выносится вперёд</div>
+          </div>
+          <div class="fchip" id="fc-log-one">
+            <div class="chip-name">Логарифм единицы</div>
+            <div class="chip-formula" data-tex="\log_a 1 = 0"></div>
+            <div class="chip-desc">Так как <span data-tex="a^0 = 1"></span></div>
+          </div>
+          <div class="fchip" id="fc-log-base">
+            <div class="chip-name">Логарифм основания</div>
+            <div class="chip-formula" data-tex="\log_a a = 1"></div>
+            <div class="chip-desc">Так как <span data-tex="a^1 = a"></span></div>
+          </div>
+          <div class="fchip" id="fc-log-change">
+            <div class="chip-name">Формула перехода</div>
+            <div class="chip-formula" data-tex="\log_a b = \dfrac{\log_c b}{\log_c a}"></div>
+            <div class="chip-desc">Перевод к произвольному основанию c</div>
+          </div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Важные частные случаи</small>
+            <b>Десятичный логарифм:</b> <span data-tex="\lg x = \log_{10} x"></span>.<br>
+            <b>Натуральный логарифм:</b> <span data-tex="\ln x = \log_e x"></span>, где <span data-tex="e \approx 2{,}718"></span>.<br>
+            <b>Основное тождество:</b> <span data-tex="a^{\log_a b} = b"></span>.
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 5: Логарифмическая функция
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Логарифмическая функция</h1>
+          <p class="lead">Обратная к показательной. ОДЗ — только положительные числа.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-log-func">
+          <div class="flabel">Логарифмическая функция</div>
+          <div class="formula" data-tex="y = \log_a x, \quad a &gt; 0,\; a \neq 1"></div>
+          <div class="fdesc">ОДЗ: <span data-tex="x &gt; 0"></span>. Область значений: <span data-tex="\mathbb{R}"></span>. При <span data-tex="x = 1"></span>: <span data-tex="y = 0"></span>.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>📈 a &gt; 1 — возрастает</h4>
+            <p><span data-tex="\log_a x \to -\infty"></span> при <span data-tex="x \to 0^+"></span>.<br><span data-tex="\log_a x \to +\infty"></span> при <span data-tex="x \to +\infty"></span>.</p>
+          </div>
+          <div class="card">
+            <h4>📉 0 &lt; a &lt; 1 — убывает</h4>
+            <p><span data-tex="\log_a x \to +\infty"></span> при <span data-tex="x \to 0^+"></span>.<br><span data-tex="\log_a x \to -\infty"></span> при <span data-tex="x \to +\infty"></span>.</p>
+          </div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+            <line x1="30" y1="190" x2="330" y2="190" stroke="#475569" stroke-width="1.5"/>
+            <line x1="60" y1="10" x2="60" y2="195" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="330,190 322,186 322,194" fill="#475569"/>
+            <polygon points="60,10 56,18 64,18" fill="#475569"/>
+            <text x="334" y="194" font-size="11" fill="#64748b">x</text>
+            <text x="53" y="10" font-size="11" fill="#64748b">y</text>
+            <!-- y = log_2(x), a>1 -->
+            <path d="M 65 185 Q 80 155, 120 130 Q 160 110, 220 80 Q 270 60, 320 40" stroke="#0e7490" stroke-width="2.5" fill="none"/>
+            <text x="310" y="38" font-size="12" fill="#0e7490" font-weight="600">a&gt;1</text>
+            <!-- y = log_(0.5)(x), 0<a<1 -->
+            <path d="M 65 40 Q 80 60, 120 80 Q 160 100, 220 130 Q 270 155, 320 185" stroke="#b45309" stroke-width="2.5" fill="none"/>
+            <text x="310" y="183" font-size="12" fill="#b45309" font-weight="600">0&lt;a&lt;1</text>
+            <!-- x=1 mark (both pass through (1,0)) -->
+            <circle cx="120" cy="190" r="3" fill="#64748b"/>
+            <text x="116" y="205" font-size="10" fill="#94a3b8">1</text>
+            <!-- vertical asymptote hint -->
+            <line x1="60" y1="15" x2="60" y2="185" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="24" y="100" font-size="11" fill="#ef4444">x=0</text>
+          </svg>
+          <div class="caption">Обе функции проходят через (1; 0). Вертикальная асимптота: x = 0.</div>
+        </div>
+
+        <!-- Diagram L2: Log function two detailed panels -->
+        <div class="diagrams-row">
+          <!-- Panel log a>1 -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- axes: origin at (40, 120) -->
+              <line x1="10" y1="120" x2="190" y2="120" stroke="#475569" stroke-width="1.2"/>
+              <line x1="40" y1="10" x2="40" y2="125" stroke="#475569" stroke-width="1.2"/>
+              <polygon points="190,120 183,116 183,124" fill="#475569"/>
+              <polygon points="40,10 36,18 44,18" fill="#475569"/>
+              <text x="192" y="124" font-size="9" fill="#64748b">x</text>
+              <text x="33" y="10" font-size="9" fill="#64748b">y</text>
+              <!-- vertical asymptote x=0 dashed at x_svg=40 -->
+              <line x1="40" y1="15" x2="40" y2="118" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+              <text x="8" y="70" font-size="8" fill="#ef4444">x=0</text>
+              <!-- log_2(x): x=0.1→y=-3.32, x=0.5→y=-1, x=1→y=0, x=2→y=1, x=4→y=2, x=8→y=3 -->
+              <!-- scale: x_svg = 40 + 30*x_real, y_svg = 120 - 30*log2(x_real) -->
+              <!-- x=0.1: x_svg=43, y_svg=120+99.7=too high -->
+              <!-- let's do: x_svg=40+25*x_real, y_svg=120-25*log2(x_real) -->
+              <!-- x=0.2: x_svg=45, y_svg=120+57.9=too high; skip -->
+              <!-- better: use points starting near x=0.5 -->
+              <!-- x=0.5: x_svg=40+12.5=52.5, y_svg=120+25=145 (off screen) -->
+              <!-- Use log scale: x_svg = 40 + 40*ln(x_real)/ln(8)*120... complex. Let's just use a bezier -->
+              <!-- log_2 a>1: starts near asymptote high, passes (1,0) at (90,120), rises slowly to the right -->
+              <path d="M 43,8 Q 68,65 90,120 Q 140,138 190,115" stroke="#0e7490" stroke-width="2.5" fill="none"/>
+              <circle cx="90" cy="120" r="3.5" fill="#0e7490"/>
+              <text x="85" y="115" font-size="8" fill="#0e7490">(1;0)</text>
+              <text x="100" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#0e7490">a &gt; 1: возрастает</text>
+            </svg>
+          </div>
+          <!-- Panel log 0<a<1 -->
+          <div class="diagram sm">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <line x1="10" y1="120" x2="190" y2="120" stroke="#475569" stroke-width="1.2"/>
+              <line x1="40" y1="10" x2="40" y2="125" stroke="#475569" stroke-width="1.2"/>
+              <polygon points="190,120 183,116 183,124" fill="#475569"/>
+              <polygon points="40,10 36,18 44,18" fill="#475569"/>
+              <text x="192" y="124" font-size="9" fill="#64748b">x</text>
+              <text x="33" y="10" font-size="9" fill="#64748b">y</text>
+              <!-- vertical asymptote -->
+              <line x1="40" y1="15" x2="40" y2="118" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+              <text x="8" y="70" font-size="8" fill="#ef4444">x=0</text>
+              <!-- log_(0.5) decreasing: near x=0+ y→+∞ (top screen=low y_svg), passes (1,0) at y_svg=120, goes below axis -->
+              <path d="M 43,10 Q 68,65 90,120 Q 130,138 185,152" stroke="#b45309" stroke-width="2.5" fill="none"/>
+              <circle cx="90" cy="120" r="3.5" fill="#b45309"/>
+              <text x="85" y="115" font-size="8" fill="#b45309">(1;0)</text>
+              <text x="100" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">0 &lt; a &lt; 1: убывает</text>
+            </svg>
+          </div>
+        </div>
+        <div class="diagram-label" style="text-align:center;margin-top:4px;font-size:12px;color:#475569;">Логарифмическая функция y = log<sub>a</sub> x</div>
+
+        <!-- Diagram L3: Inverse relationship y=2^x and y=log2(x) -->
+        <div class="diagram">
+          <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- axes: origin at (50, 170) -->
+            <line x1="10" y1="170" x2="250" y2="170" stroke="#475569" stroke-width="1.5"/>
+            <line x1="50" y1="10" x2="50" y2="175" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="250,170 243,166 243,174" fill="#475569"/>
+            <polygon points="50,10 46,18 54,18" fill="#475569"/>
+            <text x="253" y="174" font-size="10" fill="#64748b">x</text>
+            <text x="43" y="10" font-size="10" fill="#64748b">y</text>
+            <text x="53" y="183" font-size="10" fill="#94a3b8">O</text>
+            <!-- y = x diagonal dashed -->
+            <line x1="50" y1="170" x2="230" y2="-10" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="205" y="25" font-size="10" fill="#94a3b8">y = x</text>
+            <!-- y = 2^x curve (teal). Scale: 1 unit = 40px -->
+            <!-- origin at (50,170). x_svg=50+40*x_real, y_svg=170-40*y_real -->
+            <!-- x=-1: y=0.5, x_svg=10, y_svg=170-20=150 -->
+            <!-- x=-0.5: y=0.707, x_svg=30, y_svg=170-28.3=141.7 -->
+            <!-- x=0: y=1, x_svg=50, y_svg=170-40=130 -->
+            <!-- x=0.5: y=1.41, x_svg=70, y_svg=170-56.6=113.4 -->
+            <!-- x=1: y=2, x_svg=90, y_svg=170-80=90 -->
+            <!-- x=1.5: y=2.83, x_svg=110, y_svg=170-113=57 -->
+            <!-- x=2: y=4, x_svg=130, y_svg=170-160=10 -->
+            <polyline points="10,150 30,142 50,130 70,113 90,90 110,57 125,30" stroke="#0e7490" stroke-width="2.5" fill="none"/>
+            <text x="125" y="25" font-size="10" font-weight="700" fill="#0e7490">y = 2ˣ</text>
+            <!-- y = log2(x) curve (amber). Reflection of 2^x about y=x. -->
+            <!-- Points: (0.5,-1)→(10,210-off), (0.707,-0.5)→(28,190), (1,0)→(90,170), (2,1)→(130,130), (4,2)→(210,90), etc -->
+            <!-- x_svg=50+40*x_real, y_svg=170-40*log2(x_real) -->
+            <!-- x=0.5: y=-1, x_svg=70, y_svg=170+40=210 (off) -->
+            <!-- x=0.7: y=-0.515, x_svg=78, y_svg=170+20.6=190.6 (off) -->
+            <!-- x=1: y=0, x_svg=90, y_svg=170 -->
+            <!-- x=1.41: y=0.5, x_svg=106.5, y_svg=170-20=150 -->
+            <!-- x=2: y=1, x_svg=130, y_svg=170-40=130 -->
+            <!-- x=2.83: y=1.5, x_svg=163, y_svg=170-60=110 -->
+            <!-- x=4: y=2, x_svg=210, y_svg=170-80=90 -->
+            <!-- x=5.66: y=2.5, x_svg=276 (off) -->
+            <polyline points="90,170 107,150 130,130 163,110 210,90" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+            <text x="212" y="88" font-size="10" font-weight="700" fill="#b45309">y = log₂x</text>
+            <!-- Key symmetric points -->
+            <!-- (0,1) on 2^x: x_svg=50, y_svg=130 -->
+            <circle cx="50" cy="130" r="3.5" fill="#0e7490"/>
+            <text x="32" y="128" font-size="8" fill="#0e7490">(0;1)</text>
+            <!-- (1,0) on log2x: x_svg=90, y_svg=170 -->
+            <circle cx="90" cy="170" r="3.5" fill="#f59e0b"/>
+            <text x="88" y="183" font-size="8" fill="#b45309">(1;0)</text>
+            <!-- (1,2) on 2^x ↔ (2,1) on log2x -->
+            <circle cx="90" cy="90" r="3" fill="#0e7490"/>
+            <text x="72" y="88" font-size="8" fill="#0e7490">(1;2)</text>
+            <circle cx="130" cy="130" r="3" fill="#f59e0b"/>
+            <text x="132" y="128" font-size="8" fill="#b45309">(2;1)</text>
+            <!-- symmetry arrows hint -->
+            <line x1="90" y1="90" x2="130" y2="130" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,2"/>
+          </svg>
+          <div class="caption">Показательная и логарифмическая функции взаимно обратны — симметричны относительно прямой y = x.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 6: Логарифмические уравнения
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Логарифмические уравнения</h1>
+          <p class="lead">Три метода: сведение к одному основанию, потенцирование, замена переменной.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="fcard" id="f-log-eq">
+          <div class="flabel">Основной метод</div>
+          <div class="formula" data-tex="\log_a f(x) = \log_a g(x) \Leftrightarrow f(x) = g(x)"></div>
+          <div class="fdesc">При условии <span data-tex="f(x) &gt; 0"></span> и <span data-tex="g(x) &gt; 0"></span> (ОДЗ!).</div>
+        </div>
+
+        <div class="fcard" id="f-log-pot">
+          <div class="flabel">Потенцирование</div>
+          <div class="formula" data-tex="\log_a f(x) = c \Leftrightarrow f(x) = a^c"></div>
+          <div class="fdesc">ОДЗ: <span data-tex="f(x) &gt; 0"></span>.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>ОДЗ обязательна!</b> После решения всегда подставь корни обратно в ОДЗ. Например, для <span data-tex="\log_2(x-1) + \log_2(x+1) = 3"></span> нужно <span data-tex="x &gt; 1"></span>.</div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">🔄</div>
+          <div class="kc-text">
+            <small>Замена переменной</small>
+            Уравнение <span data-tex="(\log_2 x)^2 - 5\log_2 x + 6 = 0"></span> решается заменой <span data-tex="t = \log_2 x"></span>, получается <span data-tex="t^2 - 5t + 6 = 0"></span>, затем не забыть вернуться к x и проверить ОДЗ.
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 7: Логарифмические неравенства
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Логарифмические неравенства</h1>
+          <p class="lead">Ключевое отличие: при 0 &lt; a &lt; 1 знак неравенства меняется.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Частая ошибка!</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="fcard" id="f-log-ineq-gt1">
+            <div class="flabel">a &gt; 1: знак сохраняется</div>
+            <div class="formula" data-tex="\log_a f(x) &gt; \log_a g(x) \Leftrightarrow f(x) &gt; g(x)"></div>
+            <div class="fdesc">ОДЗ: <span data-tex="f(x) &gt; 0"></span>, <span data-tex="g(x) &gt; 0"></span>.</div>
+          </div>
+          <div class="fcard" id="f-log-ineq-lt1">
+            <div class="flabel">0 &lt; a &lt; 1: знак меняется!</div>
+            <div class="formula" data-tex="\log_a f(x) &gt; \log_a g(x) \Leftrightarrow f(x) &lt; g(x)"></div>
+            <div class="fdesc">ОДЗ: <span data-tex="f(x) &gt; 0"></span>, <span data-tex="g(x) &gt; 0"></span>.</div>
+          </div>
+        </div>
+
+        <div class="summary">
+          <h4>Алгоритм решения логарифмического неравенства</h4>
+          <ul>
+            <li>Записать ОДЗ (аргументы строго положительны)</li>
+            <li>Определить основание: a &gt; 1 или 0 &lt; a &lt; 1</li>
+            <li>Перейти к неравенству без логарифмов (знак меняется при 0 &lt; a &lt; 1)</li>
+            <li>Решить полученное неравенство</li>
+            <li>Пересечь результат с ОДЗ</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_tasks: Разбор задач
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор задач</h1>
+          <p class="lead">Типовые задачи ЦТ: показательное уравнение с заменой, логарифмическое уравнение с ОДЗ.</p>
+          <div class="tags"><span class="tag green">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Решите уравнение <span data-tex="3^{2x-1} = 27"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Приведём к одному основанию: <span data-tex="27 = 3^3"></span>.</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="3^{2x-1} = 3^3 \Rightarrow 2x - 1 = 3 \Rightarrow x = 2"></span>.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x = 2"></span>.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Решите уравнение <span data-tex="4^x - 5 \cdot 2^x + 4 = 0"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Замена: <span data-tex="t = 2^x &gt; 0"></span>. Тогда <span data-tex="4^x = t^2"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Уравнение: <span data-tex="t^2 - 5t + 4 = 0 \Rightarrow (t-1)(t-4) = 0"></span>.</div>
+            <div class="step"><div class="stepn">3</div><span data-tex="t = 1 \Rightarrow 2^x = 1 \Rightarrow x = 0"></span>; <span data-tex="t = 4 \Rightarrow 2^x = 4 \Rightarrow x = 2"></span>.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x = 0,\; x = 2"></span>.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Решите уравнение <span data-tex="\log_3(x^2 - 3x) = \log_3(x + 5)"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>ОДЗ: <span data-tex="x^2 - 3x &gt; 0"></span> и <span data-tex="x + 5 &gt; 0"></span>. Из первого: <span data-tex="x &lt; 0"></span> или <span data-tex="x &gt; 3"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Приравниваем аргументы: <span data-tex="x^2 - 3x = x + 5 \Rightarrow x^2 - 4x - 5 = 0"></span>.</div>
+            <div class="step"><div class="stepn">3</div><span data-tex="(x-5)(x+1) = 0 \Rightarrow x = 5,\; x = -1"></span>.</div>
+            <div class="step"><div class="stepn">4</div>Проверка ОДЗ: <span data-tex="x = 5 &gt; 3"></span> — подходит. <span data-tex="x = -1 &lt; 0"></span> — подходит.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x = 5,\; x = -1"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_check: Чек-лист
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Обязательный минимум по показательным и логарифмам.</p>
+        </div>
+
+        <h2 id="h-f-chk">Формулы (наизусть)</h2>
+        <ul>
+          <li>Свойства степеней: <span data-tex="a^m \cdot a^n = a^{m+n}"></span>, <span data-tex="(a^m)^n = a^{mn}"></span>, <span data-tex="a^{-n} = 1/a^n"></span></li>
+          <li>Определение: <span data-tex="\log_a b = c \Leftrightarrow a^c = b"></span></li>
+          <li>Свойства: <span data-tex="\log_a(bc) = \log_a b + \log_a c"></span>, <span data-tex="\log_a b^n = n\log_a b"></span></li>
+          <li>Формула перехода: <span data-tex="\log_a b = \log_c b / \log_c a"></span></li>
+          <li><span data-tex="\log_a 1 = 0"></span>, <span data-tex="\log_a a = 1"></span>, <span data-tex="a^{\log_a b} = b"></span></li>
+        </ul>
+
+        <h2 id="h-sk-chk">Навыки</h2>
+        <ul>
+          <li>Сводить показательные уравнения к одному основанию</li>
+          <li>Вводить замену <span data-tex="t=a^x"></span> для уравнений типа <span data-tex="a^{2x}-k\cdot a^x+m=0"></span></li>
+          <li>Обязательно проверять ОДЗ в логарифмических уравнениях</li>
+          <li>Менять знак неравенства при 0 &lt; a &lt; 1 в логарифмических неравенствах</li>
+        </ul>
+
+        <h2 id="h-er-chk">Типичные ошибки</h2>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Забыть ОДЗ при логарифмических уравнениях — теряются посторонние корни.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Не менять знак неравенства при 0 &lt; a &lt; 1 в логарифмических неравенствах.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Писать <span data-tex="\log_a b + \log_a c = \log_a(b+c)"></span> — это неверно! Правильно: <span data-tex="\log_a(b \cdot c)"></span>.</div>
+        </div>
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет:</b> Если основание логарифма не указано (lg), то основание 10. Всегда сначала записывай ОДЗ и только потом решай уравнение.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn" href="06_trigonometriya.html">← Тригонометрия</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">08 Прогрессии</div>
+            <div class="tp-desc">Арифметическая и геометрическая прогрессии</div>
+          </div>
+          <a class="tp-btn" href="08_progressii.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list"></div>
+</div>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

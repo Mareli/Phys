@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Прогрессии — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t08">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🔗</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Прогрессии</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 08</span>
+      <h2>Прогрессии</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">➕</span>Арифметическая прогрессия</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">✖️</span>Геометрическая прогрессия</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">📐</span>Свойства прогрессий</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">💰</span>Задачи на прогрессии</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ══════════════════════════════════════
+           SECTION 1: Арифметическая прогрессия
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Арифметическая прогрессия</h1>
+          <p class="lead">Каждый следующий член получается добавлением постоянного числа — разности d.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База ЦТ</span>
+          </div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Арифметическая прогрессия (АП)</b> — последовательность, в которой каждый следующий член отличается от предыдущего на постоянное число <span data-tex="d"></span> (разность прогрессии).</div>
+        </div>
+
+        <div class="fcard" id="f-ap-def">
+          <div class="flabel">Рекуррентное соотношение АП</div>
+          <div class="formula" data-tex="a_{n+1} = a_n + d"></div>
+          <div class="fdesc"><span data-tex="d"></span> — разность прогрессии. <span data-tex="d &gt; 0"></span>: возрастающая; <span data-tex="d &lt; 0"></span>: убывающая; <span data-tex="d = 0"></span>: постоянная.</div>
+        </div>
+
+        <div class="fcard" id="f-ap-n">
+          <div class="flabel">n-й член АП</div>
+          <div class="formula" data-tex="a_n = a_1 + (n-1)d"></div>
+          <div class="fdesc">Позволяет найти любой член по первому и разности.</div>
+        </div>
+
+        <div class="fcard" id="f-ap-n-general">
+          <div class="flabel">Через произвольный член</div>
+          <div class="formula" data-tex="a_n = a_k + (n-k)d"></div>
+          <div class="fdesc">Удобно, когда известен не первый, а произвольный член <span data-tex="a_k"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-ap-sum1">
+          <div class="flabel">Сумма первых n членов АП (форма 1)</div>
+          <div class="formula" data-tex="S_n = \dfrac{n(a_1 + a_n)}{2}"></div>
+          <div class="fdesc">Используй, когда известны первый и n-й члены.</div>
+        </div>
+
+        <div class="fcard" id="f-ap-sum2">
+          <div class="flabel">Сумма первых n членов АП (форма 2)</div>
+          <div class="formula" data-tex="S_n = \dfrac{n\bigl(2a_1 + (n-1)d\bigr)}{2}"></div>
+          <div class="fdesc">Используй, когда известны первый член и разность.</div>
+        </div>
+
+        <div class="fcard" id="f-ap-mid">
+          <div class="flabel">Средний член АП</div>
+          <div class="formula" data-tex="a_n = \dfrac{a_{n-1} + a_{n+1}}{2}"></div>
+          <div class="fdesc">Каждый член АП — среднее арифметическое соседних членов.</div>
+        </div>
+
+        <!-- Diagram P1: AP sequence on number line -->
+        <div class="diagram">
+          <svg width="380" height="80" viewBox="0 0 380 80" font-family="'Inter',sans-serif">
+            <!-- Number line -->
+            <line x1="20" y1="32" x2="360" y2="32" stroke="#94a3b8" stroke-width="2"/>
+            <!-- Arrow at right end -->
+            <polygon points="360,32 352,28 352,36" fill="#94a3b8"/>
+            <!-- 6 equally spaced dots: x = 40 + i*52, i=0..5 -->
+            <!-- d arrows between dots -->
+            <!-- d arrow: 40→92 -->
+            <line x1="40" y1="22" x2="92" y2="22" stroke="#be185d" stroke-width="1.5" marker-start="url(#arr-p)" marker-end="url(#arr-p)"/>
+            <text x="66" y="17" text-anchor="middle" font-size="11" fill="#be185d" font-weight="600">d</text>
+            <!-- d arrow: 92→144 -->
+            <line x1="92" y1="22" x2="144" y2="22" stroke="#be185d" stroke-width="1.5" marker-start="url(#arr-p)" marker-end="url(#arr-p)"/>
+            <text x="118" y="17" text-anchor="middle" font-size="11" fill="#be185d" font-weight="600">d</text>
+            <!-- d arrow: 144→196 -->
+            <line x1="144" y1="22" x2="196" y2="22" stroke="#be185d" stroke-width="1.5" marker-start="url(#arr-p)" marker-end="url(#arr-p)"/>
+            <text x="170" y="17" text-anchor="middle" font-size="11" fill="#be185d" font-weight="600">d</text>
+            <!-- d arrow: 196→248 -->
+            <line x1="196" y1="22" x2="248" y2="22" stroke="#be185d" stroke-width="1.5" marker-start="url(#arr-p)" marker-end="url(#arr-p)"/>
+            <text x="222" y="17" text-anchor="middle" font-size="11" fill="#be185d" font-weight="600">d</text>
+            <!-- d arrow: 248→300 -->
+            <line x1="248" y1="22" x2="300" y2="22" stroke="#be185d" stroke-width="1.5" marker-start="url(#arr-p)" marker-end="url(#arr-p)"/>
+            <text x="274" y="17" text-anchor="middle" font-size="11" fill="#be185d" font-weight="600">d</text>
+            <!-- Dot a1 x=40 -->
+            <circle cx="40" cy="32" r="5" fill="#be185d"/>
+            <text x="40" y="52" text-anchor="middle" font-size="12" fill="#475569">a₁</text>
+            <!-- Dot a2 x=92 -->
+            <circle cx="92" cy="32" r="5" fill="#be185d"/>
+            <text x="92" y="52" text-anchor="middle" font-size="12" fill="#475569">a₂</text>
+            <!-- Dot a3 x=144 -->
+            <circle cx="144" cy="32" r="5" fill="#be185d"/>
+            <text x="144" y="52" text-anchor="middle" font-size="12" fill="#475569">a₃</text>
+            <!-- Dot a4 x=196 -->
+            <circle cx="196" cy="32" r="5" fill="#be185d"/>
+            <text x="196" y="52" text-anchor="middle" font-size="12" fill="#475569">a₄</text>
+            <!-- Dot a5 x=248 -->
+            <circle cx="248" cy="32" r="5" fill="#be185d"/>
+            <text x="248" y="52" text-anchor="middle" font-size="12" fill="#475569">a₅</text>
+            <!-- Dot a6 x=300 -->
+            <circle cx="300" cy="32" r="5" fill="#be185d"/>
+            <text x="300" y="52" text-anchor="middle" font-size="12" fill="#475569">a₆</text>
+            <!-- Arrow marker def (double-headed: use two separate triangles via lines) -->
+            <defs>
+              <marker id="arr-p" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,1 L3,3 L0,5" fill="none" stroke="#be185d" stroke-width="1"/>
+              </marker>
+            </defs>
+            <!-- Caption -->
+            <text x="190" y="72" text-anchor="middle" font-size="11" fill="#475569">В АП: aₙ₊₁ − aₙ = d = const</text>
+          </svg>
+        </div>
+
+        <!-- Diagram P3: AP graph (linear) -->
+        <div class="diagram">
+          <svg width="260" height="180" viewBox="0 0 260 180" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="ax-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- Axes -->
+            <line x1="30" y1="165" x2="240" y2="165" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ax-arr)"/>
+            <line x1="30" y1="165" x2="30" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ax-arr)"/>
+            <text x="244" y="169" font-size="12" fill="#475569">n</text>
+            <text x="24" y="8" font-size="12" fill="#475569">aₙ</text>
+            <!-- AP: a_n = 2 + (n-1)*3 → {2,5,8,11,14,17} for n=1..6 -->
+            <!-- x = 30 + n*32, y = 165 - a_n*8 -->
+            <!-- n=1: x=62, y=165-16=149 -->
+            <!-- n=2: x=94, y=165-40=125 -->
+            <!-- n=3: x=126, y=165-64=101 -->
+            <!-- n=4: x=158, y=165-88=77 -->
+            <!-- n=5: x=190, y=165-112=53 -->
+            <!-- n=6: x=222, y=165-136=29 -->
+            <!-- Dashed trend line -->
+            <line x1="62" y1="149" x2="222" y2="29" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <!-- Points -->
+            <circle cx="62" cy="149" r="5" fill="#be185d"/>
+            <circle cx="94" cy="125" r="5" fill="#be185d"/>
+            <circle cx="126" cy="101" r="5" fill="#be185d"/>
+            <circle cx="158" cy="77" r="5" fill="#be185d"/>
+            <circle cx="190" cy="53" r="5" fill="#be185d"/>
+            <circle cx="222" cy="29" r="5" fill="#be185d"/>
+            <!-- n labels on x-axis -->
+            <text x="62" y="178" text-anchor="middle" font-size="10" fill="#475569">1</text>
+            <text x="94" y="178" text-anchor="middle" font-size="10" fill="#475569">2</text>
+            <text x="126" y="178" text-anchor="middle" font-size="10" fill="#475569">3</text>
+            <text x="158" y="178" text-anchor="middle" font-size="10" fill="#475569">4</text>
+            <text x="190" y="178" text-anchor="middle" font-size="10" fill="#475569">5</text>
+            <text x="222" y="178" text-anchor="middle" font-size="10" fill="#475569">6</text>
+            <!-- Formula label -->
+            <text x="70" y="30" font-size="11" fill="#be185d" font-weight="600">aₙ = a₁ + (n−1)d</text>
+            <!-- Caption -->
+            <text x="130" y="176" text-anchor="middle" font-size="11" fill="#475569">АП — линейная зависимость от n</text>
+          </svg>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Геометрический смысл</small>
+            Члены АП лежат на одной прямой: если отобразить <span data-tex="a_n"></span> от n, то все точки будут на линейном графике с наклоном d.
+          </div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>На ЦТ часто:</b> дают 3 члена прогрессии и просят найти d или сумму. Удобно составить систему из двух уравнений: через формулу n-го члена.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 2: Геометрическая прогрессия
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Геометрическая прогрессия</h1>
+          <p class="lead">Каждый следующий член получается умножением на постоянное число — знаменатель q.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Геометрическая прогрессия (ГП)</b> — последовательность, в которой каждый следующий член получается умножением предыдущего на постоянное число <span data-tex="q"></span> (знаменатель прогрессии), <span data-tex="q \neq 0"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-gp-def">
+          <div class="flabel">Рекуррентное соотношение ГП</div>
+          <div class="formula" data-tex="b_{n+1} = b_n \cdot q"></div>
+          <div class="fdesc">Отношение любых двух соседних членов равно <span data-tex="q = b_{n+1}/b_n"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-gp-n">
+          <div class="flabel">n-й член ГП</div>
+          <div class="formula" data-tex="b_n = b_1 \cdot q^{n-1}"></div>
+          <div class="fdesc">Показатель степени — на единицу меньше номера члена.</div>
+        </div>
+
+        <div class="fcard" id="f-gp-sum">
+          <div class="flabel">Сумма первых n членов ГП</div>
+          <div class="formula" data-tex="S_n = \dfrac{b_1(q^n - 1)}{q - 1}, \quad q \neq 1"></div>
+          <div class="fdesc">При <span data-tex="q = 1"></span>: <span data-tex="S_n = n \cdot b_1"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-gp-inf">
+          <div class="flabel">Сумма бесконечной убывающей ГП</div>
+          <div class="formula" data-tex="S = \dfrac{b_1}{1 - q}, \quad |q| &lt; 1"></div>
+          <div class="fdesc">Существует только при <span data-tex="|q| &lt; 1"></span>. Важна для задач с бесконечными десятичными дробями.</div>
+        </div>
+
+        <div class="fcard" id="f-gp-mid">
+          <div class="flabel">Средний член ГП</div>
+          <div class="formula" data-tex="b_n^2 = b_{n-1} \cdot b_{n+1}"></div>
+          <div class="fdesc">Каждый член ГП — среднее геометрическое соседних членов.</div>
+        </div>
+
+        <!-- Diagram P2: GP sequence visual (q=2) -->
+        <div class="diagram">
+          <svg width="380" height="80" viewBox="0 0 380 80" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="arr-gp" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                <path d="M0,0 L5,3.5 L0,7 Z" fill="#be185d"/>
+              </marker>
+            </defs>
+            <!-- Number line -->
+            <line x1="16" y1="32" x2="360" y2="32" stroke="#94a3b8" stroke-width="1.5"/>
+            <polygon points="360,32 352,28 352,36" fill="#94a3b8"/>
+            <!-- Positions: val*14+20. a1=1→34, a2=2→48, a3=4→76, a4=8→132, a5=16→244 -->
+            <!-- Arrows between dots showing ×q -->
+            <line x1="34" y1="22" x2="46" y2="22" stroke="#be185d" stroke-width="1.5" marker-end="url(#arr-gp)"/>
+            <text x="40" y="17" text-anchor="middle" font-size="10" fill="#be185d" font-weight="600">×q</text>
+            <line x1="48" y1="22" x2="74" y2="22" stroke="#be185d" stroke-width="1.5" marker-end="url(#arr-gp)"/>
+            <text x="61" y="17" text-anchor="middle" font-size="10" fill="#be185d" font-weight="600">×q</text>
+            <line x1="76" y1="22" x2="130" y2="22" stroke="#be185d" stroke-width="1.5" marker-end="url(#arr-gp)"/>
+            <text x="103" y="17" text-anchor="middle" font-size="10" fill="#be185d" font-weight="600">×q</text>
+            <line x1="132" y1="22" x2="242" y2="22" stroke="#be185d" stroke-width="1.5" marker-end="url(#arr-gp)"/>
+            <text x="187" y="17" text-anchor="middle" font-size="10" fill="#be185d" font-weight="600">×q</text>
+            <!-- Dots -->
+            <circle cx="34" cy="32" r="5" fill="#be185d"/>
+            <text x="34" y="52" text-anchor="middle" font-size="12" fill="#475569">b₁</text>
+            <circle cx="48" cy="32" r="5" fill="#be185d"/>
+            <text x="48" y="52" text-anchor="middle" font-size="12" fill="#475569">b₂</text>
+            <circle cx="76" cy="32" r="5" fill="#be185d"/>
+            <text x="76" y="52" text-anchor="middle" font-size="12" fill="#475569">b₃</text>
+            <circle cx="132" cy="32" r="5" fill="#be185d"/>
+            <text x="132" y="52" text-anchor="middle" font-size="12" fill="#475569">b₄</text>
+            <circle cx="244" cy="32" r="5" fill="#be185d"/>
+            <text x="244" y="52" text-anchor="middle" font-size="12" fill="#475569">b₅</text>
+            <!-- Label showing intervals grow -->
+            <text x="280" y="32" font-size="11" fill="#475569" dominant-baseline="middle">промежутки растут</text>
+            <!-- Caption -->
+            <text x="190" y="72" text-anchor="middle" font-size="11" fill="#475569">В ГП: bₙ₊₁/bₙ = q = const</text>
+          </svg>
+        </div>
+
+        <!-- Diagram P4: GP graph (exponential) -->
+        <div class="diagram">
+          <svg width="260" height="180" viewBox="0 0 260 180" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="ax-arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/>
+              </marker>
+            </defs>
+            <!-- Axes -->
+            <line x1="30" y1="165" x2="240" y2="165" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ax-arr2)"/>
+            <line x1="30" y1="165" x2="30" y2="10" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#ax-arr2)"/>
+            <text x="244" y="169" font-size="12" fill="#475569">n</text>
+            <text x="24" y="8" font-size="12" fill="#475569">bₙ</text>
+            <!-- GP q=2: {1,2,4,8,16,32} for n=1..6 -->
+            <!-- x = 30 + n*32, y = 165 - b_n*4.5 -->
+            <!-- n=1: x=62, y=165-4.5=160.5 -->
+            <!-- n=2: x=94, y=165-9=156 -->
+            <!-- n=3: x=126, y=165-18=147 -->
+            <!-- n=4: x=158, y=165-36=129 -->
+            <!-- n=5: x=190, y=165-72=93 -->
+            <!-- n=6: x=222, y=165-144=21 -->
+            <!-- Dashed curve q>1 -->
+            <polyline points="62,161 94,156 126,147 158,129 190,93 222,21" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <!-- Points q>1 (pink) -->
+            <circle cx="62" cy="161" r="5" fill="#be185d"/>
+            <circle cx="94" cy="156" r="5" fill="#be185d"/>
+            <circle cx="126" cy="147" r="5" fill="#be185d"/>
+            <circle cx="158" cy="129" r="5" fill="#be185d"/>
+            <circle cx="190" cy="93" r="5" fill="#be185d"/>
+            <circle cx="222" cy="21" r="5" fill="#be185d"/>
+            <!-- GP q<1: {16,8,4,2,1,0.5} for n=1..6 -->
+            <!-- y = 165 - b_n*4.5 -->
+            <!-- n=1: y=165-72=93, n=2: y=165-36=129, n=3: y=165-18=147, n=4: y=156, n=5: y=160.5, n=6: y=162.75 -->
+            <!-- Dashed curve q<1 -->
+            <polyline points="62,93 94,129 126,147 158,156 190,161 222,163" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <!-- Points q<1 (blue-gray) -->
+            <circle cx="62" cy="93" r="4" fill="#0369a1" opacity="0.6"/>
+            <circle cx="94" cy="129" r="4" fill="#0369a1" opacity="0.6"/>
+            <circle cx="126" cy="147" r="4" fill="#0369a1" opacity="0.6"/>
+            <circle cx="158" cy="156" r="4" fill="#0369a1" opacity="0.6"/>
+            <circle cx="190" cy="161" r="4" fill="#0369a1" opacity="0.6"/>
+            <circle cx="222" cy="163" r="4" fill="#0369a1" opacity="0.6"/>
+            <!-- n labels -->
+            <text x="62" y="178" text-anchor="middle" font-size="10" fill="#475569">1</text>
+            <text x="94" y="178" text-anchor="middle" font-size="10" fill="#475569">2</text>
+            <text x="126" y="178" text-anchor="middle" font-size="10" fill="#475569">3</text>
+            <text x="158" y="178" text-anchor="middle" font-size="10" fill="#475569">4</text>
+            <text x="190" y="178" text-anchor="middle" font-size="10" fill="#475569">5</text>
+            <text x="222" y="178" text-anchor="middle" font-size="10" fill="#475569">6</text>
+            <!-- Legend -->
+            <circle cx="38" cy="48" r="4" fill="#be185d"/>
+            <text x="46" y="52" font-size="10" fill="#be185d" font-weight="600">q &gt; 1 (рост)</text>
+            <circle cx="38" cy="63" r="4" fill="#0369a1" opacity="0.7"/>
+            <text x="46" y="67" font-size="10" fill="#0369a1" font-weight="600">q &lt; 1 (убывание)</text>
+            <!-- Caption -->
+            <text x="130" y="176" text-anchor="middle" font-size="11" fill="#475569">ГП — показательная зависимость</text>
+          </svg>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Условие на q</th><th>Поведение ГП (при b₁ > 0)</th></tr>
+            <tr><td><span data-tex="q &gt; 1"></span></td><td>Возрастающая, неограниченная</td></tr>
+            <tr><td><span data-tex="0 &lt; q &lt; 1"></span></td><td>Убывающая, стремится к 0</td></tr>
+            <tr><td><span data-tex="q = 1"></span></td><td>Постоянная последовательность</td></tr>
+            <tr><td><span data-tex="-1 &lt; q &lt; 0"></span></td><td>Знакочередующаяся, убывает по модулю</td></tr>
+            <tr><td><span data-tex="q &lt; -1"></span></td><td>Знакочередующаяся, растёт по модулю</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 3: Свойства прогрессий
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Свойства прогрессий</h1>
+          <p class="lead">Признаки, средние значения и важные теоремы о прогрессиях.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <h2 id="h-ap-props">Свойства АП</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Признак АП</h4>
+            <p>Последовательность является АП тогда и только тогда, когда <b>каждый член</b> (начиная со второго) равен среднему арифметическому соседних:</p>
+            <p><span data-tex="a_n = \dfrac{a_{n-1}+a_{n+1}}{2}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Сумма симметричных членов</h4>
+            <p>Для АП с n членами: <span data-tex="a_k + a_{n+1-k} = a_1 + a_n"></span>. Сумма членов, симметричных относительно середины, постоянна.</p>
+          </div>
+        </div>
+
+        <h2 id="h-gp-props">Свойства ГП</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Признак ГП</h4>
+            <p>Последовательность является ГП тогда и только тогда, когда квадрат каждого члена равен произведению соседних:</p>
+            <p><span data-tex="b_n^2 = b_{n-1} \cdot b_{n+1}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Произведение симметричных членов</h4>
+            <p>Для ГП с n членами: <span data-tex="b_k \cdot b_{n+1-k} = b_1 \cdot b_n"></span>. Произведение симметричных членов постоянно.</p>
+          </div>
+        </div>
+
+        <h2 id="h-means">Средние арифметическое и геометрическое</h2>
+        <div class="fgrid">
+          <div class="fchip" id="fc-am">
+            <div class="chip-name">Среднее арифметическое</div>
+            <div class="chip-formula" data-tex="A = \dfrac{a+b}{2}"></div>
+            <div class="chip-desc">Средний член двучленной АП. <span data-tex="A \geq G"></span> (неравенство AM-GM)</div>
+          </div>
+          <div class="fchip" id="fc-gm">
+            <div class="chip-name">Среднее геометрическое</div>
+            <div class="chip-formula" data-tex="G = \sqrt{ab}"></div>
+            <div class="chip-desc">Средний член двучленной ГП (при <span data-tex="a, b &gt; 0"></span>)</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Неравенство AM-GM:</b> Среднее арифметическое неотрицательных чисел не меньше среднего геометрического: <span data-tex="\dfrac{a+b}{2} \geq \sqrt{ab}"></span>. Равенство — при <span data-tex="a = b"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 4: Задачи на прогрессии
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Задачи на прогрессии</h1>
+          <p class="lead">Банковские проценты, сумма бесконечной дроби, вставка средних — три типа задач ЦТ.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Практические задачи</span></div>
+        </div>
+
+        <h2 id="h-bank">Банковские проценты как ГП</h2>
+        <div class="key-concept">
+          <div class="kc-icon">💰</div>
+          <div class="kc-text">
+            <small>Сложные проценты</small>
+            Если вклад P рублей под r% годовых (сложные проценты), то через n лет сумма составит <span data-tex="S = P \cdot \left(1 + \dfrac{r}{100}\right)^n"></span>. Это ГП с <span data-tex="b_1 = P"></span>, <span data-tex="q = 1 + r/100"></span>.
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Простые проценты</b> (начисляются только на начальную сумму): <span data-tex="S = P\left(1 + \dfrac{rn}{100}\right)"></span>. Это АП с разностью <span data-tex="d = P \cdot r/100"></span>.</div>
+        </div>
+
+        <h2 id="h-inf-frac">Бесконечные десятичные дроби</h2>
+        <div class="key-concept">
+          <div class="kc-icon">🔁</div>
+          <div class="kc-text">
+            <small>Перевод в дробь</small>
+            Бесконечная периодическая дробь — сумма бесконечной убывающей ГП. Например: <span data-tex="0{,}\overline{3} = 0{,}3 + 0{,}03 + \ldots = \dfrac{0{,}3}{1-0{,}1} = \dfrac{1}{3}"></span>.
+          </div>
+        </div>
+
+        <!-- Diagram P5: Infinite GP convergence visualization -->
+        <div class="diagram">
+          <svg width="340" height="80" viewBox="0 0 340 80" font-family="'Inter',sans-serif">
+            <!-- Total line marker -->
+            <line x1="20" y1="48" x2="300" y2="48" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,2"/>
+            <!-- Segment 1: 1/2 → 140px, x=20..160 -->
+            <rect x="20" y="30" width="140" height="16" fill="#be185d" rx="2"/>
+            <text x="90" y="42" text-anchor="middle" font-size="12" fill="white" font-weight="700">1/2</text>
+            <!-- Segment 2: 1/4 → 70px, x=160..230 -->
+            <rect x="160" y="30" width="70" height="16" fill="#f472b6" rx="2"/>
+            <text x="195" y="42" text-anchor="middle" font-size="11" fill="white" font-weight="700">1/4</text>
+            <!-- Segment 3: 1/8 → 35px, x=230..265 -->
+            <rect x="230" y="30" width="35" height="16" fill="#fbcfe8" rx="2"/>
+            <text x="247" y="42" text-anchor="middle" font-size="10" fill="#be185d" font-weight="600">1/8</text>
+            <!-- Segment 4: 1/16 → 17.5px, x=265..282.5 -->
+            <rect x="265" y="30" width="17" height="16" fill="#fce7f3" rx="1"/>
+            <text x="273" y="42" text-anchor="middle" font-size="9" fill="#be185d">1/16</text>
+            <!-- Segment 5: 1/32 → ~8.75px, x=282..291 -->
+            <rect x="282" y="30" width="9" height="16" fill="#fdf2f8" rx="1"/>
+            <!-- Dots ... -->
+            <text x="296" y="42" font-size="13" fill="#be185d" font-weight="700">…</text>
+            <!-- Brace / total = 1 -->
+            <line x1="20" y1="22" x2="300" y2="22" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="20" y1="22" x2="20" y2="28" stroke="#94a3b8" stroke-width="1"/>
+            <line x1="300" y1="22" x2="300" y2="28" stroke="#94a3b8" stroke-width="1"/>
+            <text x="160" y="17" text-anchor="middle" font-size="11" fill="#475569">= 1</text>
+            <!-- Caption -->
+            <text x="170" y="68" text-anchor="middle" font-size="11" fill="#475569">1/2 + 1/4 + 1/8 + … = 1;  S∞ = b₁/(1−q) при |q|&lt;1</text>
+          </svg>
+        </div>
+
+        <h2 id="h-insert">Вставка n средних членов</h2>
+        <p>Между числами a и b вставить n членов АП: разность <span data-tex="d = \dfrac{b-a}{n+1}"></span>.</p>
+        <p>Между числами a и b вставить n членов ГП: знаменатель <span data-tex="q = \sqrt[n+1]{\dfrac{b}{a}}"></span>.</p>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_tasks: Разбор задач
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор задач</h1>
+          <p class="lead">Три классических задачи ЦТ по прогрессиям с пошаговым решением.</p>
+          <div class="tags"><span class="tag green">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Арифметическая прогрессия: <span data-tex="a_1 = 3"></span>, <span data-tex="d = 5"></span>. Найдите <span data-tex="a_{10}"></span> и <span data-tex="S_{10}"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Десятый член: <span data-tex="a_{10} = a_1 + 9d = 3 + 9 \cdot 5 = 3 + 45 = 48"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Сумма: <span data-tex="S_{10} = \dfrac{10(a_1 + a_{10})}{2} = \dfrac{10(3 + 48)}{2} = 5 \cdot 51 = 255"></span>.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="a_{10} = 48"></span>, <span data-tex="S_{10} = 255"></span>.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Геометрическая прогрессия: <span data-tex="b_1 = 6"></span>, <span data-tex="b_4 = 48"></span>. Найдите знаменатель и <span data-tex="S_5"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Из формулы n-го члена: <span data-tex="b_4 = b_1 \cdot q^3 \Rightarrow 48 = 6 \cdot q^3 \Rightarrow q^3 = 8 \Rightarrow q = 2"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Пятый член: <span data-tex="b_5 = 6 \cdot 2^4 = 6 \cdot 16 = 96"></span>.</div>
+            <div class="step"><div class="stepn">3</div>Сумма: <span data-tex="S_5 = \dfrac{b_1(q^5 - 1)}{q - 1} = \dfrac{6(32-1)}{1} = 6 \cdot 31 = 186"></span>.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="q = 2"></span>, <span data-tex="S_5 = 186"></span>.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Числа 2, x, 18 образуют ГП. Найдите x (рассмотрите все случаи).</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Используем признак ГП: <span data-tex="x^2 = 2 \cdot 18 = 36"></span>.</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="x = \pm 6"></span>.</div>
+            <div class="step"><div class="stepn">3</div>Проверка: при <span data-tex="x = 6"></span>: прогрессия 2, 6, 18 с <span data-tex="q = 3"></span> ✓. При <span data-tex="x = -6"></span>: прогрессия 2, −6, 18 с <span data-tex="q = -3"></span> ✓.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x = 6"></span> или <span data-tex="x = -6"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_check: Чек-лист
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Все формулы и умения для уверенного решения задач по прогрессиям.</p>
+        </div>
+
+        <h2 id="h-f-chk">Формулы АП (наизусть)</h2>
+        <ul>
+          <li>n-й член: <span data-tex="a_n = a_1 + (n-1)d"></span></li>
+          <li>Сумма: <span data-tex="S_n = \dfrac{n(a_1+a_n)}{2}"></span> или <span data-tex="S_n = \dfrac{n(2a_1+(n-1)d)}{2}"></span></li>
+          <li>Средний член: <span data-tex="a_n = (a_{n-1}+a_{n+1})/2"></span></li>
+        </ul>
+
+        <h2 id="h-gf-chk">Формулы ГП (наизусть)</h2>
+        <ul>
+          <li>n-й член: <span data-tex="b_n = b_1 \cdot q^{n-1}"></span></li>
+          <li>Сумма: <span data-tex="S_n = b_1(q^n-1)/(q-1)"></span> при <span data-tex="q \neq 1"></span></li>
+          <li>Бесконечная убывающая: <span data-tex="S = b_1/(1-q)"></span> при <span data-tex="|q|&lt;1"></span></li>
+          <li>Средний член: <span data-tex="b_n^2 = b_{n-1} \cdot b_{n+1}"></span></li>
+        </ul>
+
+        <h2 id="h-sk-chk">Навыки</h2>
+        <ul>
+          <li>Составлять системы уравнений по условию и решать их</li>
+          <li>Находить разность или знаменатель прогрессии, зная несколько членов</li>
+          <li>Применять формулу суммы бесконечной ГП (периодические дроби, проценты)</li>
+          <li>Различать простые и сложные проценты как АП и ГП</li>
+        </ul>
+
+        <h2 id="h-er-chk">Типичные ошибки</h2>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Путать формулы: в АП стоит <span data-tex="n-1"></span> (не n) в <span data-tex="a_n = a_1 + (n-1)d"></span>.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Забыть, что формула <span data-tex="S = b_1/(1-q)"></span> работает только при <span data-tex="|q| &lt; 1"></span>.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>При вставке членов ГП — забыть рассмотреть отрицательный знаменатель.</div>
+        </div>
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет:</b> На ЦТ задача на прогрессию обычно сводится к системе двух уравнений. Запиши два условия через формулы n-го члена и суммы — и система решается.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn" href="07_pokazatelnaya_log.html">← Показательная</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">09 Планиметрия</div>
+            <div class="tp-desc">Треугольники, четырёхугольники, окружность</div>
+          </div>
+          <a class="tp-btn" href="09_planimetriya.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list"></div>
+</div>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

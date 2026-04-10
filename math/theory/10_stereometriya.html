@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Стереометрия — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t10">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🧊</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Стереометрия</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 10</span>
+      <h2>Стереометрия</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">📌</span>Основные понятия и аксиомы</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">▭</span>Призма и параллелепипед</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">🔺</span>Пирамида</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">⬤</span>Цилиндр</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">▽</span>Конус</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">⬡</span>Шар и сфера</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">📊</span>Координатный метод</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════════════════════════════════════════
+           SECTION 1: Основные понятия и аксиомы
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Основные понятия и аксиомы</h1>
+          <p class="lead">Прямая, плоскость, параллельность, перпендикулярность, теорема о трёх перпендикулярах, двугранный угол.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База</span>
+          </div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Главная идея</small>
+            Стереометрия изучает фигуры в <b>трёхмерном пространстве</b>. Главное отличие от планиметрии — возможность расположения фигур вне одной плоскости.
+          </div>
+        </div>
+
+        <h2 id="h-axioms">Аксиомы стереометрии</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Аксиома 1</h4>
+            <p>Через три точки, не лежащие на одной прямой, проходит <b>единственная</b> плоскость.</p>
+          </div>
+          <div class="card">
+            <h4>Аксиома 2</h4>
+            <p>Если две точки прямой лежат в плоскости, то <b>вся прямая</b> лежит в этой плоскости.</p>
+          </div>
+          <div class="card">
+            <h4>Аксиома 3</h4>
+            <p>Если две плоскости имеют общую точку, то они имеют <b>общую прямую</b>.</p>
+          </div>
+        </div>
+
+        <h2 id="h-parallel">Параллельность</h2>
+        <div class="def">
+          <div class="label">Признак параллельности прямой и плоскости</div>
+          <div class="text">Прямая параллельна плоскости, если она <b>не лежит</b> в ней и <b>параллельна хотя бы одной</b> прямой, лежащей в этой плоскости.</div>
+        </div>
+        <div class="def">
+          <div class="label">Признак параллельности двух плоскостей</div>
+          <div class="text">Две плоскости параллельны, если <b>две пересекающиеся прямые</b> одной плоскости параллельны соответственно двум прямым другой плоскости.</div>
+        </div>
+
+        <h2 id="h-perp">Перпендикулярность</h2>
+        <div class="def acc">
+          <div class="label">Прямая перпендикулярна плоскости</div>
+          <div class="text">Прямая перпендикулярна плоскости, если она перпендикулярна <b>любой прямой</b>, лежащей в этой плоскости и проходящей через основание перпендикуляра.</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Теорема о трёх перпендикулярах</div>
+          <div class="text">Если прямая в плоскости перпендикулярна <b>проекции</b> наклонной на эту плоскость, то она перпендикулярна и <b>самой наклонной</b>. Позволяет находить углы между прямой и плоскостью.</div>
+        </div>
+
+        <h2 id="h-dihedral">Двугранный угол</h2>
+        <div class="def">
+          <div class="label">Двугранный угол</div>
+          <div class="text">Двугранный угол — фигура, образованная <b>двумя полуплоскостями</b> с общим ребром. Его величина равна углу между двумя прямыми, лежащими в этих полуплоскостях и перпендикулярными ребру.</div>
+        </div>
+
+        <!-- DIAGRAM B6: Dihedral angle -->
+        <div class="diagram">
+          <div class="diagram-label">Двугранный угол — линейный угол φ</div>
+          <svg width="260" height="200" viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Edge l: vertical line from (130,20) to (130,170) -->
+            <line x1="130" y1="20" x2="130" y2="175" stroke="#4338ca" stroke-width="2.5"/>
+            <text x="135" y="18" font-size="12" font-weight="700" fill="#4338ca" font-style="italic">l</text>
+            <text x="132" y="190" font-size="11" fill="#4338ca">(ребро)</text>
+            <!-- Plane P1: left half-plane, quadrilateral (130,170)(130,80)(40,110)(40,190) -->
+            <polygon points="130,170 130,80 30,110 30,190" stroke="#4338ca" stroke-width="1.5" fill="rgba(67,56,202,0.08)" stroke-dasharray="5,3"/>
+            <!-- Back part of P1 (dashed already via polygon stroke) -->
+            <!-- Plane P2: right half-plane, quadrilateral (130,170)(130,80)(230,50)(230,140) -->
+            <polygon points="130,170 130,80 230,50 230,140" stroke="#4338ca" stroke-width="1.5" fill="rgba(67,56,202,0.12)"/>
+            <!-- Linear angle φ: two perpendiculars to edge l, one in each half-plane -->
+            <!-- Pick point on l at y=120: (130,120) -->
+            <!-- In P1: perpendicular to l going left → direction: P1 goes from edge toward left-bottom: approx (−1,0.3) normalized -->
+            <!-- Simplify: draw two rays from (130,120) — left ray and right ray at angle φ -->
+            <!-- Left ray: (130,120) → (60,130), in plane P1 -->
+            <!-- Right ray: (130,120) → (210,90), in plane P2 -->
+            <line x1="130" y1="120" x2="60" y2="130" stroke="#4338ca" stroke-width="2"/>
+            <line x1="130" y1="120" x2="210" y2="90" stroke="#4338ca" stroke-width="2"/>
+            <!-- Angle arc at (130,120) -->
+            <path d="M 62,127 A 68,68 0 0 1 207,93" stroke="#4338ca" stroke-width="1.8" fill="rgba(67,56,202,0.12)"/>
+            <!-- φ label -->
+            <text x="118" y="108" font-size="14" fill="#4338ca" font-weight="700" font-style="italic">φ</text>
+            <!-- Right angle marks at foot points (perpendicular to l) -->
+            <polyline points="130,108 118,109 118,120" stroke="#4338ca" stroke-width="1.2" fill="none"/>
+            <!-- Plane labels -->
+            <text x="24" y="107" font-size="12" fill="#475569" font-weight="600">P₁</text>
+            <text x="232" y="47" font-size="12" fill="#475569" font-weight="600">P₂</text>
+            <!-- Caption -->
+            <text x="30" y="195" font-size="11" fill="#475569">φ — линейный угол двугранного угла (⊥ ребру l)</text>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 2: Призма и параллелепипед
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Призма и параллелепипед</h1>
+          <p class="lead">Прямая и наклонная призма, объём, боковая поверхность, диагональ прямоугольного параллелепипеда.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-prism-v">
+          <div class="flabel">Объём призмы</div>
+          <div class="formula" data-tex="V = S_\text{осн} \cdot h"></div>
+          <div class="fdesc">S<sub>осн</sub> — площадь основания, h — высота (перпендикулярное расстояние между основаниями). Для любой призмы.</div>
+        </div>
+
+        <div class="fcard" id="f-prism-slat">
+          <div class="flabel">Боковая поверхность прямой призмы</div>
+          <div class="formula" data-tex="S_\text{бок} = P_\text{осн} \cdot h"></div>
+          <div class="fdesc">P<sub>осн</sub> — периметр основания, h — высота. Для прямой призмы (боковые рёбра ⊥ основанию).</div>
+        </div>
+
+        <div class="fcard" id="f-paral-diag">
+          <div class="flabel">Диагональ прямоугольного параллелепипеда</div>
+          <div class="formula" data-tex="d^2 = a^2 + b^2 + c^2"></div>
+          <div class="fdesc">a, b, c — три измерения параллелепипеда. Пространственная теорема Пифагора!</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Прямая призма</h4>
+            <p>Боковые рёбра <b>перпендикулярны</b> основаниям. Боковые грани — прямоугольники.</p>
+            <p><span data-tex="S_\text{полн} = S_\text{бок} + 2S_\text{осн}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Наклонная призма</h4>
+            <p>Боковые рёбра <b>не перпендикулярны</b> основаниям. Объём тот же: V = S<sub>осн</sub>·h, где h — перпендикулярная высота.</p>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Куб — частный случай прямоугольного параллелепипеда при a = b = c. Для куба: <span data-tex="V = a^3"></span>, <span data-tex="S_\text{полн} = 6a^2"></span>, <span data-tex="d = a\sqrt{3}"></span>.</div>
+        </div>
+
+        <!-- DIAGRAM B1: Rectangular parallelepiped (isometric) -->
+        <div class="diagram">
+          <div class="diagram-label">Прямоугольный параллелепипед — пространственная диагональ</div>
+          <svg width="280" height="220" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Oblique projection of a box: a(width)=120, b(depth)=60, c(height)=90 -->
+            <!-- Front-bottom-left = F(40,170), front-bottom-right = G(160,170) -->
+            <!-- Front-top-left = H(40,80), front-top-right = I(160,80) -->
+            <!-- Back offset: dx=50, dy=-28 (isometric-style) -->
+            <!-- Back-bottom-left = A(90,142), back-bottom-right = B(210,142) -->
+            <!-- Back-top-left = C(90,52), back-top-right = D(210,52) -->
+
+            <!-- Hidden edges (dashed): back-left vertical, bottom-back, left-back -->
+            <line x1="90" y1="142" x2="90" y2="52" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <line x1="40" y1="170" x2="90" y2="142" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <line x1="90" y1="142" x2="210" y2="142" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+            <!-- Visible edges -->
+            <!-- Front face -->
+            <rect x="40" y="80" width="120" height="90" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.06)"/>
+            <!-- Top face: F-G-D-C (H=top-front-left, I=top-front-right, D=top-back-right, C=top-back-left) -->
+            <polygon points="40,80 160,80 210,52 90,52" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.10)"/>
+            <!-- Right face: G(160,170) I(160,80) D(210,52) B(210,142) -->
+            <polygon points="160,170 160,80 210,52 210,142" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.08)"/>
+            <!-- Back-top-right to back-bottom-right (visible) -->
+            <line x1="210" y1="52" x2="210" y2="142" stroke="#4338ca" stroke-width="2"/>
+            <!-- Back-bottom-right to front-bottom-right -->
+            <line x1="210" y1="142" x2="160" y2="170" stroke="#4338ca" stroke-width="2"/>
+
+            <!-- Space diagonal: from front-bottom-left F(40,170) to back-top-right D(210,52) — dashed -->
+            <line x1="40" y1="170" x2="210" y2="52" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+            <!-- Diagonal label d near midpoint (125,111) -->
+            <text x="128" y="107" font-size="12" fill="#ef4444" font-weight="700" font-style="italic">d</text>
+
+            <!-- Edge labels -->
+            <!-- a (width, bottom front): midpoint (100,178) -->
+            <text x="92" y="188" font-size="13" fill="#4338ca" font-weight="600" font-style="italic">a</text>
+            <!-- b (depth, bottom right going back): midpoint (185,158) -->
+            <text x="186" y="165" font-size="13" fill="#4338ca" font-weight="600" font-style="italic">b</text>
+            <!-- c (height, right front): midpoint (168,125) -->
+            <text x="165" y="130" font-size="13" fill="#4338ca" font-weight="600" font-style="italic">c</text>
+
+            <!-- Formula label -->
+            <text x="18" y="214" font-size="11" fill="#475569">d = √(a² + b² + c²)  (пространственная теорема Пифагора)</text>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 3: Пирамида
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Пирамида</h1>
+          <p class="lead">Правильная пирамида, усечённая пирамида — объём и поверхность.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-pyramid-v">
+          <div class="flabel">Объём пирамиды</div>
+          <div class="formula" data-tex="V = \dfrac{1}{3}\, S_\text{осн} \cdot h"></div>
+          <div class="fdesc">S<sub>осн</sub> — площадь основания, h — высота (перпендикуляр из вершины на основание). Ровно треть призмы с тем же основанием и высотой.</div>
+        </div>
+
+        <div class="fcard" id="f-pyramid-slat">
+          <div class="flabel">Боковая поверхность правильной пирамиды</div>
+          <div class="formula" data-tex="S_\text{бок} = \dfrac{1}{2}\, P_\text{осн} \cdot a"></div>
+          <div class="fdesc">P<sub>осн</sub> — периметр основания, a — апофема боковой грани (высота боковой грани, а не пирамиды!).</div>
+        </div>
+
+        <div class="fcard" id="f-trunc-pyramid">
+          <div class="flabel">Объём усечённой пирамиды</div>
+          <div class="formula" data-tex="V = \dfrac{h}{3}\bigl(S_1 + S_2 + \sqrt{S_1 S_2}\bigr)"></div>
+          <div class="fdesc"><span data-tex="S_1,\,S_2"></span> — площади оснований, h — высота усечённой пирамиды.</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Правильная пирамида</div>
+          <div class="text">Основание — правильный многоугольник, вершина проецируется в <b>центр</b> основания. Все апофемы боковых граней равны. Все боковые рёбра равны.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Апофема</b> пирамиды ≠ боковое ребро! Апофема — высота <b>боковой грани</b> (перпендикуляр из вершины на основание боковой грани). Боковое ребро — отрезок от вершины до угла основания.</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- base (parallelogram perspective) -->
+            <polygon points="60,170 240,170 270,140 90,140" stroke="#4338ca" stroke-width="1.5" fill="rgba(67,56,202,0.07)"/>
+            <!-- apex -->
+            <circle cx="165" cy="40" r="4" fill="#4338ca"/>
+            <!-- lateral edges -->
+            <line x1="165" y1="40" x2="60" y2="170" stroke="#4338ca" stroke-width="1.5"/>
+            <line x1="165" y1="40" x2="240" y2="170" stroke="#4338ca" stroke-width="1.5"/>
+            <line x1="165" y1="40" x2="270" y2="140" stroke="#4338ca" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <line x1="165" y1="40" x2="90" y2="140" stroke="#4338ca" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <!-- height -->
+            <line x1="165" y1="40" x2="165" y2="155" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,3"/>
+            <text x="172" y="100" font-size="12" fill="#ef4444" font-weight="700" font-style="italic">h</text>
+            <!-- apex label -->
+            <text x="170" y="35" font-size="13" font-weight="700" fill="#4338ca">S</text>
+            <!-- apothem -->
+            <line x1="165" y1="40" x2="150" y2="170" stroke="#10b981" stroke-width="2"/>
+            <text x="138" y="115" font-size="11" fill="#10b981" font-style="italic">a</text>
+          </svg>
+          <div class="caption">Правильная пирамида: h — высота (красная), a — апофема боковой грани (зелёная)</div>
+        </div>
+
+        <!-- DIAGRAM B2: Pyramid with square base — labeled dimensions -->
+        <div class="diagram">
+          <div class="diagram-label">Правильная четырёхугольная пирамида — размеры</div>
+          <svg width="240" height="220" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Square base in oblique projection: A(30,180) B(170,180) C(195,155) D(55,155) -->
+            <polygon points="30,180 170,180 195,155 55,155" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.07)"/>
+            <!-- Hidden diagonal of base from A to C (dashed) -->
+            <line x1="30" y1="180" x2="195" y2="155" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+            <!-- Base center (midpoint of diagonals): A(30,180) C(195,155) → (112.5,167.5) ≈ (113,168) -->
+            <!-- Also B(170,180) D(55,155) → (112.5,167.5) ✓ -->
+            <circle cx="113" cy="168" r="2.5" fill="#4338ca"/>
+            <!-- Apex S at (120,40) -->
+            <circle cx="120" cy="40" r="4" fill="#4338ca"/>
+            <text x="124" y="35" font-size="13" font-weight="700" fill="#4338ca">S</text>
+            <!-- Lateral edges: S to all 4 base vertices -->
+            <line x1="120" y1="40" x2="30" y2="180" stroke="#4338ca" stroke-width="2"/>
+            <line x1="120" y1="40" x2="170" y2="180" stroke="#4338ca" stroke-width="2"/>
+            <line x1="120" y1="40" x2="195" y2="155" stroke="#4338ca" stroke-width="1.8" stroke-dasharray="4,3"/>
+            <line x1="120" y1="40" x2="55" y2="155" stroke="#4338ca" stroke-width="1.8" stroke-dasharray="4,3"/>
+            <!-- Height h: dashed from S(120,40) to base center (113,168) -->
+            <line x1="120" y1="40" x2="113" y2="168" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="124" y="112" font-size="12" fill="#ef4444" font-weight="700" font-style="italic">h</text>
+            <!-- Apothem: from S(120,40) to midpoint of front base edge AB midpoint=(100,180) -->
+            <line x1="120" y1="40" x2="100" y2="180" stroke="#10b981" stroke-width="2"/>
+            <text x="98" y="115" font-size="11" fill="#10b981" font-style="italic">a (апофема)</text>
+            <!-- Base side label b: along front edge A(30,180)B(170,180) -->
+            <text x="92" y="197" font-size="13" fill="#4338ca" font-weight="600" font-style="italic">b</text>
+            <!-- Right angle at base center (h ⊥ base) -->
+            <polyline points="113,158 121,158 121,168" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 4: Цилиндр
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Цилиндр</h1>
+          <p class="lead">Объём, боковая и полная поверхность прямого кругового цилиндра.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-cyl-v">
+          <div class="flabel">Объём цилиндра</div>
+          <div class="formula" data-tex="V = \pi R^2 h"></div>
+          <div class="fdesc">R — радиус основания, h — высота цилиндра.</div>
+        </div>
+
+        <div class="fcard" id="f-cyl-slat">
+          <div class="flabel">Боковая поверхность цилиндра</div>
+          <div class="formula" data-tex="S_\text{бок} = 2\pi R h"></div>
+          <div class="fdesc">Развёртка боковой поверхности — прямоугольник со сторонами 2πR и h.</div>
+        </div>
+
+        <div class="fcard" id="f-cyl-full">
+          <div class="flabel">Полная поверхность цилиндра</div>
+          <div class="formula" data-tex="S_\text{полн} = 2\pi R h + 2\pi R^2 = 2\pi R(h + R)"></div>
+          <div class="fdesc">Боковая поверхность плюс два круговых основания.</div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>ЦТ-подсказка:</b> Цилиндр — это призма с круглым основанием. Объём = площадь основания × высота, как и у любой призмы.</div>
+        </div>
+
+        <!-- DIAGRAM B3: Cylinder and its unrolled lateral surface -->
+        <div class="diagrams-row">
+          <!-- Panel: 3D Cylinder -->
+          <div class="diagram sm">
+            <div class="diagram-label">Цилиндр</div>
+            <svg width="180" height="190" viewBox="0 0 180 190" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Bottom ellipse (solid) -->
+              <ellipse cx="90" cy="155" rx="65" ry="18" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.08)"/>
+              <!-- Left and right vertical lines (sides) -->
+              <line x1="25" y1="155" x2="25" y2="45" stroke="#4338ca" stroke-width="2"/>
+              <line x1="155" y1="155" x2="155" y2="45" stroke="#4338ca" stroke-width="2"/>
+              <!-- Top ellipse: bottom half solid, top half dashed -->
+              <!-- Bottom half of top ellipse: from (25,45) to (155,45) going down (front arc) -->
+              <path d="M 25,45 A 65,18 0 0 0 155,45" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.12)"/>
+              <!-- Top half of top ellipse: dashed -->
+              <path d="M 25,45 A 65,18 0 0 1 155,45" stroke="#4338ca" stroke-width="1.5" stroke-dasharray="5,3" fill="none"/>
+              <!-- Radius r: dashed horizontal on top ellipse, center(90,45) to edge(155,45) -->
+              <line x1="90" y1="45" x2="155" y2="45" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="4,3"/>
+              <text x="116" y="39" font-size="12" fill="#ef4444" font-weight="600" font-style="italic">r</text>
+              <!-- Center dot top -->
+              <circle cx="90" cy="45" r="2.5" fill="#4338ca"/>
+              <!-- Height h: arrow on right side -->
+              <line x1="166" y1="45" x2="166" y2="155" stroke="#475569" stroke-width="1.5"/>
+              <line x1="161" y1="50" x2="166" y2="45" stroke="#475569" stroke-width="1.5"/>
+              <line x1="171" y1="50" x2="166" y2="45" stroke="#475569" stroke-width="1.5"/>
+              <line x1="161" y1="150" x2="166" y2="155" stroke="#475569" stroke-width="1.5"/>
+              <line x1="171" y1="150" x2="166" y2="155" stroke="#475569" stroke-width="1.5"/>
+              <text x="170" y="104" font-size="13" fill="#475569" font-weight="600" font-style="italic">h</text>
+            </svg>
+          </div>
+          <!-- Panel: Unrolled lateral surface -->
+          <div class="diagram sm">
+            <div class="diagram-label">Развёртка боковой поверхности</div>
+            <svg width="200" height="170" viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Rectangle: width=2πr, height=h -->
+              <!-- Draw rectangle from (20,20) to (175,140) -->
+              <rect x="20" y="20" width="155" height="110" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.07)"/>
+              <!-- Width label: 2πr (bottom) -->
+              <text x="60" y="160" font-size="12" fill="#4338ca" font-weight="600">2πr</text>
+              <!-- Height label: h (right side) -->
+              <text x="180" y="78" font-size="13" fill="#4338ca" font-weight="600" font-style="italic">h</text>
+              <!-- Area formula inside rectangle -->
+              <text x="45" y="74" font-size="13" fill="#475569" font-weight="700">S</text>
+              <text x="57" y="74" font-size="10" fill="#475569">бок</text>
+              <text x="68" y="74" font-size="13" fill="#475569"> = 2πrh</text>
+              <!-- Curved arrows suggesting rolling -->
+              <path d="M 20,10 C 20,4 30,0 40,4" stroke="#4338ca" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+              <path d="M 175,10 C 175,4 165,0 155,4" stroke="#4338ca" stroke-width="1.5" fill="none"/>
+              <text x="64" y="14" font-size="11" fill="#475569">(сворачивается в цилиндр)</text>
+            </svg>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 5: Конус
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Конус</h1>
+          <p class="lead">Объём и поверхность конуса, образующая и апофема.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-cone-v">
+          <div class="flabel">Объём конуса</div>
+          <div class="formula" data-tex="V = \dfrac{1}{3}\pi R^2 h"></div>
+          <div class="fdesc">R — радиус основания, h — высота. Конус — треть цилиндра с тем же основанием и высотой.</div>
+        </div>
+
+        <div class="fcard" id="f-cone-l">
+          <div class="flabel">Образующая конуса</div>
+          <div class="formula" data-tex="l = \sqrt{R^2 + h^2}"></div>
+          <div class="fdesc">Образующая l — расстояние от вершины до точки окружности основания. По теореме Пифагора из прямоугольного треугольника.</div>
+        </div>
+
+        <div class="fcard" id="f-cone-slat">
+          <div class="flabel">Боковая поверхность конуса</div>
+          <div class="formula" data-tex="S_\text{бок} = \pi R l"></div>
+          <div class="fdesc">l — образующая. Развёртка боковой поверхности — сектор с радиусом l и дугой 2πR.</div>
+        </div>
+
+        <div class="fcard" id="f-cone-full">
+          <div class="flabel">Полная поверхность конуса</div>
+          <div class="formula" data-tex="S_\text{полн} = \pi R l + \pi R^2 = \pi R(l + R)"></div>
+          <div class="fdesc">Боковая поверхность плюс основание (круг).</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Конус — это пирамида с круглым основанием. Формула объёма V = ⅓·S·h работает для любой пирамиды и конуса.</div>
+        </div>
+
+        <!-- DIAGRAM B4: Cone with labeled dimensions -->
+        <div class="diagram">
+          <div class="diagram-label">Конус — образующая, высота, радиус</div>
+          <svg width="240" height="220" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Base ellipse: center (120,175), rx=90, ry=22 -->
+            <ellipse cx="120" cy="175" rx="90" ry="22" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.07)"/>
+            <!-- Front half of base ellipse (solid) already done above -->
+            <!-- Back half dashed: from left to right going over top -->
+            <path d="M 30,175 A 90,22 0 0 1 210,175" stroke="#4338ca" stroke-width="1.5" stroke-dasharray="5,3" fill="none"/>
+
+            <!-- Apex S at (120,30) -->
+            <circle cx="120" cy="30" r="4" fill="#4338ca"/>
+            <text x="124" y="26" font-size="13" font-weight="700" fill="#4338ca">S</text>
+
+            <!-- Left and right lateral lines -->
+            <line x1="120" y1="30" x2="30" y2="175" stroke="#4338ca" stroke-width="2"/>
+            <line x1="120" y1="30" x2="210" y2="175" stroke="#4338ca" stroke-width="2"/>
+
+            <!-- Height h: dashed from apex to base center (120,175) -->
+            <line x1="120" y1="30" x2="120" y2="175" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="126" y="108" font-size="13" fill="#ef4444" font-weight="700" font-style="italic">h</text>
+            <!-- Right angle mark at base center -->
+            <polyline points="120,165 130,165 130,175" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+
+            <!-- Radius r: from base center (120,175) to right edge (210,175) -->
+            <line x1="120" y1="175" x2="210" y2="175" stroke="#475569" stroke-width="2"/>
+            <text x="158" y="169" font-size="13" fill="#475569" font-weight="600" font-style="italic">r</text>
+
+            <!-- Slant height l: right lateral line, same as (120,30)→(210,175) -->
+            <!-- label l at midpoint (165,102) -->
+            <text x="174" y="98" font-size="13" fill="#4338ca" font-weight="700" font-style="italic">l</text>
+
+            <!-- Formula: l = sqrt(r²+h²) -->
+            <text x="28" y="212" font-size="12" fill="#475569">l = √(r² + h²)  — образующая конуса</text>
+
+            <!-- Base center dot -->
+            <circle cx="120" cy="175" r="2.5" fill="#4338ca"/>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 6: Шар и сфера
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Шар и сфера</h1>
+          <p class="lead">Объём шара, площадь сферы, шаровой сегмент и сектор.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-sphere-v">
+          <div class="flabel">Объём шара</div>
+          <div class="formula" data-tex="V = \dfrac{4}{3}\pi R^3"></div>
+          <div class="fdesc">R — радиус шара.</div>
+        </div>
+
+        <div class="fcard" id="f-sphere-s">
+          <div class="flabel">Площадь сферы</div>
+          <div class="formula" data-tex="S = 4\pi R^2"></div>
+          <div class="fdesc">Площадь поверхности шара (сферы). Равна четырём площадям большого круга.</div>
+        </div>
+
+        <div class="fcard" id="f-sphere-seg">
+          <div class="flabel">Шаровой сегмент</div>
+          <div class="formula" data-tex="V_\text{сег} = \pi h^2\!\left(R - \dfrac{h}{3}\right), \quad S_\text{бок} = 2\pi R h"></div>
+          <div class="fdesc">h — высота сегмента (расстояние от основания до вершины), R — радиус шара.</div>
+        </div>
+
+        <div class="fcard" id="f-sphere-sector">
+          <div class="flabel">Шаровой сектор</div>
+          <div class="formula" data-tex="V_\text{сект} = \dfrac{2}{3}\pi R^2 h"></div>
+          <div class="fdesc">h — высота соответствующего сегмента, R — радиус шара. Шаровой сектор = шаровой сегмент + конус.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Шар vs Сфера:</b> Шар — это <b>тело</b> (объёмная фигура), сфера — <b>поверхность</b> (граница шара). Площадь считают у сферы, объём — у шара.</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="150" cy="110" r="85" stroke="#4338ca" stroke-width="2" fill="rgba(67,56,202,0.05)"/>
+            <ellipse cx="150" cy="110" rx="85" ry="20" stroke="#4338ca" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+            <line x1="150" y1="110" x2="235" y2="110" stroke="#ef4444" stroke-width="2"/>
+            <text x="188" y="103" font-size="12" fill="#ef4444" font-weight="700" font-style="italic">R</text>
+            <circle cx="150" cy="110" r="3" fill="#4338ca"/>
+            <text x="153" y="107" font-size="11" fill="#4338ca">O</text>
+            <!-- segment highlight -->
+            <path d="M 90 75 A 85 85 0 0 1 150 25" stroke="#10b981" stroke-width="2.5" fill="none"/>
+            <line x1="90" y1="75" x2="150" y2="25" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <text x="100" y="48" font-size="11" fill="#10b981" font-style="italic">сегмент</text>
+          </svg>
+          <div class="caption">Шар радиуса R и шаровой сегмент</div>
+        </div>
+
+        <!-- DIAGRAM B5: Sphere with great circle, radius, formulas -->
+        <div class="diagram">
+          <div class="diagram-label">Шар и сфера — радиус R, большая окружность</div>
+          <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Sphere (circle): center O(110,110), R=90 -->
+            <circle cx="110" cy="110" r="90" stroke="#4338ca" stroke-width="2.5" fill="rgba(67,56,202,0.05)"/>
+            <!-- Shading arcs to give 3D effect (right side) -->
+            <path d="M 170,65 A 75,75 0 0 1 175,155" stroke="rgba(67,56,202,0.18)" stroke-width="6" fill="none"/>
+            <path d="M 155,50 A 80,80 0 0 1 162,170" stroke="rgba(67,56,202,0.10)" stroke-width="8" fill="none"/>
+            <!-- Great circle (equator, horizontal ellipse) — dashed -->
+            <ellipse cx="110" cy="110" rx="90" ry="22" stroke="#4338ca" stroke-width="1.5" stroke-dasharray="6,4" fill="none"/>
+            <!-- Center O dot -->
+            <circle cx="110" cy="110" r="3.5" fill="#4338ca"/>
+            <text x="114" y="107" font-size="12" font-weight="700" fill="#4338ca">O</text>
+            <!-- Radius line: O(110,110) to point on circle top-right: (110+90cos(-30°), 110+90sin(-30°))=(188,65) -->
+            <!-- cos(-30°)=0.866, sin(-30°)=-0.5 → (188, 65) -->
+            <line x1="110" y1="110" x2="188" y2="65" stroke="#ef4444" stroke-width="2.5"/>
+            <text x="152" y="82" font-size="14" fill="#ef4444" font-weight="700" font-style="italic">R</text>
+            <!-- Endpoint dot -->
+            <circle cx="188" cy="65" r="3" fill="#ef4444"/>
+            <!-- Formulas inside sphere -->
+            <text x="38" y="128" font-size="12" fill="#4338ca" font-weight="700">V = ⁴⁄₃πR³</text>
+            <text x="38" y="148" font-size="12" fill="#4338ca" font-weight="700">S = 4πR²</text>
+            <!-- Label for equator -->
+            <text x="148" y="135" font-size="10" fill="#475569">большая</text>
+            <text x="148" y="148" font-size="10" fill="#475569">окружность</text>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 7: Координатный метод
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Координатный метод в стереометрии</h1>
+          <p class="lead">Векторы, скалярное произведение, угол между прямыми/плоскостями, уравнение плоскости.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-dot-product">
+          <div class="flabel">Скалярное произведение векторов</div>
+          <div class="formula" data-tex="\vec{a}\cdot\vec{b} = a_x b_x + a_y b_y + a_z b_z = |\vec{a}||\vec{b}|\cos\theta"></div>
+          <div class="fdesc">θ — угол между векторами. Если скалярное произведение = 0, векторы перпендикулярны.</div>
+        </div>
+
+        <div class="fcard" id="f-vec-mod">
+          <div class="flabel">Длина вектора</div>
+          <div class="formula" data-tex="|\vec{a}| = \sqrt{a_x^2 + a_y^2 + a_z^2}"></div>
+          <div class="fdesc">Модуль (длина) вектора <span data-tex="\vec{a} = (a_x, a_y, a_z)"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-angle-vec">
+          <div class="flabel">Угол между векторами</div>
+          <div class="formula" data-tex="\cos\theta = \dfrac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|}"></div>
+          <div class="fdesc">Угол θ ∈ [0°; 180°]. Угол между прямыми (не векторами): берём острый угол, т.е. |cosθ|.</div>
+        </div>
+
+        <div class="fcard" id="f-plane-eq">
+          <div class="flabel">Уравнение плоскости</div>
+          <div class="formula" data-tex="Ax + By + Cz + D = 0, \quad \vec{n} = (A, B, C)"></div>
+          <div class="fdesc"><span data-tex="\vec{n}"></span> — вектор нормали к плоскости. Две плоскости перпендикулярны, если <span data-tex="\vec{n}_1\cdot\vec{n}_2=0"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-dist-point-plane">
+          <div class="flabel">Расстояние от точки до плоскости</div>
+          <div class="formula" data-tex="d = \dfrac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2+B^2+C^2}}"></div>
+          <div class="fdesc">Точка <span data-tex="M(x_0,y_0,z_0)"></span>, плоскость <span data-tex="Ax+By+Cz+D=0"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-angle-planes">
+          <div class="flabel">Угол между плоскостями</div>
+          <div class="formula" data-tex="\cos\phi = \dfrac{|\vec{n_1}\cdot\vec{n_2}|}{|\vec{n_1}||\vec{n_2}|}"></div>
+          <div class="fdesc">Берём модуль, чтобы получить острый угол. Нормали можно взять любого направления.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Алгоритм координатного метода:</b> 1) Выбери удобную систему координат (обычно одну вершину в начало, рёбра по осям). 2) Запиши координаты всех нужных точек. 3) Найди нужные векторы. 4) Используй скалярное произведение.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION: Разбор задач
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор типовых задач ЦТ</h1>
+          <p class="lead">Шаблонные задачи по стереометрии с пошаговым решением.</p>
+          <div class="tags"><span class="tag acc">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Правильная четырёхугольная пирамида имеет квадратное основание со стороной <b>6 см</b> и высоту <b>4 см</b>. Найдите объём пирамиды и длину апофемы боковой грани.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><b>Объём</b>: <span data-tex="V = \dfrac{1}{3}S_\text{осн}\cdot h = \dfrac{1}{3}\cdot 36 \cdot 4 = 48\text{ см}^3"></span></div>
+            <div class="step"><div class="stepn">2</div>Центр основания удалён от середины стороны на: <span data-tex="d = \dfrac{6}{2} = 3\text{ см}"></span></div>
+            <div class="step"><div class="stepn">3</div><b>Апофема</b> (гипотенуза прямоугольного треугольника с катетами h и d): <span data-tex="a = \sqrt{h^2 + d^2} = \sqrt{16 + 9} = \sqrt{25} = 5\text{ см}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="V = 48\text{ см}^3"></span>, апофема <span data-tex="a = 5\text{ см}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Шар имеет объём <b>288π см³</b>. Найдите радиус шара и площадь сферы.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Из формулы объёма: <span data-tex="\dfrac{4}{3}\pi R^3 = 288\pi \Rightarrow R^3 = \dfrac{288 \cdot 3}{4} = 216 \Rightarrow R = \sqrt[3]{216} = 6\text{ см}"></span></div>
+            <div class="step"><div class="stepn">2</div><b>Площадь сферы</b>: <span data-tex="S = 4\pi R^2 = 4\pi \cdot 36 = 144\pi \approx 452{,}4\text{ см}^2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="R = 6\text{ см}"></span>, <span data-tex="S = 144\pi\text{ см}^2"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">В кубе ABCDA₁B₁C₁D₁ с ребром 2 найдите угол между диагональю куба AC₁ и плоскостью основания ABCD.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Введём координаты: A(0,0,0), B(2,0,0), C(2,2,0), D(0,2,0), C₁(2,2,2).</div>
+            <div class="step"><div class="stepn">2</div>Вектор диагонали: <span data-tex="\vec{AC_1} = (2,\,2,\,2)"></span></div>
+            <div class="step"><div class="stepn">3</div>Проекция AC₁ на основание — это диагональ AC: <span data-tex="|AC| = \sqrt{4+4} = 2\sqrt{2}"></span>; <span data-tex="|AC_1| = \sqrt{4+4+4} = 2\sqrt{3}"></span></div>
+            <div class="step"><div class="stepn">4</div>Угол между AC₁ и плоскостью ABCD: <span data-tex="\sin\varphi = \dfrac{C_1C}{AC_1} = \dfrac{2}{2\sqrt{3}} = \dfrac{1}{\sqrt{3}}"></span>, откуда <span data-tex="\varphi = \arcsin\dfrac{1}{\sqrt{3}} \approx 35{,}3^\circ"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\varphi = \arcsin\dfrac{1}{\sqrt{3}} \approx 35{,}3^\circ"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Конус вписан в шар радиуса R. При каком значении высоты h конуса его объём максимален? Найдите этот максимальный объём.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Радиус основания конуса: <span data-tex="r^2 = R^2 - (R-h)^2 = 2Rh - h^2"></span> (из теоремы Пифагора, центр шара на высоте R от основания)</div>
+            <div class="step"><div class="stepn">2</div>Объём: <span data-tex="V = \dfrac{\pi h}{3}(2Rh - h^2) = \dfrac{\pi}{3}(2Rh^2 - h^3)"></span></div>
+            <div class="step"><div class="stepn">3</div>Производная: <span data-tex="V' = \dfrac{\pi}{3}(4Rh - 3h^2) = \dfrac{\pi h}{3}(4R - 3h) = 0 \Rightarrow h = \dfrac{4R}{3}"></span></div>
+            <div class="step"><div class="stepn">4</div>Максимальный объём при <span data-tex="h = \tfrac{4R}{3}"></span>: <span data-tex="V_\max = \dfrac{32\pi R^3}{81}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="h = \dfrac{4R}{3}"></span>, <span data-tex="V_\max = \dfrac{32\pi R^3}{81}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION: Чек-лист
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Минимальный набор формул и навыков по стереометрии.</p>
+        </div>
+
+        <div class="summary">
+          <h4>Призма и параллелепипед</h4>
+          <ul>
+            <li>Объём: <span data-tex="V = S_\text{осн} \cdot h"></span></li>
+            <li>Боковая поверхность прямой: <span data-tex="S_\text{бок} = P \cdot h"></span></li>
+            <li>Диагональ прямоугольного параллелепипеда: <span data-tex="d^2 = a^2+b^2+c^2"></span></li>
+            <li>Куб: <span data-tex="V = a^3,\; S = 6a^2,\; d = a\sqrt{3}"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Пирамида и конус</h4>
+          <ul>
+            <li>Объём: <span data-tex="V = \tfrac{1}{3}S_\text{осн}\cdot h"></span></li>
+            <li>Боковая пирамиды: <span data-tex="S_\text{бок} = \tfrac{1}{2}P\cdot a"></span> (a — апофема)</li>
+            <li>Образующая конуса: <span data-tex="l = \sqrt{R^2+h^2}"></span></li>
+            <li>Боковая конуса: <span data-tex="S_\text{бок} = \pi Rl"></span></li>
+            <li>Усечённая пирамида: <span data-tex="V = \tfrac{h}{3}(S_1+S_2+\sqrt{S_1 S_2})"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Цилиндр, шар</h4>
+          <ul>
+            <li>Цилиндр: <span data-tex="V = \pi R^2 h,\; S_\text{бок} = 2\pi Rh"></span></li>
+            <li>Шар: <span data-tex="V = \tfrac{4}{3}\pi R^3"></span></li>
+            <li>Сфера: <span data-tex="S = 4\pi R^2"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Координатный метод</h4>
+          <ul>
+            <li>Скалярное произведение: <span data-tex="\vec{a}\cdot\vec{b} = a_x b_x + a_y b_y + a_z b_z"></span></li>
+            <li>Угол между векторами: <span data-tex="\cos\theta = \vec{a}\cdot\vec{b}/(|\vec{a}||\vec{b}|)"></span></li>
+            <li>Уравнение плоскости: <span data-tex="Ax+By+Cz+D=0"></span></li>
+            <li>Расстояние от точки до плоскости: <span data-tex="d = |Ax_0+By_0+Cz_0+D|/\sqrt{A^2+B^2+C^2}"></span></li>
+          </ul>
+        </div>
+
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Апофема пирамиды — высота боковой <b>грани</b>, а не само боковое ребро. Не путай их!</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>В формуле V = ⅓·S·h для пирамиды/конуса h — <b>перпендикулярная</b> высота, не боковое ребро и не образующая.</div>
+        </div>
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет:</b> В задачах с кубом/прямоугольным параллелепипедом всегда выноси вершину в начало координат и рёбра — по осям. Это упростит все вычисления.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">11 Текстовые задачи</div>
+            <div class="tp-desc">Движение, работа, смеси, проценты, прогрессии</div>
+          </div>
+          <a class="tp-btn" href="11_tekstovye.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s2" data-anchor="f-prism-v"><div class="ri-name">Объём призмы</div><div class="ri-formula">V = S·h</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-prism-slat"><div class="ri-name">Боковая поверхность прямой призмы</div><div class="ri-formula">S_бок = P·h</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-paral-diag"><div class="ri-name">Диагональ параллелепипеда</div><div class="ri-formula">d² = a²+b²+c²</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-pyramid-v"><div class="ri-name">Объём пирамиды</div><div class="ri-formula">V = ⅓·S·h</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-pyramid-slat"><div class="ri-name">Боковая поверхность пирамиды</div><div class="ri-formula">S_бок = ½·P·a</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-trunc-pyramid"><div class="ri-name">Объём усечённой пирамиды</div><div class="ri-formula">V = h/3·(S₁+S₂+√(S₁S₂))</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-cyl-v"><div class="ri-name">Объём цилиндра</div><div class="ri-formula">V = πR²h</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-cyl-slat"><div class="ri-name">Боковая поверхность цилиндра</div><div class="ri-formula">S_бок = 2πRh</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-cyl-full"><div class="ri-name">Полная поверхность цилиндра</div><div class="ri-formula">S_полн = 2πR(h+R)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-cone-v"><div class="ri-name">Объём конуса</div><div class="ri-formula">V = ⅓πR²h</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-cone-l"><div class="ri-name">Образующая конуса</div><div class="ri-formula">l = √(R²+h²)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-cone-slat"><div class="ri-name">Боковая поверхность конуса</div><div class="ri-formula">S_бок = πRl</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-sphere-v"><div class="ri-name">Объём шара</div><div class="ri-formula">V = 4/3·πR³</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-sphere-s"><div class="ri-name">Площадь сферы</div><div class="ri-formula">S = 4πR²</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-dot-product"><div class="ri-name">Скалярное произведение</div><div class="ri-formula">a·b = a_x·b_x + a_y·b_y + a_z·b_z</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-angle-vec"><div class="ri-name">Угол между векторами</div><div class="ri-formula">cos θ = a·b/(|a|·|b|)</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-dist-point-plane"><div class="ri-name">Расстояние от точки до плоскости</div><div class="ri-formula">d = |Ax₀+By₀+Cz₀+D|/√(A²+B²+C²)</div></div>
+  </div>
+</div>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

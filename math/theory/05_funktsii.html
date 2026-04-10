@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Функции — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t05">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">📈</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Функции</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 05</span>
+      <h2>Функции</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">📐</span>Понятие функции</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">📊</span>Свойства функций</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">📏</span>Линейная функция</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">⛰️</span>Квадратичная функция</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">🔁</span>Степенные функции</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">🔄</span>Преобразования графиков</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ══════════════════════════════════════
+           SECTION 1: Понятие функции
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Понятие функции</h1>
+          <p class="lead">Функция — основной объект математики: каждому аргументу соответствует ровно одно значение.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База</span>
+          </div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Функция</b> <span data-tex="y = f(x)"></span> — правило, по которому каждому значению аргумента <span data-tex="x"></span> из <b>области определения (ОДЗ)</b> ставится в соответствие <b>единственное</b> значение <span data-tex="y"></span>.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>📥 Область определения (ОДЗ)</h4>
+            <p>Множество всех допустимых значений <span data-tex="x"></span> — тех, при которых функция существует.</p>
+            <p>Обозначение: <span data-tex="D(f)"></span> или <span data-tex="X"></span>.</p>
+          </div>
+          <div class="card">
+            <h4>📤 Область значений</h4>
+            <p>Множество всех значений, которые принимает <span data-tex="y"></span> при <span data-tex="x \in D(f)"></span>.</p>
+            <p>Обозначение: <span data-tex="E(f)"></span> или <span data-tex="Y"></span>.</p>
+          </div>
+        </div>
+
+        <h2 id="h-odz-rules">Правила нахождения ОДЗ</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Выражение</th><th>Ограничение</th></tr>
+            <tr><td><span data-tex="\dfrac{1}{g(x)}"></span></td><td><span data-tex="g(x) \neq 0"></span></td></tr>
+            <tr><td><span data-tex="\sqrt{g(x)}"></span></td><td><span data-tex="g(x) \geq 0"></span></td></tr>
+            <tr><td><span data-tex="\sqrt[n]{g(x)}"></span>, n чётное</td><td><span data-tex="g(x) \geq 0"></span></td></tr>
+            <tr><td><span data-tex="\log_a g(x)"></span></td><td><span data-tex="g(x) &gt; 0"></span></td></tr>
+          </table>
+        </div>
+
+        <h2 id="h-ways">Способы задания функции</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Аналитический</h4>
+            <p>Формулой: <span data-tex="y = 2x^2 - 3"></span>. Наиболее распространён.</p>
+          </div>
+          <div class="card">
+            <h4>Графический</h4>
+            <p>График в системе координат. Удобен для визуального анализа.</p>
+          </div>
+          <div class="card">
+            <h4>Табличный</h4>
+            <p>Таблица значений <span data-tex="x \to y"></span>. Используется в реальных данных.</p>
+          </div>
+        </div>
+
+        <h2 id="h-vline">Критерий функции — вертикальная прямая</h2>
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Главное правило</small>
+            <b>Вертикальная прямая</b> <span data-tex="x = a"></span> должна пересекать график функции <b>не более чем в одной точке</b>. Если пересекает в двух и более — это не функция.
+          </div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- axes left -->
+            <line x1="30" y1="170" x2="170" y2="170" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="100" y1="10" x2="100" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
+            <text x="172" y="174" font-size="11" fill="#64748b">x</text>
+            <text x="93" y="10" font-size="11" fill="#64748b">y</text>
+            <text x="40" y="185" font-size="11" fill="#7c3aed" font-weight="600">Функция ✓</text>
+            <!-- parabola -->
+            <path d="M 40 155 Q 100 20, 160 155" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+            <!-- vertical line (one intersection) -->
+            <line x1="130" y1="10" x2="130" y2="170" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <circle cx="130" cy="105" r="4" fill="#10b981"/>
+            <text x="134" y="92" font-size="11" fill="#10b981">1 точка</text>
+
+            <!-- axes right -->
+            <line x1="210" y1="170" x2="360" y2="170" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="285" y1="10" x2="285" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
+            <text x="362" y="174" font-size="11" fill="#64748b">x</text>
+            <text x="278" y="10" font-size="11" fill="#64748b">y</text>
+            <text x="215" y="185" font-size="11" fill="#ef4444" font-weight="600">Не функция ✗</text>
+            <!-- circle (not a function) -->
+            <circle cx="285" cy="95" r="65" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+            <!-- vertical line (two intersections) -->
+            <line x1="320" y1="10" x2="320" y2="170" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <circle cx="320" cy="60" r="4" fill="#ef4444"/>
+            <circle cx="320" cy="130" r="4" fill="#ef4444"/>
+            <text x="324" y="55" font-size="11" fill="#ef4444">2 точки</text>
+          </svg>
+          <div class="caption">Парабола — функция. Окружность — не функция (вертикальная прямая пересекает в 2 точках)</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 2: Свойства функций
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Свойства функций</h1>
+          <p class="lead">Монотонность, чётность, нечётность и периодичность — четыре ключевых свойства для ЦТ.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <h2 id="h-mono">Монотонность</h2>
+        <div class="grid-2">
+          <div class="def">
+            <div class="label">Возрастание</div>
+            <div class="text">Функция <b>возрастает</b> на <span data-tex="(a;b)"></span>, если при <span data-tex="x_1 &lt; x_2"></span> выполняется <span data-tex="f(x_1) &lt; f(x_2)"></span>.</div>
+          </div>
+          <div class="def">
+            <div class="label">Убывание</div>
+            <div class="text">Функция <b>убывает</b> на <span data-tex="(a;b)"></span>, если при <span data-tex="x_1 &lt; x_2"></span> выполняется <span data-tex="f(x_1) &gt; f(x_2)"></span>.</div>
+          </div>
+        </div>
+
+        <h2 id="h-parity">Чётность и нечётность</h2>
+        <div class="grid-2">
+          <div class="fcard" id="f-even">
+            <div class="flabel">Чётная функция</div>
+            <div class="formula" data-tex="f(-x) = f(x)"></div>
+            <div class="fdesc">График симметричен относительно оси <span data-tex="Oy"></span>. Пример: <span data-tex="y = x^2,\; y = \cos x"></span>.</div>
+          </div>
+          <div class="fcard" id="f-odd">
+            <div class="flabel">Нечётная функция</div>
+            <div class="formula" data-tex="f(-x) = -f(x)"></div>
+            <div class="fdesc">График симметричен относительно начала координат. Пример: <span data-tex="y = x^3,\; y = \sin x"></span>.</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>ОДЗ чётной и нечётной функции должна быть <b>симметрична относительно нуля</b>: если <span data-tex="x \in D(f)"></span>, то и <span data-tex="-x \in D(f)"></span>.</div>
+        </div>
+
+        <h2 id="h-period">Периодичность</h2>
+        <div class="fcard" id="f-period">
+          <div class="flabel">Периодическая функция</div>
+          <div class="formula" data-tex="f(x + T) = f(x)"></div>
+          <div class="fdesc"><span data-tex="T &gt; 0"></span> — наименьший положительный период. Пример: <span data-tex="\sin x"></span> имеет <span data-tex="T = 2\pi"></span>.</div>
+        </div>
+
+        <h2 id="h-extrema">Экстремумы</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>⬆️ Максимум</h4>
+            <p>Точка <span data-tex="x_0"></span> — <b>точка максимума</b>, если в некоторой окрестности: <span data-tex="f(x_0) \geq f(x)"></span>.</p>
+          </div>
+          <div class="card">
+            <h4>⬇️ Минимум</h4>
+            <p>Точка <span data-tex="x_0"></span> — <b>точка минимума</b>, если в некоторой окрестности: <span data-tex="f(x_0) \leq f(x)"></span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 3: Линейная функция
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Линейная функция</h1>
+          <p class="lead">Простейшая функция — прямая. Угловой коэффициент определяет наклон, свободный член — сдвиг.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag green">База ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-linear">
+          <div class="flabel">Линейная функция</div>
+          <div class="formula" data-tex="y = kx + b"></div>
+          <div class="fdesc"><b>k</b> — угловой коэффициент (наклон прямой), <b>b</b> — свободный член (сдвиг по оси Y). ОДЗ: <span data-tex="\mathbb{R}"></span>.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Условие</th><th>Поведение графика</th></tr>
+            <tr><td><span data-tex="k &gt; 0"></span></td><td>Прямая возрастает (наклон вправо-вверх)</td></tr>
+            <tr><td><span data-tex="k &lt; 0"></span></td><td>Прямая убывает (наклон вправо-вниз)</td></tr>
+            <tr><td><span data-tex="k = 0"></span></td><td>Горизонтальная прямая <span data-tex="y = b"></span></td></tr>
+            <tr><td><span data-tex="b &gt; 0"></span></td><td>Прямая пересекает ось Y выше нуля</td></tr>
+            <tr><td><span data-tex="b &lt; 0"></span></td><td>Прямая пересекает ось Y ниже нуля</td></tr>
+            <tr><td><span data-tex="b = 0"></span></td><td>Прямая проходит через начало координат</td></tr>
+          </table>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">📐</div>
+          <div class="kc-text">
+            <small>Параллельные прямые</small>
+            Две прямые <span data-tex="y = k_1 x + b_1"></span> и <span data-tex="y = k_2 x + b_2"></span> <b>параллельны</b> тогда и только тогда, когда <span data-tex="k_1 = k_2"></span> и <span data-tex="b_1 \neq b_2"></span>.
+          </div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>На ЦТ часто:</b> найти уравнение прямой по двум точкам или по точке и параллельной прямой. Запомни: если прямая проходит через <span data-tex="(x_1, y_1)"></span> и <span data-tex="(x_2, y_2)"></span>, то <span data-tex="k = \dfrac{y_2 - y_1}{x_2 - x_1}"></span>.</div>
+        </div>
+
+        <div class="diagrams-row">
+          <!-- Panel A: k > 0 -->
+          <div class="diagram sm">
+            <div class="diagram-label">k &gt; 0 — возрастает</div>
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" width="200" height="180">
+              <!-- grid lines -->
+              <line x1="40" y1="20" x2="40" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="80" y1="20" x2="80" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="120" y1="20" x2="120" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="160" y1="20" x2="160" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="15" y1="50" x2="185" y2="50" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="15" y1="90" x2="185" y2="90" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="15" y1="130" x2="185" y2="130" stroke="#e2e8f0" stroke-width="0.5"/>
+              <!-- x-axis -->
+              <line x1="15" y1="110" x2="188" y2="110" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="188,110 181,106.5 181,113.5" fill="#94a3b8"/>
+              <text x="190" y="114" font-family="'Inter',sans-serif" font-size="12" fill="#475569">x</text>
+              <!-- y-axis -->
+              <line x1="40" y1="160" x2="40" y2="17" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="40,17 36.5,24 43.5,24" fill="#94a3b8"/>
+              <text x="35" y="14" font-family="'Inter',sans-serif" font-size="12" fill="#475569">y</text>
+              <!-- origin label -->
+              <text x="43" y="123" font-family="'Inter',sans-serif" font-size="11" fill="#94a3b8">O</text>
+              <!-- y = 2x + 1: at x=0 y=1(origin offset), passes through x=-0.5 on x-axis -->
+              <!-- mapping: x_screen = 40 + x*40, y_screen = 110 - y*40 -->
+              <!-- x=-2: y=-3 => screen((-2)*40+40, 110-(-3)*40) = (-40, 230) -->
+              <!-- x=3: y=7 => screen(3*40+40, 110-7*40) = (160, -170) too high -->
+              <!-- use x=-1.5 to x=2.5 -->
+              <!-- x=-1.5: y=2*(-1.5)+1=-2 => screen(40-60, 110+80)=(−20,190) out -->
+              <!-- scale factor 30px per unit, origin at (40,110) -->
+              <!-- x=-1: y=-1 => screen(40-30, 110+30)=(10,140) -->
+              <!-- x=2.5: y=6 => screen(40+75, 110-180)=(115,-70) out -->
+              <!-- use 25px per unit -->
+              <!-- x=-1: y=-1 => (40-25, 110+25)=(15,135) -->
+              <!-- x=2.5: y=6 => (40+62.5, 110-150)=(102.5,-40) still out -->
+              <!-- use 20px per unit, start x=-1, end x=3.5 -->
+              <!-- x=-1: y=-1 => (40-20, 110+20)=(20,130) -->
+              <!-- x=3.5: y=8 => (40+70, 110-160)=(110,-50) out -->
+              <!-- Let's just use two endpoint coords directly -->
+              <!-- Line y=2x+1. Let's pick x=-0.5 (y=0, x-intercept) and x=2 (y=5) -->
+              <!-- origin at (40,110), 28px per unit -->
+              <!-- x=-0.5 => screen_x=40+(-0.5)*28=26, screen_y=110-0*28=110 -->
+              <!-- x=2 => screen_x=40+2*28=96, screen_y=110-5*28=110-140=-30 => off screen -->
+              <!-- use smaller scale: 22px per unit -->
+              <!-- x=-0.5 => (40-11, 110)=(29,110), x=2.5 => (40+55, 110-6*22)=(95, -22) off -->
+              <!-- use 18px per unit -->
+              <!-- x-intercept at x=-0.5: screen(40-9,110)=(31,110) -->
+              <!-- x=3: y=7: screen(40+54,110-126)=(94,-16) still off -->
+              <!-- At scale 18: x=2.5: y=6: screen(85,2) borderline -->
+              <!-- actual line: from (31,110) to (85,2), with b-annotation -->
+              <!-- b=1: y-intercept at x=0: screen(40, 110-18)=(40,92) -->
+              <line x1="10" y1="138" x2="152" y2="10" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+              <!-- b label: y-intercept x=0 => screen_x=40, screen_y=110-1*18=92 -->
+              <circle cx="40" cy="92" r="3" fill="#7c3aed"/>
+              <!-- dashed horizontal from y-axis intercept -->
+              <line x1="15" y1="92" x2="40" y2="92" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,2"/>
+              <text x="4" y="96" font-family="'Inter',sans-serif" font-size="11" fill="#7c3aed" font-weight="600">b</text>
+              <!-- x-intercept dot: x=-0.5 => screen(31,110) -->
+              <circle cx="31" cy="110" r="3" fill="#7c3aed"/>
+            </svg>
+          </div>
+          <!-- Panel B: k < 0 -->
+          <div class="diagram sm">
+            <div class="diagram-label">k &lt; 0 — убывает</div>
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" width="200" height="180">
+              <!-- grid lines -->
+              <line x1="40" y1="20" x2="40" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="80" y1="20" x2="80" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="120" y1="20" x2="120" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="160" y1="20" x2="160" y2="155" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="15" y1="50" x2="185" y2="50" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="15" y1="90" x2="185" y2="90" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="15" y1="130" x2="185" y2="130" stroke="#e2e8f0" stroke-width="0.5"/>
+              <!-- x-axis -->
+              <line x1="15" y1="110" x2="188" y2="110" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="188,110 181,106.5 181,113.5" fill="#94a3b8"/>
+              <text x="190" y="114" font-family="'Inter',sans-serif" font-size="12" fill="#475569">x</text>
+              <!-- y-axis -->
+              <line x1="40" y1="160" x2="40" y2="17" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="40,17 36.5,24 43.5,24" fill="#94a3b8"/>
+              <text x="35" y="14" font-family="'Inter',sans-serif" font-size="12" fill="#475569">y</text>
+              <text x="43" y="123" font-family="'Inter',sans-serif" font-size="11" fill="#94a3b8">O</text>
+              <!-- y = -x + 2, scale 18px/unit, origin at (40,110) -->
+              <!-- x=0: y=2 => screen(40, 110-36)=(40,74) -->
+              <!-- x=2: y=0 => screen(40+36, 110)=(76,110) -->
+              <!-- x=-1: y=3 => screen(40-18, 110-54)=(22,56) -->
+              <!-- x=3.5: y=-1.5 => screen(103, 137) -->
+              <!-- line from (10,38) to (175,152) approx -->
+              <line x1="10" y1="38" x2="175" y2="152" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+              <!-- y-intercept at (40,74) -->
+              <circle cx="40" cy="74" r="3" fill="#7c3aed"/>
+              <line x1="15" y1="74" x2="40" y2="74" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,2"/>
+              <text x="4" y="78" font-family="'Inter',sans-serif" font-size="11" fill="#7c3aed" font-weight="600">b</text>
+              <!-- x-intercept at (76,110) -->
+              <circle cx="76" cy="110" r="3" fill="#7c3aed"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 4: Квадратичная функция
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Квадратичная функция</h1>
+          <p class="lead">Парабола — самый частый график на ЦТ. Ключ к успеху — координаты вершины и направление ветвей.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Часто на ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-quad">
+          <div class="flabel">Квадратичная функция</div>
+          <div class="formula" data-tex="y = ax^2 + bx + c, \quad a \neq 0"></div>
+          <div class="fdesc">ОДЗ: <span data-tex="\mathbb{R}"></span>. Область значений зависит от знака <span data-tex="a"></span>.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="fcard" id="f-vertex-x">
+            <div class="flabel">Абсцисса вершины</div>
+            <div class="formula" data-tex="x_0 = -\dfrac{b}{2a}"></div>
+            <div class="fdesc">Ось симметрии параболы: <span data-tex="x = x_0"></span>.</div>
+          </div>
+          <div class="fcard" id="f-vertex-y">
+            <div class="flabel">Ордината вершины</div>
+            <div class="formula" data-tex="y_0 = -\dfrac{D}{4a} = f(x_0)"></div>
+            <div class="fdesc">Экстремум параболы. <span data-tex="D = b^2 - 4ac"></span>.</div>
+          </div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- axes -->
+            <line x1="30" y1="180" x2="350" y2="180" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="190" y1="10" x2="190" y2="185" stroke="#94a3b8" stroke-width="1.5"/>
+            <polygon points="350,180 342,176 342,184" fill="#94a3b8"/>
+            <polygon points="190,10 186,18 194,18" fill="#94a3b8"/>
+            <text x="354" y="184" font-size="11" fill="#64748b">x</text>
+            <text x="183" y="10" font-size="11" fill="#64748b">y</text>
+            <!-- parabola a>0 (left) -->
+            <path d="M 40 170 Q 130 20, 220 170" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+            <text x="38" y="165" font-size="11" fill="#7c3aed" font-style="italic">a&gt;0</text>
+            <!-- vertex left -->
+            <circle cx="130" cy="20" r="4" fill="#7c3aed"/>
+            <line x1="130" y1="20" x2="130" y2="180" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="118" y="195" font-size="11" fill="#7c3aed">x₀</text>
+            <text x="136" y="25" font-size="11" fill="#7c3aed">min</text>
+            <!-- parabola a<0 (right) -->
+            <path d="M 200 30 Q 290 180, 370 30" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+            <text x="356" y="30" font-size="11" fill="#ef4444" font-style="italic">a&lt;0</text>
+            <!-- vertex right -->
+            <circle cx="290" cy="180" r="4" fill="#ef4444"/>
+            <text x="284" y="195" font-size="11" fill="#ef4444">x₀</text>
+            <text x="296" y="175" font-size="11" fill="#ef4444">max</text>
+            <!-- arrows range -->
+            <text x="90" y="110" font-size="11" fill="#7c3aed">E: [y₀;+∞)</text>
+            <text x="232" y="110" font-size="11" fill="#ef4444">E: (-∞;y₀]</text>
+          </svg>
+          <div class="caption">При <span data-tex="a &gt; 0"></span> парабола «улыбается», вершина — минимум. При <span data-tex="a &lt; 0"></span> — «плачет», вершина — максимум.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Свойство</th><th><span data-tex="a &gt; 0"></span></th><th><span data-tex="a &lt; 0"></span></th></tr>
+            <tr><td>Ветви</td><td>Вверх</td><td>Вниз</td></tr>
+            <tr><td>Вершина</td><td>Минимум</td><td>Максимум</td></tr>
+            <tr><td>Область значений</td><td><span data-tex="[y_0; +\infty)"></span></td><td><span data-tex="(-\infty; y_0]"></span></td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Формулу <span data-tex="y_0 = -D/(4a)"></span> применяй, когда уже нашёл дискриминант для корней уравнения. Иначе проще: вычисли <span data-tex="x_0 = -b/(2a)"></span> и подставь в функцию.</div>
+        </div>
+
+        <div class="diagrams-row">
+          <!-- Panel A: a > 0, parabola opens up -->
+          <div class="diagram sm">
+            <div class="diagram-label">a &gt; 0 — ветви вверх</div>
+            <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" width="200" height="190">
+              <!-- grid -->
+              <line x1="20" y1="30" x2="20" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="60" y1="30" x2="60" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="100" y1="30" x2="100" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="140" y1="30" x2="140" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="180" y1="30" x2="180" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="10" y1="60" x2="192" y2="60" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="10" y1="100" x2="192" y2="100" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="10" y1="140" x2="192" y2="140" stroke="#e2e8f0" stroke-width="0.5"/>
+              <!-- x-axis -->
+              <line x1="10" y1="140" x2="192" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="192,140 185,136.5 185,143.5" fill="#94a3b8"/>
+              <text x="193" y="144" font-family="'Inter',sans-serif" font-size="11" fill="#475569">x</text>
+              <!-- y-axis at x=100 -->
+              <line x1="100" y1="170" x2="100" y2="22" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="100,22 96.5,29 103.5,29" fill="#94a3b8"/>
+              <text x="94" y="20" font-family="'Inter',sans-serif" font-size="11" fill="#475569">y</text>
+              <text x="103" y="153" font-family="'Inter',sans-serif" font-size="10" fill="#94a3b8">O</text>
+              <!-- parabola y=(x-1)^2-1, scale 30px/unit, origin-screen (100,140) -->
+              <!-- x-screen = 100 + x_math*30, y-screen = 140 - y_math*30 -->
+              <!-- vertex at x_math=1, y_math=-1 => screen(130,170) - below, adjust -->
+              <!-- use scale 25px/unit: vertex at x=1,y=-1 => screen(125, 165) -->
+              <!-- roots: y=0 => (x-1)^2=1 => x=0 or x=2 -->
+              <!-- x=0: screen(100,140); x=2: screen(150,140) -->
+              <!-- let's shift: vertex at x=0.5, y=-0.8, scale 28px/unit -->
+              <!-- y=(x-0.5)^2-0.8 =>roots: x=0.5±sqrt(0.8) ≈ -0.39, 1.39 -->
+              <!-- Better: use y=x^2-2, vertex(0,-2), roots at ±sqrt(2) -->
+              <!-- vertex screen(100, 140-(-2)*28) = (100, 196) again below -->
+              <!-- let's use y=x^2-1.2 scale 25, x-axis at y_screen=130 -->
+              <!-- Redefine: x-axis at y_s=145, y-axis at x_s=80, scale=22 -->
+              <!-- vertex at x=0,y=-1.2 => screen(80,145+1.2*22)=(80,171) off -->
+              <!-- Use compact: x-axis y_s=150, y-axis x_s=80, scale=20 -->
+              <!-- parabola y=(x-1)^2-1 roots x=0,x=2 -->
+              <!-- vertex(1,-1): screen(80+20,150+20)=(100,170) off -->
+              <!-- Use x-axis y_s=145, scale 18, y-axis x_s=70 -->
+              <!-- vertex(1,-1):screen(70+18,145+18)=(88,163) off  -->
+              <!-- Final approach: let me just place it directly with real SVG coords -->
+              <!-- parabola opening up, vertex near bottom-center, two roots visible -->
+              <!-- vertex at SVG(100,130), roots at SVG(60,140) and SVG(140,140) -->
+              <!-- Quadratic through 3 points: (60,140),(100,130),(140,140) -->
+              <!-- Use path with cubic bezier: M 30,50 Q 100,145 170,50 approximately -->
+              <!-- a>0 parabola, vertex low, roots on x-axis -->
+              <path d="M 25 55 Q 100 162 175 55" stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+              <!-- vertex dot: midpoint of control = (100, 162 adjusted) -->
+              <!-- actual vertex of bezier M30,55 Q100,162 170,55: vertex at t=0.5 -->
+              <!-- P(0.5)=(0.25*30+0.5*200+0.25*170, 0.25*55+0.5*162+0.25*55)=(100,108.5) -->
+              <!-- Let's place vertex dot at (100,109) -->
+              <circle cx="100" cy="109" r="4" fill="#7c3aed"/>
+              <!-- axis of symmetry dashed -->
+              <line x1="100" y1="25" x2="100" y2="140" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4,3"/>
+              <!-- roots: where parabola crosses x-axis y_s=140 -->
+              <!-- bezier y=140: 0.25*55+0.5*162*t... approximate visually at x=45 and x=155 -->
+              <circle cx="45" cy="140" r="3.5" fill="#475569"/>
+              <circle cx="155" cy="140" r="3.5" fill="#475569"/>
+              <text x="38" y="155" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x₁</text>
+              <text x="150" y="155" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x₂</text>
+              <!-- vertex label -->
+              <text x="104" y="107" font-family="'Inter',sans-serif" font-size="10" fill="#7c3aed">вершина</text>
+              <text x="104" y="118" font-family="'Inter',sans-serif" font-size="10" fill="#7c3aed">(x₀,y₀)</text>
+              <!-- axis of sym label -->
+              <text x="103" y="35" font-family="'Inter',sans-serif" font-size="10" fill="#7c3aed">x=x₀</text>
+            </svg>
+          </div>
+          <!-- Panel B: a < 0, parabola opens down -->
+          <div class="diagram sm">
+            <div class="diagram-label">a &lt; 0 — ветви вниз</div>
+            <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" width="200" height="190">
+              <!-- grid -->
+              <line x1="20" y1="30" x2="20" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="60" y1="30" x2="60" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="100" y1="30" x2="100" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="140" y1="30" x2="140" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="180" y1="30" x2="180" y2="165" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="10" y1="60" x2="192" y2="60" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="10" y1="100" x2="192" y2="100" stroke="#e2e8f0" stroke-width="0.5"/>
+              <line x1="10" y1="140" x2="192" y2="140" stroke="#e2e8f0" stroke-width="0.5"/>
+              <!-- x-axis -->
+              <line x1="10" y1="140" x2="192" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="192,140 185,136.5 185,143.5" fill="#94a3b8"/>
+              <text x="193" y="144" font-family="'Inter',sans-serif" font-size="11" fill="#475569">x</text>
+              <!-- y-axis -->
+              <line x1="100" y1="170" x2="100" y2="22" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="100,22 96.5,29 103.5,29" fill="#94a3b8"/>
+              <text x="94" y="20" font-family="'Inter',sans-serif" font-size="11" fill="#475569">y</text>
+              <text x="103" y="153" font-family="'Inter',sans-serif" font-size="10" fill="#94a3b8">O</text>
+              <!-- parabola opening down: M 25,125 Q 100,30 175,125 -->
+              <path d="M 25 130 Q 100 28 175 130" stroke="#ef4444" stroke-width="2.5" fill="none"/>
+              <!-- vertex at t=0.5: (100, 0.25*130+0.5*28+0.25*130)=(100,54) -->
+              <circle cx="100" cy="54" r="4" fill="#ef4444"/>
+              <!-- axis of symmetry dashed -->
+              <line x1="100" y1="25" x2="100" y2="140" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+              <!-- roots at approx x=35 and x=165 where bezier hits y=140 -->
+              <circle cx="38" cy="140" r="3.5" fill="#475569"/>
+              <circle cx="162" cy="140" r="3.5" fill="#475569"/>
+              <text x="31" y="155" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x₁</text>
+              <text x="157" y="155" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x₂</text>
+              <!-- vertex label — max -->
+              <text x="104" y="50" font-family="'Inter',sans-serif" font-size="10" fill="#ef4444">вершина</text>
+              <text x="104" y="60" font-family="'Inter',sans-serif" font-size="10" fill="#ef4444">max</text>
+              <text x="103" y="35" font-family="'Inter',sans-serif" font-size="10" fill="#ef4444">x=x₀</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 5: Степенные функции
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Обратная пропорциональность и степенные функции</h1>
+          <p class="lead">Гипербола, корень и степень — три важных семейства функций с разными областями определения.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-inv">
+          <div class="flabel">Обратная пропорциональность</div>
+          <div class="formula" data-tex="y = \dfrac{k}{x}, \quad k \neq 0"></div>
+          <div class="fdesc">ОДЗ: <span data-tex="x \neq 0"></span>. Гипербола. При <span data-tex="k &gt; 0"></span> — I и III четверти; при <span data-tex="k &lt; 0"></span> — II и IV четверти.</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-power-n">
+            <div class="chip-name">Степенная <span data-tex="y = x^n"></span></div>
+            <div class="chip-formula" data-tex="y = x^n"></div>
+            <div class="chip-desc">Нечётные n: ОДЗ <span data-tex="\mathbb{R}"></span>, нечётная. Чётные n: ОДЗ <span data-tex="\mathbb{R}"></span>, чётная, <span data-tex="E \!=\! [0;+\infty)"></span>.</div>
+          </div>
+          <div class="fchip" id="fc-sqrt">
+            <div class="chip-name">Квадратный корень</div>
+            <div class="chip-formula" data-tex="y = \sqrt{x}"></div>
+            <div class="chip-desc">ОДЗ: <span data-tex="x \geq 0"></span>. Область значений: <span data-tex="y \geq 0"></span>. Возрастает на всей ОДЗ.</div>
+          </div>
+          <div class="fchip" id="fc-cbrt">
+            <div class="chip-name">Кубический корень</div>
+            <div class="chip-formula" data-tex="y = \sqrt[3]{x}"></div>
+            <div class="chip-desc">ОДЗ: <span data-tex="\mathbb{R}"></span>. Нечётная, возрастает.</div>
+          </div>
+        </div>
+
+        <!-- Diagram 3: Hyperbola y = k/x -->
+        <div class="diagram">
+          <div class="diagram-label">Гипербола y = k/x (k &gt; 0)</div>
+          <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg" width="260" height="220">
+            <!-- grid -->
+            <line x1="50" y1="15" x2="50" y2="200" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="90" y1="15" x2="90" y2="200" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="170" y1="15" x2="170" y2="200" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="210" y1="15" x2="210" y2="200" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="20" y1="50" x2="245" y2="50" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="20" y1="90" x2="245" y2="90" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="20" y1="170" x2="245" y2="170" stroke="#e2e8f0" stroke-width="0.5"/>
+            <!-- asymptote x=0 (y-axis) dashed -->
+            <line x1="130" y1="10" x2="130" y2="205" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,4"/>
+            <!-- asymptote y=0 (x-axis) dashed (actually the x-axis IS y=0) -->
+            <!-- x-axis -->
+            <line x1="15" y1="130" x2="248" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+            <polygon points="248,130 241,126.5 241,133.5" fill="#94a3b8"/>
+            <text x="250" y="134" font-family="'Inter',sans-serif" font-size="11" fill="#475569">x</text>
+            <!-- y-axis -->
+            <line x1="130" y1="210" x2="130" y2="12" stroke="#94a3b8" stroke-width="1.5"/>
+            <polygon points="130,12 126.5,19 133.5,19" fill="#94a3b8"/>
+            <text x="124" y="11" font-family="'Inter',sans-serif" font-size="11" fill="#475569">y</text>
+            <text x="133" y="143" font-family="'Inter',sans-serif" font-size="10" fill="#94a3b8">O</text>
+            <!-- asymptote labels -->
+            <text x="134" y="22" font-family="'Inter',sans-serif" font-size="10" fill="#94a3b8" font-style="italic">x=0</text>
+            <text x="202" y="127" font-family="'Inter',sans-serif" font-size="10" fill="#94a3b8" font-style="italic">y=0</text>
+            <!-- Hyperbola k>0, branch I (x>0, y>0) -->
+            <!-- y=k/x, let k=2000(px scale). origin-screen(130,130), scale=40px/unit -->
+            <!-- x_math=0.5 => x_s=150, y=k/0.5=4 => y_s=130-160=-30 off -->
+            <!-- scale=30: x=1=>x_s=160,y=2=>y_s=70; x=2=>x_s=190,y=1=>y_s=100 -->
+            <!-- x=0.5=>x_s=145,y=4=>y_s=-10 off. x=0.7=>x_s=151,y=2.86=>y_s=44 -->
+            <!-- x=3=>x_s=220,y=0.67=>y_s=110; x=3.5=>x_s=235,y=0.57=>y_s=113 -->
+            <!-- Branch I points: (145,44),(160,70),(190,100),(220,110),(235,113) -->
+            <path d="M 140 22 C 143 35 148 55 160 75 C 175 98 200 112 235 118"
+                  stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+            <!-- Branch III (x<0, y<0) — symmetric about origin -->
+            <path d="M 120 238 C 117 225 112 205 100 185 C 85 162 60 148 25 142"
+                  stroke="#7c3aed" stroke-width="2.5" fill="none"/>
+            <!-- Label quadrant I -->
+            <text x="168" y="58" font-family="'Inter',sans-serif" font-size="11" fill="#7c3aed" font-weight="600">y = k/x</text>
+            <text x="168" y="70" font-family="'Inter',sans-serif" font-size="11" fill="#7c3aed">(k &gt; 0)</text>
+            <!-- Label quadrant III -->
+            <text x="28" y="165" font-family="'Inter',sans-serif" font-size="11" fill="#7c3aed">III четв.</text>
+            <!-- Asymptotes label -->
+            <text x="15" y="196" font-family="'Inter',sans-serif" font-size="10" fill="#94a3b8">Асимптоты: x=0, y=0</text>
+          </svg>
+        </div>
+
+        <!-- Diagram 4: Power functions comparison -->
+        <div class="diagram">
+          <div class="diagram-label">Степенные функции при x ≥ 0</div>
+          <svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" width="280" height="220">
+            <!-- grid -->
+            <line x1="40" y1="20" x2="40" y2="185" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="90" y1="20" x2="90" y2="185" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="140" y1="20" x2="140" y2="185" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="190" y1="20" x2="190" y2="185" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="20" y1="40" x2="265" y2="40" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="20" y1="90" x2="265" y2="90" stroke="#e2e8f0" stroke-width="0.5"/>
+            <line x1="20" y1="140" x2="265" y2="140" stroke="#e2e8f0" stroke-width="0.5"/>
+            <!-- x-axis -->
+            <line x1="20" y1="185" x2="268" y2="185" stroke="#94a3b8" stroke-width="1.5"/>
+            <polygon points="268,185 261,181.5 261,188.5" fill="#94a3b8"/>
+            <text x="270" y="189" font-family="'Inter',sans-serif" font-size="11" fill="#475569">x</text>
+            <!-- y-axis -->
+            <line x1="40" y1="195" x2="40" y2="17" stroke="#94a3b8" stroke-width="1.5"/>
+            <polygon points="40,17 36.5,24 43.5,24" fill="#94a3b8"/>
+            <text x="34" y="15" font-family="'Inter',sans-serif" font-size="11" fill="#475569">y</text>
+            <text x="43" y="198" font-family="'Inter',sans-serif" font-size="10" fill="#94a3b8">O</text>
+            <!-- Scale: origin (40,185), 1 unit = 75px x-direction, 75px y-direction -->
+            <!-- so x=1 => x_s=115, x=2 => x_s=190, y=1 => y_s=110, y=2 => y_s=35 -->
+            <!-- y=x: straight line from (40,185) to (190,35) -->
+            <line x1="40" y1="185" x2="225" y2="35" stroke="#94a3b8" stroke-width="1.8"/>
+            <text x="225" y="32" font-family="'Inter',sans-serif" font-size="11" fill="#94a3b8" font-style="italic">y=x</text>
+            <!-- y=x²: points x=0(40,185), x=0.5(77.5,166.25), x=1(115,110), x=1.5(152.5,21.25) -->
+            <!-- at x=1.5: y=2.25 => y_s=185-2.25*75=15.25 -->
+            <!-- path through (40,185),(77,167),(115,110),(140,73),(152,16) -->
+            <path d="M 40 185 C 60 182 90 155 115 110 S 148 35 162 15"
+                  stroke="#7c3aed" stroke-width="2" fill="none"/>
+            <text x="162" y="13" font-family="'Inter',sans-serif" font-size="11" fill="#7c3aed" font-style="italic">y=x²</text>
+            <!-- y=x³: points x=0(40,185), x=0.5(77.5,176.56), x=1(115,110), x=1.5 y=3.375 off -->
+            <!-- x=1.2: y=1.728 => y_s=185-1.728*75=55.1; x=1.3: y=2.197 => y_s=20.2 -->
+            <path d="M 40 185 C 55 184 85 175 115 110 S 140 42 152 18"
+                  stroke="#059669" stroke-width="2" fill="none"/>
+            <text x="152" y="16" font-family="'Inter',sans-serif" font-size="11" fill="#059669" font-style="italic">y=x³</text>
+            <!-- y=√x: points x=0(40,185), x=0.25(58.75,147.5), x=1(115,110), x=2(190,35) -->
+            <!-- x=0.25: y=0.5 => y_s=185-0.5*75=147.5 -->
+            <!-- x=0.5: y=0.707 => y_s=185-53=132 -->
+            <!-- x=2: y=1.414 => y_s=185-106=79 -->
+            <!-- x=2.5: y=1.581 => y_s=185-118.6=66.4 -->
+            <path d="M 40 185 C 50 165 75 148 115 110 S 175 70 230 55"
+                  stroke="#f59e0b" stroke-width="2" fill="none"/>
+            <text x="228" y="52" font-family="'Inter',sans-serif" font-size="11" fill="#f59e0b" font-style="italic">y=√x</text>
+            <!-- Mark point (1,1) intersection -->
+            <circle cx="115" cy="110" r="3.5" fill="#475569"/>
+            <text x="118" y="108" font-family="'Inter',sans-serif" font-size="9" fill="#475569">(1,1)</text>
+            <!-- x-axis tick at x=1 -->
+            <line x1="115" y1="182" x2="115" y2="188" stroke="#94a3b8" stroke-width="1"/>
+            <text x="111" y="197" font-family="'Inter',sans-serif" font-size="10" fill="#475569">1</text>
+            <!-- x-axis tick at x=2 -->
+            <line x1="190" y1="182" x2="190" y2="188" stroke="#94a3b8" stroke-width="1"/>
+            <text x="186" y="197" font-family="'Inter',sans-serif" font-size="10" fill="#475569">2</text>
+          </svg>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Функция</th><th>ОДЗ</th><th>Область значений</th><th>Монотонность</th></tr>
+            <tr><td><span data-tex="y = x^2"></span></td><td><span data-tex="\mathbb{R}"></span></td><td><span data-tex="[0;+\infty)"></span></td><td>убывает на <span data-tex="(-\infty;0]"></span>, возрастает на <span data-tex="[0;+\infty)"></span></td></tr>
+            <tr><td><span data-tex="y = x^3"></span></td><td><span data-tex="\mathbb{R}"></span></td><td><span data-tex="\mathbb{R}"></span></td><td>возрастает</td></tr>
+            <tr><td><span data-tex="y = \sqrt{x}"></span></td><td><span data-tex="[0;+\infty)"></span></td><td><span data-tex="[0;+\infty)"></span></td><td>возрастает</td></tr>
+            <tr><td><span data-tex="y = 1/x"></span></td><td><span data-tex="x \neq 0"></span></td><td><span data-tex="y \neq 0"></span></td><td>убывает на каждом промежутке</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 6: Преобразования графиков
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Преобразования графиков</h1>
+          <p class="lead">Зная вид базового графика, можно построить любой сдвиг, отражение или растяжение без формул.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Часто на ЦТ</span></div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-shift-y">
+            <div class="chip-name">Сдвиг по Y</div>
+            <div class="chip-formula" data-tex="y = f(x) + c"></div>
+            <div class="chip-desc">Вверх на <span data-tex="c"></span> (если <span data-tex="c &gt; 0"></span>), вниз (если <span data-tex="c &lt; 0"></span>).</div>
+          </div>
+          <div class="fchip" id="fc-shift-x">
+            <div class="chip-name">Сдвиг по X</div>
+            <div class="chip-formula" data-tex="y = f(x + c)"></div>
+            <div class="chip-desc">Влево на <span data-tex="c"></span> (если <span data-tex="c &gt; 0"></span>), вправо (если <span data-tex="c &lt; 0"></span>). <b>Внимание: знак противоположный!</b></div>
+          </div>
+          <div class="fchip" id="fc-reflect-x">
+            <div class="chip-name">Отражение от X</div>
+            <div class="chip-formula" data-tex="y = -f(x)"></div>
+            <div class="chip-desc">Симметрия относительно оси X.</div>
+          </div>
+          <div class="fchip" id="fc-reflect-y">
+            <div class="chip-name">Отражение от Y</div>
+            <div class="chip-formula" data-tex="y = f(-x)"></div>
+            <div class="chip-desc">Симметрия относительно оси Y.</div>
+          </div>
+          <div class="fchip" id="fc-stretch-y">
+            <div class="chip-name">Растяжение по Y</div>
+            <div class="chip-formula" data-tex="y = k \cdot f(x)"></div>
+            <div class="chip-desc">При <span data-tex="|k| &gt; 1"></span> — растяжение, <span data-tex="|k| &lt; 1"></span> — сжатие.</div>
+          </div>
+          <div class="fchip" id="fc-stretch-x">
+            <div class="chip-name">Растяжение по X</div>
+            <div class="chip-formula" data-tex="y = f\!\left(\dfrac{x}{k}\right)"></div>
+            <div class="chip-desc">При <span data-tex="|k| &gt; 1"></span> — растяжение, <span data-tex="|k| &lt; 1"></span> — сжатие вдоль X.</div>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Типичная ошибка:</b> при <span data-tex="y = f(x + 2)"></span> график сдвигается <b>влево</b> на 2, а не вправо! Запомни: аргумент <span data-tex="x + c"></span> — сдвиг в сторону, <b>противоположную знаку c</b>.</div>
+        </div>
+
+        <div class="summary">
+          <h4>Порядок преобразований</h4>
+          <ul>
+            <li>Сначала — преобразования <b>внутри</b> аргумента (сдвиг и растяжение по X)</li>
+            <li>Затем — преобразования <b>снаружи</b> (сдвиг и растяжение по Y)</li>
+            <li>Отражения можно применять в любой момент, но фиксируй что уже сделано</li>
+          </ul>
+        </div>
+
+        <!-- Diagram 5: Transformation grid 3×2 -->
+        <div class="diagrams-row" style="flex-wrap:wrap;gap:12px;">
+          <!-- T1: f(x)+a — shift UP -->
+          <div class="diagram sm" style="flex:1;min-width:160px;">
+            <div class="diagram-label">f(x) + a (a &gt; 0)</div>
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" width="160" height="130">
+              <line x1="10" y1="90" x2="152" y2="90" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="152,90 146,87 146,93" fill="#94a3b8"/>
+              <line x1="50" y1="120" x2="50" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="50,12 47,19 53,19" fill="#94a3b8"/>
+              <text x="153" y="93" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x</text>
+              <text x="44" y="11" font-family="'Inter',sans-serif" font-size="10" fill="#475569">y</text>
+              <!-- base curve: parabola at vertex (50,90), gray solid -->
+              <path d="M 20 70 Q 50 108 80 70" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+              <!-- shifted up by a=25px: vertex (50,65) -->
+              <path d="M 20 45 Q 50 83 80 45" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+              <!-- arrow showing shift direction -->
+              <line x1="88" y1="68" x2="88" y2="43" stroke="#7c3aed" stroke-width="1.2" marker-end="url(#arrowUp1)"/>
+              <polygon points="88,40 85,48 91,48" fill="#7c3aed"/>
+              <text x="91" y="56" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">+a</text>
+              <text x="8" y="115" font-family="'Inter',sans-serif" font-size="9" fill="#94a3b8">f(x)</text>
+              <text x="8" y="40" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">f(x)+a</text>
+            </svg>
+          </div>
+          <!-- T2: f(x+a) — shift LEFT -->
+          <div class="diagram sm" style="flex:1;min-width:160px;">
+            <div class="diagram-label">f(x+a) — влево</div>
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" width="160" height="130">
+              <line x1="10" y1="90" x2="152" y2="90" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="152,90 146,87 146,93" fill="#94a3b8"/>
+              <line x1="80" y1="120" x2="80" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="80,12 77,19 83,19" fill="#94a3b8"/>
+              <text x="153" y="93" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x</text>
+              <text x="74" y="11" font-family="'Inter',sans-serif" font-size="10" fill="#475569">y</text>
+              <!-- base curve: parabola vertex at x=110 -->
+              <path d="M 80 68 Q 110 108 140 68" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+              <!-- shifted LEFT by a=30px: vertex at x=80 -->
+              <path d="M 50 68 Q 80 108 110 68" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+              <!-- arrow left -->
+              <polygon points="72,78 80,74 80,82" fill="#7c3aed"/>
+              <line x1="80" y1="78" x2="106" y2="78" stroke="#7c3aed" stroke-width="1.2"/>
+              <text x="83" y="73" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">a&gt;0→влево</text>
+            </svg>
+          </div>
+          <!-- T3: -f(x) — reflect x-axis -->
+          <div class="diagram sm" style="flex:1;min-width:160px;">
+            <div class="diagram-label">−f(x) — отражение от X</div>
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" width="160" height="130">
+              <line x1="10" y1="65" x2="152" y2="65" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="152,65 146,62 146,68" fill="#94a3b8"/>
+              <line x1="50" y1="120" x2="50" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="50,12 47,19 53,19" fill="#94a3b8"/>
+              <text x="153" y="68" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x</text>
+              <text x="44" y="11" font-family="'Inter',sans-serif" font-size="10" fill="#475569">y</text>
+              <!-- base curve: parabola opens up, vertex below axis -->
+              <path d="M 20 50 Q 50 18 80 50" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+              <!-- reflected: opens down, vertex above axis -->
+              <path d="M 20 80 Q 50 112 80 80" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+              <!-- horizontal axis as mirror line label -->
+              <text x="82" y="62" font-family="'Inter',sans-serif" font-size="9" fill="#94a3b8">зеркало</text>
+              <text x="8" y="36" font-family="'Inter',sans-serif" font-size="9" fill="#94a3b8">f(x)</text>
+              <text x="8" y="112" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">−f(x)</text>
+            </svg>
+          </div>
+          <!-- T4: f(x)-a — shift DOWN -->
+          <div class="diagram sm" style="flex:1;min-width:160px;">
+            <div class="diagram-label">f(x) − a (a &gt; 0)</div>
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" width="160" height="130">
+              <line x1="10" y1="65" x2="152" y2="65" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="152,65 146,62 146,68" fill="#94a3b8"/>
+              <line x1="50" y1="120" x2="50" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="50,12 47,19 53,19" fill="#94a3b8"/>
+              <text x="153" y="68" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x</text>
+              <text x="44" y="11" font-family="'Inter',sans-serif" font-size="10" fill="#475569">y</text>
+              <!-- base curve: parabola vertex at y=40 (above axis) -->
+              <path d="M 20 55 Q 50 20 80 55" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+              <!-- shifted down by a=25px: vertex at y=65 -->
+              <path d="M 20 80 Q 50 45 80 80" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+              <!-- arrow showing shift down -->
+              <polygon points="88,78 85,70 91,70" fill="#7c3aed"/>
+              <line x1="88" y1="53" x2="88" y2="70" stroke="#7c3aed" stroke-width="1.2"/>
+              <text x="91" y="65" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">−a</text>
+              <text x="8" y="48" font-family="'Inter',sans-serif" font-size="9" fill="#94a3b8">f(x)</text>
+              <text x="8" y="88" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">f(x)−a</text>
+            </svg>
+          </div>
+          <!-- T5: f(x-a) — shift RIGHT -->
+          <div class="diagram sm" style="flex:1;min-width:160px;">
+            <div class="diagram-label">f(x−a) — вправо</div>
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" width="160" height="130">
+              <line x1="10" y1="90" x2="152" y2="90" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="152,90 146,87 146,93" fill="#94a3b8"/>
+              <line x1="50" y1="120" x2="50" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="50,12 47,19 53,19" fill="#94a3b8"/>
+              <text x="153" y="93" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x</text>
+              <text x="44" y="11" font-family="'Inter',sans-serif" font-size="10" fill="#475569">y</text>
+              <!-- base curve: parabola vertex at x=50 -->
+              <path d="M 20 68 Q 50 108 80 68" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+              <!-- shifted RIGHT by a=30px: vertex at x=80 -->
+              <path d="M 50 68 Q 80 108 110 68" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+              <!-- arrow right -->
+              <polygon points="88,78 80,74 80,82" fill="#7c3aed"/>
+              <line x1="58" y1="78" x2="80" y2="78" stroke="#7c3aed" stroke-width="1.2"/>
+              <text x="55" y="72" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">a&gt;0→вправо</text>
+            </svg>
+          </div>
+          <!-- T6: f(-x) — reflect y-axis -->
+          <div class="diagram sm" style="flex:1;min-width:160px;">
+            <div class="diagram-label">f(−x) — отражение от Y</div>
+            <svg viewBox="0 0 160 130" xmlns="http://www.w3.org/2000/svg" width="160" height="130">
+              <line x1="10" y1="90" x2="152" y2="90" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="152,90 146,87 146,93" fill="#94a3b8"/>
+              <line x1="80" y1="120" x2="80" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+              <polygon points="80,12 77,19 83,19" fill="#94a3b8"/>
+              <text x="153" y="93" font-family="'Inter',sans-serif" font-size="10" fill="#475569">x</text>
+              <text x="74" y="11" font-family="'Inter',sans-serif" font-size="10" fill="#475569">y</text>
+              <!-- base curve: cubic-like, only in right half (x>0) -->
+              <path d="M 80 90 C 90 85 110 65 140 30" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+              <!-- reflected: same curve mirrored to left half (x<0) -->
+              <path d="M 80 90 C 70 85 50 65 20 30" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+              <!-- y-axis as mirror line label -->
+              <text x="82" y="50" font-family="'Inter',sans-serif" font-size="9" fill="#94a3b8">зеркало</text>
+              <text x="120" y="55" font-family="'Inter',sans-serif" font-size="9" fill="#94a3b8">f(x)</text>
+              <text x="22" y="55" font-family="'Inter',sans-serif" font-size="9" fill="#7c3aed">f(−x)</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_tasks: Разбор задач
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор задач</h1>
+          <p class="lead">Три типовые задачи ЦТ: нахождение ОДЗ, координат вершины и построение графика.</p>
+          <div class="tags"><span class="tag green">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Найдите область допустимых значений функции <span data-tex="f(x) = \dfrac{\sqrt{x+3}}{x-1}"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Из-под корня: <span data-tex="x + 3 \geq 0 \Rightarrow x \geq -3"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Знаменатель не равен нулю: <span data-tex="x - 1 \neq 0 \Rightarrow x \neq 1"></span>.</div>
+            <div class="step"><div class="stepn">3</div>Пересечение условий: <span data-tex="x \geq -3"></span> и <span data-tex="x \neq 1"></span>.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="D(f) = [-3;\,1) \cup (1;\,+\infty)"></span>.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Найдите вершину параболы <span data-tex="y = 2x^2 - 8x + 3"></span> и постройте схему графика.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Абсцисса вершины: <span data-tex="x_0 = -\dfrac{-8}{2 \cdot 2} = \dfrac{8}{4} = 2"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Ордината: <span data-tex="y_0 = 2(4) - 16 + 3 = 8 - 16 + 3 = -5"></span>.</div>
+            <div class="step"><div class="stepn">3</div>Поскольку <span data-tex="a = 2 &gt; 0"></span>, ветви направлены вверх, вершина — минимум.</div>
+          </div>
+          <div class="ans">Ответ: вершина <span data-tex="(2;\,-5)"></span>, ось симметрии <span data-tex="x = 2"></span>.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Функция <span data-tex="f(x) = x^2 - 4x + 7"></span>. Постройте график <span data-tex="g(x) = f(x-1) + 3"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Находим вершину <span data-tex="f(x)"></span>: <span data-tex="x_0 = 2, \; y_0 = 3"></span>. Вершина: <span data-tex="(2;\,3)"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Замена <span data-tex="x \to x-1"></span> сдвигает график <b>вправо</b> на 1: вершина переходит в <span data-tex="(3;\,3)"></span>.</div>
+            <div class="step"><div class="stepn">3</div>Прибавление +3 сдвигает <b>вверх</b> на 3: итоговая вершина <span data-tex="(3;\,6)"></span>.</div>
+          </div>
+          <div class="ans">Ответ: парабола <span data-tex="g(x) = (x-3)^2 + 6"></span> с вершиной в <span data-tex="(3;\,6)"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_check: Чек-лист
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Обязательный минимум по теме «Функции» для уверенного прохождения ЦТ и ЦЭ.</p>
+        </div>
+
+        <h2 id="h-formulas-check">Формулы (наизусть)</h2>
+        <ul>
+          <li>Линейная: <span data-tex="y = kx + b"></span>, угловой коэффициент <span data-tex="k = \tan\alpha"></span></li>
+          <li>Вершина параболы: <span data-tex="x_0 = -b/(2a)"></span>, <span data-tex="y_0 = f(x_0)"></span></li>
+          <li>Чётность: <span data-tex="f(-x) = f(x)"></span>; нечётность: <span data-tex="f(-x) = -f(x)"></span></li>
+          <li>Периодичность: <span data-tex="f(x+T) = f(x)"></span></li>
+          <li>Сдвиг: <span data-tex="y = f(x+c)"></span> — влево на c (при <span data-tex="c&gt;0"></span>)</li>
+        </ul>
+
+        <h2 id="h-skills-check">Навыки</h2>
+        <ul>
+          <li>Находить ОДЗ по трём основным ограничениям (дробь, корень, логарифм)</li>
+          <li>Определять направление ветвей параболы и координаты вершины</li>
+          <li>Применять правила преобразований графиков (сдвиг, отражение, растяжение)</li>
+          <li>Определять чётность/нечётность по формуле или по виду графика</li>
+          <li>Строить схему графика квадратичной функции (корни, вершина, ветви)</li>
+        </ul>
+
+        <h2 id="h-mistakes-check">Типичные ошибки</h2>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Путать направление сдвига: <span data-tex="y = f(x+2)"></span> — сдвиг <b>влево</b>, не вправо!</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Забывать, что ОДЗ логарифма — строго <span data-tex="x &gt; 0"></span>, не <span data-tex="x \geq 0"></span>.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Использовать формулу <span data-tex="y_0 = -D/(4a)"></span> без предварительного вычисления D.</div>
+        </div>
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет:</b> На ЦТ по функциям всегда сначала определи тип функции, потом характеристики (ОДЗ, монотонность, вершина/асимптоты) — и только потом отвечай на вопрос задачи.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">06 Тригонометрия</div>
+            <div class="tp-desc">Единичная окружность, тождества, уравнения</div>
+          </div>
+          <a class="tp-btn" href="06_trigonometriya.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list"></div>
+</div>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

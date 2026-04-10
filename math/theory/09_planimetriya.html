@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Планиметрия — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t09">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">📐</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Планиметрия</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 09</span>
+      <h2>Планиметрия</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">🔺</span>Треугольники</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">📐</span>Прямоугольный треугольник</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">≈</span>Подобие треугольников</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">▭</span>Четырёхугольники</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">⭕</span>Окружность и круг</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">◎</span>Вписанная и описанная</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">🗺</span>Координатная геометрия</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════════════════════════════════════════
+           SECTION 1: Треугольники
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Треугольники — основные формулы</h1>
+          <p class="lead">Периметр, площадь через высоту и синус, медиана, теоремы синусов и косинусов — ядро планиметрии ЦТ.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag amber">★ ЦТ</span>
+          </div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Главная идея</small>
+            Стороны треугольника обозначаются <b>a, b, c</b>, противоположные им углы — <b>A, B, C</b>. Сумма углов треугольника равна 180°.
+          </div>
+        </div>
+
+        <h2 id="h-perim">Периметр и полупериметр</h2>
+        <div class="fcard" id="f-perim">
+          <div class="flabel">Периметр треугольника</div>
+          <div class="formula" data-tex="P = a + b + c, \qquad p = \dfrac{P}{2} = \dfrac{a+b+c}{2}"></div>
+          <div class="fdesc">p — полупериметр, используется в формулах площади Герона и радиуса вписанной окружности.</div>
+        </div>
+
+        <h2 id="h-area">Формулы площади</h2>
+        <div class="fcard" id="f-area-h">
+          <div class="flabel">Площадь через высоту</div>
+          <div class="formula" data-tex="S = \dfrac{1}{2}\,a \cdot h_a"></div>
+          <div class="fdesc">a — любая сторона, h<sub>a</sub> — высота, опущенная на эту сторону.</div>
+        </div>
+
+        <div class="fcard" id="f-area-sin">
+          <div class="flabel">Площадь через две стороны и угол между ними</div>
+          <div class="formula" data-tex="S = \dfrac{1}{2}\,ab\sin C"></div>
+          <div class="fdesc">a, b — стороны, C — угол между ними. Самая частая формула на ЦТ!</div>
+        </div>
+
+        <div class="fcard" id="f-area-R">
+          <div class="flabel">Площадь через описанную окружность</div>
+          <div class="formula" data-tex="S = \dfrac{abc}{4R}"></div>
+          <div class="fdesc">R — радиус описанной окружности. Выводится из теоремы синусов.</div>
+        </div>
+
+        <div class="fcard" id="f-heron">
+          <div class="flabel">Формула Герона</div>
+          <div class="formula" data-tex="S = \sqrt{p(p-a)(p-b)(p-c)}"></div>
+          <div class="fdesc">Когда известны все три стороны. p = (a+b+c)/2 — полупериметр.</div>
+        </div>
+
+        <h2 id="h-median">Медиана</h2>
+        <div class="fcard" id="f-median">
+          <div class="flabel">Длина медианы m<sub>a</sub></div>
+          <div class="formula" data-tex="m_a^2 = \dfrac{2b^2 + 2c^2 - a^2}{4}"></div>
+          <div class="fdesc">Медиана, проведённая к стороне a. Медианы пересекаются в точке, делящей каждую в отношении 2:1 от вершины.</div>
+        </div>
+
+        <h2 id="h-sinus">Теорема синусов</h2>
+        <div class="fcard" id="f-sin-thm">
+          <div class="flabel">Теорема синусов</div>
+          <div class="formula" data-tex="\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C} = 2R"></div>
+          <div class="fdesc">R — радиус описанной окружности. Применяется, когда известна хотя бы одна сторона и любой угол.</div>
+        </div>
+
+        <h2 id="h-cosinus">Теорема косинусов</h2>
+        <div class="fcard" id="f-cos-thm">
+          <div class="flabel">Теорема косинусов</div>
+          <div class="formula" data-tex="a^2 = b^2 + c^2 - 2bc\cos A"></div>
+          <div class="fdesc">Обобщение теоремы Пифагора. При <span data-tex="A=90^\circ"></span> получаем <span data-tex="a^2=b^2+c^2"></span>. Используй, когда дано SAS (два ребра и угол) или SSS.</div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>Стратегия ЦТ:</b> Если даны две стороны и угол между ними → площадь через синус. Если даны все три стороны → Герон или косинус. Если одна сторона и все углы → синус.</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="60,170 280,170 170,40" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.07)"/>
+            <circle cx="60" cy="170" r="4" fill="#059669"/>
+            <circle cx="280" cy="170" r="4" fill="#059669"/>
+            <circle cx="170" cy="40" r="4" fill="#059669"/>
+            <text x="40" y="188" font-size="14" font-weight="700" fill="#059669">A</text>
+            <text x="283" y="188" font-size="14" font-weight="700" fill="#059669">B</text>
+            <text x="165" y="30" font-size="14" font-weight="700" fill="#059669">C</text>
+            <text x="165" y="195" font-size="12" fill="#475569" font-style="italic">c</text>
+            <text x="95" y="100" font-size="12" fill="#475569" font-style="italic">b</text>
+            <text x="238" y="100" font-size="12" fill="#475569" font-style="italic">a</text>
+            <line x1="170" y1="40" x2="170" y2="170" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="175" y="115" font-size="11" fill="#94a3b8" font-style="italic">h</text>
+          </svg>
+          <div class="caption">Треугольник ABC: стороны a, b, c и высота h из вершины C</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 2: Прямоугольный треугольник
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Прямоугольный треугольник</h1>
+          <p class="lead">Теорема Пифагора, тригонометрические функции острого угла и специальные прямоугольные треугольники.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag green">База</span></div>
+        </div>
+
+        <div class="fcard" id="f-pythagoras">
+          <div class="flabel">Теорема Пифагора</div>
+          <div class="formula" data-tex="a^2 + b^2 = c^2"></div>
+          <div class="fdesc">a, b — катеты, c — гипотенуза (сторона, противолежащая прямому углу).</div>
+        </div>
+
+        <h2 id="h-trig">Тригонометрические функции острого угла</h2>
+        <div class="fgrid">
+          <div class="fchip" id="fc-sin">
+            <div class="chip-name">sin α</div>
+            <div class="chip-formula" data-tex="\sin\alpha = \dfrac{\text{катет напротив}}{\text{гипотенуза}} = \dfrac{a}{c}"></div>
+            <div class="chip-desc">Отношение противолежащего катета к гипотенузе</div>
+          </div>
+          <div class="fchip" id="fc-cos">
+            <div class="chip-name">cos α</div>
+            <div class="chip-formula" data-tex="\cos\alpha = \dfrac{\text{катет прилежащий}}{\text{гипотенуза}} = \dfrac{b}{c}"></div>
+            <div class="chip-desc">Отношение прилежащего катета к гипотенузе</div>
+          </div>
+          <div class="fchip" id="fc-tg">
+            <div class="chip-name">tg α</div>
+            <div class="chip-formula" data-tex="\tan\alpha = \dfrac{a}{b} = \dfrac{\sin\alpha}{\cos\alpha}"></div>
+            <div class="chip-desc">Отношение противолежащего катета к прилежащему</div>
+          </div>
+          <div class="fchip" id="fc-ctg">
+            <div class="chip-name">ctg α</div>
+            <div class="chip-formula" data-tex="\cot\alpha = \dfrac{b}{a} = \dfrac{\cos\alpha}{\sin\alpha}"></div>
+            <div class="chip-desc">Отношение прилежащего катета к противолежащему</div>
+          </div>
+          <div class="fchip" id="fc-median-hyp">
+            <div class="chip-name">Медиана к гипотенузе</div>
+            <div class="chip-formula" data-tex="m_c = \dfrac{c}{2}"></div>
+            <div class="chip-desc">В прямоугольном треугольнике медиана к гипотенузе равна её половине</div>
+          </div>
+          <div class="fchip" id="fc-height-hyp">
+            <div class="chip-name">Высота из прямого угла</div>
+            <div class="chip-formula" data-tex="h^2 = a' \cdot b'"></div>
+            <div class="chip-desc">a', b' — отрезки, на которые высота делит гипотенузу</div>
+          </div>
+        </div>
+
+        <!-- DIAGRAM A1: Right triangle with trig -->
+        <div class="diagram">
+          <div class="diagram-label">Прямоугольный треугольник — стороны и углы</div>
+          <svg width="260" height="190" viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Triangle: A(30,160) B(230,160) C(30,40) -->
+            <polygon points="30,160 230,160 30,40" stroke="#0f172a" stroke-width="2" fill="rgba(5,150,105,0.07)"/>
+            <!-- Right angle square at A -->
+            <polyline points="30,142 48,142 48,160" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+            <!-- Angle arc at B labeled α -->
+            <path d="M 210,160 A 20,20 0 0 0 196.7,146.7" stroke="#059669" stroke-width="2" fill="none"/>
+            <text x="202" y="152" font-size="12" fill="#059669" font-style="italic">α</text>
+            <!-- Vertex dots -->
+            <circle cx="30" cy="160" r="3" fill="#0f172a"/>
+            <circle cx="230" cy="160" r="3" fill="#0f172a"/>
+            <circle cx="30" cy="40" r="3" fill="#0f172a"/>
+            <!-- Vertex labels -->
+            <text x="12" y="175" font-size="13" font-weight="700" fill="#0f172a">A</text>
+            <text x="234" y="175" font-size="13" font-weight="700" fill="#0f172a">B</text>
+            <text x="14" y="36" font-size="13" font-weight="700" fill="#0f172a">C</text>
+            <!-- Side labels -->
+            <!-- Hypotenuse BC: midpoint (130,100), perpendicular direction -->
+            <text x="140" y="95" font-size="12" fill="#475569" font-style="italic" transform="rotate(-36,140,95)">c (гипотенуза)</text>
+            <!-- Vertical AC: midpoint (30,100) -->
+            <text x="4" y="105" font-size="12" fill="#475569" font-style="italic">a</text>
+            <text x="1" y="118" font-size="10" fill="#475569">(катет)</text>
+            <!-- Horizontal AB: midpoint (130,160) -->
+            <text x="115" y="178" font-size="12" fill="#475569" font-style="italic">b (катет)</text>
+            <!-- Ratios text below -->
+            <text x="20" y="188" font-size="10" fill="#475569">sin α = a/c</text>
+            <text x="95" y="188" font-size="10" fill="#475569">cos α = b/c</text>
+            <text x="175" y="188" font-size="10" fill="#475569">tan α = a/b</text>
+          </svg>
+        </div>
+
+        <h2 id="h-special">Специальные прямоугольные треугольники</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>30° – 60° – 90°</h4>
+            <p>Катеты относятся как <b>1 : √3</b>, гипотенуза равна <b>2</b> (при катете 1).</p>
+            <p><span data-tex="\sin 30^\circ = \cos 60^\circ = \tfrac{1}{2}"></span></p>
+            <p><span data-tex="\sin 60^\circ = \cos 30^\circ = \tfrac{\sqrt{3}}{2}"></span></p>
+          </div>
+          <div class="card">
+            <h4>45° – 45° – 90°</h4>
+            <p>Катеты равны: <b>a = b</b>. Гипотенуза = <b>a√2</b>.</p>
+            <p><span data-tex="\sin 45^\circ = \cos 45^\circ = \dfrac{\sqrt{2}}{2} \approx 0{,}707"></span></p>
+            <p><span data-tex="\tan 45^\circ = 1"></span></p>
+          </div>
+        </div>
+
+        <!-- DIAGRAM A2: Special right triangles -->
+        <div class="diagrams-row">
+          <!-- Panel 1: 30-60-90 -->
+          <div class="diagram sm">
+            <div class="diagram-label">30° – 60° – 90°</div>
+            <svg width="180" height="160" viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Correct 1:√3:2 ratio: short=55, long=55√3≈95, hyp=110 -->
+              <!-- A(20,135)=30°, B(115,135)=90°, C(115,80)=60° -->
+              <!-- AB=95(√3), BC=55(1), AC≈110(2) ✓ -->
+              <polygon points="20,135 115,135 115,80" stroke="#0f172a" stroke-width="2" fill="rgba(5,150,105,0.08)"/>
+              <!-- Right angle square at B(115,135) -->
+              <polyline points="100,135 100,120 115,120" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+              <!-- 30° arc at A(20,135): from (40,135) on AB to (37.3,125) on AC -->
+              <path d="M 40,135 A 20,20 0 0 0 37.3,125" stroke="#059669" stroke-width="1.8" fill="none"/>
+              <text x="42" y="130" font-size="11" fill="#059669" font-weight="600">30°</text>
+              <!-- 60° arc at C(115,80): from (115,100) on CB to (97.7,90) on CA -->
+              <path d="M 115,100 A 20,20 0 0 1 97.7,90" stroke="#059669" stroke-width="1.8" fill="none"/>
+              <text x="88" y="97" font-size="11" fill="#059669" font-weight="600">60°</text>
+              <!-- 90° label near B -->
+              <text x="76" y="152" font-size="11" fill="#059669" font-weight="600">90°</text>
+              <!-- BC (short leg, opposite 30°) = 1 -->
+              <text x="122" y="112" font-size="14" fill="#059669" font-weight="700" text-anchor="middle">1</text>
+              <!-- AB (long leg, opposite 60°) = √3 -->
+              <text x="67" y="152" font-size="13" fill="#059669" font-weight="700" text-anchor="middle">√3</text>
+              <!-- AC (hypotenuse, opposite 90°) = 2 -->
+              <text x="55" y="97" font-size="13" fill="#059669" font-weight="700" text-anchor="middle" transform="rotate(-30,55,97)">2</text>
+            </svg>
+          </div>
+          <!-- Panel 2: 45-45-90 -->
+          <div class="diagram sm">
+            <div class="diagram-label">45° – 45° – 90°</div>
+            <svg width="180" height="160" viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Correct: equal legs 80px each, hyp=80√2≈113 -->
+              <!-- A(20,140)=45°, B(100,140)=90°, C(100,60)=45° -->
+              <!-- AB=80, BC=80 (equal!) AC=113≈80√2 ✓ -->
+              <polygon points="20,140 100,140 100,60" stroke="#0f172a" stroke-width="2" fill="rgba(5,150,105,0.08)"/>
+              <!-- Right angle square at B(100,140) -->
+              <polyline points="85,140 85,125 100,125" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+              <!-- 45° arc at A(20,140): from (40,140) on AB to (34.1,125.9) on AC -->
+              <path d="M 40,140 A 20,20 0 0 0 34.1,125.9" stroke="#059669" stroke-width="2" fill="none"/>
+              <text x="43" y="135" font-size="11" fill="#059669" font-weight="600">45°</text>
+              <!-- 45° arc at C(100,60): from (100,80) on CB to (85.9,74.1) on CA -->
+              <path d="M 100,80 A 20,20 0 0 1 85.9,74.1" stroke="#059669" stroke-width="2" fill="none"/>
+              <text x="78" y="82" font-size="11" fill="#059669" font-weight="600">45°</text>
+              <!-- 90° label near B -->
+              <text x="62" y="157" font-size="11" fill="#059669" font-weight="600">90°</text>
+              <!-- AB (horizontal leg) = a -->
+              <text x="60" y="157" font-size="12" fill="#475569" font-weight="600" font-style="italic" text-anchor="middle">a</text>
+              <!-- BC (vertical leg) = a (equal to AB) -->
+              <text x="110" y="103" font-size="12" fill="#475569" font-weight="600" font-style="italic" text-anchor="middle">a</text>
+              <!-- AC (hypotenuse) = a√2 -->
+              <text x="46" y="92" font-size="11" fill="#475569" font-weight="600" font-style="italic" text-anchor="middle" transform="rotate(-45,46,92)">a√2</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Мнемоника «SOH-CAH-TOA»:</b> Sin = Opposing/Hypotenuse, Cos = Adjacent/Hypotenuse, Tan = Opposite/Adjacent</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 3: Подобие треугольников
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Подобие треугольников</h1>
+          <p class="lead">Три признака подобия, коэффициент k и связь площадей — частая тема в ЦТ.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text">Два треугольника <b>подобны</b>, если их углы попарно равны и соответственные стороны пропорциональны. Коэффициент подобия <span data-tex="k = \dfrac{a_1}{a_2} = \dfrac{b_1}{b_2} = \dfrac{c_1}{c_2}"></span>.</div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h4>Признак 1 (AA)</h4>
+            <p>Два угла одного треугольника равны двум углам другого.</p>
+          </div>
+          <div class="card">
+            <h4>Признак 2 (SAS)</h4>
+            <p>Два ребра пропорциональны и угол между ними равен.</p>
+          </div>
+          <div class="card">
+            <h4>Признак 3 (SSS)</h4>
+            <p>Все три ребра пропорциональны: <span data-tex="\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}"></span>.</p>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-similar-area">
+          <div class="flabel">Отношение площадей подобных треугольников</div>
+          <div class="formula" data-tex="\dfrac{S_1}{S_2} = k^2"></div>
+          <div class="fdesc">Площади подобных фигур относятся как квадрат коэффициента подобия.</div>
+        </div>
+
+        <div class="fcard" id="f-height-leg">
+          <div class="flabel">Высота из прямого угла (через катеты гипотенузы)</div>
+          <div class="formula" data-tex="h^2 = a' \cdot b', \quad a^2 = a' \cdot c, \quad b^2 = b' \cdot c"></div>
+          <div class="fdesc">В прямоугольном треугольнике с высотой из прямого угла, a', b' — проекции катетов на гипотенузу c.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Не путай:</b> Равные треугольники — частный случай подобных при k = 1. При подобии стороны пропорциональны, при равенстве — они равны.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 4: Четырёхугольники
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Четырёхугольники</h1>
+          <p class="lead">Формулы площадей параллелограмма, прямоугольника, ромба, квадрата и трапеции.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-parallelogram">
+            <div class="chip-name">Параллелограмм</div>
+            <div class="chip-formula" data-tex="S = a \cdot h = ab\sin\alpha"></div>
+            <div class="chip-desc">a — основание, h — высота, α — угол между сторонами</div>
+          </div>
+          <div class="fchip" id="fc-rect">
+            <div class="chip-name">Прямоугольник</div>
+            <div class="chip-formula" data-tex="S = a \cdot b, \quad d = \sqrt{a^2 + b^2}"></div>
+            <div class="chip-desc">a, b — стороны, d — диагональ</div>
+          </div>
+          <div class="fchip" id="fc-rhombus">
+            <div class="chip-name">Ромб</div>
+            <div class="chip-formula" data-tex="S = a^2\sin\alpha = \dfrac{d_1 d_2}{2}"></div>
+            <div class="chip-desc">d₁, d₂ — диагонали; диагонали перпендикулярны</div>
+          </div>
+          <div class="fchip" id="fc-square">
+            <div class="chip-name">Квадрат</div>
+            <div class="chip-formula" data-tex="S = a^2 = \dfrac{d^2}{2}"></div>
+            <div class="chip-desc">a — сторона, d = a√2 — диагональ</div>
+          </div>
+          <div class="fchip" id="fc-trapezoid">
+            <div class="chip-name">Трапеция</div>
+            <div class="chip-formula" data-tex="S = \dfrac{(a+b)}{2}\cdot h"></div>
+            <div class="chip-desc">a, b — основания (параллельные стороны), h — высота</div>
+          </div>
+          <div class="fchip" id="fc-midline">
+            <div class="chip-name">Средняя линия трапеции</div>
+            <div class="chip-formula" data-tex="m = \dfrac{a + b}{2}"></div>
+            <div class="chip-desc">Параллельна основаниям, равна их полусумме</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Диагонали прямоугольника и квадрата равны и точкой пересечения делятся пополам. Диагонали ромба перпендикулярны и делятся пополам. Диагонали параллелограмма только делятся пополам.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Фигура</th><th>Все стороны</th><th>Углы</th><th>Диагонали</th></tr>
+            <tr><td>Параллелограмм</td><td>попарно равны</td><td>напротив равны</td><td>пересекаются в середине</td></tr>
+            <tr><td>Прямоугольник</td><td>попарно равны</td><td>все 90°</td><td>равны, пересекаются в середине</td></tr>
+            <tr><td>Ромб</td><td>все равны</td><td>напротив равны</td><td>перпендикулярны, делятся пополам</td></tr>
+            <tr><td>Квадрат</td><td>все равны</td><td>все 90°</td><td>равны, ⊥, делятся пополам</td></tr>
+          </table>
+        </div>
+
+        <!-- DIAGRAM A3: Quadrilaterals gallery -->
+        <div class="diagrams-row">
+          <!-- Parallelogram -->
+          <div class="diagram sm">
+            <div class="diagram-label">Параллелограмм</div>
+            <svg width="180" height="140" viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- A(25,110) B(145,110) C(155,30) D(35,30) -->
+              <polygon points="25,110 145,110 155,30 35,30" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.07)"/>
+              <!-- Height h: dashed vertical from (35,30) down to (35,110) -->
+              <line x1="35" y1="30" x2="35" y2="110" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <polyline points="35,94 49,94 49,110" stroke="#475569" stroke-width="1.2" fill="none"/>
+              <text x="52" y="74" font-size="11" fill="#475569" font-style="italic">h</text>
+              <!-- Angle α at A(25,110) -->
+              <path d="M 43,110 A 18,18 0 0 0 37.4,92.5" stroke="#059669" stroke-width="1.5" fill="none"/>
+              <text x="44" y="103" font-size="10" fill="#059669" font-style="italic">α</text>
+              <!-- Side labels -->
+              <text x="78" y="127" font-size="12" fill="#475569" font-style="italic">a</text>
+              <text x="157" y="74" font-size="12" fill="#475569" font-style="italic">b</text>
+              <text x="78" y="24" font-size="12" fill="#475569" font-style="italic">a</text>
+              <text x="4" y="74" font-size="12" fill="#475569" font-style="italic">b</text>
+            </svg>
+          </div>
+          <!-- Trapezoid -->
+          <div class="diagram sm">
+            <div class="diagram-label">Трапеция</div>
+            <svg width="180" height="140" viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- A(15,110) B(165,110) C(130,30) D(50,30) -->
+              <polygon points="15,110 165,110 130,30 50,30" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.07)"/>
+              <!-- Height h: dashed from D(50,30) down to (50,110) -->
+              <line x1="50" y1="30" x2="50" y2="110" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <polyline points="50,94 64,94 64,110" stroke="#475569" stroke-width="1.2" fill="none"/>
+              <text x="66" y="74" font-size="11" fill="#475569" font-style="italic">h</text>
+              <!-- Top base a -->
+              <text x="82" y="24" font-size="12" fill="#475569" font-style="italic">a</text>
+              <!-- Bottom base b -->
+              <text x="82" y="128" font-size="12" fill="#475569" font-style="italic">b</text>
+            </svg>
+          </div>
+          <!-- Rectangle -->
+          <div class="diagram sm">
+            <div class="diagram-label">Прямоугольник</div>
+            <svg width="180" height="140" viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- A(20,110) B(160,110) C(160,25) D(20,25) -->
+              <rect x="20" y="25" width="140" height="85" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.07)"/>
+              <!-- Right angle squares at all corners -->
+              <polyline points="20,41 36,41 36,25" stroke="#0f172a" stroke-width="1.2" fill="none"/>
+              <polyline points="144,25 144,41 160,41" stroke="#0f172a" stroke-width="1.2" fill="none"/>
+              <polyline points="160,94 144,94 144,110" stroke="#0f172a" stroke-width="1.2" fill="none"/>
+              <polyline points="36,110 36,94 20,94" stroke="#0f172a" stroke-width="1.2" fill="none"/>
+              <!-- Diagonal dashed -->
+              <line x1="20" y1="25" x2="160" y2="110" stroke="#059669" stroke-width="1.5" stroke-dasharray="5,3"/>
+              <!-- Diagonal label d -->
+              <text x="95" y="60" font-size="11" fill="#059669" font-style="italic">d</text>
+              <!-- Side labels -->
+              <text x="82" y="126" font-size="12" fill="#475569" font-style="italic">a</text>
+              <text x="164" y="72" font-size="12" fill="#475569" font-style="italic">b</text>
+            </svg>
+          </div>
+          <!-- Rhombus -->
+          <div class="diagram sm">
+            <div class="diagram-label">Ромб</div>
+            <svg width="180" height="140" viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- A(90,10) B(165,68) C(90,126) D(15,68) -->
+              <polygon points="90,10 165,68 90,126 15,68" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.07)"/>
+              <!-- Diagonals dashed -->
+              <line x1="90" y1="10" x2="90" y2="126" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <line x1="15" y1="68" x2="165" y2="68" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <!-- Right angle at center -->
+              <polyline points="90,60 98,60 98,68" stroke="#0f172a" stroke-width="1.2" fill="none"/>
+              <!-- Center dot -->
+              <circle cx="90" cy="68" r="2.5" fill="#0f172a"/>
+              <!-- Diagonal labels -->
+              <text x="94" y="44" font-size="11" fill="#475569" font-style="italic">d₁</text>
+              <text x="130" y="62" font-size="11" fill="#475569" font-style="italic">d₂</text>
+              <!-- Side label a -->
+              <text x="128" y="36" font-size="12" fill="#475569" font-style="italic">a</text>
+              <!-- Angle α at A(90,10) -->
+              <path d="M 90,30 A 20,20 0 0 1 108.5,38.5" stroke="#059669" stroke-width="1.5" fill="none"/>
+              <text x="97" y="30" font-size="10" fill="#059669" font-style="italic">α</text>
+            </svg>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 5: Окружность и круг
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Окружность и круг</h1>
+          <p class="lead">Длина окружности, площадь круга, длина дуги, площадь сектора, центральный и вписанный углы.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-circle-c">
+          <div class="flabel">Длина окружности</div>
+          <div class="formula" data-tex="C = 2\pi R = \pi d"></div>
+          <div class="fdesc">R — радиус, d = 2R — диаметр. π ≈ 3,14159…</div>
+        </div>
+
+        <div class="fcard" id="f-circle-s">
+          <div class="flabel">Площадь круга</div>
+          <div class="formula" data-tex="S = \pi R^2 = \dfrac{\pi d^2}{4}"></div>
+          <div class="fdesc">R — радиус окружности, ограничивающей круг.</div>
+        </div>
+
+        <div class="fcard" id="f-arc">
+          <div class="flabel">Длина дуги</div>
+          <div class="formula" data-tex="l = \dfrac{\pi R \alpha}{180^\circ} = R\varphi"></div>
+          <div class="fdesc">α — центральный угол в градусах, φ — в радианах. l = Rφ при φ в радианах.</div>
+        </div>
+
+        <div class="fcard" id="f-sector">
+          <div class="flabel">Площадь сектора</div>
+          <div class="formula" data-tex="S_\text{сект} = \dfrac{\pi R^2 \alpha}{360^\circ} = \dfrac{1}{2}R^2\varphi = \dfrac{1}{2}Rl"></div>
+          <div class="fdesc">α — центральный угол в градусах; φ — в радианах; l — длина дуги.</div>
+        </div>
+
+        <h2 id="h-angles">Вписанный и центральный углы</h2>
+        <div class="def acc">
+          <div class="label">Теорема</div>
+          <div class="text"><b>Вписанный угол</b> равен половине центрального угла, опирающегося на ту же дугу:<br>
+          <span data-tex="\angle \text{вписанный} = \dfrac{1}{2}\, \angle \text{центральный}"></span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Угол Фалеса</h4>
+            <p>Вписанный угол, опирающийся на диаметр, равен <b>90°</b>.</p>
+            <p>Любой треугольник, вписанный в полуокружность, прямоугольный.</p>
+          </div>
+          <div class="card">
+            <h4>Хорды и секущие</h4>
+            <p>Угол между двумя хордами = ½ суммы дуг, на которые они опираются.</p>
+            <p>Угол между двумя секущими (снаружи) = ½ |разности дуг|.</p>
+          </div>
+        </div>
+
+        <!-- DIAGRAM A4: Circle elements -->
+        <div class="diagram">
+          <div class="diagram-label">Элементы окружности</div>
+          <svg width="300" height="280" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Main circle: center O(150,145), r=110 -->
+            <circle cx="150" cy="145" r="110" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.04)"/>
+            <!-- Center dot -->
+            <circle cx="150" cy="145" r="3.5" fill="#059669"/>
+            <text x="154" y="141" font-size="12" font-weight="700" fill="#059669">O</text>
+            <!-- Radius: O(150,145) to point P(260,145) on right -->
+            <line x1="150" y1="145" x2="260" y2="145" stroke="#0f172a" stroke-width="2"/>
+            <text x="198" y="138" font-size="12" fill="#0f172a" font-style="italic">r</text>
+            <!-- Diameter: A(40,145) through O to B(260,145) -->
+            <line x1="40" y1="145" x2="260" y2="145" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <text x="52" y="137" font-size="11" fill="#0f172a">d = 2r</text>
+            <!-- Chord (not through center): from Q1(76,52) to Q2(243,80) -->
+            <line x1="76" y1="52" x2="243" y2="80" stroke="#0f172a" stroke-width="2"/>
+            <text x="148" y="56" font-size="11" fill="#0f172a">хорда</text>
+            <!-- Arc corresponding to chord (minor arc from Q1 to Q2 going through top) -->
+            <path d="M 76,52 A 110,110 0 0 1 243,80" stroke="#059669" stroke-width="2.5" fill="none"/>
+            <text x="170" y="28" font-size="11" fill="#059669" font-weight="600">дуга</text>
+            <!-- Tangent line at point T(150,35) (top of circle) — horizontal line -->
+            <line x1="60" y1="35" x2="240" y2="35" stroke="#f59e0b" stroke-width="2"/>
+            <!-- Radius to tangent point, perpendicular -->
+            <line x1="150" y1="145" x2="150" y2="35" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <!-- Right angle at tangent point -->
+            <polyline points="150,35 160,35 160,45" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+            <text x="242" y="31" font-size="11" fill="#f59e0b" font-weight="600">касательная</text>
+            <!-- Central angle: ∠AOB — O(150,145), A(76,52), B(243,80) -->
+            <line x1="150" y1="145" x2="76" y2="52" stroke="#0f172a" stroke-width="1.5"/>
+            <line x1="150" y1="145" x2="243" y2="80" stroke="#0f172a" stroke-width="1.5"/>
+            <path d="M 136,103 A 50,50 0 0 1 175,116" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+            <text x="142" y="112" font-size="10" fill="#0f172a">∠AOB</text>
+            <!-- Inscribed angle: ∠ACB, vertex C on circle at bottom C(105,250) -->
+            <!-- C must be on circle: (105-150)²+(250-145)²=45²+105²=2025+11025=13050 ≠ 110²=12100 -->
+            <!-- Use C(110,252): (110-150)²+(252-145)²=1600+11449=13049 still no. Let's compute: x=150+110*cos(250°), y=145+110*sin(250°) -->
+            <!-- cos(250°)=cos(-110°)=-0.342, sin(250°)=-0.940 → x=150-37.6=112.4, y=145-103.4=41.6 — that's top -->
+            <!-- Let C be at bottom: 200° from horizontal: x=150+110cos(200°)=150-103.4=46.6, y=145+110sin(200°)=145-37.6=107.4... -->
+            <!-- Let me use simpler: C at bottom of circle: (150, 255) -->
+            <!-- Check: (150-150)²+(255-145)²=0+12100=12100=110² ✓ -->
+            <line x1="76" y1="52" x2="150" y2="255" stroke="#059669" stroke-width="1.5"/>
+            <line x1="243" y1="80" x2="150" y2="255" stroke="#059669" stroke-width="1.5"/>
+            <circle cx="150" cy="255" r="3" fill="#059669"/>
+            <text x="154" y="260" font-size="12" font-weight="700" fill="#059669">C</text>
+            <!-- Inscribed angle arc at C -->
+            <path d="M 150,237 A 20,20 0 0 1 155,237" stroke="#059669" stroke-width="1.5" fill="none"/>
+            <text x="120" y="245" font-size="10" fill="#059669">∠ACB (вписанный)</text>
+            <!-- Labels A, B on circle -->
+            <text x="62" y="50" font-size="12" font-weight="700" fill="#0f172a">A</text>
+            <text x="246" y="78" font-size="12" font-weight="700" fill="#0f172a">B</text>
+            <!-- Caption line -->
+            <text x="50" y="275" font-size="11" fill="#475569">∠ACB = ½ ∠AOB — теорема о вписанном угле</text>
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 6: Вписанная и описанная окружности
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Вписанная и описанная окружности</h1>
+          <p class="lead">Формулы радиусов вписанной и описанной окружностей для треугольников и четырёхугольников.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fcard" id="f-inradius">
+          <div class="flabel">Радиус вписанной окружности треугольника</div>
+          <div class="formula" data-tex="r = \dfrac{S}{p} = \dfrac{S}{\frac{a+b+c}{2}}"></div>
+          <div class="fdesc">S — площадь треугольника, p — полупериметр. Центр вписанной окружности — точка пересечения биссектрис.</div>
+        </div>
+
+        <div class="fcard" id="f-circumradius">
+          <div class="flabel">Радиус описанной окружности треугольника</div>
+          <div class="formula" data-tex="R = \dfrac{abc}{4S} = \dfrac{a}{2\sin A}"></div>
+          <div class="fdesc">Центр описанной окружности — точка пересечения серединных перпендикуляров. Выражение справа — следствие теоремы синусов.</div>
+        </div>
+
+        <!-- DIAGRAM A5: Inscribed and circumscribed circles -->
+        <div class="diagrams-row">
+          <!-- Inscribed circle -->
+          <div class="diagram sm">
+            <div class="diagram-label">Вписанная окружность (r = S/p)</div>
+            <svg width="200" height="180" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Triangle: A(20,160) B(180,160) C(80,20) -->
+              <polygon points="20,160 180,160 80,20" stroke="#0f172a" stroke-width="2" fill="rgba(5,150,105,0.05)"/>
+              <!-- Vertex labels -->
+              <text x="6" y="170" font-size="12" font-weight="700" fill="#0f172a">A</text>
+              <text x="183" y="170" font-size="12" font-weight="700" fill="#0f172a">B</text>
+              <text x="75" y="14" font-size="12" font-weight="700" fill="#0f172a">C</text>
+              <!-- Incircle: center I, radius r -->
+              <!-- Incenter: I = (a*A + b*B + c*C)/(a+b+c) where a=BC,b=CA,c=AB -->
+              <!-- a=|BC|=sqrt((180-80)²+(160-20)²)=sqrt(10000+19600)=sqrt(29600)≈172.0 -->
+              <!-- b=|CA|=sqrt((80-20)²+(20-160)²)=sqrt(3600+19600)=sqrt(23200)≈152.3 -->
+              <!-- c=|AB|=sqrt((180-20)²+(160-160)²)=160 -->
+              <!-- I_x=(172*20+152.3*180+160*80)/(172+152.3+160)=(3440+27414+12800)/484.3=43654/484.3≈90.1 -->
+              <!-- I_y=(172*160+152.3*160+160*20)/(484.3)=(27520+24368+3200)/484.3=55088/484.3≈113.8 -->
+              <!-- r = dist from I to AB (y=160): r = 160-113.8 = 46.2... let's use r≈46 -->
+              <circle cx="90" cy="114" r="46" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.08)" stroke-dasharray="none"/>
+              <!-- Center I dot -->
+              <circle cx="90" cy="114" r="3" fill="#059669"/>
+              <text x="93" y="111" font-size="11" font-weight="700" fill="#059669">I</text>
+              <!-- Dashed lines from I to touch points on sides -->
+              <!-- Touch point on AB (bottom): (90,160) -->
+              <line x1="90" y1="114" x2="90" y2="160" stroke="#059669" stroke-width="1.2" stroke-dasharray="3,2"/>
+              <!-- Touch point on CA: foot from I to line CA -->
+              <!-- Line CA: A(20,160) C(80,20), direction (60,-140), normal (140,60)/155.2 -->
+              <!-- foot = A + ((I-A)·d)/(d·d)*d where d=(60,-140) -->
+              <!-- (I-A)=(70,-46), d·(I-A)=60*70+(-140)*(-46)=4200+6440=10640, |d|²=3600+19600=23200 -->
+              <!-- t=10640/23200=0.4586, foot=(20+0.4586*60, 160+0.4586*(-140))=(47.5,96.0) -->
+              <line x1="90" y1="114" x2="48" y2="96" stroke="#059669" stroke-width="1.2" stroke-dasharray="3,2"/>
+              <!-- Touch point on BC: foot from I to line BC -->
+              <!-- Line BC: B(180,160) C(80,20), direction (-100,-140), n=(-140,100)/172 -->
+              <!-- (I-B)=(-90,-46), d·(I-B)=(-100)*(-90)+(-140)*(-46)=9000+6440=15440, |d|²=29600 -->
+              <!-- t=15440/29600=0.5216, foot=(180-100*0.5216, 160-140*0.5216)=(127.8,87.0) -->
+              <line x1="90" y1="114" x2="128" y2="87" stroke="#059669" stroke-width="1.2" stroke-dasharray="3,2"/>
+              <!-- Label r -->
+              <text x="92" y="140" font-size="11" fill="#059669" font-style="italic">r</text>
+              <!-- Formula -->
+              <text x="10" y="177" font-size="11" fill="#475569" font-weight="600">r = S/p</text>
+            </svg>
+          </div>
+          <!-- Circumscribed circle -->
+          <div class="diagram sm">
+            <div class="diagram-label">Описанная окружность (R = abc/4S)</div>
+            <svg width="200" height="180" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Triangle: A(20,155) B(180,155) C(80,15) — same triangle -->
+              <!-- Circumcenter O: perpendicular bisectors -->
+              <!-- Midpoint AB = (100,155), perp bisector: x=100 -->
+              <!-- Midpoint AC = (50,85), slope AC=(155-15)/(20-80)=140/(-60)=-7/3, perp slope=3/7 -->
+              <!-- Perp bisector of AC: y-85=(3/7)(x-50) → y=85+(3/7)(x-50) -->
+              <!-- At x=100: y=85+(3/7)*50=85+21.4=106.4 → O=(100,106) -->
+              <!-- R=dist(O,A)=sqrt((100-20)²+(106-155)²)=sqrt(6400+2401)=sqrt(8801)≈93.8 → use R=86 for scaling -->
+              <!-- Actually let me use the computed center for same triangle A(20,160)B(180,160)C(80,20) -->
+              <!-- Same as before: midpoints and perp bisectors -->
+              <!-- But let me scale: use A(30,150) B(170,150) C(85,25) for better fit -->
+              <!-- Circumcenter: midAB=(100,150), perp bisector x=100 -->
+              <!-- midAC=(57.5,87.5), slope AC=(150-25)/(30-85)=125/(-55)=-25/11, perp slope=11/25 -->
+              <!-- At x=100: y=87.5+(11/25)*(100-57.5)=87.5+(11/25)*42.5=87.5+18.7=106.2 → O≈(100,106) -->
+              <!-- R=sqrt((100-30)²+(106-150)²)=sqrt(4900+1936)=sqrt(6836)≈82.7 → R≈83 -->
+              <polygon points="30,150 170,150 85,25" stroke="#0f172a" stroke-width="2" fill="rgba(5,150,105,0.05)"/>
+              <!-- Circumcircle: center O(100,106) radius 83 -->
+              <circle cx="100" cy="106" r="83" stroke="#059669" stroke-width="2" fill="rgba(5,150,105,0.04)"/>
+              <!-- Center O dot -->
+              <circle cx="100" cy="106" r="3" fill="#059669"/>
+              <text x="103" y="103" font-size="11" font-weight="700" fill="#059669">O</text>
+              <!-- Radius line to vertex B(170,150) -->
+              <line x1="100" y1="106" x2="170" y2="150" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <text x="134" y="122" font-size="11" fill="#059669" font-style="italic">R</text>
+              <!-- Vertex labels -->
+              <text x="16" y="162" font-size="12" font-weight="700" fill="#0f172a">A</text>
+              <text x="173" y="162" font-size="12" font-weight="700" fill="#0f172a">B</text>
+              <text x="80" y="19" font-size="12" font-weight="700" fill="#0f172a">C</text>
+              <!-- Formula -->
+              <text x="8" y="174" font-size="11" fill="#475569" font-weight="600">R = abc / 4S</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Прямоугольный треугольник</h4>
+            <p>Описанная окружность имеет центр в середине гипотенузы: <span data-tex="R = \dfrac{c}{2}"></span></p>
+            <p>Вписанная: <span data-tex="r = \dfrac{a + b - c}{2}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Правильный треугольник</h4>
+            <p><span data-tex="R = \dfrac{a}{\sqrt{3}}, \quad r = \dfrac{a}{2\sqrt{3}}"></span></p>
+            <p>Отношение R : r = 2 : 1</p>
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="label">Теорема о вписанном четырёхугольнике</div>
+          <div class="text">Четырёхугольник можно вписать в окружность тогда и только тогда, когда <b>сумма противоположных углов равна 180°</b>: <span data-tex="A + C = B + D = 180^\circ"></span>.</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Свойство касательной</div>
+          <div class="text">Касательная к окружности перпендикулярна радиусу в точке касания. Два отрезка касательных, проведённых из одной внешней точки, <b>равны</b>.</div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>ЦТ-лайфхак:</b> Если задача о касательных из внешней точки, сразу вводи переменную x для длины одного отрезка касательной. Оба отрезка из этой точки одинаковы!</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 7: Координатная геометрия
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Координатная геометрия на плоскости</h1>
+          <p class="lead">Уравнение прямой, расстояние от точки до прямой, уравнение окружности — обязательно для ЦТ.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-line-kb">
+          <div class="flabel">Уравнение прямой (угловой коэффициент)</div>
+          <div class="formula" data-tex="y = kx + b"></div>
+          <div class="fdesc">k — угловой коэффициент (tg угла с осью Ox), b — свободный член (точка на оси Y).</div>
+        </div>
+
+        <div class="fcard" id="f-line-2pts">
+          <div class="flabel">Уравнение прямой через две точки</div>
+          <div class="formula" data-tex="\dfrac{x - x_1}{x_2 - x_1} = \dfrac{y - y_1}{y_2 - y_1}"></div>
+          <div class="fdesc">Проходит через точки <span data-tex="(x_1,\,y_1)"></span> и <span data-tex="(x_2,\,y_2)"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-dist-pt-line">
+          <div class="flabel">Расстояние от точки до прямой</div>
+          <div class="formula" data-tex="d = \dfrac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}"></div>
+          <div class="fdesc">Прямая <span data-tex="Ax+By+C=0"></span>, точка <span data-tex="(x_0,\,y_0)"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-circle-eq">
+          <div class="flabel">Уравнение окружности</div>
+          <div class="formula" data-tex="(x - a)^2 + (y - b)^2 = R^2"></div>
+          <div class="fdesc">Центр <span data-tex="(a,b)"></span>, радиус <span data-tex="R"></span>. При центре в начале координат: <span data-tex="x^2+y^2=R^2"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-dist-2pts">
+          <div class="flabel">Расстояние между двумя точками</div>
+          <div class="formula" data-tex="d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}"></div>
+          <div class="fdesc">Точки <span data-tex="M_1(x_1,y_1)"></span> и <span data-tex="M_2(x_2,y_2)"></span> на плоскости.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Чтобы привести уравнение окружности из общего вида x² + y² + Dx + Ey + F = 0, выдели полные квадраты: <span data-tex="(x + D/2)^2 + (y + E/2)^2 = (D/2)^2 + (E/2)^2 - F"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION: Разбор задач
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор типовых задач ЦТ</h1>
+          <p class="lead">Шаблонные задачи по планиметрии с пошаговым решением.</p>
+          <div class="tags"><span class="tag acc">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">В прямоугольном треугольнике катеты равны <b>6 см</b> и <b>8 см</b>. Найдите гипотенузу, площадь и радиус описанной окружности.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><b>Гипотенуза</b> по теореме Пифагора: <span data-tex="c = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10\text{ см}"></span></div>
+            <div class="step"><div class="stepn">2</div><b>Площадь</b>: <span data-tex="S = \dfrac{1}{2}\cdot 6 \cdot 8 = 24\text{ см}^2"></span></div>
+            <div class="step"><div class="stepn">3</div><b>Радиус описанной</b>: в прямоугольном треугольнике <span data-tex="R = \dfrac{c}{2} = \dfrac{10}{2} = 5\text{ см}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="c = 10\text{ см}"></span>, <span data-tex="S = 24\text{ см}^2"></span>, <span data-tex="R = 5\text{ см}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">В треугольнике ABC стороны AB = 5, BC = 7, угол B = 60°. Найдите площадь треугольника и длину стороны AC.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><b>Площадь</b> через две стороны и угол: <span data-tex="S = \dfrac{1}{2}\cdot AB \cdot BC \cdot \sin B = \dfrac{1}{2}\cdot 5 \cdot 7 \cdot \sin 60^\circ = \dfrac{35}{2}\cdot\dfrac{\sqrt{3}}{2} = \dfrac{35\sqrt{3}}{4} \approx 15{,}1"></span></div>
+            <div class="step"><div class="stepn">2</div><b>Сторона AC</b> по теореме косинусов: <span data-tex="AC^2 = AB^2 + BC^2 - 2\cdot AB\cdot BC\cdot\cos B = 25 + 49 - 2\cdot 5\cdot 7\cdot\frac{1}{2} = 74 - 35 = 39"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="AC = \sqrt{39} \approx 6{,}24"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="S = \dfrac{35\sqrt{3}}{4}"></span>, <span data-tex="AC = \sqrt{39}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Радиус окружности равен 10 см. Найдите длину дуги и площадь сектора с центральным углом 72°.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><b>Длина дуги</b>: <span data-tex="l = \dfrac{\pi R \alpha}{180^\circ} = \dfrac{\pi \cdot 10 \cdot 72^\circ}{180^\circ} = \dfrac{720\pi}{180} = 4\pi \approx 12{,}57\text{ см}"></span></div>
+            <div class="step"><div class="stepn">2</div><b>Площадь сектора</b>: <span data-tex="S = \dfrac{\pi R^2 \alpha}{360^\circ} = \dfrac{\pi \cdot 100 \cdot 72^\circ}{360^\circ} = \dfrac{7200\pi}{360} = 20\pi \approx 62{,}83\text{ см}^2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="l = 4\pi\text{ см}"></span>, <span data-tex="S = 20\pi\text{ см}^2"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Найдите расстояние от точки M(3; −1) до прямой, проходящей через точки A(1; 2) и B(5; 0).</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Уравнение прямой AB: <span data-tex="\dfrac{x-1}{5-1} = \dfrac{y-2}{0-2} \Rightarrow \dfrac{x-1}{4} = \dfrac{y-2}{-2}"></span></div>
+            <div class="step"><div class="stepn">2</div>Раскрываем: <span data-tex="-2(x-1) = 4(y-2) \Rightarrow -2x + 2 = 4y - 8 \Rightarrow 2x + 4y - 10 = 0 \Rightarrow x + 2y - 5 = 0"></span></div>
+            <div class="step"><div class="stepn">3</div>Расстояние от M(3; −1): <span data-tex="d = \dfrac{|1\cdot 3 + 2\cdot(-1) - 5|}{\sqrt{1^2+2^2}} = \dfrac{|3 - 2 - 5|}{\sqrt{5}} = \dfrac{4}{\sqrt{5}} = \dfrac{4\sqrt{5}}{5}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="d = \dfrac{4\sqrt{5}}{5} \approx 1{,}79"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION: Чек-лист
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Минимальный набор формул и навыков по планиметрии для успешной сдачи ЦТ/ЦЭ.</p>
+        </div>
+
+        <div class="summary">
+          <h4>Треугольники</h4>
+          <ul>
+            <li>Теорема Пифагора: <span data-tex="a^2 + b^2 = c^2"></span></li>
+            <li>Теорема синусов: <span data-tex="\dfrac{a}{\sin A} = 2R"></span></li>
+            <li>Теорема косинусов: <span data-tex="a^2 = b^2 + c^2 - 2bc\cos A"></span></li>
+            <li>Площадь: <span data-tex="S = \tfrac{1}{2}ab\sin C = \tfrac{1}{2}ah_a"></span></li>
+            <li>Формула Герона: <span data-tex="S = \sqrt{p(p-a)(p-b)(p-c)}"></span></li>
+            <li>Вписанная: <span data-tex="r = S/p"></span>; Описанная: <span data-tex="R = abc/(4S)"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Четырёхугольники</h4>
+          <ul>
+            <li>Трапеция: <span data-tex="S = \tfrac{(a+b)}{2} \cdot h"></span></li>
+            <li>Параллелограмм: <span data-tex="S = a \cdot h = ab\sin\alpha"></span></li>
+            <li>Ромб: <span data-tex="S = \tfrac{d_1 d_2}{2}"></span></li>
+            <li>Вписанный 4-угольник: <span data-tex="\alpha + \gamma = 180^\circ"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Окружность</h4>
+          <ul>
+            <li><span data-tex="C = 2\pi R"></span>, <span data-tex="S = \pi R^2"></span></li>
+            <li>Дуга: <span data-tex="l = \pi R\alpha / 180^\circ"></span></li>
+            <li>Сектор: <span data-tex="S = \pi R^2\alpha / 360^\circ"></span></li>
+            <li>Вписанный угол = ½ центрального</li>
+            <li>Касательная ⊥ радиусу; два отрезка касательных из внешней точки равны</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Координаты</h4>
+          <ul>
+            <li>Прямая: <span data-tex="y = kx + b"></span>, общий вид <span data-tex="Ax + By + C = 0"></span></li>
+            <li>Расстояние: <span data-tex="d = |Ax_0 + By_0 + C| / \sqrt{A^2+B^2}"></span></li>
+            <li>Окружность: <span data-tex="(x-a)^2 + (y-b)^2 = R^2"></span></li>
+          </ul>
+        </div>
+
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Не путай градусы и радианы в формулах дуги и сектора. Формула l = Rφ работает только с φ в радианах.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>В формуле S = ½ab·sinC угол C — это угол <b>между</b> сторонами a и b, а не напротив них.</div>
+        </div>
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет:</b> При решении задач на окружности всегда рисуй радиус в точку касания — он перпендикулярен касательной, что часто открывает прямоугольный треугольник.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">10 Стереометрия</div>
+            <div class="tp-desc">Тела вращения, многогранники, координатный метод</div>
+          </div>
+          <a class="tp-btn" href="10_stereometriya.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-perim"><div class="ri-name">Периметр треугольника</div><div class="ri-formula">P = a+b+c; p = P/2</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-area-h"><div class="ri-name">Площадь через высоту</div><div class="ri-formula">S = ½·a·h</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-area-sin"><div class="ri-name">Площадь через синус</div><div class="ri-formula">S = ½·ab·sinC</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-heron"><div class="ri-name">Формула Герона</div><div class="ri-formula">S = √(p(p-a)(p-b)(p-c))</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-sin-thm"><div class="ri-name">Теорема синусов</div><div class="ri-formula">a/sinA = b/sinB = 2R</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-cos-thm"><div class="ri-name">Теорема косинусов</div><div class="ri-formula">a² = b²+c²−2bc·cosA</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-median"><div class="ri-name">Медиана</div><div class="ri-formula">m_a² = (2b²+2c²−a²)/4</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-pythagoras"><div class="ri-name">Теорема Пифагора</div><div class="ri-formula">a²+b² = c²</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-similar-area"><div class="ri-name">Площади подобных фигур</div><div class="ri-formula">S₁/S₂ = k²</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-circle-c"><div class="ri-name">Длина окружности</div><div class="ri-formula">C = 2πR</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-circle-s"><div class="ri-name">Площадь круга</div><div class="ri-formula">S = πR²</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-arc"><div class="ri-name">Длина дуги</div><div class="ri-formula">l = πRα/180°</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-sector"><div class="ri-name">Площадь сектора</div><div class="ri-formula">S = πR²α/360°</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-inradius"><div class="ri-name">Радиус вписанной окружности</div><div class="ri-formula">r = S/p</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-circumradius"><div class="ri-name">Радиус описанной окружности</div><div class="ri-formula">R = abc/(4S)</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-dist-pt-line"><div class="ri-name">Расстояние от точки до прямой</div><div class="ri-formula">d = |Ax₀+By₀+C|/√(A²+B²)</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-circle-eq"><div class="ri-name">Уравнение окружности</div><div class="ri-formula">(x−a)²+(y−b)² = R²</div></div>
+  </div>
+</div>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

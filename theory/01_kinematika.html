@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Кинематика — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{
+  0%,100%{background:transparent}
+  30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}
+}
+</style>
+</head>
+<body data-topic="t01">
+
+<!-- ─── TOPBAR ─── -->
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🏃</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Кинематика</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<!-- ─── APP LAYOUT ─── -->
+<div class="app">
+  <div class="sidebar-overlay"></div>
+
+  <!-- ─── SIDEBAR ─── -->
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 01</span>
+      <h2>Кинематика</h2>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">📐</span>Основные понятия</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">🏃</span>Скорость и ускорение</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">📈</span>Тангенциальное и нормальное</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">🔄</span>Сложение скоростей</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">📏</span>Равномерное движение</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">⚡</span>Равноускоренное движение</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">⬇</span>Свободное падение</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">⭕</span>Движение по окружности</button>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">🎯</span>Бросок под углом</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">📊</span>Графики движения</button>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <!-- ─── CONTENT ─── -->
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════════════════════════════════════════
+           SECTION 1: Основные понятия
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Основные понятия</h1>
+          <p class="lead">Тело отсчёта, система координат, радиус-вектор, траектория, путь и перемещение — фундамент кинематики.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База</span>
+          </div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Главная идея</small>
+            Любое движение существует <b>только относительно</b> выбранной системы отсчёта. Без СО говорить о движении бессмысленно.
+          </div>
+        </div>
+
+        <h2 id="h-syst">Система отсчёта</h2>
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Система отсчёта (СО)</b> — совокупность <b>тела отсчёта</b>, связанной с ним <b>системы координат</b> и <b>часов</b>, неподвижных относительно тела отсчёта.</div>
+        </div>
+        <p>Любое механическое движение относительно: оно описывается только в выбранной системе отсчёта. Без СО говорить о движении бессмысленно.</p>
+
+        <h2 id="h-radius">Радиус-вектор и координаты</h2>
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Радиус-вектор</b> точки — направленный отрезок, проведённый из начала координат в данную точку. Координаты точки равны проекциям радиус-вектора на оси.</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- axes -->
+            <line x1="40" y1="180" x2="340" y2="180" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="40" y1="180" x2="40" y2="20" stroke="#94a3b8" stroke-width="1.5"/>
+            <polygon points="340,180 332,176 332,184" fill="#94a3b8"/>
+            <polygon points="40,20 36,28 44,28" fill="#94a3b8"/>
+            <text x="345" y="185" font-size="12" fill="#475569" font-style="italic">X</text>
+            <text x="32" y="18" font-size="12" fill="#475569" font-style="italic">Y</text>
+            <text x="28" y="195" font-size="11" fill="#94a3b8">O</text>
+            <!-- point A -->
+            <circle cx="220" cy="70" r="4" fill="#3b82f6"/>
+            <text x="228" y="68" font-size="13" font-weight="700" fill="#1e293b">A</text>
+            <!-- radius vector -->
+            <line x1="40" y1="180" x2="220" y2="70" stroke="#3b82f6" stroke-width="2.5"/>
+            <polygon points="220,70 209,76 213,82" fill="#3b82f6"/>
+            <text x="115" y="115" font-size="14" font-weight="700" fill="#3b82f6" font-style="italic">r</text>
+            <!-- projections -->
+            <line x1="220" y1="70" x2="220" y2="180" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="220" y1="70" x2="40" y2="70" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="225" y="135" font-size="11" fill="#64748b">y</text>
+            <text x="120" y="65" font-size="11" fill="#64748b">x</text>
+            <text x="220" y="200" font-size="11" fill="#64748b" text-anchor="middle">x</text>
+            <text x="25" y="74" font-size="11" fill="#64748b" text-anchor="end">y</text>
+          </svg>
+          <div class="caption">Радиус-вектор r точки A и его проекции на оси координат</div>
+        </div>
+
+        <h2 id="h-traj">Траектория, путь и перемещение</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>📏 Путь s</h4>
+            <p><b>Скаляр.</b> Длина участка траектории. Всегда <b>положителен</b> и не убывает со временем.</p>
+            <p>Единица: <b>метр (м)</b>.</p>
+          </div>
+          <div class="card">
+            <h4>↗️ Перемещение Δr</h4>
+            <p><b>Вектор.</b> Направленный отрезок из начального положения в конечное.</p>
+            <p>Проекция перемещения на ось равна изменению координаты: Δr<sub>x</sub> = x − x₀.</p>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Не путай!</b> Если тело идёт по замкнутой траектории (круг и вернулось в начало), <b>путь ≠ 0</b> (равен длине окружности), но <b>перемещение = 0</b> (начало совпало с концом).</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- curve trajectory -->
+            <path d="M 60 150 Q 120 40, 200 80 T 320 60" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+            <!-- point 1 -->
+            <circle cx="60" cy="150" r="5" fill="#3b82f6"/>
+            <text x="48" y="170" font-size="12" font-weight="700" fill="#3b82f6">1</text>
+            <!-- point 2 -->
+            <circle cx="320" cy="60" r="5" fill="#3b82f6"/>
+            <text x="328" y="60" font-size="12" font-weight="700" fill="#3b82f6">2</text>
+            <!-- displacement vector -->
+            <line x1="60" y1="150" x2="320" y2="60" stroke="#10b981" stroke-width="2.5"/>
+            <polygon points="320,60 309,62 312,70" fill="#10b981"/>
+            <text x="180" y="100" font-size="13" font-weight="700" fill="#10b981" font-style="italic">Δr</text>
+            <text x="160" y="50" font-size="12" fill="#94a3b8" font-style="italic">путь s (вдоль кривой)</text>
+          </svg>
+          <div class="caption">Серым — траектория и путь s, зелёным — вектор перемещения Δr</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Для прямолинейного движения <b>в одну сторону</b>: путь s = |Δr| (длина перемещения). В остальных случаях s &gt; |Δr|.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 2: Скорость и ускорение
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Скорость и ускорение</h1>
+          <p class="lead">Векторы скорости и ускорения, средние и мгновенные значения, правила работы с проекциями.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <h2 id="h-vel">Скорость</h2>
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Скорость точки</b> — векторная физическая величина, равная отношению перемещения к промежутку времени. Характеризует быстроту и направление движения.</div>
+        </div>
+
+        <div class="fcard" id="f-velocity">
+          <div class="flabel">Скорость</div>
+          <div class="formula" data-tex="\vec{v} = \dfrac{\Delta \vec{r}}{\Delta t}"></div>
+          <div class="fdesc">Отношение перемещения к промежутку времени. Единица: м/с.</div>
+        </div>
+
+        <div class="fcard" id="f-vel-avg">
+          <div class="flabel">Средняя скорость (вектор)</div>
+          <div class="formula" data-tex="\vec{v}_{ср} = \frac{\Delta \vec{r}}{\Delta t}"></div>
+          <div class="fdesc">Перемещение, делённое на промежуток времени</div>
+        </div>
+
+        <div class="fcard" id="f-speed-avg">
+          <div class="flabel">Средняя путевая скорость (модуль)</div>
+          <div class="formula" data-tex="\langle v \rangle = \frac{s}{t}"></div>
+          <div class="fdesc">Полный <b>путь</b>, делённый на полное <b>время</b>. ⚠️ <b>Не равно</b> модулю средней векторной скорости!</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Типичная ошибка ЦТ.</b> Если тело прошло по сложной траектории, <span data-tex="\dfrac{s}{t} \neq \left|\dfrac{\Delta \vec{r}}{\Delta t}\right|"></span>. Внимательно читай условие: «средняя скорость» обычно означает <b>среднюю путевую</b>.</div>
+        </div>
+
+        <h2 id="h-acc">Ускорение</h2>
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Ускорение точки</b> — векторная величина, равная отношению изменения скорости к промежутку времени. Характеризует быстроту изменения скорости (по модулю и направлению).</div>
+        </div>
+
+        <div class="fcard" id="f-acc">
+          <div class="flabel">Ускорение</div>
+          <div class="formula" data-tex="\vec{a} = \dfrac{\Delta \vec{v}}{\Delta t}"></div>
+          <div class="fdesc">Отношение изменения скорости к промежутку времени. Единица: м/с².</div>
+        </div>
+
+        <h2 id="h-proj">Работа с проекциями</h2>
+        <p>В одномерных задачах удобно работать с <b>проекциями</b> векторов на ось. Проекция — скаляр со знаком (+ или −), показывающим направление вектора относительно оси.</p>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Вектор</th><th>Знак проекции +</th><th>Знак проекции −</th></tr>
+            <tr><td>v<sub>x</sub></td><td>тело движется по +X</td><td>тело движется против X</td></tr>
+            <tr><td>a<sub>x</sub></td><td>скорость растёт (по +X)</td><td>скорость убывает</td></tr>
+            <tr><td>Δr<sub>x</sub></td><td>x₂ &gt; x₁</td><td>x₂ &lt; x₁</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 3: Тангенциальное и нормальное
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Тангенциальное и нормальное ускорения</h1>
+          <p class="lead">Полное ускорение раскладывается на две составляющие: вдоль скорости и перпендикулярно ей.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Важно</span></div>
+        </div>
+
+        <p>В общем случае вектор ускорения <span data-tex="\vec{a}"></span> представляют как сумму двух составляющих:</p>
+
+        <div class="fcard" id="f-a-decomp">
+          <div class="flabel">Разложение ускорения</div>
+          <div class="formula" data-tex="\vec{a} = \vec{a}_\tau + \vec{a}_n"></div>
+          <div class="fdesc"><b>a<sub>τ</sub></b> — параллельно скорости (тангенциальное), <b>a<sub>n</sub></b> — перпендикулярно скорости (нормальное)</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 30 160 Q 130 60, 280 100" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+            <circle cx="180" cy="90" r="4" fill="#1e293b"/>
+            <!-- tangent v -->
+            <line x1="180" y1="90" x2="280" y2="55" stroke="#3b82f6" stroke-width="2.5"/>
+            <polygon points="280,55 268,57 271,65" fill="#3b82f6"/>
+            <text x="285" y="58" font-size="13" font-weight="700" fill="#3b82f6" font-style="italic">v</text>
+            <!-- tangential a (parallel to v) -->
+            <line x1="180" y1="90" x2="240" y2="69" stroke="#f59e0b" stroke-width="2.5"/>
+            <polygon points="240,69 230,69 233,77" fill="#f59e0b"/>
+            <text x="225" y="86" font-size="12" font-weight="700" fill="#f59e0b" font-style="italic">aτ</text>
+            <!-- normal a (perpendicular) -->
+            <line x1="180" y1="90" x2="155" y2="155" stroke="#10b981" stroke-width="2.5"/>
+            <polygon points="155,155 152,143 161,146" fill="#10b981"/>
+            <text x="135" y="150" font-size="12" font-weight="700" fill="#10b981" font-style="italic">an</text>
+            <!-- full a -->
+            <line x1="180" y1="90" x2="215" y2="135" stroke="#ef4444" stroke-width="2"/>
+            <polygon points="215,135 205,131 208,140" fill="#ef4444"/>
+            <text x="220" y="140" font-size="13" font-weight="700" fill="#ef4444" font-style="italic">a</text>
+          </svg>
+          <div class="caption">Полное ускорение a = a<sub>τ</sub> + a<sub>n</sub></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="fcard" id="f-at">
+            <div class="flabel">Тангенциальное</div>
+            <div class="formula" data-tex="a_\tau = \dfrac{\Delta v}{\Delta t}"></div>
+            <div class="fdesc">Меняет <b>модуль</b> скорости. Параллельно скорости.</div>
+          </div>
+          <div class="fcard" id="f-an">
+            <div class="flabel">Нормальное</div>
+            <div class="formula" data-tex="a_n = \dfrac{v^2}{R}"></div>
+            <div class="fdesc">Меняет <b>направление</b> скорости. R — радиус кривизны.</div>
+          </div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Модуль полного ускорения</div>
+          <div class="formula" data-tex="a = \sqrt{a_\tau^2 + a_n^2}"></div>
+          <div class="fdesc">По теореме Пифагора (a<sub>τ</sub> <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span> a<sub>n</sub>)</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Запомни:</b><br>
+          • Прямолинейное движение → a<sub>n</sub> = 0, остаётся только a<sub>τ</sub><br>
+          • Равномерное движение по окружности → a<sub>τ</sub> = 0, есть только a<sub>n</sub><br>
+          • Ускоренное движение по кривой → есть обе составляющие</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 4: Сложение скоростей
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Сложение скоростей и ускорений</h1>
+          <p class="lead">Закон сложения скоростей описывает связь между скоростями тела в разных системах отсчёта.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Закон сложения скоростей (классический)</div>
+          <div class="text">Скорость точки относительно «неподвижной» системы отсчёта (НСО) равна <b>векторной сумме</b> скорости точки относительно «подвижной» системы (ПСО) и скорости ПСО относительно НСО.</div>
+        </div>
+
+        <div class="fcard" id="f-relvel">
+          <div class="flabel">Сложение скоростей</div>
+          <div class="formula" data-tex="\vec{v}_{т/НСО} = \vec{v}_{т/ПСО} + \vec{v}_{ПСО/НСО}"></div>
+          <div class="fdesc"><b>Абсолютная</b> = <b>относительная</b> + <b>переносная</b> скорость</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Скорость одной точки относительно другой</div>
+          <div class="formula" data-tex="\vec{v}_{1/2} = \vec{v}_1 - \vec{v}_2"></div>
+          <div class="fdesc">v₁, v₂ — скорости тел в одной (неподвижной) СО</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Сложение ускорений</div>
+          <div class="formula" data-tex="\vec{a}_{т/НСО} = \vec{a}_{т/ПСО} + \vec{a}_{ПСО/НСО}"></div>
+          <div class="fdesc">Справедливо, если ПСО движется поступательно (не вращается)</div>
+        </div>
+
+        <h2 id="h-rel-types">Частые случаи</h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>🚣 Лодка по/против течения</h4>
+            <p><b>По течению:</b> v = v<sub>л</sub> + v<sub>т</sub><br>
+            <b>Против течения:</b> v = v<sub>л</sub> − v<sub>т</sub></p>
+            <p>v<sub>л</sub> — скорость лодки в стоячей воде, v<sub>т</sub> — скорость течения.</p>
+          </div>
+          <div class="card">
+            <h4>🚣 Лодка поперёк реки</h4>
+            <p>Если лодка плывёт перпендикулярно берегам:<br>
+            <span data-tex="v_{абс} = \sqrt{v_л^2 + v_т^2}"></span></p>
+            <p>Снос: <span data-tex="L = \dfrac{v_т}{v_л}\cdot d"></span>, где d — ширина реки.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача</span>
+          <div class="ptext"><b>По прямому шоссе</b> навстречу друг другу едут два автомобиля со скоростями <span data-tex="v_1 = 60\text{ км/ч}"></span> и <span data-tex="v_2 = 40\text{ км/ч}"></span>. С какой скоростью первый приближается ко второму?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Выберем ось X в направлении движения первого. Тогда <span data-tex="v_{1x} = +60\text{ км/ч},\; v_{2x} = -40\text{ км/ч}"></span> (второй едет навстречу).</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="v_{1/2,\,x} = v_{1x} - v_{2x} = 60 - (-40) = 100\text{ км/ч}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v_\text{сбл} = 100\text{ км/ч}"></span> — скорость сближения.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 5: Равномерное движение
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Равномерное прямолинейное движение</h1>
+          <p class="lead">Простейший вид движения: вектор скорости постоянен по модулю и по направлению (a = 0).</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag green">База ЦТ</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Равномерное прямолинейное движение</b> — движение, при котором за любые равные промежутки времени тело совершает одинаковые перемещения. Вектор скорости <b>не изменяется ни по модулю, ни по направлению</b>.</div>
+        </div>
+
+        <div class="fcard" id="f-uniform">
+          <div class="flabel">Закон движения</div>
+          <div class="formula" data-tex="x = x_0 + v_x \cdot t"></div>
+          <div class="fdesc"><b>x₀</b> — начальная координата, <b>v<sub>x</sub></b> — проекция скорости на ось X, <b>t</b> — время</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Путь и перемещение</div>
+          <div class="formula" data-tex="s = v \cdot t \qquad \Delta x = v_x \cdot t"></div>
+          <div class="fdesc">Путь s — модуль скорости × время. Перемещение Δx — проекция скорости × время.</div>
+        </div>
+
+        <h2 id="h-graph-uniform">Графики</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h4>x(t)</h4>
+            <p>Прямая. Угол наклона = v<sub>x</sub>. Если v<sub>x</sub> &gt; 0 — растёт, v<sub>x</sub> &lt; 0 — убывает.</p>
+          </div>
+          <div class="card">
+            <h4>v(t)</h4>
+            <p>Горизонтальная прямая (v = const). Площадь под графиком = пройденный путь.</p>
+          </div>
+          <div class="card">
+            <h4>a(t)</h4>
+            <p>На оси t (a = 0).</p>
+          </div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="150" x2="340" y2="150" stroke="#94a3b8"/>
+            <line x1="40" y1="20" x2="40" y2="150" stroke="#94a3b8"/>
+            <polygon points="340,150 332,146 332,154" fill="#94a3b8"/>
+            <polygon points="40,20 36,28 44,28" fill="#94a3b8"/>
+            <text x="345" y="155" font-size="12" fill="#475569" font-style="italic">t</text>
+            <text x="32" y="18" font-size="12" fill="#475569" font-style="italic">x</text>
+            <line x1="40" y1="130" x2="320" y2="40" stroke="#3b82f6" stroke-width="2.5"/>
+            <text x="200" y="80" font-size="11" fill="#3b82f6" font-weight="600">x = x₀ + v·t</text>
+            <text x="20" y="135" font-size="11" fill="#64748b">x₀</text>
+          </svg>
+          <div class="caption">График x(t) при равномерном движении — прямая</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 6: Равноускоренное движение
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Равноускоренное движение (a = const)</h1>
+          <p class="lead">Самый важный вид движения для ЦТ. Все формулы должен знать наизусть.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Равноускоренное движение</b> — движение с постоянным по модулю и направлению вектором ускорения. Векторы a и v могут быть параллельны (равноускоренное вдоль v) или не параллельны (тогда траектория — парабола).</div>
+        </div>
+
+        <h2 id="h-eqs">Основные уравнения</h2>
+
+        <div class="fcard" id="f-vt">
+          <div class="flabel">Скорость через время</div>
+          <div class="formula" data-tex="v_x = v_{0x} + a_x \cdot t"></div>
+          <div class="fdesc">v₀ — начальная скорость, a — ускорение, t — время</div>
+        </div>
+
+        <div class="fcard hero" id="f-xt">
+          <div class="flabel">Координата через время</div>
+          <div class="formula" data-tex="x = x_0 + v_{0x} \cdot t + \dfrac{a_x t^2}{2}"></div>
+          <div class="fdesc">Универсальная формула пути при a = const</div>
+          <div class="fcard-when"><strong>Применять:</strong> когда известны v₀, a, t — найти координату или перемещение</div>
+        </div>
+
+        <div class="fcard hero" id="f-v2">
+          <div class="flabel">Без времени</div>
+          <div class="formula" data-tex="v_x^2 - v_{0x}^2 = 2 a_x \Delta x"></div>
+          <div class="fdesc">Самая популярная формула на ЦТ. Используй, когда время неизвестно.</div>
+          <div class="fcard-when"><strong>Применять:</strong> когда неизвестно время, а известны v₀, v, a — найти путь, или наоборот</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Перемещение через средние значения</div>
+          <div class="formula" data-tex="\Delta x = \dfrac{v_x + v_{0x}}{2}\cdot t"></div>
+          <div class="fdesc">Среднее арифметическое начальной и конечной скоростей умножить на время</div>
+        </div>
+
+        <h2 id="h-cases">Прямолинейное движение: два случая</h2>
+
+        <div class="grid-2">
+          <div class="card accent">
+            <h4>↑↑ Равноускоренное (a ↑↑ v)</h4>
+            <p>Скорость <b>растёт</b>: v = v₀ + at</p>
+            <p><span data-tex="s = v_0 t + \dfrac{at^2}{2}"></span></p>
+            <p><span data-tex="2as = v^2 - v_0^2"></span></p>
+          </div>
+          <div class="card">
+            <h4>↑↓ Равнозамедленное (a ↑↓ v)</h4>
+            <p>Скорость <b>убывает</b>: v = v₀ − at</p>
+            <p><span data-tex="s = v_0 t - \dfrac{at^2}{2}"></span> (при t ≤ v₀/a)</p>
+            <p><span data-tex="2as = v_0^2 - v^2"></span></p>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Время остановки</b> при равнозамедленном движении: <span data-tex="t_{ост} = \dfrac{v_0}{a}"></span></div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Не используй формулу <span data-tex="s = v_0 t - \dfrac{at^2}{2}"></span> при t &gt; t<sub>ост</sub>! После остановки тело либо стоит, либо начинает движение в обратную сторону — формула даст неверный результат.</div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico"></span>
+          <div><b>На ЦТ часто:</b> просят найти <b>путь до остановки</b> при торможении. Используй <span data-tex="s = v_0^2/(2a)"></span> — самый быстрый способ.</div>
+        </div>
+
+        <div class="summary">
+          <h4>Краткие итоги</h4>
+          <ul>
+            <li><b>Главное уравнение:</b> <span data-tex="x = x_0 + v_0 t + at^2/2"></span></li>
+            <li><b>Без времени:</b> <span data-tex="v^2 - v_0^2 = 2a\Delta x"></span> — экономит шаги</li>
+            <li><b>Перемещение:</b> <span data-tex="\Delta x = (v + v_0)t/2"></span></li>
+            <li>При <b>равноускоренном:</b> a ↑↑ v, скорость растёт</li>
+            <li>При <b>равнозамедленном:</b> a ↑↓ v, скорость убывает; ограничение t ≤ v₀/a</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 7: Свободное падение
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Свободное падение</h1>
+          <p class="lead">Частный случай равноускоренного движения с ускорением g ≈ 9,8 м/с² (на ЦТ обычно <b>g = 10 м/с²</b>).</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag green">База ЦТ</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Свободное падение</b> — движение тела только под действием силы тяжести (без сопротивления воздуха). Все тела падают с одинаковым ускорением g, направленным вертикально вниз.</div>
+        </div>
+
+        <h2 id="h-fall-down">Падение с высоты h без начальной скорости</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Скорость в момент t</div>
+            <div class="chip-formula" data-tex="v = g\cdot t"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Высота падения</div>
+            <div class="chip-formula" data-tex="h = \dfrac{g t^2}{2}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Время падения</div>
+            <div class="chip-formula" data-tex="t = \sqrt{\dfrac{2h}{g}}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Скорость в момент удара</div>
+            <div class="chip-formula" data-tex="v = \sqrt{2gh}"></div>
+          </div>
+        </div>
+
+        <h2 id="h-fall-up">Тело брошено вертикально вверх со скоростью v₀</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Скорость в момент t</div>
+            <div class="chip-formula" data-tex="v = v_0 - g t"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Высота в момент t</div>
+            <div class="chip-formula" data-tex="h = v_0 t - \dfrac{g t^2}{2}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Макс. высота подъёма</div>
+            <div class="chip-formula" data-tex="H = \dfrac{v_0^2}{2g}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Время подъёма</div>
+            <div class="chip-formula" data-tex="t_{под} = \dfrac{v_0}{g}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Время полёта (вверх+вниз)</div>
+            <div class="chip-formula" data-tex="t_{пол} = \dfrac{2v_0}{g}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Скорость на исходной высоте</div>
+            <div class="chip-formula" data-tex="v = v_0"></div>
+          </div>
+        </div>
+
+        <div class="tip info">
+          <span class="ico">💡</span>
+          <div><b>Симметрия движения вверх и вниз:</b> время подъёма = время падения с верхней точки, скорость на исходной высоте при возвращении = начальной (по модулю).</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 8: Движение по окружности
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Равномерное движение по окружности</h1>
+          <p class="lead">Движение, при котором тело за равные промежутки времени проходит равные дуги. Скорость по модулю постоянна, но <b>меняется направление</b>.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Равномерное движение по окружности</b> — частный случай движения по кривой, когда модуль скорости постоянен. При этом <b>есть нормальное (центростремительное) ускорение</b>, а тангенциальное равно нулю.</div>
+        </div>
+
+        <h2 id="h-omega">Угловая скорость, период, частота</h2>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Угловая скорость</div>
+            <div class="chip-formula" data-tex="\omega = \dfrac{\Delta \varphi}{\Delta t}"></div>
+            <div class="chip-desc">рад/с</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Период вращения</div>
+            <div class="chip-formula" data-tex="T = \dfrac{2\pi}{\omega} = \dfrac{t}{N}"></div>
+            <div class="chip-desc">время одного полного оборота</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Частота вращения</div>
+            <div class="chip-formula" data-tex="\nu = \dfrac{1}{T}"></div>
+            <div class="chip-desc">оборотов в секунду, Гц</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Связь ω и ν</div>
+            <div class="chip-formula" data-tex="\omega = 2\pi\nu"></div>
+          </div>
+        </div>
+
+        <h2 id="h-vlin">Линейная скорость и центростремительное ускорение</h2>
+
+        <div class="fcard" id="f-vlin">
+          <div class="flabel">Линейная скорость</div>
+          <div class="formula" data-tex="v = \omega \cdot R"></div>
+          <div class="fdesc">R — радиус окружности</div>
+        </div>
+
+        <div class="fcard hero" id="f-acentro">
+          <div class="flabel">Центростремительное ускорение</div>
+          <div class="formula" data-tex="a_ц = \dfrac{v^2}{R} = \omega^2 R = \dfrac{4\pi^2 R}{T^2}"></div>
+          <div class="fdesc">Направлено к <b>центру окружности</b>. Меняет только направление скорости.</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="140" cy="110" r="70" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+            <circle cx="140" cy="110" r="3" fill="#1e293b"/>
+            <text x="146" y="106" font-size="11" fill="#475569">O</text>
+            <!-- point on circle -->
+            <circle cx="195" cy="65" r="5" fill="#3b82f6"/>
+            <!-- velocity vector tangent -->
+            <line x1="195" y1="65" x2="245" y2="105" stroke="#3b82f6" stroke-width="2.5"/>
+            <polygon points="245,105 234,103 237,111" fill="#3b82f6"/>
+            <text x="248" y="108" font-size="13" font-weight="700" fill="#3b82f6" font-style="italic">v</text>
+            <!-- centripetal a -->
+            <line x1="195" y1="65" x2="155" y2="98" stroke="#ef4444" stroke-width="2.5"/>
+            <polygon points="155,98 162,89 167,97" fill="#ef4444"/>
+            <text x="158" y="80" font-size="13" font-weight="700" fill="#ef4444">aц</text>
+            <!-- radius -->
+            <line x1="140" y1="110" x2="195" y2="65" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2,2"/>
+            <text x="160" y="92" font-size="11" fill="#94a3b8" font-style="italic">R</text>
+          </svg>
+          <div class="caption">При движении по окружности v направлено по касательной, a<sub>ц</sub> — к центру</div>
+        </div>
+
+        <h2 id="h-ang-displ">Длина дуги и угол</h2>
+        <div class="fcard">
+          <div class="flabel">Связь длины дуги и угла</div>
+          <div class="formula" data-tex="s = R\cdot\varphi"></div>
+          <div class="fdesc">⚠️ Угол φ — обязательно в <b>радианах</b>!</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Перевод град ↔ рад:</b> 180° = π рад, 360° = 2π рад. Формула: <span data-tex="\varphi(\text{рад}) = \varphi(°)\cdot\dfrac{\pi}{180}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 9: Бросок под углом
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Движение тела, брошенного под углом к горизонту</h1>
+          <p class="lead">Двумерное движение с постоянным ускорением g. Траектория — парабола. Главный приём — раскладывать на оси X (равномерное) и Y (равноускоренное).</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <h2 id="h-decomp">Принцип независимости движений</h2>
+        <div class="def">
+          <div class="label">Принцип Галилея</div>
+          <div class="text">Сложное движение можно представить как сумму независимых движений по каждой оси координат. По <b>оси X</b> — равномерное (нет силы). По <b>оси Y</b> — равноускоренное (под действием g).</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- ground -->
+            <line x1="20" y1="190" x2="380" y2="190" stroke="#94a3b8" stroke-width="2"/>
+            <!-- parabola -->
+            <path d="M 30 190 Q 200 -10, 370 190" stroke="#3b82f6" stroke-width="2.5" fill="none"/>
+            <!-- start point -->
+            <circle cx="30" cy="190" r="5" fill="#1e293b"/>
+            <!-- v0 vector -->
+            <line x1="30" y1="190" x2="100" y2="120" stroke="#10b981" stroke-width="2.5"/>
+            <polygon points="100,120 91,124 96,131" fill="#10b981"/>
+            <text x="65" y="148" font-size="13" font-weight="700" fill="#10b981" font-style="italic">v₀</text>
+            <!-- v0x -->
+            <line x1="30" y1="190" x2="100" y2="190" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <text x="55" y="205" font-size="11" fill="#475569" font-style="italic">v₀ cos α</text>
+            <!-- v0y -->
+            <line x1="30" y1="190" x2="30" y2="120" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <text x="0" y="160" font-size="11" fill="#475569" font-style="italic">v₀ sin α</text>
+            <!-- angle alpha -->
+            <path d="M 55 190 A 25 25 0 0 0 47 175" stroke="#94a3b8" fill="none"/>
+            <text x="60" y="180" font-size="11" fill="#475569" font-style="italic">α</text>
+            <!-- max height label -->
+            <line x1="200" y1="40" x2="200" y2="190" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,2"/>
+            <text x="205" y="115" font-size="11" fill="#64748b" font-style="italic">H</text>
+            <!-- range -->
+            <text x="200" y="210" font-size="11" fill="#64748b" font-style="italic" text-anchor="middle">L (дальность)</text>
+          </svg>
+          <div class="caption">Тело брошено со скоростью v₀ под углом α к горизонту</div>
+        </div>
+
+        <h2 id="h-comp">Скорость и координаты в момент t</h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Ось X (равномерное)</h4>
+            <p><span data-tex="v_x = v_0 \cos\alpha = const"></span></p>
+            <p><span data-tex="x = v_0 \cos\alpha \cdot t"></span></p>
+          </div>
+          <div class="card">
+            <h4>Ось Y (равноускоренное, a = −g)</h4>
+            <p><span data-tex="v_y = v_0 \sin\alpha - g t"></span></p>
+            <p><span data-tex="y = v_0 \sin\alpha \cdot t - \dfrac{g t^2}{2}"></span></p>
+          </div>
+        </div>
+
+        <h2 id="h-park">Ключевые параметры полёта</h2>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Время полёта</div>
+            <div class="chip-formula" data-tex="t_{пол} = \dfrac{2 v_0 \sin\alpha}{g}"></div>
+            <div class="chip-desc">если бросок и приземление на одной высоте</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Максимальная высота</div>
+            <div class="chip-formula" data-tex="H = \dfrac{v_0^2 \sin^2\alpha}{2g}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Дальность полёта</div>
+            <div class="chip-formula" data-tex="L = \dfrac{v_0^2 \sin 2\alpha}{g}"></div>
+            <div class="chip-desc">максимальна при α = 45°</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Скорость в момент t</div>
+            <div class="chip-formula" data-tex="v = \sqrt{v_x^2 + v_y^2}"></div>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Формулы L, H, t<sub>пол</sub> работают, только если бросок с горизонтальной поверхности на ту же высоту!</b> Если бросок с обрыва или на другую высоту — раскладывай через уравнения движения по X и Y.</div>
+        </div>
+
+        <h2 id="h-horiz">Бросок горизонтально (α = 0)</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Время полёта с высоты h</div>
+            <div class="chip-formula" data-tex="t = \sqrt{\dfrac{2h}{g}}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Дальность полёта</div>
+            <div class="chip-formula" data-tex="L = v_0 \sqrt{\dfrac{2h}{g}}"></div>
+          </div>
+        </div>
+
+        <!-- ── Алгоритм решения ── -->
+        <div class="method-card">
+          <div class="mc-head">
+            <div class="mc-icon">🔧</div>
+            <div class="mc-title">Алгоритм: задача на бросок под углом</div>
+          </div>
+          <ol class="mc-steps">
+            <li><strong>Выбрать оси:</strong> ось X — горизонталь вправо, ось Y — вертикаль вверх. Начало — точка броска.</li>
+            <li><strong>Разложить v₀:</strong> <span data-tex="v_{0x} = v_0\cos\alpha"></span>, <span data-tex="v_{0y} = v_0\sin\alpha"></span></li>
+            <li><strong>Уравнения движения:</strong> по X — равномерное (<span data-tex="x = v_{0x}t"></span>), по Y — равноускоренное (<span data-tex="y = v_{0y}t - gt^2/2"></span>).</li>
+            <li><strong>Использовать готовые формулы</strong> L, H, t<sub>пол</sub> <b>только если</b> старт и финиш на одной высоте. Иначе — из уравнений.</li>
+            <li><strong>Бросок горизонтально:</strong> v<sub>0y</sub> = 0, угол α = 0°. Время из <span data-tex="h = gt^2/2"></span>, дальность <span data-tex="L = v_0 t"></span>.</li>
+            <li><strong>Проверь ответ:</strong> в верхней точке v<sub>y</sub> = 0, в точке возврата |v<sub>y</sub>| = v<sub>0y</sub>.</li>
+          </ol>
+        </div>
+
+        <!-- ── Интерактивный симулятор ── -->
+        <div class="sim-wrap">
+          <div class="sim-head">
+            <div class="sim-label">🎮 Интерактив</div>
+            <div class="sim-name">Траектория броска под углом — меняй параметры</div>
+          </div>
+          <div class="sim-display">
+            <svg id="proj-svg" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg">
+              <!-- ground -->
+              <line id="proj-ground" x1="20" y1="230" x2="480" y2="230" stroke="#cbd5e1" stroke-width="2"/>
+              <!-- Y axis -->
+              <line x1="20" y1="230" x2="20" y2="20" stroke="#e2e8f0" stroke-width="1.5"/>
+              <polygon points="20,20 16,28 24,28" fill="#e2e8f0"/>
+              <text x="24" y="18" font-size="10" fill="#94a3b8">H</text>
+              <!-- trajectory path -->
+              <path id="proj-path" d="M 20 230 Q 260 50 480 230" stroke="#3b82f6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- start point -->
+              <circle cx="20" cy="230" r="5" fill="#1e293b"/>
+              <!-- v0 vector -->
+              <line id="proj-v0" x1="20" y1="230" x2="80" y2="168" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+              <polygon id="proj-v0-head" points="80,168 70,172 73,162" fill="#10b981"/>
+              <text id="proj-v0-label" x="56" y="194" font-size="11" font-weight="700" fill="#10b981" font-style="italic">v₀</text>
+              <!-- angle arc -->
+              <path id="proj-arc" d="M 48 230 A 28 28 0 0 0 38 211" stroke="#94a3b8" fill="none" stroke-width="1.5"/>
+              <text id="proj-alpha-label" x="52" y="218" font-size="10" fill="#64748b" font-style="italic">α</text>
+              <!-- H label (vertical) -->
+              <line id="proj-Hline" x1="260" y1="50" x2="260" y2="230" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
+              <text id="proj-Hlabel" x="264" y="140" font-size="10" fill="#f59e0b" font-weight="700">H</text>
+              <!-- L label (horizontal) -->
+              <line id="proj-Lline" x1="20" y1="242" x2="480" y2="242" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="0"/>
+              <text id="proj-Llabel" x="250" y="256" font-size="10" fill="#8b5cf6" font-weight="700" text-anchor="middle">L</text>
+              <!-- landing point -->
+              <circle id="proj-land" cx="480" cy="230" r="5" fill="#ef4444"/>
+            </svg>
+          </div>
+          <div class="sim-controls">
+            <label>
+              <div class="ctrl-label">Угол α <span class="ctrl-val" id="a-val">45</span>°</div>
+              <input type="range" id="a-slider" min="10" max="80" value="45" step="1">
+            </label>
+            <label>
+              <div class="ctrl-label">Начальная скорость v₀ <span class="ctrl-val" id="v-val">30</span> м/с</div>
+              <input type="range" id="v-slider" min="10" max="50" value="30" step="1">
+            </label>
+          </div>
+          <div class="sim-output">
+            <div class="sim-out-item">
+              <div class="out-key">Дальность L</div>
+              <div class="out-val" id="out-L">78.0</div>
+              <div class="out-unit">м</div>
+            </div>
+            <div class="sim-out-item">
+              <div class="out-key">Высота H</div>
+              <div class="out-val" id="out-H">11.3</div>
+              <div class="out-unit">м</div>
+            </div>
+            <div class="sim-out-item">
+              <div class="out-key">Время t</div>
+              <div class="out-val" id="out-t">3.00</div>
+              <div class="out-unit">с</div>
+            </div>
+            <div class="sim-out-item">
+              <div class="out-key">v₀ₓ</div>
+              <div class="out-val" id="out-vx">21.2</div>
+              <div class="out-unit">м/с</div>
+            </div>
+            <div class="sim-out-item">
+              <div class="out-key">v₀ᵧ</div>
+              <div class="out-val" id="out-vy">21.2</div>
+              <div class="out-unit">м/с</div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+          var g=10;
+          var SVG_W=460,SVG_H=200,X0=20,Y0=230;
+
+          function upd(){
+            var alpha=parseInt(document.getElementById('a-slider').value);
+            var v0=parseInt(document.getElementById('v-slider').value);
+            document.getElementById('a-val').textContent=alpha;
+            document.getElementById('v-val').textContent=v0;
+
+            var aRad=alpha*Math.PI/180;
+            var vx=v0*Math.cos(aRad),vy=v0*Math.sin(aRad);
+            var H=vy*vy/(2*g);
+            var Lm=v0*v0*Math.sin(2*aRad)/g;
+            var tf=2*vy/g;
+
+            document.getElementById('out-L').textContent=Lm.toFixed(1);
+            document.getElementById('out-H').textContent=H.toFixed(1);
+            document.getElementById('out-t').textContent=tf.toFixed(2);
+            document.getElementById('out-vx').textContent=vx.toFixed(1);
+            document.getElementById('out-vy').textContent=vy.toFixed(1);
+
+            // Scale to fit SVG: Lm → SVG_W, H → SVG_H (keep aspect)
+            var scaleX=SVG_W/Math.max(Lm,1);
+            var scaleY=SVG_H/Math.max(H,1);
+            var scale=Math.min(scaleX,scaleY*0.85);
+            var Lsvg=Lm*scale,Hsvg=H*scale;
+            var xEnd=X0+Lsvg,xApex=X0+Lsvg/2,yApex=Y0-Hsvg;
+            var cpX=xApex,cpY=Y0-2*Hsvg;
+
+            document.getElementById('proj-path')
+              .setAttribute('d','M '+X0+' '+Y0+' Q '+cpX+' '+cpY+' '+xEnd+' '+Y0);
+
+            // v0 arrow (fixed length 70px)
+            var vLen=70;
+            var vxE=X0+vLen*Math.cos(aRad),vyE=Y0-vLen*Math.sin(aRad);
+            document.getElementById('proj-v0').setAttribute('x2',vxE);
+            document.getElementById('proj-v0').setAttribute('y2',vyE);
+            // arrowhead (crude — just move label)
+            document.getElementById('proj-v0-label')
+              .setAttribute('x',X0+vLen*0.5*Math.cos(aRad)+4);
+            document.getElementById('proj-v0-label')
+              .setAttribute('y',Y0-vLen*0.5*Math.sin(aRad)+4);
+
+            // H dashed line
+            document.getElementById('proj-Hline')
+              .setAttribute('x1',xApex);
+            document.getElementById('proj-Hline')
+              .setAttribute('x2',xApex);
+            document.getElementById('proj-Hline')
+              .setAttribute('y1',yApex);
+            document.getElementById('proj-Hlabel')
+              .setAttribute('x',xApex+4);
+            document.getElementById('proj-Hlabel')
+              .setAttribute('y',(Y0+yApex)/2);
+
+            // L line
+            document.getElementById('proj-Lline')
+              .setAttribute('x2',xEnd);
+            document.getElementById('proj-Llabel')
+              .setAttribute('x',(X0+xEnd)/2);
+
+            // landing point
+            document.getElementById('proj-land')
+              .setAttribute('cx',xEnd);
+
+            // alpha arc
+            var arcR=28;
+            var arcX=X0+arcR*Math.cos(aRad*0.5);
+            var arcY=Y0-arcR*Math.sin(aRad*0.5);
+            var arcEndX=X0+arcR;
+            var laf=0;
+            document.getElementById('proj-arc')
+              .setAttribute('d','M '+arcEndX+' '+Y0+
+                ' A '+arcR+' '+arcR+' 0 0 0 '+
+                (X0+arcR*Math.cos(aRad))+' '+(Y0-arcR*Math.sin(aRad)));
+            document.getElementById('proj-alpha-label')
+              .setAttribute('x',X0+arcR*0.7*Math.cos(aRad/2)+2);
+            document.getElementById('proj-alpha-label')
+              .setAttribute('y',Y0-arcR*0.7*Math.sin(aRad/2)+4);
+          }
+
+          document.getElementById('a-slider').addEventListener('input',upd);
+          document.getElementById('v-slider').addEventListener('input',upd);
+          upd();
+        })();
+        </script>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 10: Графики движения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Графики движения</h1>
+          <p class="lead">Чтение и построение графиков x(t), v(t), a(t) — обязательный навык для ЦТ. Главное правило — площадь и наклон.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <h2 id="h-rules">Главные правила</h2>
+        <div class="def acc">
+          <div class="label">Запомни</div>
+          <div class="text">
+          • <b>Наклон x(t)</b> = скорость v<br>
+          • <b>Наклон v(t)</b> = ускорение a<br>
+          • <b>Площадь под v(t)</b> = пройденный путь s (или Δx)<br>
+          • <b>Площадь под a(t)</b> = изменение скорости Δv
+          </div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Тип движения</th><th>x(t)</th><th>v(t)</th><th>a(t)</th></tr>
+            <tr><td>Покой</td><td>горизонталь</td><td>на оси t</td><td>на оси t</td></tr>
+            <tr><td>Равномерное</td><td>прямая, наклон = v</td><td>горизонталь</td><td>на оси t</td></tr>
+            <tr><td>Равноускоренное</td><td>парабола (вершина в t = 0 если v₀ = 0)</td><td>наклонная прямая</td><td>горизонталь</td></tr>
+            <tr><td>Равнозамедленное → обратное</td><td>парабола с вершиной (t<sub>ост</sub>)</td><td>пересекает 0</td><td>горизонталь &lt; 0</td></tr>
+          </table>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- v(t) graph -->
+            <g>
+              <line x1="20" y1="170" x2="180" y2="170" stroke="#94a3b8"/>
+              <line x1="20" y1="20" x2="20" y2="170" stroke="#94a3b8"/>
+              <text x="100" y="190" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">t</text>
+              <text x="10" y="18" font-size="11" fill="#475569" font-style="italic">v</text>
+              <line x1="20" y1="140" x2="160" y2="40" stroke="#3b82f6" stroke-width="2.5"/>
+              <polygon points="20,140 160,40 160,170 20,170" fill="#3b82f6" fill-opacity=".15"/>
+              <text x="80" y="115" font-size="11" fill="#3b82f6" font-weight="600">площадь = путь</text>
+              <text x="30" y="135" font-size="10" fill="#64748b">v₀</text>
+            </g>
+            <!-- a(t) graph -->
+            <g>
+              <line x1="220" y1="170" x2="380" y2="170" stroke="#94a3b8"/>
+              <line x1="220" y1="20" x2="220" y2="170" stroke="#94a3b8"/>
+              <text x="300" y="190" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">t</text>
+              <text x="210" y="18" font-size="11" fill="#475569" font-style="italic">a</text>
+              <line x1="220" y1="60" x2="370" y2="60" stroke="#10b981" stroke-width="2.5"/>
+              <text x="295" y="80" text-anchor="middle" font-size="11" fill="#10b981" font-weight="600">a = const</text>
+              <text x="225" y="56" font-size="10" fill="#64748b">a₀</text>
+            </g>
+            <!-- x(t) graph -->
+            <g>
+              <line x1="420" y1="170" x2="530" y2="170" stroke="#94a3b8"/>
+              <line x1="420" y1="20" x2="420" y2="170" stroke="#94a3b8"/>
+              <text x="475" y="190" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">t</text>
+              <text x="410" y="18" font-size="11" fill="#475569" font-style="italic">x</text>
+              <path d="M 420 160 Q 470 100, 525 30" stroke="#f97316" stroke-width="2.5" fill="none"/>
+              <text x="475" y="100" text-anchor="middle" font-size="11" fill="#f97316" font-weight="600">парабола</text>
+            </g>
+          </svg>
+          <div class="caption">Графики v(t), a(t), x(t) при равноускоренном движении (a = const, v₀ &gt; 0)</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Площадь над осью t</b> считается со знаком +, <b>под осью</b> — со знаком −. Если на v(t) есть участок ниже оси, тело движется в обратную сторону.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 11: Разбор задач
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>★ Разбор типовых задач ЦТ</h1>
+          <p class="lead">Шаблонные задачи всех уровней сложности с пошаговым решением.</p>
+          <div class="tags"><span class="tag acc">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Автомобиль начинает движение из состояния покоя с ускорением <b>2 м/с²</b>. Какой <b>путь</b> он пройдёт за <b>5 с</b> и какова его <b>скорость</b> в конце 5-й секунды?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><b>Дано:</b> <span data-tex="v_0 = 0,\; a = 2\text{ м/с}^2,\; t = 5\text{ с}"></span>. Найти: <span data-tex="s,\; v"></span>.</div>
+            <div class="step"><div class="stepn">2</div>Скорость: <span data-tex="v = v_0 + at = 0 + 2\cdot 5 = 10\text{ м/с}"></span></div>
+            <div class="step"><div class="stepn">3</div>Путь: <span data-tex="s = v_0 t + \dfrac{at^2}{2} = 0 + \dfrac{2\cdot 25}{2} = 25\text{ м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v = 10\text{ м/с}"></span>, <span data-tex="s = 25\text{ м}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Камень брошен <b>вертикально вверх</b> со скоростью <b>20 м/с</b>. Найти максимальную высоту подъёма и время полёта. (g = 10 м/с²)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>В верхней точке <span data-tex="v = 0"></span>. Из формулы <span data-tex="v^2 - v_0^2 = -2gH"></span>:</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="H = \dfrac{v_0^2}{2g} = \dfrac{400}{20} = 20\text{ м}"></span></div>
+            <div class="step"><div class="stepn">3</div>Время полёта: <span data-tex="t_\text{пол} = \dfrac{2v_0}{g} = \dfrac{40}{10} = 4\text{ с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="H = 20\text{ м}"></span>, <span data-tex="t = 4\text{ с}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Тело брошено со скоростью <b>v₀ = 30 м/с</b> под углом <b>α = 30°</b> к горизонту. Найти максимальную высоту H, дальность полёта L и время полёта t. (g = 10 м/с²)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Разложим начальную скорость: <span data-tex="v_{0x} = v_0\cos30° = 30\cdot0{,}87 \approx 26\text{ м/с},\quad v_{0y} = v_0\sin30° = 30\cdot0{,}5 = 15\text{ м/с}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="H = \dfrac{v_0^2 \sin^2\alpha}{2g} = \dfrac{900\cdot 0{,}25}{20} = 11{,}25\text{ м}"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="t = \dfrac{2v_0 \sin\alpha}{g} = \dfrac{2\cdot 30\cdot 0{,}5}{10} = 3\text{ с}"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="L = v_{0x}\cdot t = 26\cdot 3 \approx 78\text{ м}"></span> (или через <span data-tex="L = \dfrac{v_0^2 \sin 2\alpha}{g}"></span>)</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="H \approx 11{,}25\text{ м}"></span>, <span data-tex="L \approx 78\text{ м}"></span>, <span data-tex="t = 3\text{ с}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Поезд тормозит с ускорением <b>0,5 м/с²</b>, начальная скорость <b>20 м/с</b>. Какое расстояние он пройдёт до полной остановки?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>В момент остановки <span data-tex="v = 0"></span>. Используем формулу без времени:</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="v^2 - v_0^2 = -2as \Rightarrow s = \dfrac{v_0^2}{2a} = \dfrac{400}{1} = 400\text{ м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="s = 400\text{ м}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Точка движется по окружности радиуса <b>R = 0,5 м</b> с периодом <b>T = 0,2 с</b>. Найти линейную скорость и центростремительное ускорение.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Угловая скорость: <span data-tex="\omega = \dfrac{2\pi}{T} = \dfrac{2\pi}{0{,}2} = 10\pi \approx 31{,}4\text{ рад/с}"></span></div>
+            <div class="step"><div class="stepn">2</div>Линейная скорость: <span data-tex="v = \omega R = 31{,}4 \cdot 0{,}5 \approx 15{,}7\text{ м/с}"></span></div>
+            <div class="step"><div class="stepn">3</div>Ускорение: <span data-tex="a_ц = \dfrac{v^2}{R} = \dfrac{246{,}5}{0{,}5} \approx 493\text{ м/с}^2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v \approx 15{,}7\text{ м/с}"></span>, <span data-tex="a_\text{ц} \approx 493\text{ м/с}^2"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Лодка переплывает реку шириной <b>60 м</b> перпендикулярно к берегам. Скорость лодки относительно воды <span data-tex="v_\text{л} = 4\text{ м/с}"></span>, скорость течения <span data-tex="v_\text{т} = 3\text{ м/с}"></span>. Сколько времени займёт переправа и на сколько метров снесёт лодку?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>По оси Y (поперёк реки) лодка движется со скоростью <span data-tex="v_\text{л} = 4\text{ м/с}"></span>. Время: <span data-tex="t = \dfrac{d}{v_\text{л}} = \dfrac{60}{4} = 15\text{ с}"></span></div>
+            <div class="step"><div class="stepn">2</div>За это время течение снесёт: <span data-tex="L = v_\text{т} \cdot t = 3\cdot 15 = 45\text{ м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="t = 15\text{ с}"></span>, снос <span data-tex="L = 45\text{ м}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">По графику v(t) известно: тело движется с v = 6 м/с в течение первых 4 с, затем равномерно тормозит и останавливается через ещё 6 с. Найти полный пройденный путь.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Площадь графика v(t) = путь. На первом участке — прямоугольник:<br><span data-tex="s_1 = 6 \cdot 4 = 24\text{ м}"></span></div>
+            <div class="step"><div class="stepn">2</div>На втором участке — треугольник:<br><span data-tex="s_2 = \dfrac{1}{2}\cdot 6 \cdot 6 = 18\text{ м}"></span></div>
+            <div class="step"><div class="stepn">3</div>Полный путь: <span data-tex="s = 24 + 18 = 42\text{ м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="s = 42\text{ м}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 12: Чек-лист
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Минимальный набор формул и навыков, без которых задачи ЦТ по кинематике не решить.</p>
+        </div>
+
+        <h2 id="h-formulas">Формулы (надо знать наизусть)</h2>
+        <ul>
+          <li>Закон равномерного движения: <span data-tex="x = x_0 + vt"></span></li>
+          <li>Закон равноускоренного: <span data-tex="x = x_0 + v_0 t + at^2/2"></span></li>
+          <li>Связь без времени: <span data-tex="v^2 - v_0^2 = 2a\Delta x"></span></li>
+          <li>Свободное падение: <span data-tex="h = \dfrac{gt^2}{2}, \quad v = \sqrt{2gh}"></span></li>
+          <li>Бросок под углом: <span data-tex="L = \dfrac{v_0^2 \sin 2\alpha}{g}, \quad H = \dfrac{v_0^2 \sin^2\alpha}{2g}"></span></li>
+          <li>Окружность: <span data-tex="\omega = \dfrac{2\pi}{T}, \quad v = \omega R, \quad a_ц = \dfrac{v^2}{R}"></span></li>
+        </ul>
+
+        <h2 id="h-skills">Навыки</h2>
+        <ul>
+          <li>Раскладывать движение на оси X и Y (бросок под углом)</li>
+          <li>Работать со знаками проекций (выбор оси, знак ускорения)</li>
+          <li>Находить путь как площадь под графиком v(t)</li>
+          <li>Применять формулу без времени, когда t неизвестно</li>
+          <li>Решать задачи на относительное движение (лодка/река, два автомобиля)</li>
+          <li>Понимать симметрию свободного падения вверх/вниз</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Использовать <span data-tex="s = v_0 t - at^2/2"></span> при t больше времени остановки.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Путать модуль средней скорости и среднюю путевую скорость.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Считать угол φ в градусах при расчёте длины дуги (<span data-tex="s = R\varphi"></span> работает только в радианах).</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Применять формулы <span data-tex="L,\, H,\, t_\text{пол}"></span> для броска под углом, когда тело приземляется на другой высоте (с обрыва, на крышу).</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Забывать про знак ускорения свободного падения (всегда направлено вниз; если ось Y вверх — то <span data-tex="a_y = -g"></span>).</div>
+        </div>
+
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет:</b> На ЦТ всегда сначала записывай дано → выбирай ось → пиши уравнение в проекциях → решай. Это экономит время и снижает количество ошибок.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">02 Динамика</div>
+            <div class="tp-desc">Законы Ньютона, силы, гравитация, наклонная плоскость</div>
+          </div>
+          <a class="tp-btn" href="02_dinamika.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ─── FLOATING REFERENCE PANEL ─── -->
+<button class="ref-toggle">
+  <span class="icn">📋</span>
+  Все формулы
+</button>
+
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head">
+    <h3>Формулы кинематики</h3>
+    <button class="ref-close">✕</button>
+  </div>
+  <div class="ref-search">
+    <input type="text" placeholder="Поиск формулы..." />
+  </div>
+  <div class="ref-list">
+
+    <div class="ref-item" data-section="s2" data-anchor="f-velocity">
+      <div class="ri-name">Мгновенная скорость</div>
+      <div class="ri-formula">v = dr/dt</div>
+    </div>
+    <div class="ref-item" data-section="s2" data-anchor="f-vel-avg">
+      <div class="ri-name">Средняя скорость (вектор)</div>
+      <div class="ri-formula">vср = Δr/Δt</div>
+    </div>
+    <div class="ref-item" data-section="s2" data-anchor="f-speed-avg">
+      <div class="ri-name">Средняя путевая скорость</div>
+      <div class="ri-formula">⟨v⟩ = s/t</div>
+    </div>
+    <div class="ref-item" data-section="s2" data-anchor="f-acc">
+      <div class="ri-name">Ускорение</div>
+      <div class="ri-formula">a = Δv/Δt</div>
+    </div>
+
+    <div class="ref-item" data-section="s3" data-anchor="f-a-decomp">
+      <div class="ri-name">Разложение ускорения</div>
+      <div class="ri-formula">a = aτ + an</div>
+    </div>
+    <div class="ref-item" data-section="s3" data-anchor="f-at">
+      <div class="ri-name">Тангенциальное ускорение</div>
+      <div class="ri-formula">aτ = Δv/Δt</div>
+    </div>
+    <div class="ref-item" data-section="s3" data-anchor="f-an">
+      <div class="ri-name">Нормальное ускорение</div>
+      <div class="ri-formula">an = v²/R</div>
+    </div>
+
+    <div class="ref-item" data-section="s4" data-anchor="f-relvel">
+      <div class="ri-name">Сложение скоростей</div>
+      <div class="ri-formula">v = v' + vПСО</div>
+    </div>
+
+    <div class="ref-item" data-section="s5" data-anchor="f-uniform">
+      <div class="ri-name">Равномерное движение</div>
+      <div class="ri-formula">x = x₀ + v·t</div>
+    </div>
+
+    <div class="ref-item" data-section="s6" data-anchor="f-vt">
+      <div class="ri-name">Скорость при a = const</div>
+      <div class="ri-formula">v = v₀ + at</div>
+    </div>
+    <div class="ref-item" data-section="s6" data-anchor="f-xt">
+      <div class="ri-name">Координата при a = const</div>
+      <div class="ri-formula">x = x₀ + v₀t + at²/2</div>
+    </div>
+    <div class="ref-item" data-section="s6" data-anchor="f-v2">
+      <div class="ri-name">Без времени</div>
+      <div class="ri-formula">v² − v₀² = 2aΔx</div>
+    </div>
+
+    <div class="ref-item" data-section="s7" data-anchor="h-fall-down">
+      <div class="ri-name">Свободное падение</div>
+      <div class="ri-formula">h = gt²/2 ; v = √(2gh)</div>
+    </div>
+    <div class="ref-item" data-section="s7" data-anchor="h-fall-up">
+      <div class="ri-name">Бросок вверх</div>
+      <div class="ri-formula">H = v₀²/(2g)</div>
+    </div>
+    <div class="ref-item" data-section="s7" data-anchor="h-fall-up">
+      <div class="ri-name">Время полёта вверх</div>
+      <div class="ri-formula">t = 2v₀/g</div>
+    </div>
+
+    <div class="ref-item" data-section="s8" data-anchor="h-omega">
+      <div class="ri-name">Период вращения</div>
+      <div class="ri-formula">T = 2π/ω</div>
+    </div>
+    <div class="ref-item" data-section="s8" data-anchor="f-vlin">
+      <div class="ri-name">Линейная скорость</div>
+      <div class="ri-formula">v = ω·R</div>
+    </div>
+    <div class="ref-item" data-section="s8" data-anchor="f-acentro">
+      <div class="ri-name">Центростремительное ускорение</div>
+      <div class="ri-formula">aц = v²/R = ω²R</div>
+    </div>
+
+    <div class="ref-item" data-section="s9" data-anchor="h-park">
+      <div class="ri-name">Дальность броска под углом</div>
+      <div class="ri-formula">L = v₀²·sin(2α)/g</div>
+    </div>
+    <div class="ref-item" data-section="s9" data-anchor="h-park">
+      <div class="ri-name">Высота броска под углом</div>
+      <div class="ri-formula">H = v₀²·sin²α/(2g)</div>
+    </div>
+    <div class="ref-item" data-section="s9" data-anchor="h-park">
+      <div class="ri-name">Время полёта под углом</div>
+      <div class="ri-formula">t = 2v₀·sinα/g</div>
+    </div>
+    <div class="ref-item" data-section="s9" data-anchor="h-horiz">
+      <div class="ri-name">Бросок горизонтально</div>
+      <div class="ri-formula">L = v₀·√(2h/g)</div>
+    </div>
+
+  </div>
+</aside>
+
+<!-- ─── COMMAND PALETTE (Ctrl+K) ─── -->
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделу: формула, понятие, тема..." />
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

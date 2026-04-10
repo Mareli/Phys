@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Тригонометрия — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t06">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🌀</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Тригонометрия</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 06</span>
+      <h2>Тригонометрия</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">⭕</span>Единичная окружность</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">📐</span>Основные функции</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">🔑</span>Основные тождества</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">➕</span>Формулы сложения</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">2️⃣</span>Двойной угол</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">🔀</span>Сумма и разность</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">📋</span>Таблица значений</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">⚙️</span>Тригон. уравнения</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ══════════════════════════════════════
+           SECTION 1: Единичная окружность
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Единичная окружность и радианная мера</h1>
+          <p class="lead">Единичная окружность — главный инструмент тригонометрии. Радианная мера связывает угол с длиной дуги.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База</span>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-rad-deg">
+          <div class="flabel">Перевод радианы ↔ градусы</div>
+          <div class="formula" data-tex="\pi \text{ рад} = 180^\circ"></div>
+          <div class="fdesc">Перевод: <span data-tex="\alpha^\circ = \alpha \cdot \dfrac{\pi}{180}"></span> рад; <span data-tex="\alpha \text{ рад} = \alpha \cdot \dfrac{180}{\pi}"></span>°.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Градусы</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>120°</th><th>135°</th><th>150°</th><th>180°</th></tr>
+            <tr>
+              <th>Радианы</th>
+              <td>0</td>
+              <td><span data-tex="\dfrac{\pi}{6}"></span></td>
+              <td><span data-tex="\dfrac{\pi}{4}"></span></td>
+              <td><span data-tex="\dfrac{\pi}{3}"></span></td>
+              <td><span data-tex="\dfrac{\pi}{2}"></span></td>
+              <td><span data-tex="\dfrac{2\pi}{3}"></span></td>
+              <td><span data-tex="\dfrac{3\pi}{4}"></span></td>
+              <td><span data-tex="\dfrac{5\pi}{6}"></span></td>
+              <td><span data-tex="\pi"></span></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- axes -->
+            <line x1="20" y1="170" x2="320" y2="170" stroke="#475569" stroke-width="1.5"/>
+            <line x1="170" y1="20" x2="170" y2="320" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="320,170 312,166 312,174" fill="#475569"/>
+            <polygon points="170,20 166,28 174,28" fill="#475569"/>
+            <text x="324" y="174" font-size="12" fill="#64748b">x</text>
+            <text x="163" y="18" font-size="12" fill="#64748b">y</text>
+            <text x="172" y="185" font-size="11" fill="#94a3b8">O</text>
+            <!-- unit circle -->
+            <circle cx="170" cy="170" r="120" stroke="#b45309" stroke-width="2" fill="none"/>
+            <!-- angle marks -->
+            <text x="295" y="168" font-size="11" fill="#94a3b8">1</text>
+            <text x="166" y="50" font-size="11" fill="#94a3b8">1</text>
+            <!-- key points -->
+            <circle cx="290" cy="170" r="3" fill="#b45309"/>
+            <text x="294" y="162" font-size="11" fill="#b45309">0°</text>
+            <circle cx="170" cy="50" r="3" fill="#b45309"/>
+            <text x="175" y="50" font-size="11" fill="#b45309">90°</text>
+            <circle cx="50" cy="170" r="3" fill="#b45309"/>
+            <text x="17" y="168" font-size="11" fill="#b45309">180°</text>
+            <circle cx="170" cy="290" r="3" fill="#b45309"/>
+            <text x="174" y="308" font-size="11" fill="#b45309">270°</text>
+            <!-- 30° point -->
+            <circle cx="274" cy="110" r="3" fill="#3b82f6"/>
+            <line x1="170" y1="170" x2="274" y2="110" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="278" y="108" font-size="11" fill="#3b82f6">30°</text>
+            <!-- 60° point -->
+            <circle cx="230" cy="66" r="3" fill="#10b981"/>
+            <line x1="170" y1="170" x2="230" y2="66" stroke="#10b981" stroke-width="1.5"/>
+            <text x="234" y="64" font-size="11" fill="#10b981">60°</text>
+            <!-- 45° point -->
+            <circle cx="255" cy="85" r="3" fill="#f59e0b"/>
+            <line x1="170" y1="170" x2="255" y2="85" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="257" y="83" font-size="11" fill="#f59e0b">45°</text>
+            <!-- quadrant labels -->
+            <text x="230" y="130" font-size="13" fill="#334155" font-weight="600">I</text>
+            <text x="105" y="130" font-size="13" fill="#334155" font-weight="600">II</text>
+            <text x="105" y="225" font-size="13" fill="#334155" font-weight="600">III</text>
+            <text x="230" y="225" font-size="13" fill="#334155" font-weight="600">IV</text>
+          </svg>
+          <div class="caption">Единичная окружность: радиус = 1, угол отсчитывается против часовой стрелки</div>
+        </div>
+
+        <!-- Diagram 1: Full unit circle with all 12 standard angles -->
+        <div class="diagram">
+          <div class="diagram-label">ПОЛНАЯ ЕДИНИЧНАЯ ОКРУЖНОСТЬ</div>
+          <svg width="380" height="380" viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Axes -->
+            <line x1="10" y1="190" x2="370" y2="190" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="190" y1="370" x2="190" y2="10" stroke="#94a3b8" stroke-width="1.5"/>
+            <!-- Arrowheads -->
+            <polygon points="370,190 360,185 360,195" fill="#94a3b8"/>
+            <polygon points="190,10 185,20 195,20" fill="#94a3b8"/>
+            <!-- Axis labels -->
+            <text x="374" y="194" font-size="12" fill="#475569" font-family="'Inter',sans-serif">x</text>
+            <text x="183" y="8" font-size="12" fill="#475569" font-family="'Inter',sans-serif">y</text>
+            <text x="194" y="204" font-size="11" fill="#94a3b8" font-family="'Inter',sans-serif">O</text>
+            <!-- Unit circle -->
+            <circle cx="190" cy="190" r="140" stroke="#b45309" stroke-width="2" fill="none"/>
+            <!-- Radial lines -->
+            <line x1="190" y1="190" x2="330.0" y2="190.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="311.2" y2="120.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="289.0" y2="91.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="260.0" y2="68.8" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="190.0" y2="50.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="120.0" y2="68.8" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="91.0" y2="91.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="68.8" y2="120.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="50.0" y2="190.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="68.8" y2="260.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="91.0" y2="289.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="120.0" y2="311.2" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="190.0" y2="330.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="260.0" y2="311.2" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="289.0" y2="289.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <line x1="190" y1="190" x2="311.2" y2="260.0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <!-- Points on circle -->
+            <circle cx="330.0" cy="190.0" r="3" fill="#b45309"/>
+            <circle cx="311.2" cy="120.0" r="3" fill="#b45309"/>
+            <circle cx="289.0" cy="91.0" r="3" fill="#b45309"/>
+            <circle cx="260.0" cy="68.8" r="3" fill="#b45309"/>
+            <circle cx="190.0" cy="50.0" r="3" fill="#b45309"/>
+            <circle cx="120.0" cy="68.8" r="3" fill="#b45309"/>
+            <circle cx="91.0" cy="91.0" r="3" fill="#b45309"/>
+            <circle cx="68.8" cy="120.0" r="3" fill="#b45309"/>
+            <circle cx="50.0" cy="190.0" r="3" fill="#b45309"/>
+            <circle cx="68.8" cy="260.0" r="3" fill="#b45309"/>
+            <circle cx="91.0" cy="289.0" r="3" fill="#b45309"/>
+            <circle cx="120.0" cy="311.2" r="3" fill="#b45309"/>
+            <circle cx="190.0" cy="330.0" r="3" fill="#b45309"/>
+            <circle cx="260.0" cy="311.2" r="3" fill="#b45309"/>
+            <circle cx="289.0" cy="289.0" r="3" fill="#b45309"/>
+            <circle cx="311.2" cy="260.0" r="3" fill="#b45309"/>
+            <!-- Angle labels (outside circle, r=163) -->
+            <!-- 0° -->
+            <text x="353.0" y="193.5" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="start">0°</text>
+            <!-- 30° -->
+            <text x="328.2" y="111.5" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="start">30°</text>
+            <!-- 45° -->
+            <text x="302.3" y="77.7" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="start">45°</text>
+            <!-- 60° -->
+            <text x="268.5" y="51.8" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="middle">60°</text>
+            <!-- 90° -->
+            <text x="190.0" y="24.0" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="middle">90°</text>
+            <!-- 120° -->
+            <text x="108.5" y="51.8" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="middle">120°</text>
+            <!-- 135° -->
+            <text x="71.7" y="77.7" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="end">135°</text>
+            <!-- 150° -->
+            <text x="44.8" y="111.5" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="end">150°</text>
+            <!-- 180° -->
+            <text x="24.0" y="193.5" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="end">180°</text>
+            <!-- 210° -->
+            <text x="44.8" y="275.5" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="end">210°</text>
+            <!-- 225° -->
+            <text x="71.7" y="309.3" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="end">225°</text>
+            <!-- 240° -->
+            <text x="105.5" y="336.2" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="middle">240°</text>
+            <!-- 270° -->
+            <text x="190.0" y="360.0" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="middle">270°</text>
+            <!-- 300° -->
+            <text x="271.5" y="336.2" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="middle">300°</text>
+            <!-- 315° -->
+            <text x="308.3" y="309.3" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="start">315°</text>
+            <!-- 330° -->
+            <text x="333.2" y="275.5" font-size="11" fill="#b45309" font-family="'Inter',sans-serif" text-anchor="start">330°</text>
+            <!-- Coordinate labels inside (r=108) -->
+            <!-- 0°: (1; 0) -->
+            <text x="274" y="188" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(1; 0)</text>
+            <!-- 30°: (√3/2; 1/2) -->
+            <text x="270" y="133" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(√3/2; 1/2)</text>
+            <!-- 45°: (√2/2; √2/2) -->
+            <text x="255" y="112" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(√2/2; √2/2)</text>
+            <!-- 60°: (1/2; √3/2) -->
+            <text x="234" y="97" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(1/2; √3/2)</text>
+            <!-- 90°: (0; 1) -->
+            <text x="190" y="83" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(0; 1)</text>
+            <!-- 120°: (-1/2; √3/2) -->
+            <text x="146" y="97" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(-1/2; √3/2)</text>
+            <!-- 135°: (-√2/2; √2/2) -->
+            <text x="125" y="112" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(-√2/2; √2/2)</text>
+            <!-- 150°: (-√3/2; 1/2) -->
+            <text x="107" y="133" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(-√3/2; 1/2)</text>
+            <!-- 180°: (-1; 0) -->
+            <text x="104" y="188" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(-1; 0)</text>
+            <!-- 210°: (-√3/2; -1/2) -->
+            <text x="107" y="248" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(-√3/2; -1/2)</text>
+            <!-- 225°: (-√2/2; -√2/2) -->
+            <text x="125" y="268" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(-√2/2; -√2/2)</text>
+            <!-- 240°: (-1/2; -√3/2) -->
+            <text x="146" y="285" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(-1/2; -√3/2)</text>
+            <!-- 270°: (0; -1) -->
+            <text x="190" y="297" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(0; -1)</text>
+            <!-- 300°: (1/2; -√3/2) -->
+            <text x="234" y="285" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(1/2; -√3/2)</text>
+            <!-- 315°: (√2/2; -√2/2) -->
+            <text x="255" y="268" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(√2/2; -√2/2)</text>
+            <!-- 330°: (√3/2; -1/2) -->
+            <text x="270" y="248" font-size="9" fill="#0f172a" font-family="'Inter',sans-serif" text-anchor="middle">(√3/2; -1/2)</text>
+          </svg>
+          <div class="caption">Единичная окружность со всеми стандартными углами</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 2: Основные функции
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Основные тригонометрические функции</h1>
+          <p class="lead">sin, cos, tg, ctg — определяются через координаты точки на единичной окружности.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="fcard" id="f-sin-def">
+            <div class="flabel">Синус</div>
+            <div class="formula" data-tex="\sin\alpha = y"></div>
+            <div class="fdesc">Ордината точки на единичной окружности. ОДЗ: <span data-tex="\mathbb{R}"></span>. Область значений: <span data-tex="[-1;\,1]"></span>.</div>
+          </div>
+          <div class="fcard" id="f-cos-def">
+            <div class="flabel">Косинус</div>
+            <div class="formula" data-tex="\cos\alpha = x"></div>
+            <div class="fdesc">Абсцисса точки на единичной окружности. ОДЗ: <span data-tex="\mathbb{R}"></span>. Область значений: <span data-tex="[-1;\,1]"></span>.</div>
+          </div>
+          <div class="fcard" id="f-tg-def">
+            <div class="flabel">Тангенс</div>
+            <div class="formula" data-tex="\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}"></div>
+            <div class="fdesc">ОДЗ: <span data-tex="\alpha \neq \dfrac{\pi}{2} + \pi n"></span>. Область значений: <span data-tex="\mathbb{R}"></span>.</div>
+          </div>
+          <div class="fcard" id="f-ctg-def">
+            <div class="flabel">Котангенс</div>
+            <div class="formula" data-tex="\cot\alpha = \dfrac{\cos\alpha}{\sin\alpha}"></div>
+            <div class="fdesc">ОДЗ: <span data-tex="\alpha \neq \pi n"></span>. Область значений: <span data-tex="\mathbb{R}"></span>.</div>
+          </div>
+        </div>
+
+        <h2 id="h-signs">Знаки по четвертям</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Четверть</th><th>sin</th><th>cos</th><th>tg</th><th>ctg</th></tr>
+            <tr><td>I (0° — 90°)</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>
+            <tr><td>II (90° — 180°)</td><td>+</td><td>−</td><td>−</td><td>−</td></tr>
+            <tr><td>III (180° — 270°)</td><td>−</td><td>−</td><td>+</td><td>+</td></tr>
+            <tr><td>IV (270° — 360°)</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>
+          </table>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">🧠</div>
+          <div class="kc-text">
+            <small>Мнемоника знаков</small>
+            <b>«Все Студенты Тянут Котов»</b> — Все (+,+,+,+), Синус (+), Тангенс (+), Косинус (+) — по четвертям I, II, III, IV соответственно.
+          </div>
+        </div>
+
+        <!-- Diagram 2: CAST quadrant sign diagram -->
+        <div class="diagram">
+          <div class="diagram-label">ЗНАКИ ПО ЧЕТВЕРТЯМ</div>
+          <svg width="280" height="220" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Quadrant fills -->
+            <rect x="140" y="10" width="130" height="100" fill="#dcfce7" rx="4"/>
+            <rect x="10" y="10" width="130" height="100" fill="#eff6ff" rx="4"/>
+            <rect x="10" y="110" width="130" height="100" fill="#fef3c7" rx="4"/>
+            <rect x="140" y="110" width="130" height="100" fill="#fef2f2" rx="4"/>
+            <!-- Axes -->
+            <line x1="140" y1="10" x2="140" y2="210" stroke="#0f172a" stroke-width="2"/>
+            <line x1="10" y1="110" x2="270" y2="110" stroke="#0f172a" stroke-width="2"/>
+            <!-- Arrowheads -->
+            <polygon points="270,110 260,105 260,115" fill="#0f172a"/>
+            <polygon points="140,10 135,20 145,20" fill="#0f172a"/>
+            <!-- Axis labels -->
+            <text x="273" y="114" font-size="11" fill="#0f172a" font-family="'Inter',sans-serif">x</text>
+            <text x="133" y="8" font-size="11" fill="#0f172a" font-family="'Inter',sans-serif">y</text>
+            <!-- Quadrant numbers -->
+            <text x="255" y="28" font-size="12" fill="#334155" font-weight="700" font-family="'Inter',sans-serif">I</text>
+            <text x="18" y="28" font-size="12" fill="#334155" font-weight="700" font-family="'Inter',sans-serif">II</text>
+            <text x="18" y="205" font-size="12" fill="#334155" font-weight="700" font-family="'Inter',sans-serif">III</text>
+            <text x="252" y="205" font-size="12" fill="#334155" font-weight="700" font-family="'Inter',sans-serif">IV</text>
+            <!-- Quadrant I: sin+ cos+ tg+ ctg+ -->
+            <text x="205" y="52" font-size="12" fill="#15803d" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">sin +  cos +</text>
+            <text x="205" y="68" font-size="12" fill="#15803d" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">tg +  ctg +</text>
+            <text x="205" y="86" font-size="10" fill="#166534" font-family="'Inter',sans-serif" text-anchor="middle">все положительны</text>
+            <!-- Quadrant II: sin+ cos- tg- ctg- -->
+            <text x="75" y="52" font-size="12" fill="#1d4ed8" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">sin +  cos −</text>
+            <text x="75" y="68" font-size="12" fill="#1d4ed8" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">tg −  ctg −</text>
+            <text x="75" y="86" font-size="10" fill="#1e40af" font-family="'Inter',sans-serif" text-anchor="middle">только синус</text>
+            <!-- Quadrant III: sin- cos- tg+ ctg+ -->
+            <text x="75" y="148" font-size="12" fill="#b45309" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">sin −  cos −</text>
+            <text x="75" y="164" font-size="12" fill="#b45309" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">tg +  ctg +</text>
+            <text x="75" y="182" font-size="10" fill="#92400e" font-family="'Inter',sans-serif" text-anchor="middle">только тангенс</text>
+            <!-- Quadrant IV: sin- cos+ tg- ctg- -->
+            <text x="205" y="148" font-size="12" fill="#dc2626" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">sin −  cos +</text>
+            <text x="205" y="164" font-size="12" fill="#dc2626" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">tg −  ctg −</text>
+            <text x="205" y="182" font-size="10" fill="#991b1b" font-family="'Inter',sans-serif" text-anchor="middle">только косинус</text>
+          </svg>
+          <div class="caption">Знаки тригонометрических функций по четвертям</div>
+        </div>
+
+        <!-- Diagram 3: Right triangle with trig ratios -->
+        <div class="diagram">
+          <div class="diagram-label">ТРИГОНОМЕТРИЯ В ПРЯМОУГОЛЬНОМ ТРЕУГОЛЬНИКЕ</div>
+          <svg width="320" height="200" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Triangle: A(40,155) B(260,155) C(40,35) -->
+            <polygon points="40,155 260,155 40,35" fill="#fefce8" stroke="#0f172a" stroke-width="2"/>
+            <!-- Right angle mark at A -->
+            <polyline points="40,140 55,140 55,155" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+            <!-- Angle arc at B -->
+            <path d="M 240,155 A 20,20 0 0,0 225,143" fill="none" stroke="#b45309" stroke-width="1.5"/>
+            <text x="228" y="153" font-size="11" fill="#b45309" font-family="'Inter',sans-serif">α</text>
+            <!-- Vertex labels -->
+            <text x="26" y="168" font-size="12" fill="#475569" font-weight="600" font-family="'Inter',sans-serif">A</text>
+            <text x="264" y="168" font-size="12" fill="#475569" font-weight="600" font-family="'Inter',sans-serif">B</text>
+            <text x="26" y="32" font-size="12" fill="#475569" font-weight="600" font-family="'Inter',sans-serif">C</text>
+            <!-- Side labels -->
+            <!-- AC (left side, vertical): противолежащий катет a -->
+            <text x="4" y="100" font-size="10" fill="#334155" font-family="'Inter',sans-serif" text-anchor="middle" transform="rotate(-90 4 100)">катет a</text>
+            <!-- AB (bottom, horizontal): прилежащий катет b -->
+            <text x="150" y="172" font-size="10" fill="#334155" font-family="'Inter',sans-serif" text-anchor="middle">катет b</text>
+            <!-- BC (hypotenuse): гипотенуза c -->
+            <text x="162" y="88" font-size="10" fill="#334155" font-family="'Inter',sans-serif" text-anchor="middle" transform="rotate(-57 162 88)">гипотенуза c</text>
+            <!-- Formulas -->
+            <text x="290" y="50" font-size="11" fill="#0f172a" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">sin α = a/c</text>
+            <text x="290" y="68" font-size="11" fill="#0f172a" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">cos α = b/c</text>
+            <text x="290" y="86" font-size="11" fill="#0f172a" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">tg α = a/b</text>
+            <text x="290" y="104" font-size="11" fill="#0f172a" font-weight="600" font-family="'Inter',sans-serif" text-anchor="middle">ctg α = b/a</text>
+            <!-- Bracket/separator -->
+            <line x1="270" y1="40" x2="310" y2="40" stroke="#b45309" stroke-width="0.8"/>
+            <line x1="270" y1="112" x2="310" y2="112" stroke="#b45309" stroke-width="0.8"/>
+          </svg>
+          <div class="caption">Определение тригонометрических функций через прямоугольный треугольник</div>
+        </div>
+
+        <!-- Diagram 4: Special triangles 30-60-90 and 45-45-90 -->
+        <div class="diagrams-row">
+          <div class="diagram" style="flex:1">
+            <div class="diagram-label">30°-60°-90°</div>
+            <svg width="200" height="170" viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Correct 1:√3:2 ratio: short=60, long=60√3≈104, hyp=120 -->
+              <!-- A(30,145)=90°, B(134,145)=30°, C(30,85)=60° -->
+              <!-- AB=104(√3), AC=60(1), BC≈120(2) ✓ -->
+              <polygon points="30,145 134,145 30,85" fill="#fefce8" stroke="#0f172a" stroke-width="2"/>
+              <!-- Right angle square at A(30,145) -->
+              <polyline points="45,145 45,130 30,130" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+              <!-- 30° arc at B(134,145): from (114,145) on BA to (116.7,135) on BC -->
+              <path d="M 114,145 A 20,20 0 0 1 116.7,135" fill="none" stroke="#b45309" stroke-width="1.5"/>
+              <text x="106" y="138" font-size="11" fill="#b45309" font-family="'Inter',sans-serif">30°</text>
+              <!-- 60° arc at C(30,85): from (47.3,95) on CB to (30,105) on CA -->
+              <path d="M 47.3,95 A 20,20 0 0 1 30,105" fill="none" stroke="#b45309" stroke-width="1.5"/>
+              <text x="36" y="100" font-size="11" fill="#b45309" font-family="'Inter',sans-serif">60°</text>
+              <!-- 90° label near A -->
+              <text x="48" y="143" font-size="11" fill="#b45309" font-family="'Inter',sans-serif">90°</text>
+              <!-- Side labels -->
+              <!-- AC (left vertical, short leg) = 1 -->
+              <text x="18" y="118" font-size="13" fill="#0f172a" font-weight="700" font-family="'Inter',sans-serif" text-anchor="middle">1</text>
+              <!-- AB (bottom horizontal, long leg) = √3 -->
+              <text x="82" y="162" font-size="13" fill="#0f172a" font-weight="700" font-family="'Inter',sans-serif" text-anchor="middle">√3</text>
+              <!-- BC (hypotenuse) = 2 -->
+              <text x="96" y="107" font-size="13" fill="#b45309" font-weight="700" font-family="'Inter',sans-serif" text-anchor="middle" transform="rotate(-30,96,107)">2</text>
+            </svg>
+            <div class="caption">Треугольник 30°-60°-90°</div>
+          </div>
+          <div class="diagram" style="flex:1">
+            <div class="diagram-label">45°-45°-90°</div>
+            <svg width="200" height="170" viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+              <!-- Isosceles right triangle: right angle at A(30,140), 45° at C(30,30), 45° at B(140,140) -->
+              <polygon points="30,140 140,140 30,30" fill="#fefce8" stroke="#0f172a" stroke-width="2"/>
+              <!-- Right angle mark -->
+              <polyline points="30,125 45,125 45,140" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+              <!-- 45° arc at C -->
+              <path d="M 30,50 A 20,20 0 0,1 47,43" fill="none" stroke="#b45309" stroke-width="1.5"/>
+              <text x="34" y="62" font-size="11" fill="#b45309" font-family="'Inter',sans-serif">45°</text>
+              <!-- 45° arc at B -->
+              <path d="M 121,140 A 19,19 0 0,0 125,121" fill="none" stroke="#b45309" stroke-width="1.5"/>
+              <text x="113" y="132" font-size="11" fill="#b45309" font-family="'Inter',sans-serif">45°</text>
+              <!-- 90° label -->
+              <text x="48" y="138" font-size="11" fill="#b45309" font-family="'Inter',sans-serif">90°</text>
+              <!-- Side labels -->
+              <!-- AC (left vertical): 1 -->
+              <text x="18" y="90" font-size="13" fill="#0f172a" font-weight="700" font-family="'Inter',sans-serif" text-anchor="middle">1</text>
+              <!-- AB (bottom horizontal): 1 -->
+              <text x="85" y="158" font-size="13" fill="#0f172a" font-weight="700" font-family="'Inter',sans-serif" text-anchor="middle">1</text>
+              <!-- BC (hypotenuse): √2 -->
+              <text x="95" y="80" font-size="13" fill="#b45309" font-weight="700" font-family="'Inter',sans-serif" text-anchor="middle" transform="rotate(-51 95 80)">√2</text>
+            </svg>
+            <div class="caption">Треугольник 45°-45°-90°</div>
+          </div>
+        </div>
+
+        <!-- Diagram 5: Sine and cosine graphs -->
+        <div class="diagram">
+          <div class="diagram-label">ГРАФИКИ ТРИГОНОМЕТРИЧЕСКИХ ФУНКЦИЙ</div>
+          <svg width="460" height="200" viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Dashed lines at y=1 and y=-1 -->
+            <line x1="0" y1="20" x2="460" y2="20" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <line x1="0" y1="180" x2="460" y2="180" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <!-- y=1 and y=-1 labels -->
+            <text x="2" y="18" font-size="10" fill="#64748b" font-family="'Inter',sans-serif">1</text>
+            <text x="2" y="184" font-size="10" fill="#64748b" font-family="'Inter',sans-serif">-1</text>
+            <!-- Axes -->
+            <line x1="0" y1="100" x2="455" y2="100" stroke="#475569" stroke-width="1.5"/>
+            <line x1="15" y1="190" x2="15" y2="10" stroke="#475569" stroke-width="1.5"/>
+            <!-- Arrowheads -->
+            <polygon points="455,100 445,95 445,105" fill="#475569"/>
+            <polygon points="15,10 10,20 20,20" fill="#475569"/>
+            <!-- x-axis ticks and labels -->
+            <!-- π/2 at x=115 -->
+            <line x1="115" y1="97" x2="115" y2="103" stroke="#475569" stroke-width="1"/>
+            <text x="115" y="114" font-size="10" fill="#475569" font-family="'Inter',sans-serif" text-anchor="middle">π/2</text>
+            <!-- π at x=230 -->
+            <line x1="230" y1="97" x2="230" y2="103" stroke="#475569" stroke-width="1"/>
+            <text x="230" y="114" font-size="10" fill="#475569" font-family="'Inter',sans-serif" text-anchor="middle">π</text>
+            <!-- 3π/2 at x=345 -->
+            <line x1="345" y1="97" x2="345" y2="103" stroke="#475569" stroke-width="1"/>
+            <text x="345" y="114" font-size="10" fill="#475569" font-family="'Inter',sans-serif" text-anchor="middle">3π/2</text>
+            <!-- 2π at x=460 -->
+            <line x1="455" y1="97" x2="455" y2="103" stroke="#475569" stroke-width="1"/>
+            <text x="455" y="114" font-size="10" fill="#475569" font-family="'Inter',sans-serif" text-anchor="middle">2π</text>
+            <!-- x and y axis labels -->
+            <text x="458" y="98" font-size="11" fill="#475569" font-family="'Inter',sans-serif">x</text>
+            <text x="8" y="8" font-size="11" fill="#475569" font-family="'Inter',sans-serif">y</text>
+            <text x="19" y="114" font-size="10" fill="#64748b" font-family="'Inter',sans-serif">0</text>
+            <!-- Sine curve (violet-amber #b45309) -->
+            <polyline points="0.0,100.0 11.5,87.5 23.0,75.3 34.5,63.7 46.0,53.0 57.5,43.4 69.0,35.3 80.5,28.7 92.0,23.9 103.5,21.0 115.0,20.0 126.5,21.0 138.0,23.9 149.5,28.7 161.0,35.3 172.5,43.4 184.0,53.0 195.5,63.7 207.0,75.3 218.5,87.5 230.0,100.0 241.5,112.5 253.0,124.7 264.5,136.3 276.0,147.0 287.5,156.6 299.0,164.7 310.5,171.3 322.0,176.1 333.5,179.0 345.0,180.0 356.5,179.0 368.0,176.1 379.5,171.3 391.0,164.7 402.5,156.6 414.0,147.0 425.5,136.3 437.0,124.7 448.5,112.5 460.0,100.0"
+              fill="none" stroke="#b45309" stroke-width="2.2"/>
+            <!-- Cosine curve (blue #3b82f6) -->
+            <polyline points="0.0,20.0 11.5,21.0 23.0,23.9 34.5,28.7 46.0,35.3 57.5,43.4 69.0,53.0 80.5,63.7 92.0,75.3 103.5,87.5 115.0,100.0 126.5,112.5 138.0,124.7 149.5,136.3 161.0,147.0 172.5,156.6 184.0,164.7 195.5,171.3 207.0,176.1 218.5,179.0 230.0,180.0 241.5,179.0 253.0,176.1 264.5,171.3 276.0,164.7 287.5,156.6 299.0,147.0 310.5,136.3 322.0,124.7 333.5,112.5 345.0,100.0 356.5,87.5 368.0,75.3 379.5,63.7 391.0,53.0 402.5,43.4 414.0,35.3 425.5,28.7 437.0,23.9 448.5,21.0 460.0,20.0"
+              fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+            <!-- Key points on sine curve -->
+            <circle cx="0" cy="100" r="3" fill="#b45309"/>
+            <circle cx="115" cy="20" r="3" fill="#b45309"/>
+            <circle cx="230" cy="100" r="3" fill="#b45309"/>
+            <circle cx="345" cy="180" r="3" fill="#b45309"/>
+            <circle cx="460" cy="100" r="3" fill="#b45309"/>
+            <!-- Key points on cosine curve -->
+            <circle cx="0" cy="20" r="3" fill="#3b82f6"/>
+            <circle cx="115" cy="100" r="3" fill="#3b82f6"/>
+            <circle cx="230" cy="180" r="3" fill="#3b82f6"/>
+            <circle cx="345" cy="100" r="3" fill="#3b82f6"/>
+            <circle cx="460" cy="20" r="3" fill="#3b82f6"/>
+            <!-- Legend -->
+            <rect x="320" y="8" width="12" height="8" fill="#b45309" rx="2"/>
+            <text x="335" y="16" font-size="11" fill="#0f172a" font-family="'Inter',sans-serif">sin x</text>
+            <rect x="320" y="22" width="12" height="8" fill="#3b82f6" rx="2"/>
+            <text x="335" y="30" font-size="11" fill="#0f172a" font-family="'Inter',sans-serif">cos x</text>
+          </svg>
+          <div class="caption">Графики синуса и косинуса</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 3: Основные тождества
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Основные тригонометрические тождества</h1>
+          <p class="lead">Пять фундаментальных тождеств — основа всех тригонометрических преобразований.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Наизусть</span></div>
+        </div>
+
+        <div class="fcard" id="f-pyth">
+          <div class="flabel">Основное тригонометрическое тождество</div>
+          <div class="formula" data-tex="\sin^2\alpha + \cos^2\alpha = 1"></div>
+          <div class="fdesc">Следствие теоремы Пифагора для единичной окружности.</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-tg">
+            <div class="chip-name">Связь tg и sin/cos</div>
+            <div class="chip-formula" data-tex="\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}"></div>
+            <div class="chip-desc">Определение тангенса</div>
+          </div>
+          <div class="fchip" id="fc-ctg">
+            <div class="chip-name">Связь ctg и sin/cos</div>
+            <div class="chip-formula" data-tex="\cot\alpha = \dfrac{\cos\alpha}{\sin\alpha}"></div>
+            <div class="chip-desc">Определение котангенса</div>
+          </div>
+          <div class="fchip" id="fc-1tg2">
+            <div class="chip-name">Тождество с tg</div>
+            <div class="chip-formula" data-tex="1 + \tan^2\alpha = \dfrac{1}{\cos^2\alpha}"></div>
+            <div class="chip-desc">Делением <span data-tex="\sin^2+\cos^2=1"></span> на <span data-tex="\cos^2"></span></div>
+          </div>
+          <div class="fchip" id="fc-1ctg2">
+            <div class="chip-name">Тождество с ctg</div>
+            <div class="chip-formula" data-tex="1 + \cot^2\alpha = \dfrac{1}{\sin^2\alpha}"></div>
+            <div class="chip-desc">Делением <span data-tex="\sin^2+\cos^2=1"></span> на <span data-tex="\sin^2"></span></div>
+          </div>
+          <div class="fchip" id="fc-tg-ctg">
+            <div class="chip-name">Произведение tg и ctg</div>
+            <div class="chip-formula" data-tex="\tan\alpha \cdot \cot\alpha = 1"></div>
+            <div class="chip-desc">Непосредственно из определений</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 4: Формулы сложения
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Формулы сложения</h1>
+          <p class="lead">Позволяют вычислить тригонометрические функции суммы и разности углов.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-sin-sum">
+            <div class="chip-name"><span data-tex="\sin(\alpha+\beta)"></span></div>
+            <div class="chip-formula" data-tex="\sin(\alpha+\beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-sin-diff">
+            <div class="chip-name"><span data-tex="\sin(\alpha-\beta)"></span></div>
+            <div class="chip-formula" data-tex="\sin(\alpha-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-cos-sum">
+            <div class="chip-name"><span data-tex="\cos(\alpha+\beta)"></span></div>
+            <div class="chip-formula" data-tex="\cos(\alpha+\beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-cos-diff">
+            <div class="chip-name"><span data-tex="\cos(\alpha-\beta)"></span></div>
+            <div class="chip-formula" data-tex="\cos(\alpha-\beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-tg-sum">
+            <div class="chip-name"><span data-tex="\tan(\alpha+\beta)"></span></div>
+            <div class="chip-formula" data-tex="\tan(\alpha+\beta) = \dfrac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-tg-diff">
+            <div class="chip-name"><span data-tex="\tan(\alpha-\beta)"></span></div>
+            <div class="chip-formula" data-tex="\tan(\alpha-\beta) = \dfrac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}"></div>
+            <div class="chip-desc"></div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Мнемоника для sin:</b> «синус первого на косинус второго плюс/минус косинус первого на синус второго». Знак в sin повторяет знак в аргументе.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 5: Двойной угол
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Формулы двойного угла и понижения степени</h1>
+          <p class="lead">Частный случай формул сложения при α = β. Используются для упрощения и решения уравнений.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Часто на ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-sin2a">
+          <div class="flabel">Синус двойного угла</div>
+          <div class="formula" data-tex="\sin 2\alpha = 2\sin\alpha\cos\alpha"></div>
+          <div class="fdesc">Получается из <span data-tex="\sin(\alpha+\alpha)"></span>.</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-cos2a-1">
+            <div class="chip-name">cos 2α (форма 1)</div>
+            <div class="chip-formula" data-tex="\cos 2\alpha = \cos^2\alpha - \sin^2\alpha"></div>
+            <div class="chip-desc">Базовая форма</div>
+          </div>
+          <div class="fchip" id="fc-cos2a-2">
+            <div class="chip-name">cos 2α (форма 2)</div>
+            <div class="chip-formula" data-tex="\cos 2\alpha = 2\cos^2\alpha - 1"></div>
+            <div class="chip-desc">Через <span data-tex="\sin^2 = 1 - \cos^2"></span></div>
+          </div>
+          <div class="fchip" id="fc-cos2a-3">
+            <div class="chip-name">cos 2α (форма 3)</div>
+            <div class="chip-formula" data-tex="\cos 2\alpha = 1 - 2\sin^2\alpha"></div>
+            <div class="chip-desc">Через <span data-tex="\cos^2 = 1 - \sin^2"></span></div>
+          </div>
+          <div class="fchip" id="fc-tg2a">
+            <div class="chip-name">tg 2α</div>
+            <div class="chip-formula" data-tex="\tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}"></div>
+            <div class="chip-desc"></div>
+          </div>
+        </div>
+
+        <h2 id="h-lower">Формулы понижения степени</h2>
+        <div class="fgrid">
+          <div class="fchip" id="fc-sin2-lower">
+            <div class="chip-name">Понижение sin²</div>
+            <div class="chip-formula" data-tex="\sin^2\alpha = \dfrac{1 - \cos 2\alpha}{2}"></div>
+            <div class="chip-desc">Из формулы <span data-tex="\cos 2\alpha = 1 - 2\sin^2\alpha"></span></div>
+          </div>
+          <div class="fchip" id="fc-cos2-lower">
+            <div class="chip-name">Понижение cos²</div>
+            <div class="chip-formula" data-tex="\cos^2\alpha = \dfrac{1 + \cos 2\alpha}{2}"></div>
+            <div class="chip-desc">Из формулы <span data-tex="\cos 2\alpha = 2\cos^2\alpha - 1"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 6: Сумма и разность
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Формулы суммы и разности</h1>
+          <p class="lead">Преобразование суммы/разности тригонометрических функций в произведение.</p>
+          <div class="tags"><span class="tag acc">Теория</span></div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip" id="fc-sin-plus">
+            <div class="chip-name">sin α + sin β</div>
+            <div class="chip-formula" data-tex="\sin\alpha + \sin\beta = 2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-sin-minus">
+            <div class="chip-name">sin α − sin β</div>
+            <div class="chip-formula" data-tex="\sin\alpha - \sin\beta = 2\cos\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-cos-plus">
+            <div class="chip-name">cos α + cos β</div>
+            <div class="chip-formula" data-tex="\cos\alpha + \cos\beta = 2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2}"></div>
+            <div class="chip-desc"></div>
+          </div>
+          <div class="fchip" id="fc-cos-minus">
+            <div class="chip-name">cos α − cos β</div>
+            <div class="chip-formula" data-tex="\cos\alpha - \cos\beta = -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}"></div>
+            <div class="chip-desc">Знак минус!</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Используются для разложения суммы функций на множители, что часто применяется при решении тригонометрических уравнений методом разложения.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 7: Таблица значений
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Таблица точных значений</h1>
+          <p class="lead">Обязательно знать наизусть — эти значения встречаются в каждом варианте ЦТ.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Наизусть</span></div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr>
+              <th>α</th>
+              <th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th>
+              <th>120°</th><th>135°</th><th>150°</th><th>180°</th>
+              <th>270°</th><th>360°</th>
+            </tr>
+            <tr>
+              <th>sin α</th>
+              <td>0</td>
+              <td><span data-tex="\tfrac{1}{2}"></span></td>
+              <td><span data-tex="\tfrac{\sqrt{2}}{2}"></span></td>
+              <td><span data-tex="\tfrac{\sqrt{3}}{2}"></span></td>
+              <td>1</td>
+              <td><span data-tex="\tfrac{\sqrt{3}}{2}"></span></td>
+              <td><span data-tex="\tfrac{\sqrt{2}}{2}"></span></td>
+              <td><span data-tex="\tfrac{1}{2}"></span></td>
+              <td>0</td>
+              <td>−1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>cos α</th>
+              <td>1</td>
+              <td><span data-tex="\tfrac{\sqrt{3}}{2}"></span></td>
+              <td><span data-tex="\tfrac{\sqrt{2}}{2}"></span></td>
+              <td><span data-tex="\tfrac{1}{2}"></span></td>
+              <td>0</td>
+              <td><span data-tex="-\tfrac{1}{2}"></span></td>
+              <td><span data-tex="-\tfrac{\sqrt{2}}{2}"></span></td>
+              <td><span data-tex="-\tfrac{\sqrt{3}}{2}"></span></td>
+              <td>−1</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>tg α</th>
+              <td>0</td>
+              <td><span data-tex="\tfrac{1}{\sqrt{3}}"></span></td>
+              <td>1</td>
+              <td><span data-tex="\sqrt{3}"></span></td>
+              <td>н/о</td>
+              <td><span data-tex="-\sqrt{3}"></span></td>
+              <td>−1</td>
+              <td><span data-tex="-\tfrac{1}{\sqrt{3}}"></span></td>
+              <td>0</td>
+              <td>н/о</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">🧠</div>
+          <div class="kc-text">
+            <small>Правило «0 1 2 3 4»</small>
+            <span data-tex="\sin 0^\circ = \sqrt{0}/2 = 0"></span>, <span data-tex="\sin 30^\circ = \sqrt{1}/2 = 1/2"></span>, <span data-tex="\sin 45^\circ = \sqrt{2}/2"></span>, <span data-tex="\sin 60^\circ = \sqrt{3}/2"></span>, <span data-tex="\sin 90^\circ = \sqrt{4}/2 = 1"></span>. Под корнем числа 0,1,2,3,4.
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION 8: Тригон. уравнения
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Тригонометрические уравнения</h1>
+          <p class="lead">Стандартные формулы решения базовых тригонометрических уравнений.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="fcard" id="f-sinx-a">
+          <div class="flabel">sin x = a, |a| ≤ 1</div>
+          <div class="formula" data-tex="x = (-1)^n \arcsin a + \pi n, \quad n \in \mathbb{Z}"></div>
+          <div class="fdesc">Общая формула. Включает оба угла первой и второй четвертей.</div>
+        </div>
+
+        <div class="fcard" id="f-cosx-a">
+          <div class="flabel">cos x = a, |a| ≤ 1</div>
+          <div class="formula" data-tex="x = \pm\arccos a + 2\pi n, \quad n \in \mathbb{Z}"></div>
+          <div class="fdesc">Два серии корней: <span data-tex="+\arccos a"></span> и <span data-tex="-\arccos a"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-tgx-a">
+          <div class="flabel">tg x = a</div>
+          <div class="formula" data-tex="x = \arctan a + \pi n, \quad n \in \mathbb{Z}"></div>
+          <div class="fdesc">Период π (не 2π!). ОДЗ на выводе: <span data-tex="\cos x \neq 0"></span>.</div>
+        </div>
+
+        <h2 id="h-special">Особые случаи</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Уравнение</th><th>Решение</th></tr>
+            <tr><td><span data-tex="\sin x = 0"></span></td><td><span data-tex="x = \pi n"></span></td></tr>
+            <tr><td><span data-tex="\sin x = 1"></span></td><td><span data-tex="x = \dfrac{\pi}{2} + 2\pi n"></span></td></tr>
+            <tr><td><span data-tex="\sin x = -1"></span></td><td><span data-tex="x = -\dfrac{\pi}{2} + 2\pi n"></span></td></tr>
+            <tr><td><span data-tex="\cos x = 0"></span></td><td><span data-tex="x = \dfrac{\pi}{2} + \pi n"></span></td></tr>
+            <tr><td><span data-tex="\cos x = 1"></span></td><td><span data-tex="x = 2\pi n"></span></td></tr>
+            <tr><td><span data-tex="\cos x = -1"></span></td><td><span data-tex="x = \pi + 2\pi n"></span></td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>При отборе корней на отрезке — подставляй конкретные значения n = 0, ±1, ±2, … и проверяй попадание в заданный промежуток.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_tasks: Разбор задач
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор задач</h1>
+          <p class="lead">Типовые задачи ЦТ: упрощение выражения и решение тригонометрического уравнения.</p>
+          <div class="tags"><span class="tag green">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Упростите выражение <span data-tex="\sin^2 x + \cos^2 x + \tan x \cdot \cot x"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\sin^2 x + \cos^2 x = 1"></span> — основное тождество.</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\tan x \cdot \cot x = \dfrac{\sin x}{\cos x} \cdot \dfrac{\cos x}{\sin x} = 1"></span>.</div>
+            <div class="step"><div class="stepn">3</div>Итого: <span data-tex="1 + 1 = 2"></span>.</div>
+          </div>
+          <div class="ans">Ответ: 2.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Решите уравнение <span data-tex="2\sin^2 x - \cos 2x = 1"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Заменим <span data-tex="\cos 2x = 1 - 2\sin^2 x"></span>: <span data-tex="2\sin^2 x - (1 - 2\sin^2 x) = 1"></span>.</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="4\sin^2 x - 1 = 1 \Rightarrow \sin^2 x = \dfrac{1}{2}"></span>.</div>
+            <div class="step"><div class="stepn">3</div><span data-tex="\sin x = \pm\dfrac{\sqrt{2}}{2}"></span>, значит <span data-tex="x = \pm\dfrac{\pi}{4} + \dfrac{\pi n}{2}, \quad n \in \mathbb{Z}"></span>.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x = \dfrac{\pi}{4}(2k+1),\ k \in \mathbb{Z}"></span>.</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Вычислите <span data-tex="\cos 15^\circ"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\cos 15^\circ = \cos(45^\circ - 30^\circ) = \cos 45^\circ \cos 30^\circ + \sin 45^\circ \sin 30^\circ"></span>.</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="= \dfrac{\sqrt{2}}{2} \cdot \dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2} \cdot \dfrac{1}{2} = \dfrac{\sqrt{6}}{4} + \dfrac{\sqrt{2}}{4}"></span>.</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\cos 15^\circ = \dfrac{\sqrt{6}+\sqrt{2}}{4}"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+           SECTION s_check: Чек-лист
+           ══════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Минимальный набор для решения задач по тригонометрии на ЦТ.</p>
+        </div>
+
+        <h2 id="h-formulas-chk">Формулы (наизусть)</h2>
+        <ul>
+          <li>Основное тождество: <span data-tex="\sin^2\alpha + \cos^2\alpha = 1"></span></li>
+          <li>Таблица значений для 0°, 30°, 45°, 60°, 90°</li>
+          <li>Формулы сложения: sin(α±β), cos(α±β)</li>
+          <li>Двойной угол: <span data-tex="\sin 2\alpha = 2\sin\alpha\cos\alpha"></span>, три формы <span data-tex="\cos 2\alpha"></span></li>
+          <li>Решения: <span data-tex="\sin x = a \Rightarrow x = (-1)^n\arcsin a + \pi n"></span></li>
+          <li>Решения: <span data-tex="\cos x = a \Rightarrow x = \pm\arccos a + 2\pi n"></span></li>
+          <li>Решения: <span data-tex="\tan x = a \Rightarrow x = \arctan a + \pi n"></span></li>
+        </ul>
+
+        <h2 id="h-skills-chk">Навыки</h2>
+        <ul>
+          <li>Определять знак sin/cos/tg по четверти</li>
+          <li>Применять формулы двойного угла для понижения степени</li>
+          <li>Решать простейшие уравнения и отбирать корни на заданном промежутке</li>
+          <li>Использовать формулы сложения для вычисления значений (cos 15°, sin 75°)</li>
+        </ul>
+
+        <h2 id="h-errors-chk">Типичные ошибки</h2>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Писать <span data-tex="x = \arcsin a + 2\pi n"></span> для уравнения <span data-tex="\sin x = a"></span> — это неполное решение (пропущена вторая серия).</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Путать период: у tg период <span data-tex="\pi"></span>, а не <span data-tex="2\pi"></span>.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Забывать ОДЗ при уравнениях с tg и ctg.</div>
+        </div>
+        <div class="tip info">
+          <span class="ico">🎯</span>
+          <div><b>Совет:</b> При упрощении тригонометрических выражений на ЦТ сначала проверь, можно ли применить основное тождество или формулу двойного угла — это решает большинство задач.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn" href="05_funktsii.html">← Функции</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">07 Показательная и логарифмы</div>
+            <div class="tp-desc">Степени, показательные уравнения, логарифм</div>
+          </div>
+          <a class="tp-btn" href="07_pokazatelnaya_log.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list"></div>
+</div>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

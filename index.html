@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Infobook — Физика и Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  background:#f1f5f9;color:#0f172a;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:10px}
+
+/* ─── TOKENS ─── */
+:root{
+  --surface:#fff;
+  --bg:#f1f5f9;
+  --text:#0f172a;
+  --text2:#475569;
+  --text3:#94a3b8;
+  --border:#e2e8f0;
+  --border-strong:#cbd5e1;
+  --radius:14px;
+  --radius-lg:18px;
+}
+
+/* ─── LANDING ─── */
+.landing{
+  min-height:100vh;
+  padding:72px 24px 100px;
+  background:
+    radial-gradient(ellipse 110% 60% at 15% 0%,rgba(59,130,246,.08),transparent),
+    radial-gradient(ellipse 110% 60% at 85% 5%,rgba(220,38,38,.06),transparent),
+    var(--bg);
+}
+
+/* ─── HERO ─── */
+.hero{max-width:1100px;margin:0 auto 68px;text-align:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 18px;border-radius:50px;
+  background:#fff;border:1px solid var(--border-strong);
+  font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--text3);margin-bottom:22px;
+  box-shadow:0 2px 8px rgba(15,23,42,.06);
+}
+.hero-logo{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;border-radius:20px;
+  background:linear-gradient(135deg,#3b82f6 0%,#dc2626 100%);
+  font-size:30px;margin-bottom:22px;
+  box-shadow:0 8px 32px rgba(59,130,246,.25);
+}
+.hero h1{
+  font-size:clamp(2.4rem,6vw,3.8rem);font-weight:900;
+  letter-spacing:-.04em;margin-bottom:16px;color:var(--text);
+}
+.hero h1 .accent-phys{
+  background:linear-gradient(125deg,#3b82f6 0%,#6366f1 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero h1 .accent-math{
+  background:linear-gradient(125deg,#dc2626 0%,#f97316 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero .lead{
+  font-size:1.06rem;color:var(--text2);max-width:560px;margin:0 auto 36px;line-height:1.65;
+}
+.hero-stats{
+  display:flex;justify-content:center;gap:48px;flex-wrap:wrap;
+  padding:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  max-width:500px;margin:0 auto;
+}
+.hero-stat{display:flex;flex-direction:column;align-items:center;gap:3px}
+.stat-num{
+  font-size:2.2rem;font-weight:900;letter-spacing:-.05em;
+  font-family:'JetBrains Mono',monospace;
+}
+.stat-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)}
+.hero-stat.phys .stat-num{color:#3b82f6}
+.hero-stat.math .stat-num{color:#dc2626}
+.hero-stat.total .stat-num{color:var(--text)}
+
+/* ─── SUBJECTS ─── */
+.subjects{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:60px}
+
+/* ─── SUBJECT HEADER ─── */
+.subject-head{
+  display:flex;align-items:center;gap:18px;
+  margin-bottom:32px;padding-bottom:20px;
+  border-bottom:2px solid var(--border-strong);
+}
+.subject-badge{
+  width:56px;height:56px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;flex-shrink:0;
+  box-shadow:0 8px 24px var(--subj-glow);
+  background:linear-gradient(135deg,var(--subj-c1),var(--subj-c2));
+}
+.subject-info{flex:1}
+.subject-label{
+  font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;
+  color:var(--subj-c1);margin-bottom:3px;
+}
+.subject-title{font-size:1.7rem;font-weight:900;color:var(--text);letter-spacing:-.03em}
+.subject-actions{display:flex;gap:10px;flex-shrink:0}
+.subj-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 22px;border-radius:10px;
+  font-family:inherit;font-size:.88rem;font-weight:700;
+  text-decoration:none;transition:transform .18s,box-shadow .18s;
+}
+.subj-btn.primary{
+  background:linear-gradient(135deg,var(--subj-c1),var(--subj-c2));
+  color:#fff;box-shadow:0 4px 18px var(--subj-glow);
+}
+.subj-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--subj-glow)}
+.subj-btn.secondary{
+  background:var(--surface);border:1px solid var(--border-strong);color:var(--text2);
+}
+.subj-btn.secondary:hover{background:#f8fafc;color:var(--text)}
+
+.phys-section{--subj-c1:#3b82f6;--subj-c2:#6366f1;--subj-glow:rgba(59,130,246,.3)}
+.math-section{--subj-c1:#dc2626;--subj-c2:#ea580c;--subj-glow:rgba(220,38,38,.3)}
+
+/* ─── TOPIC GROUPS ─── */
+.topic-groups-wrap{display:flex;flex-direction:column;gap:34px}
+.topic-group-head{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;padding-bottom:12px;
+  border-bottom:1px dashed var(--border-strong);
+}
+.tg-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:var(--tg-color);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+  box-shadow:0 4px 14px var(--tg-glow);
+}
+.tg-label{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--tg-color)}
+.tg-title{font-size:1.05rem;font-weight:800;color:var(--text);letter-spacing:-.02em;margin-top:1px}
+
+/* physics groups */
+.tg-mech   {--tg-color:#3b82f6;--tg-glow:rgba(59,130,246,.3)}
+.tg-thermo {--tg-color:#f97316;--tg-glow:rgba(249,115,22,.3)}
+.tg-em     {--tg-color:#8b5cf6;--tg-glow:rgba(139,92,246,.3)}
+.tg-waves  {--tg-color:#06b6d4;--tg-glow:rgba(6,182,212,.3)}
+.tg-quantum{--tg-color:#d946ef;--tg-glow:rgba(217,70,239,.3)}
+/* math groups */
+.tg-algebra{--tg-color:#dc2626;--tg-glow:rgba(220,38,38,.3)}
+.tg-trig   {--tg-color:#7c3aed;--tg-glow:rgba(124,58,237,.3)}
+.tg-geom   {--tg-color:#059669;--tg-glow:rgba(5,150,105,.3)}
+.tg-word   {--tg-color:#0369a1;--tg-glow:rgba(3,105,161,.3)}
+
+/* ─── TOPIC GRID ─── */
+.topic-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+.topic-card{
+  position:relative;display:block;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:22px 22px 20px;
+  text-decoration:none;color:inherit;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  overflow:hidden;
+  transform-style:preserve-3d;perspective:1000px;
+}
+.topic-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--tc);
+}
+.topic-card:hover{
+  transform:translateY(-5px) rotateX(1.5deg);
+  box-shadow:0 16px 40px rgba(15,23,42,.12),0 4px 12px rgba(15,23,42,.06);
+  border-color:var(--tc);
+}
+.topic-card .num{
+  position:absolute;top:16px;right:18px;
+  font-size:2.4rem;font-weight:900;color:var(--tc);opacity:.12;
+  font-family:'JetBrains Mono',monospace;line-height:.9;
+}
+.topic-card .icon{font-size:1.9rem;margin-bottom:12px;display:block}
+.topic-card h3{font-size:1.06rem;font-weight:800;color:var(--text);margin-bottom:5px;letter-spacing:-.02em}
+.topic-card p{font-size:.82rem;color:var(--text2);line-height:1.6;margin-bottom:14px}
+.topic-card .arrow{
+  position:absolute;right:18px;bottom:16px;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--tc);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;
+  opacity:0;transform:translateX(-8px);transition:all .25s;
+}
+.topic-card:hover .arrow{opacity:1;transform:translateX(0)}
+
+/* physics card colors */
+.phys-section .topic-card.t01{--tc:#3b82f6}
+.phys-section .topic-card.t02{--tc:#6366f1}
+.phys-section .topic-card.t03{--tc:#0891b2}
+.phys-section .topic-card.t04{--tc:#10b981}
+.phys-section .topic-card.t05{--tc:#f97316}
+.phys-section .topic-card.t06{--tc:#8b5cf6}
+.phys-section .topic-card.t07{--tc:#eab308}
+.phys-section .topic-card.t08{--tc:#ec4899}
+.phys-section .topic-card.t09{--tc:#06b6d4}
+.phys-section .topic-card.t10{--tc:#f59e0b}
+.phys-section .topic-card.t11{--tc:#d946ef}
+
+/* math card colors */
+.math-section .topic-card.t01{--tc:#dc2626}
+.math-section .topic-card.t02{--tc:#ea580c}
+.math-section .topic-card.t03{--tc:#16a34a}
+.math-section .topic-card.t04{--tc:#2563eb}
+.math-section .topic-card.t05{--tc:#7c3aed}
+.math-section .topic-card.t06{--tc:#b45309}
+.math-section .topic-card.t07{--tc:#0e7490}
+.math-section .topic-card.t08{--tc:#be185d}
+.math-section .topic-card.t09{--tc:#059669}
+.math-section .topic-card.t10{--tc:#4338ca}
+.math-section .topic-card.t11{--tc:#0369a1}
+
+/* ─── DIVIDER ─── */
+.divider{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;gap:14px;
+}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border-strong)}
+.divider-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:linear-gradient(135deg,#3b82f6,#dc2626);
+  box-shadow:0 0 12px rgba(99,102,241,.4);
+}
+
+/* ─── FOOTER ─── */
+.landing-footer{
+  max-width:1100px;margin:72px auto 0;padding-top:28px;
+  border-top:1px solid var(--border);
+  text-align:center;font-size:.82rem;color:var(--text3);
+  display:flex;flex-direction:column;gap:8px;align-items:center;
+}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.footer-links a{color:var(--text3);text-decoration:none;transition:color .15s;font-weight:500}
+.footer-links a:hover{color:var(--text2)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .landing{padding:52px 16px 80px}
+  .hero h1{font-size:2.2rem}
+  .subject-head{flex-wrap:wrap;gap:14px}
+  .subject-actions{width:100%}
+  .subj-btn{flex:1;justify-content:center;padding:10px 14px}
+  .topic-grid{grid-template-columns:1fr;gap:12px}
+  .topic-card{padding:18px 18px 16px}
+  .hero-stats{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<section class="landing">
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <div class="hero-badge">📚 ЦТ / ЦЭ · Республика Беларусь</div>
+    <div class="hero-logo">📖</div>
+    <h1>
+      <span class="accent-phys">Физика</span>
+      &nbsp;+&nbsp;
+      <span class="accent-math">Математика</span>
+    </h1>
+    <p class="lead">Единый справочник для подготовки к централизованному тестированию. Все формулы, теоремы и методы решения задач.</p>
+    <div class="hero-stats">
+      <div class="hero-stat phys">
+        <span class="stat-num">11</span>
+        <span class="stat-lbl">тем физики</span>
+      </div>
+      <div class="hero-stat total">
+        <span class="stat-num">22</span>
+        <span class="stat-lbl">темы всего</span>
+      </div>
+      <div class="hero-stat math">
+        <span class="stat-num">11</span>
+        <span class="stat-lbl">тем математики</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subjects">
+
+  <!-- ═══════════════════════════════════════════════════
+       ФИЗИКА
+       ═══════════════════════════════════════════════════ -->
+  <div class="phys-section">
+    <div class="subject-head">
+      <div class="subject-badge">⚛️</div>
+      <div class="subject-info">
+        <div class="subject-label">Предмет I</div>
+        <div class="subject-title">Физика</div>
+      </div>
+      <div class="subject-actions">
+        <a class="subj-btn secondary" href="./formulas/index.html">Все формулы →</a>
+      </div>
+    </div>
+
+    <div class="topic-groups-wrap">
+
+      <!-- МЕХАНИКА -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-mech">
+          <div class="tg-icon">🏃</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел I</div>
+            <div class="tg-title">Механика</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t01" href="./theory/01_kinematika.html">
+            <span class="num">01</span><span class="icon">🏃</span>
+            <h3>Кинематика</h3>
+            <p>Перемещение, скорость, ускорение. Равномерное и равноускоренное движение, круговое движение, бросок под углом.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t02" href="./theory/02_dinamika.html">
+            <span class="num">02</span><span class="icon">⚙️</span>
+            <h3>Динамика</h3>
+            <p>Законы Ньютона, силы, движение по наклонной плоскости, гравитация, центростремительное движение.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t03" href="./theory/03_statika_gidrostatika.html">
+            <span class="num">03</span><span class="icon">⚖️</span>
+            <h3>Статика и гидростатика</h3>
+            <p>Условия равновесия, моменты сил, давление, закон Архимеда, сообщающиеся сосуды.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t04" href="./theory/04_zakony_sohraneniya.html">
+            <span class="num">04</span><span class="icon">💥</span>
+            <h3>Законы сохранения</h3>
+            <p>Импульс и его сохранение, работа, мощность, кинетическая и потенциальная энергия, закон сохранения энергии.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ТЕРМОДИНАМИКА -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-thermo">
+          <div class="tg-icon">🌡️</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел II</div>
+            <div class="tg-title">Молекулярная физика и термодинамика</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t05" href="./theory/05_mkt_termodinamika.html">
+            <span class="num">05</span><span class="icon">🌡️</span>
+            <h3>МКТ и термодинамика</h3>
+            <p>Идеальный газ, изопроцессы, первое начало термодинамики, КПД тепловых машин, фазовые переходы.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ЭЛЕКТРОМАГНЕТИЗМ -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-em">
+          <div class="tg-icon">⚡</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел III</div>
+            <div class="tg-title">Электромагнетизм</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t06" href="./theory/06_elektrostatika.html">
+            <span class="num">06</span><span class="icon">⚡</span>
+            <h3>Электростатика</h3>
+            <p>Закон Кулона, электрическое поле, потенциал, конденсаторы, энергия поля.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t07" href="./theory/07_elektricheskij_tok.html">
+            <span class="num">07</span><span class="icon">🔌</span>
+            <h3>Электрический ток</h3>
+            <p>Закон Ома, последовательное и параллельное соединения, работа и мощность тока, ЭДС, КПД, электролиз.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t08" href="./theory/08_magnetizm.html">
+            <span class="num">08</span><span class="icon">🧲</span>
+            <h3>Магнетизм</h3>
+            <p>Магнитное поле, сила Ампера и Лоренца, электромагнитная индукция, самоиндукция, энергия поля.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- КОЛЕБАНИЯ И ОПТИКА -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-waves">
+          <div class="tg-icon">🌊</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел IV</div>
+            <div class="tg-title">Колебания, волны, оптика</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t09" href="./theory/09_kolebaniya_volny.html">
+            <span class="num">09</span><span class="icon">🌊</span>
+            <h3>Колебания и волны</h3>
+            <p>Гармонические колебания, маятники, волны, звук, переменный ток, электромагнитные волны.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t10" href="./theory/10_optika.html">
+            <span class="num">10</span><span class="icon">💡</span>
+            <h3>Оптика</h3>
+            <p>Геометрическая оптика, отражение, преломление, линзы, дифракция, интерференция.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- КВАНТОВАЯ -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-quantum">
+          <div class="tg-icon">⚛️</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел V</div>
+            <div class="tg-title">Квантовая и ядерная физика</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t11" href="./theory/11_kvantovaya.html">
+            <span class="num">11</span><span class="icon">⚛️</span>
+            <h3>Квантовая физика</h3>
+            <p>Фотоэффект, постулаты Бора, ядерные реакции, радиоактивность, СТО.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /phys-section -->
+
+  <!-- ─── DIVIDER ─── -->
+  <div class="divider"><div class="divider-dot"></div></div>
+
+  <!-- ═══════════════════════════════════════════════════
+       МАТЕМАТИКА
+       ═══════════════════════════════════════════════════ -->
+  <div class="math-section">
+    <div class="subject-head">
+      <div class="subject-badge">📊</div>
+      <div class="subject-info">
+        <div class="subject-label">Предмет II</div>
+        <div class="subject-title">Математика</div>
+      </div>
+    </div>
+
+    <div class="topic-groups-wrap">
+
+      <!-- АЛГЕБРА -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-algebra">
+          <div class="tg-icon">🔢</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел I</div>
+            <div class="tg-title">Алгебра</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t01" href="./math/theory/01_chisla.html">
+            <span class="num">01</span><span class="icon">🔢</span>
+            <h3>Числа и вычисления</h3>
+            <p>Натуральные, целые, рациональные, иррациональные числа. Степени, корни, проценты, формулы сокращённого умножения.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t02" href="./math/theory/02_vyrazheniya.html">
+            <span class="num">02</span><span class="icon">📐</span>
+            <h3>Алгебраические выражения</h3>
+            <p>Многочлены, дробно-рациональные выражения, степени и корни. Упрощение и преобразование выражений.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t03" href="./math/theory/03_uravneniya.html">
+            <span class="num">03</span><span class="icon">⚖️</span>
+            <h3>Уравнения</h3>
+            <p>Линейные, квадратные, рациональные, иррациональные, с модулями. Системы уравнений. Дискриминант, теорема Виета.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t04" href="./math/theory/04_neravenstva.html">
+            <span class="num">04</span><span class="icon">📊</span>
+            <h3>Неравенства</h3>
+            <p>Линейные, квадратные, рациональные неравенства. Метод интервалов. Неравенства с модулями. Системы неравенств.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ТРИГОНОМЕТРИЯ И ФУНКЦИИ -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-trig">
+          <div class="tg-icon">📈</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел II</div>
+            <div class="tg-title">Тригонометрия и функции</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t05" href="./math/theory/05_funktsii.html">
+            <span class="num">05</span><span class="icon">📈</span>
+            <h3>Функции</h3>
+            <p>Понятие функции, область определения и значений. Монотонность, чётность/нечётность, периодичность. Линейная, квадратичная, степенная.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t06" href="./math/theory/06_trigonometriya.html">
+            <span class="num">06</span><span class="icon">🌀</span>
+            <h3>Тригонометрия</h3>
+            <p>Единичная окружность, радианы, основные тождества. Формулы сложения, двойного угла. Тригонометрические уравнения.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t07" href="./math/theory/07_pokazatelnaya_log.html">
+            <span class="num">07</span><span class="icon">🔬</span>
+            <h3>Показательная и логарифмы</h3>
+            <p>Степени и их свойства. Показательная функция и уравнения. Логарифм: определение и свойства. Логарифмические уравнения.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t08" href="./math/theory/08_progressii.html">
+            <span class="num">08</span><span class="icon">🔗</span>
+            <h3>Прогрессии</h3>
+            <p>Арифметическая и геометрическая прогрессии. Формулы n-го члена и суммы первых n членов. Задачи на прогрессии.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ГЕОМЕТРИЯ -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-geom">
+          <div class="tg-icon">📐</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел III</div>
+            <div class="tg-title">Геометрия</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t09" href="./math/theory/09_planimetriya.html">
+            <span class="num">09</span><span class="icon">📐</span>
+            <h3>Планиметрия</h3>
+            <p>Треугольники, четырёхугольники, окружность. Теоремы Пифагора, синусов и косинусов. Площади и периметры.</p>
+            <span class="arrow">→</span>
+          </a>
+          <a class="topic-card t10" href="./math/theory/10_stereometriya.html">
+            <span class="num">10</span><span class="icon">🧊</span>
+            <h3>Стереометрия</h3>
+            <p>Призма, параллелепипед, пирамида, цилиндр, конус, шар. Объёмы и площади поверхностей.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ТЕКСТОВЫЕ ЗАДАЧИ -->
+      <div class="topic-group">
+        <div class="topic-group-head tg-word">
+          <div class="tg-icon">📝</div>
+          <div class="tg-text">
+            <div class="tg-label">Раздел IV</div>
+            <div class="tg-title">Текстовые задачи</div>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card t11" href="./math/theory/11_tekstovye.html">
+            <span class="num">11</span><span class="icon">📝</span>
+            <h3>Текстовые задачи</h3>
+            <p>Движение, работа, смеси и сплавы, задачи на проценты и концентрации. Универсальный алгоритм составления уравнений.</p>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /math-section -->
+
+  </div><!-- /subjects -->
+
+  <footer class="landing-footer">
+    <span>Infobook · Подготовка к ЦТ/ЦЭ · Республика Беларусь</span>
+    <div class="footer-links">
+      <a href="./formulas/index.html">Все формулы физики →</a>
+      <a href="./math/index.html">Математика (отдельно) →</a>
+    </div>
+  </footer>
+
+</section>
+
+</body>
+</html>

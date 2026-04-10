@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Алгебраические выражения — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t02">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">📐</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Алгебраические выражения</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 02</span>
+      <h2>Алгебраические выражения</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">P</span>Многочлены</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">✖</span>Разложение на множители</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">÷</span>Дробно-рациональные выражения</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">⬆</span>Степенные выражения</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">√</span>Иррациональные выражения</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════════════════════════════════════════
+           SECTION 1: Многочлены
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Многочлены</h1>
+          <p class="lead">Одночлен, многочлен, степень, стандартный вид. Действия с многочленами: сложение, умножение, деление на одночлен.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База</span>
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Одночлен</b> — произведение числа и переменных в натуральных степенях: <span data-tex="5x^2y^3"></span>. <b>Многочлен</b> — сумма одночленов. <b>Стандартный вид</b> — по убыванию степени.</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Степень многочлена</div>
+          <div class="text"><b>Степень многочлена</b> — наибольшая из степеней его одночленов. Пример: <span data-tex="3x^4 - 2x^2 + 7"></span> — многочлен 4-й степени.</div>
+        </div>
+
+        <h2 id="h-poly-ops">Действия с многочленами</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Сложение/вычитание</h4>
+            <p>Складывают <b>подобные члены</b> (одинаковые переменные и степени).</p>
+            <p><span data-tex="(3x^2 - 2x + 1) + (x^2 + 4x - 3) = 4x^2 + 2x - 2"></span></p>
+          </div>
+          <div class="card">
+            <h4>Умножение многочлена на одночлен</h4>
+            <p>Каждый член умножается на одночлен:</p>
+            <p><span data-tex="3x(x^2 - 2x + 5) = 3x^3 - 6x^2 + 15x"></span></p>
+          </div>
+        </div>
+
+        <h2 id="h-poly-mult">Умножение двух многочленов</h2>
+        <div class="fcard" id="f-poly-mult">
+          <div class="flabel">Правило умножения многочленов</div>
+          <div class="formula" data-tex="(a_1 + a_2 + \ldots)(b_1 + b_2 + \ldots) = \sum_{i,j} a_i b_j"></div>
+          <div class="fdesc">Каждый член первого многочлена умножается на каждый член второго. Подобные члены результата складываются.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Умножение двух двучленов:</b> <span data-tex="(ax+b)(cx+d) = acx^2 + (ad+bc)x + bd"></span>. Метод FOIL: First, Outer, Inner, Last.</div>
+        </div>
+
+        <!-- Diagram E1: Polynomial multiplication grid -->
+        <div class="diagram">
+          <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="arr-e1" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+                <path d="M0,0 L7,3.5 L0,7 z" fill="#475569"/>
+              </marker>
+            </defs>
+            <!-- Grid structure: header row y=30..70, header col x=60..120 -->
+            <!-- Column headers: "2x" and "+3" -->
+            <rect x="80" y="10" width="80" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="120" y="35" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">2x</text>
+            <rect x="160" y="10" width="80" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="200" y="35" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">+3</text>
+            <!-- Row headers: "x" and "−4" -->
+            <rect x="10" y="50" width="70" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="45" y="75" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">x</text>
+            <rect x="10" y="90" width="70" height="40" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="45" y="115" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c">−4</text>
+            <!-- Inner cells -->
+            <!-- 2x * x = 2x² -->
+            <rect x="80" y="50" width="80" height="40" rx="4" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="120" y="75" text-anchor="middle" font-size="14" font-weight="700" fill="#9a3412">2x²</text>
+            <!-- +3 * x = +3x (amber - like term) -->
+            <rect x="160" y="50" width="80" height="40" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+            <text x="200" y="75" text-anchor="middle" font-size="14" font-weight="700" fill="#b45309">+3x</text>
+            <!-- 2x * (−4) = −8x (amber - like term) -->
+            <rect x="80" y="90" width="80" height="40" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+            <text x="120" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#b45309">−8x</text>
+            <!-- +3 * (−4) = −12 -->
+            <rect x="160" y="90" width="80" height="40" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+            <text x="200" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#475569">−12</text>
+            <!-- Bracket label (a+b)(c+d) -->
+            <text x="45" y="22" text-anchor="middle" font-size="11" fill="#64748b">(2x+3)</text>
+            <text x="18" y="95" text-anchor="start" font-size="10" fill="#64748b" transform="rotate(-90,18,95)">(x−4)</text>
+            <!-- Combine like terms arrow -->
+            <line x1="165" y1="70" x2="155" y2="80" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <line x1="165" y1="110" x2="155" y2="100" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <!-- Result text -->
+            <text x="140" y="152" text-anchor="middle" font-size="12" fill="#0f172a">= 2x²</text>
+            <text x="180" y="152" text-anchor="middle" font-size="12" fill="#b45309" font-weight="600">+(3−8)x</text>
+            <text x="235" y="152" text-anchor="middle" font-size="12" fill="#0f172a">− 12</text>
+            <text x="140" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#ea580c">= 2x² − 5x − 12</text>
+          </svg>
+          <div class="diagram-label">Метод таблицы (grid method): (2x + 3)(x − 4)</div>
+        </div>
+
+        <h2 id="h-poly-div">Деление многочлена на одночлен</h2>
+        <div class="fcard" id="f-poly-div">
+          <div class="flabel">Деление на одночлен</div>
+          <div class="formula" data-tex="\dfrac{a_1 x^n + a_2 x^{n-1} + \ldots}{c x^k} = \dfrac{a_1}{c}x^{n-k} + \dfrac{a_2}{c}x^{n-1-k} + \ldots"></div>
+          <div class="fdesc">Каждый член числителя делится на одночлен-знаменатель</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Название</th><th>Степень</th><th>Пример</th></tr>
+            <tr><td>Одночлен</td><td>сумма степеней переменных</td><td><span data-tex="4x^2y^3"></span> — 5-й степени</td></tr>
+            <tr><td>Двучлен</td><td>наибольшая из слагаемых</td><td><span data-tex="x^3 - 5"></span> — 3-й степени</td></tr>
+            <tr><td>Трёхчлен</td><td>наибольшая из слагаемых</td><td><span data-tex="ax^2+bx+c"></span> — 2-й степени</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 2: Разложение на множители
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Разложение на множители</h1>
+          <p class="lead">Четыре основных метода: вынесение за скобки, группировка, ФСУ и теорема Безу.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Важно</span></div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">🔑</div>
+          <div class="kc-text">
+            <small>Алгоритм разложения</small>
+            1. Вынести общий множитель. 2. Применить ФСУ. 3. Группировка. 4. Теорема Безу (для степеней ≥ 3).
+          </div>
+        </div>
+
+        <!-- Diagram E2: Pascal's triangle -->
+        <div class="diagram">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <!-- Connecting lines first (behind numbers) -->
+            <!-- Row 0->1 -->
+            <line x1="150" y1="22" x2="130" y2="42" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="150" y1="22" x2="170" y2="42" stroke="#cbd5e1" stroke-width="1"/>
+            <!-- Row 1->2 -->
+            <line x1="130" y1="42" x2="110" y2="67" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="130" y1="42" x2="150" y2="67" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="170" y1="42" x2="150" y2="67" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="170" y1="42" x2="190" y2="67" stroke="#cbd5e1" stroke-width="1"/>
+            <!-- Row 2->3 -->
+            <line x1="110" y1="67" x2="90" y2="92" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="110" y1="67" x2="130" y2="92" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="150" y1="67" x2="130" y2="92" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="150" y1="67" x2="170" y2="92" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="190" y1="67" x2="170" y2="92" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="190" y1="67" x2="210" y2="92" stroke="#cbd5e1" stroke-width="1"/>
+            <!-- Row 3->4 -->
+            <line x1="90" y1="92" x2="70" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="90" y1="92" x2="110" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="130" y1="92" x2="110" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="130" y1="92" x2="150" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="170" y1="92" x2="150" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="170" y1="92" x2="190" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="210" y1="92" x2="190" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="210" y1="92" x2="230" y2="117" stroke="#cbd5e1" stroke-width="1"/>
+            <!-- Row 4->5 -->
+            <line x1="70" y1="117" x2="50" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="70" y1="117" x2="90" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="110" y1="117" x2="90" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="110" y1="117" x2="130" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="150" y1="117" x2="130" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="150" y1="117" x2="170" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="190" y1="117" x2="170" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="190" y1="117" x2="210" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="230" y1="117" x2="210" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <line x1="230" y1="117" x2="250" y2="142" stroke="#cbd5e1" stroke-width="1"/>
+            <!-- Row 0: 1 -->
+            <text x="150" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#ea580c">1</text>
+            <!-- Row 1: 1 1 -->
+            <text x="130" y="45" text-anchor="middle" font-size="14" font-weight="600" fill="#f97316">1</text>
+            <text x="170" y="45" text-anchor="middle" font-size="14" font-weight="600" fill="#f97316">1</text>
+            <!-- Row 2: 1 2 1 -->
+            <text x="110" y="70" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">1</text>
+            <text x="150" y="70" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">2</text>
+            <text x="190" y="70" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">1</text>
+            <!-- Row 3: 1 3 3 1 -->
+            <text x="90" y="95" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">1</text>
+            <text x="130" y="95" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">3</text>
+            <text x="170" y="95" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">3</text>
+            <text x="210" y="95" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">1</text>
+            <!-- Row 4: 1 4 6 4 1 -->
+            <text x="70" y="120" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">1</text>
+            <text x="110" y="120" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">4</text>
+            <text x="150" y="120" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">6</text>
+            <text x="190" y="120" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">4</text>
+            <text x="230" y="120" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">1</text>
+            <!-- Row 5: 1 5 10 10 5 1 -->
+            <text x="50" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">1</text>
+            <text x="90" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">5</text>
+            <text x="130" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">10</text>
+            <text x="170" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">10</text>
+            <text x="210" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">5</text>
+            <text x="250" y="145" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">1</text>
+            <!-- Labels on right -->
+            <text x="272" y="20" font-size="10" fill="#64748b">(x+y)⁰</text>
+            <text x="272" y="45" font-size="10" fill="#64748b">(x+y)¹</text>
+            <text x="272" y="70" font-size="10" fill="#64748b">(x+y)²</text>
+            <text x="272" y="95" font-size="10" fill="#64748b">(x+y)³</text>
+            <text x="272" y="120" font-size="10" fill="#64748b">(x+y)⁴</text>
+            <text x="272" y="145" font-size="10" fill="#64748b">(x+y)⁵</text>
+          </svg>
+          <div class="diagram-label">Треугольник Паскаля для коэффициентов бинома</div>
+        </div>
+
+        <!-- Diagram E3: Factorization decision flowchart -->
+        <div class="diagram">
+          <svg viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" font-family="'Inter',sans-serif">
+            <defs>
+              <marker id="arr-e3" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+                <path d="M0,0 L7,3.5 L0,7 z" fill="#64748b"/>
+              </marker>
+            </defs>
+            <!-- Box 1: Start -->
+            <rect x="20" y="10" width="220" height="42" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+            <text x="130" y="30" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">Многочлен</text>
+            <text x="130" y="46" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c">для разложения</text>
+            <!-- Arrow down -->
+            <line x1="130" y1="52" x2="130" y2="70" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-e3)"/>
+            <!-- Diamond 1: общий множитель? -->
+            <polygon points="130,72 200,95 130,118 60,95" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="130" y="92" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">Общий</text>
+            <text x="130" y="106" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">множитель?</text>
+            <!-- YES arrow right -->
+            <line x1="200" y1="95" x2="240" y2="95" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-e3)"/>
+            <text x="205" y="90" font-size="9" fill="#16a34a" font-weight="600">Да</text>
+            <!-- Box: Вынести за скобку (to the right - we'll note it inline) -->
+            <!-- NO arrow down -->
+            <line x1="130" y1="118" x2="130" y2="138" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-e3)"/>
+            <text x="135" y="132" font-size="9" fill="#64748b">Нет</text>
+            <!-- YES label box right side (floating) -->
+            <rect x="195" y="82" width="60" height="28" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+            <text x="225" y="93" text-anchor="middle" font-size="8.5" fill="#15803d">Вынести</text>
+            <text x="225" y="105" text-anchor="middle" font-size="8.5" fill="#15803d">за скобку</text>
+            <!-- Diamond 2: Группировка? -->
+            <polygon points="130,140 200,163 130,186 60,163" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="130" y="160" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">Группировка</text>
+            <text x="130" y="174" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">работает?</text>
+            <!-- YES right -->
+            <line x1="200" y1="163" x2="240" y2="163" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-e3)"/>
+            <text x="205" y="158" font-size="9" fill="#16a34a" font-weight="600">Да</text>
+            <rect x="195" y="150" width="60" height="28" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+            <text x="225" y="161" text-anchor="middle" font-size="8.5" fill="#15803d">Метод</text>
+            <text x="225" y="173" text-anchor="middle" font-size="8.5" fill="#15803d">группировки</text>
+            <!-- NO arrow down -->
+            <line x1="130" y1="186" x2="130" y2="206" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-e3)"/>
+            <text x="135" y="200" font-size="9" fill="#64748b">Нет</text>
+            <!-- Diamond 3: ФСУ? -->
+            <polygon points="130,208 200,231 130,254 60,231" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+            <text x="130" y="228" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">Узнаётся</text>
+            <text x="130" y="242" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">ФСУ?</text>
+            <!-- YES right -->
+            <line x1="200" y1="231" x2="240" y2="231" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-e3)"/>
+            <text x="205" y="226" font-size="9" fill="#16a34a" font-weight="600">Да</text>
+            <rect x="195" y="218" width="60" height="28" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+            <text x="225" y="229" text-anchor="middle" font-size="8.5" fill="#15803d">Применить</text>
+            <text x="225" y="241" text-anchor="middle" font-size="8.5" fill="#15803d">ФСУ</text>
+            <!-- NO arrow down -->
+            <line x1="130" y1="254" x2="130" y2="274" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-e3)"/>
+            <text x="135" y="268" font-size="9" fill="#64748b">Нет</text>
+            <!-- Box End: Теорема Безу -->
+            <rect x="20" y="276" width="220" height="40" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+            <text x="130" y="294" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">Теорема Безу /</text>
+            <text x="130" y="310" text-anchor="middle" font-size="11" font-weight="700" fill="#ea580c">деление углом</text>
+          </svg>
+          <div class="diagram-label">Алгоритм разложения на множители</div>
+        </div>
+
+        <h2 id="h-factor-common">Метод 1: Вынесение общего множителя</h2>
+        <div class="fcard" id="f-factor-common">
+          <div class="flabel">Вынесение за скобки</div>
+          <div class="formula" data-tex="ab + ac + ad = a(b + c + d)"></div>
+          <div class="fdesc">Найти наибольший общий множитель всех членов и вынести за скобку</div>
+        </div>
+        <p>Пример: <span data-tex="6x^3 - 4x^2 + 2x = 2x(3x^2 - 2x + 1)"></span></p>
+
+        <h2 id="h-factor-group">Метод 2: Группировка</h2>
+        <div class="fcard" id="f-grouping">
+          <div class="flabel">Метод группировки</div>
+          <div class="formula" data-tex="ac + bc + ad + bd = c(a+b) + d(a+b) = (a+b)(c+d)"></div>
+          <div class="fdesc">Разбить многочлен на группы, в каждой вынести общий множитель</div>
+        </div>
+
+        <h2 id="h-factor-fsu">Метод 3: Формулы сокращённого умножения</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Полный квадрат</div>
+            <div class="chip-formula" data-tex="a^2 \pm 2ab + b^2 = (a \pm b)^2"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Разность квадратов</div>
+            <div class="chip-formula" data-tex="a^2 - b^2 = (a+b)(a-b)"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Сумма/разность кубов</div>
+            <div class="chip-formula" data-tex="a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2)"></div>
+          </div>
+        </div>
+
+        <h2 id="h-bezout">Метод 4: Теорема Безу</h2>
+        <div class="def acc">
+          <div class="label">Теорема Безу</div>
+          <div class="text">Остаток от деления многочлена <span data-tex="P(x)"></span> на двучлен <span data-tex="(x - a)"></span> равен <span data-tex="P(a)"></span>. Если <span data-tex="P(a) = 0"></span>, то <span data-tex="(x - a)"></span> является делителем <span data-tex="P(x)"></span>.</div>
+        </div>
+
+        <div class="fcard" id="f-bezout">
+          <div class="flabel">Следствие теоремы Безу</div>
+          <div class="formula" data-tex="P(a) = 0 \;\Rightarrow\; P(x) = (x - a)\cdot Q(x)"></div>
+          <div class="fdesc">Если a — корень многочлена, то (x − a) — его множитель. Корни ищут среди делителей свободного члена.</div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>Алгоритм для ЦТ:</b> чтобы разложить <span data-tex="x^3 - 6x^2 + 11x - 6"></span>, ищем корень среди ±{1,2,3,6}. Подставляем: <span data-tex="P(1) = 1-6+11-6 = 0"></span> → делитель <span data-tex="(x-1)"></span>. Делим уголком, получаем <span data-tex="(x-1)(x^2-5x+6) = (x-1)(x-2)(x-3)"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 3: Дробно-рациональные выражения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Дробно-рациональные выражения</h1>
+          <p class="lead">ОДЗ алгебраических дробей, сокращение, сложение и умножение, сложные дроби.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Алгебраическая дробь</b> — выражение вида <span data-tex="\dfrac{P(x)}{Q(x)}"></span>, где P и Q — многочлены. <b>ОДЗ:</b> знаменатель не равен нулю: <span data-tex="Q(x) \neq 0"></span>.</div>
+        </div>
+
+        <h2 id="h-frac-reduce">Сокращение дроби</h2>
+        <div class="fcard" id="f-frac-reduce">
+          <div class="flabel">Сокращение алгебраической дроби</div>
+          <div class="formula" data-tex="\dfrac{P(x) \cdot M(x)}{Q(x) \cdot M(x)} = \dfrac{P(x)}{Q(x)}, \quad M(x) \neq 0"></div>
+          <div class="fdesc">Разложить числитель и знаменатель на множители, затем сократить общие</div>
+        </div>
+
+        <h2 id="h-frac-ops">Действия с дробями</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Умножение дробей</div>
+            <div class="chip-formula" data-tex="\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Деление дробей</div>
+            <div class="chip-formula" data-tex="\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \cdot \dfrac{d}{c} = \dfrac{ad}{bc}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Сложение с общим знаменателем</div>
+            <div class="chip-formula" data-tex="\dfrac{a}{c} + \dfrac{b}{c} = \dfrac{a+b}{c}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Сложение с разными знаменателями</div>
+            <div class="chip-formula" data-tex="\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + bc}{bd}"></div>
+          </div>
+        </div>
+
+        <h2 id="h-complex-frac">Сложные дроби</h2>
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Сложная дробь</b> — дробь, числитель или знаменатель которой содержит дроби. Способ упрощения: умножить числитель и знаменатель на <b>НОК всех вложенных знаменателей</b>.</div>
+        </div>
+        <p>Пример: <span data-tex="\dfrac{\frac{1}{x} - \frac{1}{y}}{\frac{1}{x} + \frac{1}{y}} = \dfrac{\frac{y-x}{xy}}{\frac{y+x}{xy}} = \dfrac{y-x}{y+x}"></span></p>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>ОДЗ алгебраической дроби</b> нужно <b>указывать в ответе</b>! При сокращении <span data-tex="\dfrac{x^2-4}{x-2} = x+2"></span> не забыть: <span data-tex="x \neq 2"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 4: Степенные выражения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Степенные выражения</h1>
+          <p class="lead">Преобразование выражений с дробными и отрицательными показателями степени.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">Важно</span></div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Отрицательный показатель</div>
+            <div class="chip-formula" data-tex="a^{-n} = \dfrac{1}{a^n}"></div>
+            <div class="chip-desc">a ≠ 0</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Дробный показатель</div>
+            <div class="chip-formula" data-tex="a^{\frac{p}{q}} = \sqrt[q]{a^p}"></div>
+            <div class="chip-desc">a ≥ 0, q ∈ ℕ</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Произведение степеней</div>
+            <div class="chip-formula" data-tex="a^m \cdot a^n = a^{m+n}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Степень степени</div>
+            <div class="chip-formula" data-tex="(a^m)^n = a^{mn}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Перенос из числителя в знаменатель</div>
+            <div class="chip-formula" data-tex="\dfrac{a^m}{a^n} = a^{m-n}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Степень произведения</div>
+            <div class="chip-formula" data-tex="(ab)^n = a^n b^n"></div>
+          </div>
+        </div>
+
+        <h2 id="h-power-transform">Типичные преобразования</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Приведение к одному основанию</h4>
+            <p><span data-tex="8^x = (2^3)^x = 2^{3x}"></span></p>
+            <p><span data-tex="0{,}25^x = \left(\dfrac{1}{4}\right)^x = 4^{-x}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Вынесение степени за скобку</h4>
+            <p><span data-tex="a^{n+2} + a^n = a^n(a^2 + 1)"></span></p>
+            <p><span data-tex="2^{x+1} - 2^x = 2^x(2 - 1) = 2^x"></span></p>
+          </div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>ЦТ-приём:</b> замена переменной при степенных уравнениях. Если <span data-tex="4^x + 4^x + 4^x + 4^x = 4^{20}"></span>, то <span data-tex="4 \cdot 4^x = 4^{20}"></span>, значит <span data-tex="4^{x+1} = 4^{20}"></span>, откуда <span data-tex="x = 19"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 5: Иррациональные выражения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Иррациональные выражения</h1>
+          <p class="lead">ОДЗ, упрощение выражений с корнями, освобождение от иррациональности в знаменателе.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag green">ОДЗ важна</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">ОДЗ иррационального выражения</div>
+          <div class="text">Для <span data-tex="\sqrt[n]{f(x)}"></span>: если <span data-tex="n"></span> чётное — требуется <span data-tex="f(x) \geq 0"></span>; если <span data-tex="n"></span> нечётное — ограничений нет. ОДЗ всего выражения — пересечение ОДЗ всех его частей.</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Корень произведения</div>
+            <div class="chip-formula" data-tex="\sqrt[n]{ab} = \sqrt[n]{a}\cdot\sqrt[n]{b}"></div>
+            <div class="chip-desc">при чётном n: a,b ≥ 0</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Корень частного</div>
+            <div class="chip-formula" data-tex="\sqrt[n]{\dfrac{a}{b}} = \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}"></div>
+            <div class="chip-desc">b ≠ 0; при чётном n: a,b ≥ 0</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Вложенные корни</div>
+            <div class="chip-formula" data-tex="\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Переход к дробной степени</div>
+            <div class="chip-formula" data-tex="\sqrt[n]{a^m} = a^{\frac{m}{n}}"></div>
+          </div>
+        </div>
+
+        <h2 id="h-rationalize">Освобождение от иррациональности в знаменателе</h2>
+        <div class="fcard" id="f-rat-denom">
+          <div class="flabel">Рационализация знаменателя</div>
+          <div class="formula" data-tex="\dfrac{c}{\sqrt{a} \pm \sqrt{b}} = \dfrac{c(\sqrt{a} \mp \sqrt{b})}{a - b}"></div>
+          <div class="fdesc">Умножить числитель и знаменатель на сопряжённое выражение</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Разложение двойного корня:</b> если <span data-tex="a + b + 2\sqrt{ab} = (\sqrt{a} + \sqrt{b})^2"></span>, то <span data-tex="\sqrt{a+b+2\sqrt{ab}} = \sqrt{a}+\sqrt{b}"></span> (при <span data-tex="a,b \geq 0"></span>). Это помогает упрощать выражения вида <span data-tex="\sqrt{3+2\sqrt{2}} = \sqrt{2}+1"></span>.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>При сокращении иррациональных выражений всегда проверяй ОДЗ. Нельзя делить на <span data-tex="\sqrt{x}-2"></span> без условия <span data-tex="x \neq 4"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION s_tasks: Разбор задач
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор типовых задач ЦТ</h1>
+          <p class="lead">Задачи на упрощение, разложение и преобразование алгебраических выражений.</p>
+          <div class="tags"><span class="tag acc">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Разложите на множители: <span data-tex="x^3 - 3x^2 - x + 3"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Группируем: <span data-tex="(x^3 - 3x^2) + (-x + 3)"></span></div>
+            <div class="step"><div class="stepn">2</div>Выносим общие множители: <span data-tex="x^2(x - 3) - 1(x - 3)"></span></div>
+            <div class="step"><div class="stepn">3</div>Выносим общий двучлен: <span data-tex="(x - 3)(x^2 - 1)"></span></div>
+            <div class="step"><div class="stepn">4</div>Продолжаем разложение: <span data-tex="(x-3)(x-1)(x+1)"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="(x-3)(x-1)(x+1)"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Упростите: <span data-tex="\dfrac{x^2 - 9}{x^2 + 5x + 6}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Числитель: <span data-tex="x^2 - 9 = (x-3)(x+3)"></span></div>
+            <div class="step"><div class="stepn">2</div>Знаменатель разложим по формуле или теоремой Виета: <span data-tex="x^2 + 5x + 6 = (x+2)(x+3)"></span></div>
+            <div class="step"><div class="stepn">3</div>Сокращаем <span data-tex="(x+3)"></span>: <span data-tex="\dfrac{(x-3)(x+3)}{(x+2)(x+3)} = \dfrac{x-3}{x+2}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\dfrac{x-3}{x+2},\quad x \neq -3,\; x \neq -2"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Упростите: <span data-tex="\dfrac{\sqrt{x} - 1}{\sqrt{x} + 1} + \dfrac{\sqrt{x} + 1}{\sqrt{x} - 1}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Приводим к общему знаменателю <span data-tex="(\sqrt{x}+1)(\sqrt{x}-1) = x - 1"></span></div>
+            <div class="step"><div class="stepn">2</div>Числитель: <span data-tex="(\sqrt{x}-1)^2 + (\sqrt{x}+1)^2 = (x - 2\sqrt{x}+1) + (x + 2\sqrt{x}+1) = 2x+2"></span></div>
+            <div class="step"><div class="stepn">3</div>Итог: <span data-tex="\dfrac{2x+2}{x-1} = \dfrac{2(x+1)}{x-1}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\dfrac{2(x+1)}{x-1}"></span>, ОДЗ: <span data-tex="x \geq 0,\; x \neq 1"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Упростите: <span data-tex="\left(\dfrac{x^{\frac{1}{2}} - y^{\frac{1}{2}}}{x^{\frac{1}{2}} + y^{\frac{1}{2}}} - \dfrac{x^{\frac{1}{2}} + y^{\frac{1}{2}}}{x^{\frac{1}{2}} - y^{\frac{1}{2}}}\right) \cdot \dfrac{x - y}{4\sqrt{xy}}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Обозначим <span data-tex="a = x^{1/2},\; b = y^{1/2}"></span>. Первая скобка: <span data-tex="\dfrac{(a-b)^2 - (a+b)^2}{(a+b)(a-b)}"></span></div>
+            <div class="step"><div class="stepn">2</div>Числитель разности: <span data-tex="(a^2 - 2ab + b^2) - (a^2+2ab+b^2) = -4ab"></span></div>
+            <div class="step"><div class="stepn">3</div>Знаменатель: <span data-tex="a^2 - b^2 = x - y"></span>. Итак, скобка = <span data-tex="\dfrac{-4ab}{x-y} = \dfrac{-4\sqrt{xy}}{x-y}"></span></div>
+            <div class="step"><div class="stepn">4</div>Умножаем на <span data-tex="\dfrac{x-y}{4\sqrt{xy}}"></span>: результат <span data-tex="-1"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="-1"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION s_check: Чек-лист к ЦТ
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Ключевые навыки и формулы раздела «Алгебраические выражения».</p>
+        </div>
+
+        <div class="summary">
+          <h4>Многочлены</h4>
+          <ul>
+            <li>Складывать и умножать многочлены (подобные члены)</li>
+            <li>Делить многочлен на одночлен</li>
+            <li>Знать определение степени многочлена</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Разложение на множители</h4>
+          <ul>
+            <li>Вынесение общего множителя за скобку</li>
+            <li>Метод группировки</li>
+            <li>Применение всех 7 ФСУ в обе стороны</li>
+            <li>Теорема Безу: <span data-tex="P(a)=0 \Rightarrow (x-a) \mid P(x)"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Дробно-рациональные выражения</h4>
+          <ul>
+            <li>Находить ОДЗ (знаменатель ≠ 0)</li>
+            <li>Сокращать дроби (разложить числитель и знаменатель)</li>
+            <li>Складывать дроби с разными знаменателями</li>
+            <li>Упрощать сложные дроби</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Иррациональные выражения</h4>
+          <ul>
+            <li>ОДЗ: подкоренное выражение ≥ 0 (для чётного корня)</li>
+            <li>Рационализация знаменателя: умножить на сопряжённое</li>
+            <li><span data-tex="\sqrt{a^2} = |a|"></span> — всегда с модулем!</li>
+          </ul>
+        </div>
+
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>При сокращении дроби забывать указывать ОДЗ для сокращённых множителей.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Раскладывать <span data-tex="a^2 + b^2"></span> на линейные множители (это невозможно в ℝ!).</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="01_chisla.html">← Числа</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">03 Уравнения</div>
+            <div class="tp-desc">Линейные, квадратные, иррациональные, с модулями, системы</div>
+          </div>
+          <a class="tp-btn" href="03_uravneniya.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- Floating reference panel -->
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list"></div>
+</div>
+
+<!-- Search palette -->
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

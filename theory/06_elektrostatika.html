@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Электростатика — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t06">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">⚡</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Электростатика</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 06</span>
+      <h2>Электростатика</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Поле и заряд</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">⚡</span>Электрический заряд</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">📏</span>Закон Кулона</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">📊</span>Напряжённость поля</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">🎯</span>Поля типичных зарядов</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">➕</span>Принцип суперпозиции</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Энергия и потенциал</div>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">💡</span>Потенциал. Работа поля</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">🔌</span>Связь E и U</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">🔋</span>Энергия зарядов</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Конденсаторы</div>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">💾</span>Электроёмкость</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">🔗</span>Соединения конденсаторов</button>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">📦</span>Проводники и диэлектрики</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">⚡</span>Движение заряда в поле</button>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s13"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1 ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Электрический заряд</h1>
+          <p class="lead">Электрический заряд — фундаментальная характеристика частиц. Бывает положительный и отрицательный.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Свойства заряда</div>
+          <div class="text">
+          <b>1. Дискретность.</b> Заряд квантован: q = N·e, где e — элементарный заряд.<br>
+          <b>2. Сохранение.</b> В замкнутой системе алгебраическая сумма зарядов сохраняется.<br>
+          <b>3. Инвариантность.</b> Заряд тела не зависит от системы отсчёта.
+          </div>
+        </div>
+
+        <div class="fcard" id="f-e">
+          <div class="flabel">Элементарный заряд</div>
+          <div class="formula" data-tex="e \approx 1{,}6 \cdot 10^{-19}\;\text{Кл}"></div>
+          <div class="fdesc">Заряд электрона = −e, протона = +e</div>
+        </div>
+
+        <div class="fcard" id="f-q">
+          <div class="flabel">Заряд тела</div>
+          <div class="formula" data-tex="q = N\,e"></div>
+          <div class="fdesc">N — целое число (число избыточных или недостающих электронов)</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Закон сохранения заряда</div>
+          <div class="text">В замкнутой (изолированной) системе тел алгебраическая сумма зарядов остаётся неизменной: <span data-tex="\sum q_i = const"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S2: Кулон ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Закон Кулона</h1>
+          <p class="lead">Сила взаимодействия двух точечных зарядов прямо пропорциональна их зарядам и обратно пропорциональна квадрату расстояния.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ База</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Закон Кулона</div>
+          <div class="text">Сила взаимодействия двух неподвижных точечных зарядов в вакууме (или в однородном диэлектрике) прямо пропорциональна произведению их модулей и обратно пропорциональна квадрату расстояния между ними. Направлена вдоль прямой, соединяющей заряды.</div>
+        </div>
+
+        <div class="fcard" id="f-coulomb">
+          <div class="flabel">Закон Кулона</div>
+          <div class="formula" data-tex="F = k\,\dfrac{|q_1|\cdot|q_2|}{\varepsilon\,r^2}"></div>
+          <div class="fdesc">k ≈ 9·10⁹ Н·м²/Кл² — коэффициент Кулона; ε — диэлектрическая проницаемость среды; r — расстояние между зарядами</div>
+          <div class="fcard-when"><strong>Применять:</strong> когда заряды — точечные (или шары с зарядом) и известно расстояние. Для системы зарядов — использовать принцип суперпозиции</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Через ε₀</div>
+          <div class="formula" data-tex="k = \dfrac{1}{4\pi\varepsilon_0}, \qquad \varepsilon_0 \approx 8{,}85\cdot10^{-12}\;\text{Ф/м}"></div>
+          <div class="fdesc">ε₀ — электрическая постоянная</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>В законе Кулона ε — диэлектрическая проницаемость <b>среды</b>, а не самого тела. Для воздуха и вакуума ε = 1. Для воды ε ≈ 81 — поэтому в воде взаимодействие зарядов в 81 раз слабее.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Среда</th><th>ε</th></tr>
+            <tr><td>Вакуум, воздух</td><td>1 (≈1)</td></tr>
+            <tr><td>Парафин</td><td>2</td></tr>
+            <tr><td>Стекло</td><td>5–10</td></tr>
+            <tr><td>Вода</td><td>≈81</td></tr>
+            <tr><td>Сегнетова соль</td><td>~10⁴</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ S3: Напряжённость ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Напряжённость электрического поля</h1>
+          <p class="lead">Напряжённость — векторная характеристика поля, показывающая силу, действующую на единичный пробный заряд.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Напряжённость электрического поля E</b> в данной точке — векторная величина, равная отношению силы, действующей на пробный заряд, к величине этого заряда.</div>
+        </div>
+
+        <div class="fcard" id="f-E-def">
+          <div class="flabel">Определение напряжённости</div>
+          <div class="formula" data-tex="\vec{E} = \dfrac{\vec{F}}{q}"></div>
+          <div class="fdesc">Единица: <b>1 В/м = 1 Н/Кл</b></div>
+        </div>
+
+        <div class="fcard" id="f-Fe">
+          <div class="flabel">Сила, действующая на заряд в поле</div>
+          <div class="formula" data-tex="\vec{F} = q\vec{E}"></div>
+          <div class="fdesc">Если q &gt; 0 — сила направлена по полю; q &lt; 0 — против поля</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Линии напряжённости начинаются на положительных зарядах и заканчиваются на отрицательных. Густота линий пропорциональна модулю напряжённости.</div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Поля типичных зарядов ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Поля типичных конфигураций</h1>
+          <p class="lead">Формулы для напряжённости и потенциала самых частых задач: точечный заряд, шар, плоскость, конденсатор.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <h2 id="h-point">Поле точечного заряда</h2>
+        <div class="grid-2">
+          <div class="fcard" id="f-Epoint">
+            <div class="flabel">Напряжённость</div>
+            <div class="formula" data-tex="E = k\,\dfrac{|Q|}{\varepsilon\,r^2}"></div>
+            <div class="fdesc">r — расстояние от заряда до точки</div>
+          </div>
+          <div class="fcard" id="f-phi-point">
+            <div class="flabel">Потенциал</div>
+            <div class="formula" data-tex="\varphi = k\,\dfrac{Q}{\varepsilon\,r}"></div>
+            <div class="fdesc">Потенциал на бесконечности принят за 0</div>
+          </div>
+        </div>
+
+        <h2 id="h-sphere">Поле заряженной сферы (шара)</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Снаружи (r ≥ R)</h4>
+            <p>Так же, как от точечного заряда в центре:</p>
+            <p><span data-tex="E = k\dfrac{|Q|}{\varepsilon r^2}, \quad \varphi = k\dfrac{Q}{\varepsilon r}"></span></p>
+          </div>
+          <div class="card accent">
+            <h4>Внутри (r &lt; R)</h4>
+            <p><span data-tex="E_{внутри} = 0"></span> (по теореме Гаусса)</p>
+            <p><span data-tex="\varphi_{внутри} = k\dfrac{Q}{\varepsilon R}"></span> (постоянен)</p>
+          </div>
+        </div>
+
+        <h2 id="h-plane">Поле бесконечной заряженной плоскости</h2>
+        <div class="fcard" id="f-sigma">
+          <div class="flabel">Поверхностная плотность заряда</div>
+          <div class="formula" data-tex="\sigma = \dfrac{q}{S}"></div>
+          <div class="fdesc">q — заряд на поверхности, S — площадь. Единица: Кл/м²</div>
+        </div>
+
+        <div class="fcard" id="f-Eplane">
+          <div class="flabel">Поле плоскости</div>
+          <div class="formula" data-tex="E = \dfrac{\sigma}{2\varepsilon_0\varepsilon}"></div>
+          <div class="fdesc">Поле <b>однородно</b> и не зависит от расстояния до плоскости</div>
+        </div>
+
+        <h2 id="h-cap">Поле плоского конденсатора</h2>
+        <div class="fcard" id="f-Ecap">
+          <div class="flabel">Поле плоского конденсатора</div>
+          <div class="formula" data-tex="E = \dfrac{\sigma}{\varepsilon_0\varepsilon} = \dfrac{U}{d}"></div>
+          <div class="fdesc">d — расстояние между обкладками. В 2 раза больше, чем у одной плоскости (поля двух плоскостей складываются)</div>
+        </div>
+      </section>
+
+      <!-- ════ S5: Суперпозиция ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Принцип суперпозиции</h1>
+          <p class="lead">Если поле создано несколькими зарядами, напряжённости складываются векторно.</p>
+        </div>
+
+        <div class="fcard" id="f-super">
+          <div class="flabel">Принцип суперпозиции</div>
+          <div class="formula" data-tex="\vec{E} = \vec{E}_1 + \vec{E}_2 + \ldots"></div>
+          <div class="fdesc">Векторная сумма! Потенциалы складываются <b>скалярно</b>: <span data-tex="\varphi = \varphi_1 + \varphi_2 + \ldots"></span></div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Алгоритм: 1) Находим E от каждого заряда отдельно. 2) Раскладываем по осям. 3) Складываем проекции. 4) Находим модуль и направление.</div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Потенциал ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Потенциал. Работа электрического поля</h1>
+          <p class="lead">Потенциал — энергетическая характеристика поля.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">Потенциал</div>
+          <div class="text"><b>Потенциал φ</b> в точке поля — отношение потенциальной энергии заряда в этой точке к величине заряда. Численно равен энергии, которой обладал бы единичный пробный заряд.</div>
+        </div>
+
+        <div class="fcard" id="f-phi-def">
+          <div class="flabel">Потенциал</div>
+          <div class="formula" data-tex="\varphi = \dfrac{W}{q}"></div>
+          <div class="fdesc">Единица: <b>1 В = 1 Дж/Кл</b></div>
+        </div>
+
+        <div class="fcard" id="f-W">
+          <div class="flabel">Энергия заряда в поле</div>
+          <div class="formula" data-tex="W = q\varphi"></div>
+        </div>
+
+        <div class="fcard" id="f-A-elec">
+          <div class="flabel">Работа поля над зарядом</div>
+          <div class="formula" data-tex="A = q\,(\varphi_1 - \varphi_2) = q\,U_{12}"></div>
+          <div class="fdesc">U₁₂ = φ₁ − φ₂ — разность потенциалов (напряжение) между точками 1 и 2. Не зависит от пути!</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Работа электрического поля <b>не зависит от траектории</b> — только от начального и конечного потенциалов. Электростатическая сила — консервативная.</div>
+        </div>
+      </section>
+
+      <!-- ════ S7: Связь E и U ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Связь напряжённости и потенциала</h1>
+          <p class="lead">Для однородного поля разность потенциалов = напряжённость × расстояние.</p>
+        </div>
+
+        <div class="fcard" id="f-Ed">
+          <div class="flabel">Связь E и U в однородном поле</div>
+          <div class="formula" data-tex="U = E\cdot d"></div>
+          <div class="fdesc">d — расстояние между двумя точками вдоль силовой линии</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Общая связь (для однородного поля)</div>
+          <div class="formula" data-tex="\varphi_1 - \varphi_2 = E_x\,(x_2 - x_1)"></div>
+          <div class="fdesc">Направление вектора E — от высокого потенциала к низкому</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Поверхность, во всех точках которой потенциал одинаков, называется <b>эквипотенциальной</b>. Силовые линии всегда перпендикулярны эквипотенциальным поверхностям.</div>
+        </div>
+      </section>
+
+      <!-- ════ S8: Энергия зарядов ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Энергия системы зарядов</h1>
+        </div>
+
+        <div class="fcard" id="f-W2">
+          <div class="flabel">Энергия двух зарядов</div>
+          <div class="formula" data-tex="W_{12} = k\,\dfrac{q_1 q_2}{\varepsilon\,r_{12}}"></div>
+          <div class="fdesc">При q₁q₂ &gt; 0 — энергия положительная (отталкивание), при q₁q₂ &lt; 0 — отрицательная (притяжение)</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Энергия трёх зарядов</div>
+          <div class="formula" data-tex="W = k\dfrac{q_1q_2}{r_{12}} + k\dfrac{q_1q_3}{r_{13}} + k\dfrac{q_2q_3}{r_{23}}"></div>
+          <div class="fdesc">Сумма парных энергий взаимодействия</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Энергия системы зарядов = работа, которую нужно совершить, чтобы собрать систему из «бесконечно удалённых» зарядов.</div>
+        </div>
+      </section>
+
+      <!-- ════ S9: Электроёмкость ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Электроёмкость. Конденсаторы</h1>
+          <p class="lead">Электроёмкость — способность тела накапливать заряд при заданном потенциале.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Электроёмкость уединённого проводника</div>
+          <div class="text"><b>Электроёмкость C</b> — отношение заряда уединённого проводника к его потенциалу.</div>
+        </div>
+
+        <div class="fcard" id="f-C">
+          <div class="flabel">Электроёмкость</div>
+          <div class="formula" data-tex="C = \dfrac{q}{\varphi}"></div>
+          <div class="fdesc">Единица: <b>1 Ф (фарад) = 1 Кл/В</b>. На практике используют мкФ, нФ, пФ.</div>
+        </div>
+
+        <h2 id="h-cap-def">Конденсатор</h2>
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Конденсатор</b> — два проводника (обкладки), разделённых диэлектриком. Накапливает электрический заряд и энергию.</div>
+        </div>
+
+        <div class="fcard" id="f-Ccap">
+          <div class="flabel">Электроёмкость конденсатора</div>
+          <div class="formula" data-tex="C = \dfrac{q}{U}"></div>
+          <div class="fdesc">q — заряд одной обкладки, U = φ₁ − φ₂ — напряжение между обкладками</div>
+        </div>
+
+        <div class="fcard" id="f-Cpar">
+          <div class="flabel">Плоский конденсатор</div>
+          <div class="formula" data-tex="C = \dfrac{\varepsilon_0\,\varepsilon\,S}{d}"></div>
+          <div class="fdesc">S — площадь обкладки, d — расстояние между обкладками, ε — диэлектрическая проницаемость диэлектрика</div>
+        </div>
+
+        <div class="fcard" id="f-Wcap">
+          <div class="flabel">Энергия конденсатора</div>
+          <div class="formula" data-tex="W = \dfrac{C U^2}{2} = \dfrac{q^2}{2C} = \dfrac{q U}{2}"></div>
+          <div class="fdesc">Три эквивалентные записи. Используй ту, где известны нужные величины.</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: Соединения конденсаторов ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Соединения конденсаторов</h1>
+          <p class="lead">Параллельно — складываются ёмкости. Последовательно — складываются обратные.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card accent">
+            <h4>Параллельное</h4>
+            <p>Все конденсаторы под одним напряжением.</p>
+            <p><span data-tex="C_{общ} = C_1 + C_2 + \ldots"></span></p>
+            <p>U<sub>общ</sub> = U₁ = U₂; q<sub>общ</sub> = q₁ + q₂</p>
+          </div>
+          <div class="card accent">
+            <h4>Последовательное</h4>
+            <p>Все конденсаторы имеют одинаковый заряд.</p>
+            <p><span data-tex="\dfrac{1}{C_{общ}} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \ldots"></span></p>
+            <p>U<sub>общ</sub> = U₁ + U₂; q<sub>общ</sub> = q₁ = q₂</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4>Два конденсатора последовательно</h4>
+          <p><span data-tex="C_{общ} = \dfrac{C_1 C_2}{C_1 + C_2}"></span></p>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Сравни с резисторами: <b>конденсаторы соединяются «наоборот»</b> по сравнению с резисторами. Параллельно — суммируется, последовательно — обратные суммируются.</div>
+        </div>
+      </section>
+
+      <!-- ════ S11: Проводники и диэлектрики ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>11. Проводники и диэлектрики в поле</h1>
+        </div>
+
+        <h2 id="h-cond">Проводник в поле</h2>
+        <div class="def">
+          <div class="label">Свойства проводника в электростатическом поле</div>
+          <div class="text">
+          <b>1.</b> Поле внутри проводника = 0 (E<sub>внутри</sub> = 0).<br>
+          <b>2.</b> Все точки проводника имеют одинаковый потенциал (проводник <b>эквипотенциален</b>).<br>
+          <b>3.</b> Заряды распределены тонким слоем по поверхности.<br>
+          <b>4.</b> Силовые линии входят и выходят перпендикулярно поверхности.
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Электростатическая защита:</b> внутри замкнутой проводящей оболочки поле от внешних зарядов отсутствует. Этим пользуются для защиты приборов от внешних полей.</div>
+        </div>
+
+        <h2 id="h-die">Диэлектрик в поле</h2>
+        <p>Поле в диэлектрике <b>ослабляется</b> в ε раз по сравнению с вакуумом. ε — диэлектрическая проницаемость.</p>
+        <div class="fcard">
+          <div class="flabel">Поле внутри диэлектрика</div>
+          <div class="formula" data-tex="E = \dfrac{E_0}{\varepsilon}"></div>
+          <div class="fdesc">E₀ — поле без диэлектрика, E — с диэлектриком</div>
+        </div>
+      </section>
+
+      <!-- ════ S12: Разбор задач ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head">
+          <h1>★ Разбор задач</h1>
+          <p class="lead">Типичные задачи ЦТ: закон Кулона, поле, потенциал, конденсаторы, движение заряда в поле.</p>
+        </div>
+
+        <!-- ── Движение заряда в поле ── -->
+        <h2 id="h-charge-motion">Движение заряда в однородном электрическом поле</h2>
+
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Аналогия с баллистикой</small>
+            Заряд в электрическом поле — это <b>аналог тела в гравитационном поле</b>. Все формулы кинематики применяются! Ускорение: <span data-tex="a = \dfrac{qE}{m}"></span>
+          </div>
+        </div>
+
+        <div class="fcard hero" id="f-charge-a">
+          <div class="flabel">Ускорение заряда в поле</div>
+          <div class="formula" data-tex="a = \dfrac{qE}{m} = \dfrac{qU}{md}"></div>
+          <div class="fdesc">q — заряд, E — напряжённость поля, m — масса частицы. Направление: по полю для +q, против — для −q</div>
+          <div class="fcard-when"><strong>Применять:</strong> всегда как первый шаг — найти ускорение, затем применять формулы кинематики</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card accent">
+            <h4>⬆ Движение вдоль поля (как свободное падение)</h4>
+            <p>Ускорение вдоль направления E. Это равноускоренное движение:</p>
+            <p><span data-tex="v = v_0 + at"></span></p>
+            <p><span data-tex="s = v_0 t + \dfrac{at^2}{2}"></span></p>
+            <p>Применимо к ускоряющим электронным пушкам, заряженным шарам и т.д.</p>
+          </div>
+          <div class="card">
+            <h4>➡ Движение поперёк поля (как горизонтальный бросок)</h4>
+            <p>По X — равномерное, по Y (вдоль E) — равноускоренное с a = qE/m:</p>
+            <p><span data-tex="x = v_0 t"></span></p>
+            <p><span data-tex="y = \dfrac{at^2}{2} = \dfrac{qE}{m}\cdot\dfrac{t^2}{2}"></span></p>
+            <p>Применимо к электронно-лучевой трубке, отклонению в конденсаторе.</p>
+          </div>
+        </div>
+
+        <div class="method-card">
+          <div class="mc-head">
+            <div class="mc-icon">🔧</div>
+            <div class="mc-title">Алгоритм: движение заряда в поле конденсатора</div>
+          </div>
+          <ol class="mc-steps">
+            <li><strong>Найти ускорение:</strong> <span data-tex="a = qE/m = qU/(md)"></span>. Направление — по E для положительного заряда.</li>
+            <li><strong>Выбрать оси:</strong> ось X — вдоль скорости влёта, ось Y — вдоль поля.</li>
+            <li><strong>По X — равномерно:</strong> <span data-tex="x = v_0 t \Rightarrow t = l/v_0"></span> (l — длина конденсатора).</li>
+            <li><strong>По Y — равноускоренно:</strong> <span data-tex="y = at^2/2"></span> — отклонение внутри конденсатора.</li>
+            <li><strong>Скорость на выходе:</strong> <span data-tex="v_y = at"></span>, итоговая <span data-tex="v = \sqrt{v_0^2 + v_y^2}"></span>.</li>
+            <li><strong>Убедиться, что заряд не попал на обкладку:</strong> y &lt; d/2.</li>
+          </ol>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача ЦТ-уровень <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Электрон (<span data-tex="m = 9{,}1\cdot10^{-31}\text{ кг}"></span>, <span data-tex="q = 1{,}6\cdot10^{-19}\text{ Кл}"></span>) влетает горизонтально в конденсатор со скоростью <span data-tex="v_0 = 2\cdot10^7\text{ м/с}"></span>. Напряжённость поля <span data-tex="E = 10^4\text{ В/м}"></span>, длина конденсатора <span data-tex="l = 5\text{ см}"></span>. Найти отклонение электрона.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Ускорение: <span data-tex="a = \dfrac{qE}{m} = \dfrac{1{,}6\cdot10^{-19}\cdot10^4}{9{,}1\cdot10^{-31}} \approx 1{,}76\cdot10^{15}\text{ м/с}^2"></span></div>
+            <div class="step"><div class="stepn">2</div>Время пролёта через конденсатор: <span data-tex="t = \dfrac{l}{v_0} = \dfrac{0{,}05}{2\cdot10^7} = 2{,}5\cdot10^{-9}\text{ с}"></span></div>
+            <div class="step"><div class="stepn">3</div>Отклонение по Y: <span data-tex="y = \dfrac{at^2}{2} = \dfrac{1{,}76\cdot10^{15}\cdot(2{,}5\cdot10^{-9})^2}{2} \approx 5{,}5\text{ мм}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="y \approx 5{,}5\text{ мм}"></span></div>
+        </div>
+
+        <hr class="fml-divider">
+        <h2 id="h-classic-tasks">Классические задачи</h2>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Два точечных заряда <span data-tex="q_1 = +5\cdot10^{-6}\text{ Кл}"></span> и <span data-tex="q_2 = -2\cdot10^{-6}\text{ Кл}"></span> находятся на расстоянии <span data-tex="r = 10\text{ см}"></span> друг от друга. Найти силу взаимодействия.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="F = k\dfrac{|q_1 q_2|}{r^2} = \dfrac{9\cdot10^9\cdot5\cdot10^{-6}\cdot2\cdot10^{-6}}{(0{,}1)^2}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="F = \dfrac{9\cdot10^9\cdot10\cdot10^{-12}}{0{,}01} = \dfrac{90\cdot10^{-3}}{0{,}01} = 9\text{ Н}"></span> (притяжение)</div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="F = 9\text{ Н}"></span> (заряды притягиваются)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Какова напряжённость поля точечного заряда <span data-tex="Q = 10\text{ нКл}"></span> на расстоянии <span data-tex="r = 3\text{ см}"></span> от него? (в воздухе)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="E = k\dfrac{|Q|}{r^2} = \dfrac{9\cdot10^9\cdot10\cdot10^{-9}}{(0{,}03)^2}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="E = \dfrac{90}{0{,}0009} = 10^5\text{ В/м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="E = 10^5\text{ В/м}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Заряд <span data-tex="q = 2\text{ нКл}"></span> переместили из точки с потенциалом <span data-tex="\varphi_1 = 100\text{ В}"></span> в точку с потенциалом <span data-tex="\varphi_2 = 20\text{ В}"></span>. Какую работу совершило поле?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="A = q(\varphi_1 - \varphi_2) = 2\cdot10^{-9}\cdot(100 - 20) = 2\cdot10^{-9}\cdot80"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="A = 1{,}6\cdot10^{-7}\text{ Дж} = 0{,}16\text{ мкДж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="A = 1{,}6\cdot10^{-7}\text{ Дж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Плоский конденсатор имеет ёмкость <span data-tex="C = 50\text{ пФ}"></span>. Его подключили к источнику <span data-tex="U = 200\text{ В}"></span>. Найти заряд и энергию конденсатора.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="q = CU = 50\cdot10^{-12}\cdot200 = 10^{-8}\text{ Кл} = 10\text{ нКл}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="W = \dfrac{CU^2}{2} = \dfrac{50\cdot10^{-12}\cdot40\,000}{2} = 10^{-6}\text{ Дж} = 1\text{ мкДж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="q = 10\text{ нКл}"></span>, <span data-tex="W = 1\text{ мкДж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Два конденсатора ёмкостью <span data-tex="C_1 = 2\text{ мкФ}"></span> и <span data-tex="C_2 = 3\text{ мкФ}"></span> соединены последовательно. Найти общую ёмкость.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="C = \dfrac{C_1 C_2}{C_1 + C_2} = \dfrac{2\cdot3}{2+3} = \dfrac{6}{5} = 1{,}2\text{ мкФ}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="C = 1{,}2\text{ мкФ}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Между обкладками плоского конденсатора напряжение <span data-tex="U = 500\text{ В}"></span>, расстояние между обкладками <span data-tex="d = 5\text{ мм}"></span>. Найти напряжённость поля.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="E = \dfrac{U}{d} = \dfrac{500}{0{,}005} = 100\,000\text{ В/м} = 100\text{ кВ/м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="E = 100\text{ кВ/м}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S13: Чек-лист ════ -->
+      <section class="sec" id="s13">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+        <h2 id="h-must">Формулы наизусть</h2>
+        <ul>
+          <li>Закон Кулона: <span data-tex="F = k|q_1 q_2|/(\varepsilon r^2)"></span></li>
+          <li>Поле точечного заряда: <span data-tex="E = k|Q|/(\varepsilon r^2)"></span></li>
+          <li>Потенциал точечного заряда: <span data-tex="\varphi = kQ/(\varepsilon r)"></span></li>
+          <li>Сила в поле: F = qE</li>
+          <li>Работа поля: A = q(φ₁ − φ₂)</li>
+          <li>U = E·d (для однородного поля)</li>
+          <li>Поле плоского конденсатора: E = U/d</li>
+          <li>Энергия двух зарядов: <span data-tex="W = kq_1q_2/(\varepsilon r)"></span></li>
+          <li>Электроёмкость: C = q/U</li>
+          <li>Плоский конденсатор: <span data-tex="C = \varepsilon_0\varepsilon S/d"></span></li>
+          <li>Энергия конденсатора: <span data-tex="W = CU^2/2"></span></li>
+          <li>Параллельно: C = C₁ + C₂; Последовательно: 1/C = 1/C₁ + 1/C₂</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Складывать напряжённости как скаляры. Только векторно!</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Забывать про ε среды в законе Кулона.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать, что внутри проводника есть поле — нет, E<sub>внутри</sub> = 0.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать формулу плоского конденсатора и одной плоскости (отличаются в 2 раза).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Брать заряд тела вместо <b>модуля</b> заряда в формуле силы.</div></div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">07 Электрический ток</div>
+            <div class="tp-desc">Закон Ома, мощность, ЭДС, КПД</div>
+          </div>
+          <a class="tp-btn" href="07_elektricheskij_tok.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы электростатики</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-e"><div class="ri-name">Элементарный заряд</div><div class="ri-formula">e ≈ 1,6·10⁻¹⁹ Кл</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-coulomb"><div class="ri-name">Закон Кулона</div><div class="ri-formula">F = k|q₁q₂|/(εr²)</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-E-def"><div class="ri-name">Напряжённость</div><div class="ri-formula">E = F/q</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-Fe"><div class="ri-name">Сила в поле</div><div class="ri-formula">F = qE</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-Epoint"><div class="ri-name">Поле точечного заряда</div><div class="ri-formula">E = k|Q|/(εr²)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-phi-point"><div class="ri-name">Потенциал точечного</div><div class="ri-formula">φ = kQ/(εr)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-Eplane"><div class="ri-name">Поле плоскости</div><div class="ri-formula">E = σ/(2ε₀ε)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-Ecap"><div class="ri-name">Поле конденсатора</div><div class="ri-formula">E = U/d</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-super"><div class="ri-name">Принцип суперпозиции</div><div class="ri-formula">E = ΣEᵢ</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-phi-def"><div class="ri-name">Потенциал</div><div class="ri-formula">φ = W/q</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-W"><div class="ri-name">Энергия заряда</div><div class="ri-formula">W = qφ</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-A-elec"><div class="ri-name">Работа поля</div><div class="ri-formula">A = q(φ₁−φ₂)</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-Ed"><div class="ri-name">Связь U и E</div><div class="ri-formula">U = E·d</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-W2"><div class="ri-name">Энергия двух зарядов</div><div class="ri-formula">W = kq₁q₂/(εr)</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-C"><div class="ri-name">Электроёмкость</div><div class="ri-formula">C = q/U</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-Cpar"><div class="ri-name">Плоский конденсатор</div><div class="ri-formula">C = ε₀εS/d</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-Wcap"><div class="ri-name">Энергия конденсатора</div><div class="ri-formula">W = CU²/2</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="h-cond"><div class="ri-name">Параллельное</div><div class="ri-formula">C = C₁ + C₂</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="h-cond"><div class="ri-name">Последовательное</div><div class="ri-formula">1/C = 1/C₁ + 1/C₂</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

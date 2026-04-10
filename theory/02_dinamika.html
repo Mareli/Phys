@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Динамика — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t02">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">⚙️</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Динамика</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 02</span>
+      <h2>Динамика</h2>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">⚡</span>Законы Ньютона</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">🔧</span>Силы в природе</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">🌍</span>Гравитация</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">⬇</span>Сила тяжести и вес</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">🪝</span>Сила упругости. Закон Гука</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">📐</span>Реакция опоры и нити</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">🛑</span>Сила трения</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">📋</span>Алгоритм решения задач</button>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">📐</span>Наклонная плоскость</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">⭕</span>Движение по окружности</button>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">🔗</span>Связанные тела</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s13"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1: Законы Ньютона ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Законы Ньютона</h1>
+          <p class="lead">Три закона Ньютона — фундамент классической механики. Без них динамику не решить.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ База</span></div>
+        </div>
+
+        <h2 id="h-iso">Инерциальные системы отсчёта (ИСО)</h2>
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>ИСО</b> — это системы отсчёта, относительно которых любая материальная точка, свободная от действия сил, движется <b>равномерно и прямолинейно</b> или <b>покоится</b> (т. е. не имеет ускорения).</div>
+        </div>
+        <p>Пример практически инерциальной СО — связанная с поверхностью Земли (если игнорировать вращение).</p>
+
+        <h2 id="h-n1">Первый закон Ньютона (закон инерции)</h2>
+        <div class="def acc">
+          <div class="label">I закон Ньютона</div>
+          <div class="text">Существуют такие системы отсчёта (ИСО), относительно которых тело сохраняет состояние покоя или равномерного прямолинейного движения, если на него <b>не действуют другие тела</b> или их действия <b>скомпенсированы</b>.</div>
+        </div>
+
+        <h2 id="h-n2">Второй закон Ньютона</h2>
+        <div class="def acc">
+          <div class="label">II закон Ньютона</div>
+          <div class="text">Ускорение, приобретаемое телом, прямо пропорционально равнодействующей всех сил, действующих на тело, и обратно пропорционально его массе. Направление ускорения совпадает с направлением равнодействующей силы.</div>
+        </div>
+
+        <div class="fcard" id="f-n2">
+          <div class="flabel">II закон Ньютона</div>
+          <div class="formula" data-tex="m\vec{a} = \vec{F}_1 + \vec{F}_2 + \vec{F}_3 + \ldots = \vec{F}_{равн}"></div>
+          <div class="fdesc">m — масса, a — ускорение, F<sub>равн</sub> — векторная сумма всех сил (равнодействующая)</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">В проекциях на оси</div>
+          <div class="formula" data-tex="ma_x = \sum F_x \qquad ma_y = \sum F_y"></div>
+          <div class="fdesc">⭐ Самая рабочая запись для решения задач</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Важно:</b> II закон работает только в <b>инерциальных</b> системах отсчёта. В неинерциальных нужно вводить силы инерции.</div>
+        </div>
+
+        <h2 id="h-n3">Третий закон Ньютона</h2>
+        <div class="def acc">
+          <div class="label">III закон Ньютона</div>
+          <div class="text">Если тело 1 действует на тело 2 силой <span data-tex="\vec{F}_{12}"></span>, то тело 2 обязательно действует на тело 1 силой <span data-tex="\vec{F}_{21}"></span>, причём эти силы <b>равны по модулю</b> и <b>противоположны по направлению</b>.</div>
+        </div>
+
+        <div class="fcard" id="f-n3">
+          <div class="flabel">Третий закон Ньютона</div>
+          <div class="formula" data-tex="\vec{F}_{21} = -\vec{F}_{12}"></div>
+          <div class="fdesc">F₂₁ = F₁₂, направления противоположны, лежат на одной прямой, имеют одну природу</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="120" cy="70" r="22" fill="#6366f1"/>
+            <text x="120" y="76" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+            <circle cx="240" cy="70" r="22" fill="#10b981"/>
+            <text x="240" y="76" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+            <line x1="142" y1="70" x2="200" y2="70" stroke="#1e293b" stroke-width="2.5"/>
+            <polygon points="200,70 192,66 192,74" fill="#1e293b"/>
+            <text x="160" y="60" font-size="13" font-weight="700" fill="#1e293b" font-style="italic">F₁₂</text>
+            <line x1="218" y1="70" x2="160" y2="70" stroke="#dc2626" stroke-width="2.5"/>
+            <polygon points="160,70 168,66 168,74" fill="#dc2626"/>
+            <text x="180" y="92" font-size="13" font-weight="700" fill="#dc2626" font-style="italic">F₂₁</text>
+          </svg>
+          <div class="caption">Силы действия и противодействия — равны по модулю и противоположны</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Не путать!</b> Силы действия и противодействия приложены к <b>разным телам</b>, поэтому они не могут уравновешивать друг друга. Уравновесить силу можно только другой силой, действующей на то же самое тело.</div>
+        </div>
+      </section>
+
+      <!-- ════ S2: Силы в природе ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Силы в природе</h1>
+          <p class="lead">В школьной физике встречаются 4 типа сил. Все остальные силы — их частные случаи.</p>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Сила</th><th>Природа</th><th>Контакт?</th><th>Куда направлена</th></tr>
+            <tr><td>Гравитационная</td><td>Гравитация</td><td>Нет</td><td>Между центрами тел (притяжение)</td></tr>
+            <tr><td>Сила тяжести</td><td>Гравитация</td><td>Нет</td><td>Вертикально вниз (к центру Земли)</td></tr>
+            <tr><td>Реакция опоры N</td><td>Упругость</td><td>Да</td><td>Перпендикулярно поверхности</td></tr>
+            <tr><td>Сила трения F<sub>тр</sub></td><td>Эл/магн. + микрозацепления</td><td>Да</td><td>Параллельно поверхности (против скольжения)</td></tr>
+            <tr><td>Сила упругости</td><td>Электромагнитная</td><td>Да</td><td>Против деформации</td></tr>
+            <tr><td>Натяжение нити T</td><td>Упругость</td><td>Да</td><td>Вдоль нити</td></tr>
+          </table>
+        </div>
+
+        <div class="def">
+          <div class="label">Две группы сил</div>
+          <div class="text">
+          <b>1. Контактные</b> — действуют только при касании (упругость, трение, реакция, натяжение).<br>
+          <b>2. Дальнодействующие</b> — действуют через поле без контакта (гравитационная, электрическая, магнитная).
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ S3: Гравитация ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Закон всемирного тяготения</h1>
+          <p class="lead">Все тела во Вселенной притягиваются друг к другу. Гравитация — основа астрофизики и движения планет.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Закон всемирного тяготения (Ньютон)</div>
+          <div class="text">Сила гравитационного притяжения двух материальных точек прямо пропорциональна произведению их масс и обратно пропорциональна квадрату расстояния между ними.</div>
+        </div>
+
+        <div class="fcard" id="f-grav">
+          <div class="flabel">Закон всемирного тяготения</div>
+          <div class="formula" data-tex="F_{грав} = \gamma\,\dfrac{m_1 m_2}{r^2}"></div>
+          <div class="fdesc">γ ≈ 6,67·10⁻¹¹ Н·м²/кг² — гравитационная постоянная. r — расстояние между <b>центрами</b> тел.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Формула работает для <b>материальных точек</b> или <b>однородных шаров</b>. Для шаров r — это расстояние между <b>центрами</b>, а не между поверхностями.</div>
+        </div>
+
+        <h2 id="h-g">Ускорение свободного падения</h2>
+        <p>Около поверхности планеты сила тяжести совпадает с силой гравитации:</p>
+
+        <div class="fcard" id="f-g">
+          <div class="flabel">g на поверхности планеты</div>
+          <div class="formula" data-tex="g = \gamma\,\dfrac{M_{пл}}{R_{пл}^2}"></div>
+          <div class="fdesc">M<sub>пл</sub> — масса планеты, R<sub>пл</sub> — её радиус</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">g на высоте h</div>
+          <div class="formula" data-tex="g(h) = \gamma\,\dfrac{M}{(R+h)^2}"></div>
+          <div class="fdesc">С увеличением высоты g уменьшается</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Планета</th><th>g, м/с²</th><th>R, км</th></tr>
+            <tr><td>Земля</td><td>9,8 (≈ 10)</td><td>6371</td></tr>
+            <tr><td>Луна</td><td>1,62</td><td>1737</td></tr>
+            <tr><td>Марс</td><td>3,72</td><td>3389</td></tr>
+            <tr><td>Юпитер</td><td>24,8</td><td>69 911</td></tr>
+            <tr><td>Солнце</td><td>274</td><td>696 340</td></tr>
+          </table>
+        </div>
+
+        <h2 id="h-orbit">Первая космическая скорость</h2>
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Первая космическая скорость</b> — минимальная скорость, при которой тело становится спутником планеты, движущимся по круговой орбите радиуса r ≈ R<sub>пл</sub>.</div>
+        </div>
+
+        <div class="fcard" id="f-v1">
+          <div class="flabel">Первая космическая скорость</div>
+          <div class="formula" data-tex="v_1 = \sqrt{g R_{пл}} = \sqrt{\dfrac{\gamma M_{пл}}{R_{пл}}}"></div>
+          <div class="fdesc">Для Земли v₁ ≈ 7,9 км/с</div>
+        </div>
+
+        <div class="fcard" id="f-v2">
+          <div class="flabel">Вторая космическая скорость (параболическая)</div>
+          <div class="formula" data-tex="v_2 = \sqrt{\dfrac{2\gamma M_{пл}}{R_{пл}}} = v_1\sqrt{2}"></div>
+          <div class="fdesc">Скорость, при которой тело преодолевает гравитационное поле планеты. Для Земли v₂ ≈ 11,2 км/с</div>
+        </div>
+
+        <div class="fcard" id="f-vorbit">
+          <div class="flabel">Орбитальная скорость на высоте h</div>
+          <div class="formula" data-tex="v = \sqrt{\dfrac{\gamma M}{R + h}}"></div>
+          <div class="fdesc">Скорость спутника на круговой орбите радиуса r = R + h</div>
+        </div>
+
+        <p><b>Вывод:</b> на круговой орбите сила тяжести играет роль центростремительной силы:</p>
+        <div class="fcard">
+          <div class="flabel">Условие круговой орбиты</div>
+          <div class="formula" data-tex="\dfrac{m v^2}{r} = \dfrac{\gamma M m}{r^2}"></div>
+          <div class="fdesc">⇒ <span data-tex="v = \sqrt{\dfrac{\gamma M}{r}}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Сила тяжести и вес ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Сила тяжести и вес тела</h1>
+          <p class="lead">Не путай: сила тяжести и вес — это <b>разные</b> силы! Это любимая ловушка ЦТ.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">⚠ Ловушка</span></div>
+        </div>
+
+        <h2 id="h-mg">Сила тяжести</h2>
+        <div class="def">
+          <div class="label">Сила тяжести</div>
+          <div class="text"><b>Сила тяжести F<sub>тяж</sub></b> — сила, с которой Земля (планета) притягивает тело. Приложена <b>к телу</b>, направлена вертикально вниз.</div>
+        </div>
+
+        <div class="fcard" id="f-mg">
+          <div class="flabel">Сила тяжести</div>
+          <div class="formula" data-tex="\vec{F}_{тяж} = m\vec{g}"></div>
+          <div class="fdesc">m — масса тела, g ≈ 9,8 м/с² (на ЦТ обычно g = 10 м/с²)</div>
+        </div>
+
+        <h2 id="h-weight">Вес тела</h2>
+        <div class="def acc">
+          <div class="label">Вес</div>
+          <div class="text"><b>Вес P</b> — сила, с которой тело давит на горизонтальную опору или растягивает подвес. Приложен <b>к опоре или подвесу</b>, а не к телу.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>На неподвижной опоре (a = 0)</h4>
+            <p><span data-tex="P = mg"></span></p>
+            <p>Вес численно равен силе тяжести.</p>
+          </div>
+          <div class="card">
+            <h4>В лифте с ускорением a (вверх)</h4>
+            <p><span data-tex="P = m(g + a)"></span></p>
+            <p><b>Перегрузка:</b> вес больше mg.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>В лифте с ускорением a (вниз)</h4>
+            <p><span data-tex="P = m(g - a)"></span></p>
+            <p>Вес меньше mg.</p>
+          </div>
+          <div class="card accent">
+            <h4>Свободное падение (a = g)</h4>
+            <p><span data-tex="P = m(g - g) = 0"></span></p>
+            <p><b>Невесомость!</b> Тело не давит на опору.</p>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Невесомость</b> — это не отсутствие силы тяжести! Сила тяжести продолжает действовать, но вес = 0, потому что тело и опора падают с одинаковым ускорением g.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Перегрузка</b> — превышение весом значения mg. Считается в единицах g: перегрузка 3g означает P = 3mg. У космонавтов при запуске — до 4g.</div>
+        </div>
+      </section>
+
+      <!-- ════ S5: Сила упругости. Закон Гука ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Сила упругости. Закон Гука</h1>
+          <p class="lead">Силы упругости возникают при деформации тела и стремятся вернуть его к исходной форме.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Сила упругости</b> — сила, возникающая при деформации тела и направленная против деформации. Природа — электромагнитное взаимодействие молекул.</div>
+        </div>
+
+        <div class="fcard" id="f-hook">
+          <div class="flabel">Закон Гука для пружины</div>
+          <div class="formula" data-tex="F_{упр} = k\,|\Delta l|"></div>
+          <div class="fdesc">k — жёсткость пружины (Н/м), Δl = l − l₀ — удлинение (или сжатие)</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Закон Гука в общем виде</div>
+          <div class="formula" data-tex="\sigma = E\,\varepsilon"></div>
+          <div class="fdesc">σ = F/S — механическое напряжение, ε = Δl/l₀ — относительное удлинение, E — модуль Юнга</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Жёсткость стержня</div>
+          <div class="formula" data-tex="k = \dfrac{E\,S}{l_0}"></div>
+          <div class="fdesc">S — площадь сечения, l₀ — длина в недеформированном состоянии</div>
+        </div>
+
+        <h2 id="h-conn">Соединения пружин</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Параллельное</h4>
+            <p><span data-tex="k_{общ} = k_1 + k_2"></span></p>
+            <p>Удлинения одинаковы, силы складываются.</p>
+          </div>
+          <div class="card">
+            <h4>Последовательное</h4>
+            <p><span data-tex="\dfrac{1}{k_{общ}} = \dfrac{1}{k_1} + \dfrac{1}{k_2}"></span></p>
+            <p>Силы одинаковы, удлинения складываются.</p>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Закон Гука работает только при <b>малых упругих</b> деформациях. При больших возникают пластические деформации, а потом — разрушение.</div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Реакция опоры и нити ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Реакция опоры и натяжение нити</h1>
+          <p class="lead">Реакция и натяжение — частные случаи силы упругости. Действуют, пока есть контакт.</p>
+        </div>
+
+        <h2 id="h-N">Сила нормальной реакции опоры N</h2>
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Сила реакции опоры N</b> — сила, с которой опора действует на тело. Направлена <b>перпендикулярно поверхности</b>, по которой тело движется или покоится. Природа — упругая.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Тело на горизонтали</h4>
+            <p><span data-tex="N = mg"></span> (если нет вертикальных сил кроме mg и N)</p>
+          </div>
+          <div class="card">
+            <h4>Тело на наклонной (угол α)</h4>
+            <p><span data-tex="N = mg\cos\alpha"></span></p>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Реакция опоры — НЕ всегда равна mg! Если на тело действуют ещё силы (приложенная сила вниз/вверх, наклон), N считается через II закон Ньютона по оси, перпендикулярной опоре.</div>
+        </div>
+
+        <h2 id="h-T">Сила натяжения нити T</h2>
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Сила натяжения нити T</b> — сила, с которой нить тянет тело. Направлена <b>вдоль нити</b>. В нерастяжимой нити натяжение во всех точках одинаково.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Если нить перекинута через <b>идеальный (невесомый)</b> блок, натяжение по обе стороны блока одинаково. Если блок имеет массу — натяжения разные.</div>
+        </div>
+      </section>
+
+      <!-- ════ S7: Сила трения ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Сила трения</h1>
+          <p class="lead">Трение бывает покоя, скольжения и качения. На ЦТ чаще всего встречается сухое трение скольжения.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Часто</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Сила трения F<sub>тр</sub></b> — сила, действующая параллельно поверхности контакта. Направлена против скольжения тела (или против стремления к скольжению).</div>
+        </div>
+
+        <h2 id="h-frtypes">Три вида трения</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Покоя</h4>
+            <p>Тело не скользит. Сила трения покоя <b>может принимать любое значение</b> от 0 до μN, чтобы уравновесить приложенную силу.</p>
+            <p><span data-tex="F_{тр.п} \le \mu N"></span></p>
+          </div>
+          <div class="card">
+            <h4>Скольжения</h4>
+            <p>Тело движется. Сила трения <b>постоянна</b> и направлена против скорости.</p>
+            <p><span data-tex="F_{тр} = \mu N"></span></p>
+          </div>
+          <div class="card">
+            <h4>Качения</h4>
+            <p>Колесо катится. Гораздо меньше трения скольжения. На ЦТ обычно игнорируется.</p>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-fr">
+          <div class="flabel">Сила трения скольжения</div>
+          <div class="formula" data-tex="F_{тр} = \mu\,N"></div>
+          <div class="fdesc">μ — коэффициент трения (безразмерный), N — сила нормальной реакции опоры</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Условие отсутствия скольжения</div>
+          <div class="formula" data-tex="F_{тр.п} \le \mu_0\,N"></div>
+          <div class="fdesc">μ₀ — коэффициент трения покоя (обычно μ₀ &gt; μ скольжения)</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Поверхности</th><th>μ</th></tr>
+            <tr><td>Сталь по стали</td><td>0,15</td></tr>
+            <tr><td>Сталь по льду</td><td>0,02</td></tr>
+            <tr><td>Резина по асфальту</td><td>0,7</td></tr>
+            <tr><td>Дерево по дереву</td><td>0,3</td></tr>
+            <tr><td>Лыжи по снегу</td><td>0,03</td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Сила трения F<sub>тр</sub> = μN</b> работает только при <b>скольжении</b>. Если тело покоится, нельзя автоматически писать F<sub>тр</sub> = μN — это может быть гораздо меньше.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Сила трения <b>не зависит</b> от площади контакта (для гладких сухих поверхностей). Зависит от материала и силы нормального давления.</div>
+        </div>
+      </section>
+
+      <!-- ════ S8: Алгоритм решения задач ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Алгоритм решения задач динамики</h1>
+          <p class="lead">Универсальный пошаговый план, который работает в 95% задач ЦТ.</p>
+          <div class="tags"><span class="tag acc">Метод</span></div>
+        </div>
+
+        <div class="card accent">
+          <h4>Пошаговый алгоритм</h4>
+          <ol>
+            <li><b>Сделать рисунок.</b> Изобразить тело и все силы, действующие на него.</li>
+            <li><b>Выбрать ИСО и оси координат.</b> Обычно одну ось направляют вдоль возможного движения, другую — перпендикулярно.</li>
+            <li><b>Записать II закон Ньютона</b> в векторном виде: <span data-tex="m\vec{a} = \sum \vec{F}"></span></li>
+            <li><b>Спроецировать на оси:</b> <span data-tex="ma_x = \sum F_x, \quad ma_y = \sum F_y"></span></li>
+            <li><b>Решить систему</b> уравнений относительно неизвестных.</li>
+            <li><b>Проверить размерность</b> и физический смысл ответа.</li>
+          </ol>
+        </div>
+
+        <h2 id="h-axes">Как выбрать оси</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Горизонтальное движение</h4>
+            <p>Ось X — горизонтально по движению. Ось Y — вертикально вверх.</p>
+          </div>
+          <div class="card">
+            <h4>Наклонная плоскость</h4>
+            <p>Ось X — вдоль плоскости (по движению). Ось Y — перпендикулярно плоскости.</p>
+          </div>
+          <div class="card">
+            <h4>Движение по окружности</h4>
+            <p>Одна ось — к центру (центростремительная), другая — по касательной.</p>
+          </div>
+          <div class="card">
+            <h4>Свободное падение</h4>
+            <p>Ось Y — вертикально (вверх или вниз — решай сам, главное — потом следить за знаком g).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ S9: Наклонная плоскость ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Движение по наклонной плоскости</h1>
+          <p class="lead">Самая популярная конфигурация в задачах ЦТ. Запомни две стандартные формулы.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ-классика</span></div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- наклонная -->
+            <polygon points="40,180 320,180 320,80" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+            <!-- угол альфа -->
+            <path d="M 80 180 A 30 30 0 0 0 95 165" fill="none" stroke="#475569" stroke-width="1.5"/>
+            <text x="100" y="178" font-size="13" font-style="italic" fill="#475569">α</text>
+            <!-- тело -->
+            <rect x="200" y="105" width="36" height="22" fill="#6366f1" stroke="#4f46e5" stroke-width="1.5" transform="rotate(-19.65 218 116)"/>
+            <!-- mg -->
+            <line x1="218" y1="116" x2="218" y2="180" stroke="#dc2626" stroke-width="2.5"/>
+            <polygon points="218,180 214,170 222,170" fill="#dc2626"/>
+            <text x="222" y="155" font-size="12" font-weight="700" fill="#dc2626">mg</text>
+            <!-- N -->
+            <line x1="218" y1="116" x2="245" y2="83" stroke="#10b981" stroke-width="2.5"/>
+            <polygon points="245,83 240,90 247,93" fill="#10b981"/>
+            <text x="248" y="80" font-size="12" font-weight="700" fill="#10b981">N</text>
+            <!-- mg sin alpha -->
+            <line x1="218" y1="116" x2="180" y2="155" stroke="#f59e0b" stroke-width="2.5"/>
+            <polygon points="180,155 187,151 188,159" fill="#f59e0b"/>
+            <text x="170" y="138" font-size="11" font-weight="700" fill="#f59e0b">mg sinα</text>
+            <!-- mg cos alpha -->
+            <line x1="218" y1="116" x2="240" y2="140" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <text x="245" y="130" font-size="10" fill="#64748b">mg cosα</text>
+          </svg>
+          <div class="caption">Разложение силы тяжести на оси, связанные с наклонной плоскостью</div>
+        </div>
+
+        <h2 id="h-incline-formulas">Главные формулы</h2>
+
+        <div class="fcard" id="f-incline-N">
+          <div class="flabel">Сила реакции опоры</div>
+          <div class="formula" data-tex="N = mg\cos\alpha"></div>
+          <div class="fdesc">α — угол наклона плоскости к горизонту</div>
+        </div>
+
+        <div class="fcard" id="f-incline-a">
+          <div class="flabel">Ускорение скольжения вниз без трения</div>
+          <div class="formula" data-tex="a = g\sin\alpha"></div>
+          <div class="fdesc">Не зависит от массы! Это следствие принципа эквивалентности.</div>
+        </div>
+
+        <div class="fcard" id="f-incline-fr">
+          <div class="flabel">Ускорение скольжения с трением</div>
+          <div class="formula" data-tex="a = g(\sin\alpha - \mu\cos\alpha)"></div>
+          <div class="fdesc">μ — коэффициент трения. Если μ = 0 — формула сводится к предыдущей.</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Условие неподвижности на наклонной</div>
+          <div class="formula" data-tex="\mu \ge \tan\alpha"></div>
+          <div class="fdesc">Если μ &lt; tg α, тело начнёт скользить. tg α называют углом трения.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Запомни приём:</b> ось X направляют <b>вдоль наклонной</b> (вниз — если тело скользит вниз). Тогда:<br>
+          • F<sub>тяж</sub>: F<sub>x</sub> = mg sin α, F<sub>y</sub> = −mg cos α<br>
+          • N: F<sub>x</sub> = 0, F<sub>y</sub> = N<br>
+          • F<sub>тр</sub>: F<sub>x</sub> = ±μN, F<sub>y</sub> = 0</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: Движение по окружности ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Динамика движения по окружности</h1>
+          <p class="lead">При движении по окружности равнодействующая всех сил всегда направлена к центру и обеспечивает центростремительное ускорение.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Центростремительная сила</div>
+          <div class="text"><b>Центростремительная сила</b> — это не отдельный вид силы, а равнодействующая всех сил, приложенных к телу, движущемуся по окружности. Направлена к центру.</div>
+        </div>
+
+        <div class="fcard" id="f-fc">
+          <div class="flabel">Второй закон Ньютона на окружности</div>
+          <div class="formula" data-tex="F_{ц} = m a_ц = \dfrac{m v^2}{R} = m\omega^2 R"></div>
+          <div class="fdesc">F<sub>ц</sub> — сумма проекций всех сил на радиус (направленный к центру)</div>
+        </div>
+
+        <h2 id="h-circ-types">Типичные ситуации</h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>🚗 Машина по горизонтальному повороту</h4>
+            <p>Центростремительную силу обеспечивает сила трения покоя: <span data-tex="\mu m g \ge \dfrac{m v^2}{R}"></span></p>
+            <p>Максимальная скорость: <span data-tex="v_{max} = \sqrt{\mu g R}"></span></p>
+          </div>
+          <div class="card">
+            <h4>🪀 Шарик на нити (вертикально)</h4>
+            <p>В верхней точке: <span data-tex="T + mg = \dfrac{m v^2}{R}"></span></p>
+            <p>В нижней точке: <span data-tex="T - mg = \dfrac{m v^2}{R}"></span></p>
+          </div>
+          <div class="card">
+            <h4>🎢 Машина на выпуклом мосту</h4>
+            <p>В вершине: <span data-tex="mg - N = \dfrac{m v^2}{R}"></span></p>
+            <p>Вес: <span data-tex="N = m\left(g - \dfrac{v^2}{R}\right)"></span></p>
+          </div>
+          <div class="card">
+            <h4>🎢 Машина на вогнутом мосту</h4>
+            <p>В нижней точке: <span data-tex="N - mg = \dfrac{m v^2}{R}"></span></p>
+            <p>Вес: <span data-tex="N = m\left(g + \dfrac{v^2}{R}\right)"></span></p>
+          </div>
+        </div>
+
+        <h2 id="h-conpend">Конический маятник</h2>
+        <p>Шарик на нити вращается по горизонтальной окружности — нить описывает конус.</p>
+        <div class="fcard">
+          <div class="flabel">Угол отклонения нити от вертикали</div>
+          <div class="formula" data-tex="\tan\alpha = \dfrac{v^2}{g R} = \dfrac{\omega^2 R}{g}"></div>
+          <div class="fdesc">R = L sin α, где L — длина нити</div>
+        </div>
+      </section>
+
+      <!-- ════ S11: Связанные тела ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>11. Связанные тела</h1>
+          <p class="lead">Несколько тел соединены нитью или сцепкой и движутся вместе. Решается через II закон Ньютона для каждого тела отдельно.</p>
+        </div>
+
+        <div class="card accent">
+          <h4>Главное правило</h4>
+          <p>У связанных тел <b>одинаковое по модулю ускорение</b>. Натяжение нити (внутренняя сила) определяется II законом для каждого тела отдельно.</p>
+        </div>
+
+        <h2 id="h-train">Поезд / сцепка</h2>
+        <div class="card">
+          <h4>Два бруска тянут силой F</h4>
+          <p>Общее ускорение: <span data-tex="a = \dfrac{F}{m_1 + m_2}"></span></p>
+          <p>Сила натяжения нити (между телами): <span data-tex="T = m_2 a = \dfrac{m_2 F}{m_1 + m_2}"></span></p>
+        </div>
+
+        <h2 id="h-atwood">Машина Атвуда</h2>
+        <p>Два груза массы m₁ и m₂ (m₁ &gt; m₂) на нити через идеальный блок.</p>
+        <div class="fcard">
+          <div class="flabel">Ускорение системы</div>
+          <div class="formula" data-tex="a = \dfrac{m_1 - m_2}{m_1 + m_2}\,g"></div>
+          <div class="fdesc">m₁ опускается, m₂ поднимается с одинаковым по модулю ускорением</div>
+        </div>
+        <div class="fcard">
+          <div class="flabel">Натяжение нити</div>
+          <div class="formula" data-tex="T = \dfrac{2 m_1 m_2}{m_1 + m_2}\,g"></div>
+        </div>
+
+        <h2 id="h-cliff">Тело на столе + груз через блок</h2>
+        <p>На столе тело m₁ (трение μ), через блок к нему привязан груз m₂ (висит).</p>
+        <div class="fcard">
+          <div class="flabel">Ускорение системы</div>
+          <div class="formula" data-tex="a = \dfrac{m_2 g - \mu m_1 g}{m_1 + m_2}"></div>
+          <div class="fdesc">Если a &gt; 0, тело m₂ опускается, m₁ ускоряется по столу</div>
+        </div>
+      </section>
+
+      <!-- ════ S12: Разбор задач ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head">
+          <h1>★ Разбор задач по динамике</h1>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">К телу массой <span data-tex="m = 2\text{ кг}"></span>, лежащему на гладком горизонтальном столе, приложили горизонтальную силу <span data-tex="F = 6\text{ Н}"></span>. Найти ускорение тела.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>На тело действуют: <span data-tex="mg"></span> вниз, <span data-tex="N"></span> вверх (взаимно компенсируются), <span data-tex="F"></span> горизонтально.</div>
+            <div class="step"><div class="stepn">2</div>II закон по оси X: <span data-tex="ma = F \Rightarrow a = \dfrac{F}{m} = \dfrac{6}{2} = 3\text{ м/с}^2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="a = 3\text{ м/с}^2"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Тело массой <span data-tex="m = 5\text{ кг}"></span> тянут по горизонтальной поверхности с силой <span data-tex="F = 30\text{ Н}"></span>, направленной горизонтально. Коэффициент трения <span data-tex="\mu = 0{,}4"></span>. Найти ускорение. (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Силы: <span data-tex="F"></span> (по X), <span data-tex="mg"></span> (вниз), <span data-tex="N"></span> (вверх), <span data-tex="F_\text{тр} = \mu N"></span> (против движения).</div>
+            <div class="step"><div class="stepn">2</div>Ось Y: <span data-tex="N = mg = 50\text{ Н} \Rightarrow F_\text{тр} = 0{,}4\cdot50 = 20\text{ Н}"></span></div>
+            <div class="step"><div class="stepn">3</div>Ось X: <span data-tex="ma = F - F_\text{тр} = 30 - 20 = 10\text{ Н} \Rightarrow a = 10/5 = 2\text{ м/с}^2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="a = 2\text{ м/с}^2"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Брусок соскальзывает с наклонной плоскости с углом <span data-tex="\alpha = 30^\circ"></span>. Коэффициент трения <span data-tex="\mu = 0{,}2"></span>. Найти ускорение. (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Используем формулу для наклонной с трением: <span data-tex="a = g(\sin\alpha - \mu\cos\alpha)"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\sin 30^\circ = 0{,}5;\quad \cos 30^\circ \approx 0{,}87"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="a = 10\cdot(0{,}5 - 0{,}2\cdot0{,}87) = 10\cdot(0{,}5 - 0{,}174) \approx 10\cdot0{,}326 \approx 3{,}26\text{ м/с}^2"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="a \approx 3{,}3\text{ м/с}^2"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Автомобиль массой <span data-tex="m = 1000\text{ кг}"></span> едет по горизонтальному закруглению радиуса <span data-tex="R = 50\text{ м}"></span> со скоростью <span data-tex="v = 10\text{ м/с}"></span>. Какова сила трения, действующая на колёса? (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Центростремительную силу обеспечивает трение: <span data-tex="F_\text{тр} = \dfrac{mv^2}{R}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="F_\text{тр} = \dfrac{1000\cdot100}{50} = 2000\text{ Н}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="F_\text{тр} = 2000\text{ Н}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Человек массой <span data-tex="m = 70\text{ кг}"></span> стоит в лифте, поднимающемся с ускорением <span data-tex="a = 2\text{ м/с}^2"></span>. Каков вес человека? (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Вес при движении вверх с ускорением: <span data-tex="P = m(g + a)"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="P = 70\cdot(10 + 2) = 70\cdot12 = 840\text{ Н}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="P = 840\text{ Н}"></span> (это перегрузка <span data-tex="\approx 1{,}2g"></span>)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Через идеальный блок переброшена нить. На концах — грузы <span data-tex="m_1 = 3\text{ кг}"></span> и <span data-tex="m_2 = 2\text{ кг}"></span>. Найти ускорение системы и натяжение нити. (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Ускорение: <span data-tex="a = \dfrac{m_1 - m_2}{m_1 + m_2}g = \dfrac{1}{5}\cdot10 = 2\text{ м/с}^2"></span></div>
+            <div class="step"><div class="stepn">2</div>Натяжение: <span data-tex="T = \dfrac{2m_1 m_2}{m_1 + m_2}g = \dfrac{12}{5}\cdot10 = 24\text{ Н}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="a = 2\text{ м/с}^2"></span>, <span data-tex="T = 24\text{ Н}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Под действием груза <span data-tex="m = 4\text{ кг}"></span> пружина растянулась на <span data-tex="\Delta l = 5\text{ см}"></span>. Найти жёсткость пружины. (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>В равновесии <span data-tex="F_\text{упр} = mg \Rightarrow k\Delta l = mg"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="k = \dfrac{mg}{\Delta l} = \dfrac{40}{0{,}05} = 800\text{ Н/м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="k = 800\text{ Н/м}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S13: Чек-лист ════ -->
+      <section class="sec" id="s13">
+        <div class="sec-head">
+          <h1>✓ Чек-лист по динамике</h1>
+        </div>
+
+        <h2 id="h-formulas">Что знать наизусть</h2>
+        <ul>
+          <li>II закон Ньютона: <span data-tex="m\vec{a} = \sum\vec{F}"></span> и в проекциях</li>
+          <li>Закон всемирного тяготения: <span data-tex="F = \gamma m_1 m_2 / r^2"></span></li>
+          <li>g на планете: <span data-tex="g = \gamma M / R^2"></span></li>
+          <li>Первая космическая: <span data-tex="v_1 = \sqrt{gR}"></span></li>
+          <li>Закон Гука: <span data-tex="F_{упр} = k\,|\Delta l|"></span></li>
+          <li>Сила трения: <span data-tex="F_{тр} = \mu N"></span></li>
+          <li>Наклонная с трением: <span data-tex="a = g(\sin\alpha - \mu\cos\alpha)"></span></li>
+          <li>Центростремительная: <span data-tex="F_ц = m v^2 / R"></span></li>
+          <li>Вес в лифте: <span data-tex="P = m(g \pm a)"></span></li>
+          <li>Машина Атвуда: ускорение и натяжение</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error">
+          <span class="ico">❌</span><div>Путать силу тяжести и вес. Сила тяжести приложена к телу, вес — к опоре.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span><div>Считать, что в невесомости нет силы тяжести. Она есть, просто P = 0.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span><div>Писать F<sub>тр</sub> = μN для тела покоя. Для покоя: F<sub>тр.п</sub> ≤ μN.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span><div>На наклонной плоскости считать N = mg. Правильно: N = mg cos α.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span><div>Складывать силу тяжести и центростремительную. Центростремительная — это сумма всех сил, mg уже её часть.</div>
+        </div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">03 Статика и гидростатика</div>
+            <div class="tp-desc">Условия равновесия, закон Архимеда, давление</div>
+          </div>
+          <a class="tp-btn" href="03_statika_gidrostatika.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head">
+    <h3>Формулы динамики</h3>
+    <button class="ref-close">✕</button>
+  </div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-n2"><div class="ri-name">II закон Ньютона</div><div class="ri-formula">ma = ΣF</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-n3"><div class="ri-name">III закон Ньютона</div><div class="ri-formula">F₂₁ = −F₁₂</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-grav"><div class="ri-name">Закон всемирного тяготения</div><div class="ri-formula">F = γ·m₁m₂/r²</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-g"><div class="ri-name">g на планете</div><div class="ri-formula">g = γM/R²</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-v1"><div class="ri-name">Первая космическая</div><div class="ri-formula">v₁ = √(gR)</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-v2"><div class="ri-name">Вторая космическая</div><div class="ri-formula">v₂ = √(2gR)</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-vorbit"><div class="ri-name">Орбитальная на высоте h</div><div class="ri-formula">v = √(γM/(R+h))</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-mg"><div class="ri-name">Сила тяжести</div><div class="ri-formula">F = mg</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="h-weight"><div class="ri-name">Вес в лифте</div><div class="ri-formula">P = m(g ± a)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-hook"><div class="ri-name">Закон Гука (пружина)</div><div class="ri-formula">F = k·|Δl|</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-hook"><div class="ri-name">Закон Гука (стержень)</div><div class="ri-formula">σ = E·ε</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-fr"><div class="ri-name">Сила трения скольжения</div><div class="ri-formula">F = μN</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-incline-N"><div class="ri-name">Реакция на наклонной</div><div class="ri-formula">N = mg cos α</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-incline-a"><div class="ri-name">Ускорение на наклонной (без трения)</div><div class="ri-formula">a = g sin α</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-incline-fr"><div class="ri-name">Ускорение на наклонной (с трением)</div><div class="ri-formula">a = g(sin α − μ cos α)</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-fc"><div class="ri-name">Центростремительная сила</div><div class="ri-formula">F = mv²/R</div></div>
+    <div class="ref-item" data-section="s11" data-anchor="h-atwood"><div class="ri-name">Машина Атвуда (ускорение)</div><div class="ri-formula">a = (m₁−m₂)g/(m₁+m₂)</div></div>
+    <div class="ref-item" data-section="s11" data-anchor="h-atwood"><div class="ri-name">Машина Атвуда (натяжение)</div><div class="ri-formula">T = 2m₁m₂g/(m₁+m₂)</div></div>
+  </div>
+</aside>
+
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделу..." />
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

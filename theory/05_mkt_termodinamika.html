@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>МКТ и термодинамика — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t05">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🌡️</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">МКТ и термодинамика</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 05</span>
+      <h2>МКТ и термодинамика</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">МКТ</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">🧬</span>Основы МКТ</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">📐</span>Уравнение состояния</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">🔬</span>Основное уравнение МКТ</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">📈</span>Газовые законы</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">➕</span>Закон Дальтона</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Термодинамика</div>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">🔥</span>Внутренняя энергия</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">1️⃣</span>I закон термодинамики</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">⚙</span>Работа газа</button>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">♨</span>Тепловые двигатели</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">🌡</span>Калориметрия</button>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">💧</span>Влажность и фазовые переходы</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s13"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1 ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Основы молекулярно-кинетической теории</h1>
+          <p class="lead">Три постулата МКТ — фундамент описания газов, жидкостей и твёрдых тел.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Положения МКТ</div>
+          <div class="text">
+          <b>1.</b> Все вещества состоят из частиц (молекул, атомов, ионов).<br>
+          <b>2.</b> Частицы непрерывно и хаотически движутся.<br>
+          <b>3.</b> Частицы взаимодействуют (притягиваются и отталкиваются).
+          </div>
+        </div>
+
+        <h2 id="h-mol">Количество вещества и моль</h2>
+        <div class="def">
+          <div class="label">Моль</div>
+          <div class="text"><b>1 моль</b> — количество вещества, содержащее столько же структурных единиц (молекул, атомов), сколько атомов содержится в 12 г углерода-12. Это число — <b>число Авогадро N<sub>A</sub></b>.</div>
+        </div>
+
+        <div class="fcard" id="f-NA">
+          <div class="flabel">Число Авогадро</div>
+          <div class="formula" data-tex="N_A \approx 6{,}02 \cdot 10^{23}\;\text{моль}^{-1}"></div>
+          <div class="fdesc">Число молекул (атомов) в одном моле</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Количество вещества</div>
+            <div class="chip-formula" data-tex="\nu = \dfrac{N}{N_A} = \dfrac{m}{M}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Масса одной молекулы</div>
+            <div class="chip-formula" data-tex="m_0 = \dfrac{M}{N_A}"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Концентрация молекул</div>
+            <div class="chip-formula" data-tex="n = \dfrac{N}{V}"></div>
+            <div class="chip-desc">молекул в 1 м³</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Постоянная Больцмана</div>
+            <div class="chip-formula" data-tex="k = \dfrac{R}{N_A} \approx 1{,}38\cdot10^{-23}\;\text{Дж/К}"></div>
+          </div>
+        </div>
+
+        <h2 id="h-T">Абсолютная температура</h2>
+        <div class="fcard" id="f-T">
+          <div class="flabel">Связь шкал температур</div>
+          <div class="formula" data-tex="T(\text{К}) = t(°\text{C}) + 273"></div>
+          <div class="fdesc">Абсолютная температура измеряется в кельвинах. T = 0 К — абсолютный нуль. Не может быть отрицательной!</div>
+        </div>
+      </section>
+
+      <!-- ════ S2: Уравнение состояния ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Уравнение состояния идеального газа</h1>
+          <p class="lead">Уравнение Менделеева–Клапейрона связывает четыре макропараметра идеального газа: давление, объём, температуру и количество вещества.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Идеальный газ</div>
+          <div class="text"><b>Идеальный газ</b> — модель газа, в которой:<br>
+          • Молекулы — материальные точки (размер пренебрежимо мал)<br>
+          • Молекулы взаимодействуют только при упругих столкновениях<br>
+          • Объём всех молекул много меньше объёма сосуда</div>
+        </div>
+
+        <div class="fcard" id="f-mendeleev">
+          <div class="flabel">Уравнение Менделеева–Клапейрона</div>
+          <div class="formula" data-tex="pV = \nu RT = \dfrac{m}{M}RT"></div>
+          <div class="fdesc">⭐ Главная формула молекулярной физики. R ≈ 8,31 Дж/(моль·К) — универсальная газовая постоянная</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Через концентрацию</div>
+          <div class="formula" data-tex="p = nkT"></div>
+          <div class="fdesc">n — концентрация молекул, k — постоянная Больцмана</div>
+        </div>
+
+        <div class="fcard" id="f-rho-RT">
+          <div class="flabel">Плотность газа</div>
+          <div class="formula" data-tex="\rho = \dfrac{p\,M}{R\,T}"></div>
+          <div class="fdesc">⭐ Часто встречается в задачах ЦТ: из уравнения Менделеева-Клапейрона при m/V = ρ</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Газ</th><th>M, г/моль</th></tr>
+            <tr><td>H₂ (водород)</td><td>2</td></tr>
+            <tr><td>He (гелий)</td><td>4</td></tr>
+            <tr><td>N₂ (азот)</td><td>28</td></tr>
+            <tr><td>O₂ (кислород)</td><td>32</td></tr>
+            <tr><td>CO₂ (углекислый газ)</td><td>44</td></tr>
+            <tr><td>Воздух (среднее)</td><td>29</td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>В уравнении Менделеева–Клапейрона <b>температура только в кельвинах!</b> Перевод: T(К) = t(°C) + 273.</div>
+        </div>
+      </section>
+
+      <!-- ════ S3: Основное уравнение МКТ ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Основное уравнение МКТ</h1>
+          <p class="lead">Связывает макропараметр (давление) с микропараметром (средняя кинетическая энергия молекул).</p>
+        </div>
+
+        <div class="fcard" id="f-mkt-main">
+          <div class="flabel">Основное уравнение МКТ</div>
+          <div class="formula" data-tex="p = \dfrac{2}{3}\,n\,\bar{E}_к = \dfrac{1}{3}\,n\,m_0\,\overline{v^2}"></div>
+          <div class="fdesc">n — концентрация молекул, m₀ — масса одной молекулы, <span data-tex="\overline{v^2}"></span> — среднеквадратичная скорость</div>
+        </div>
+
+        <div class="fcard" id="f-Ek-mol">
+          <div class="flabel">Средняя кинетическая энергия молекулы</div>
+          <div class="formula" data-tex="\bar{E}_к = \dfrac{3}{2}kT"></div>
+          <div class="fdesc">⭐ Только от температуры! Не зависит от рода газа.</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Среднеквадратичная скорость</div>
+          <div class="formula" data-tex="v_{кв} = \sqrt{\overline{v^2}} = \sqrt{\dfrac{3kT}{m_0}} = \sqrt{\dfrac{3RT}{M}}"></div>
+          <div class="fdesc">При T = 273 К для воздуха ≈ 500 м/с</div>
+        </div>
+
+        <div class="fcard" id="f-mkt-rho">
+          <div class="flabel">Основное уравнение МКТ через плотность</div>
+          <div class="formula" data-tex="p = \dfrac{1}{3}\,\rho\,v_{кв}^2"></div>
+          <div class="fdesc">⭐ Удобно, если известна плотность газа ρ</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Температура — мера кинетической энергии</b> хаотического движения молекул. Чем выше T, тем быстрее движутся молекулы.</div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Газовые законы ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Газовые законы (изопроцессы)</h1>
+          <p class="lead">Если ν = const, удобно использовать комбинированный закон <span data-tex="pV/T = const"></span> и его частные случаи.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ-классика</span></div>
+        </div>
+
+        <div class="fcard" id="f-united">
+          <div class="flabel">Объединённый газовый закон</div>
+          <div class="formula" data-tex="\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}"></div>
+          <div class="fdesc">Применяется при ν = const (количество газа не меняется)</div>
+        </div>
+
+        <h2 id="h-iso">Три изопроцесса</h2>
+
+        <div class="grid-3">
+          <div class="card accent">
+            <h4>🌡️ Изотермический (T = const)</h4>
+            <p><b>Бойль–Мариотт:</b></p>
+            <p><span data-tex="p_1 V_1 = p_2 V_2"></span></p>
+            <p>график p(V): гипербола</p>
+          </div>
+          <div class="card accent">
+            <h4>📊 Изобарный (p = const)</h4>
+            <p><b>Гей-Люссак:</b></p>
+            <p><span data-tex="\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}"></span></p>
+            <p>график V(T): прямая через 0</p>
+          </div>
+          <div class="card accent">
+            <h4>🔒 Изохорный (V = const)</h4>
+            <p><b>Шарль:</b></p>
+            <p><span data-tex="\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}"></span></p>
+            <p>график p(T): прямая через 0</p>
+          </div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Изотерма -->
+            <g>
+              <line x1="20" y1="170" x2="180" y2="170" stroke="#94a3b8"/>
+              <line x1="20" y1="20" x2="20" y2="170" stroke="#94a3b8"/>
+              <text x="100" y="190" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">V</text>
+              <text x="10" y="18" font-size="11" fill="#475569" font-style="italic">p</text>
+              <path d="M 35 40 Q 80 80, 170 160" stroke="#f97316" stroke-width="2.5" fill="none"/>
+              <text x="100" y="80" text-anchor="middle" font-size="11" fill="#f97316" font-weight="600">T = const</text>
+            </g>
+            <!-- Изобара -->
+            <g>
+              <line x1="220" y1="170" x2="380" y2="170" stroke="#94a3b8"/>
+              <line x1="220" y1="20" x2="220" y2="170" stroke="#94a3b8"/>
+              <text x="300" y="190" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">T</text>
+              <text x="210" y="18" font-size="11" fill="#475569" font-style="italic">V</text>
+              <line x1="220" y1="170" x2="370" y2="40" stroke="#f97316" stroke-width="2.5"/>
+              <text x="300" y="80" text-anchor="middle" font-size="11" fill="#f97316" font-weight="600">p = const</text>
+            </g>
+            <!-- Изохора -->
+            <g>
+              <line x1="420" y1="170" x2="530" y2="170" stroke="#94a3b8"/>
+              <line x1="420" y1="20" x2="420" y2="170" stroke="#94a3b8"/>
+              <text x="475" y="190" text-anchor="middle" font-size="11" fill="#475569" font-style="italic">T</text>
+              <text x="410" y="18" font-size="11" fill="#475569" font-style="italic">p</text>
+              <line x1="420" y1="170" x2="525" y2="40" stroke="#f97316" stroke-width="2.5"/>
+              <text x="475" y="80" text-anchor="middle" font-size="11" fill="#f97316" font-weight="600">V = const</text>
+            </g>
+          </svg>
+          <div class="caption">Графики изопроцессов в характерных координатах</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Графики через нулевые точки</b> в координатах V(T) и p(T) существуют только в шкале <b>Кельвина</b>! В шкале Цельсия они пройдут через t = −273 °C.</div>
+        </div>
+
+        <!-- ── Интерактивная p-V диаграмма ── -->
+        <div class="sim-wrap">
+          <div class="sim-head">
+            <div class="sim-label">🎮 Интерактив</div>
+            <div class="sim-name">Изопроцессы на p-V диаграмме — выбери процесс</div>
+          </div>
+          <div class="sim-display">
+            <svg id="pv-svg" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg">
+              <!-- axes -->
+              <line x1="50" y1="220" x2="460" y2="220" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="50" y1="220" x2="50" y2="20" stroke="#94a3b8" stroke-width="2"/>
+              <polygon points="460,220 452,216 452,224" fill="#94a3b8"/>
+              <polygon points="50,20 46,28 54,28" fill="#94a3b8"/>
+              <text x="464" y="225" font-size="13" fill="#475569" font-style="italic">V</text>
+              <text x="38" y="18" font-size="13" fill="#475569" font-style="italic">p</text>
+              <!-- Isothermal curves (background) -->
+              <path d="M 60 190 Q 150 100, 440 30" stroke="#e2e8f0" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+              <path d="M 80 200 Q 200 110, 440 55" stroke="#e2e8f0" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+              <!-- Main process curves (hidden by default) -->
+              <!-- Изотерма -->
+              <path id="pv-isothermal" d="M 80 40 Q 160 80, 430 190" stroke="#f97316" stroke-width="3" fill="none" stroke-linecap="round" opacity="0"/>
+              <!-- Изобара -->
+              <line id="pv-isobaric" x1="80" y1="100" x2="400" y2="100" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" opacity="0"/>
+              <!-- Изохора -->
+              <line id="pv-isochoric" x1="220" y1="30" x2="220" y2="210" stroke="#10b981" stroke-width="3" stroke-linecap="round" opacity="0"/>
+              <!-- Адиабата -->
+              <path id="pv-adiabatic" d="M 80 30 Q 160 90, 440 210" stroke="#d946ef" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="8,4" opacity="0"/>
+              <!-- Labels -->
+              <text id="pv-lbl-iso" x="300" y="130" font-size="12" fill="#f97316" font-weight="700" opacity="0">pV = const</text>
+              <text id="pv-lbl-isobar" x="300" y="90" font-size="12" fill="#3b82f6" font-weight="700" opacity="0">p = const</text>
+              <text id="pv-lbl-isochor" x="228" y="110" font-size="12" fill="#10b981" font-weight="700" opacity="0">V = const</text>
+              <text id="pv-lbl-adiab" x="300" y="150" font-size="12" fill="#d946ef" font-weight="700" opacity="0">адиабата</text>
+            </svg>
+          </div>
+          <div class="sim-controls" style="flex-direction:column;gap:10px">
+            <div class="pv-buttons">
+              <button class="pv-btn active" data-proc="isothermal" style="color:#f97316;border-color:#f97316;background:#fff7ed">🌡️ Изотерма (T=const)</button>
+              <button class="pv-btn" data-proc="isobaric" style="">📊 Изобара (p=const)</button>
+              <button class="pv-btn" data-proc="isochoric">🔒 Изохора (V=const)</button>
+              <button class="pv-btn" data-proc="adiabatic">⚡ Адиабата (Q=0)</button>
+              <button class="pv-btn" data-proc="all">Все сразу</button>
+            </div>
+          </div>
+          <div class="sim-output" id="pv-info">
+            <div class="sim-out-item" style="min-width:auto;flex:unset">
+              <div class="out-key">Закон</div>
+              <div class="out-val" id="pv-law" style="font-size:.92rem;font-family:inherit">pV = const</div>
+            </div>
+            <div class="sim-out-item" style="min-width:auto;flex:1">
+              <div class="out-key">Что постоянно / Условие</div>
+              <div class="out-val" id="pv-desc" style="font-size:.85rem;font-family:inherit;color:var(--text2);font-weight:500">T = const. При увеличении объёма давление падает (и наоборот). График — гипербола.</div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+          var procs={
+            isothermal:{ids:['pv-isothermal','pv-lbl-iso'],law:'p₁V₁ = p₂V₂',desc:'T = const. При увеличении V давление падает. График в p-V — гипербола.'},
+            isobaric:{ids:['pv-isobaric','pv-lbl-isobar'],law:'V₁/T₁ = V₂/T₂',desc:'p = const. Объём прямо пропорционален температуре (в кельвинах). График V(T) — прямая.'},
+            isochoric:{ids:['pv-isochoric','pv-lbl-isochor'],law:'p₁/T₁ = p₂/T₂',desc:'V = const. Давление прямо пропорционально температуре. График p(T) — прямая.'},
+            adiabatic:{ids:['pv-adiabatic','pv-lbl-adiab'],law:'pV^γ = const',desc:'Q = 0 (без теплообмена). Круче изотермы. При расширении газ охлаждается, при сжатии — нагревается.'},
+            all:{ids:['pv-isothermal','pv-lbl-iso','pv-isobaric','pv-lbl-isobar','pv-isochoric','pv-lbl-isochor','pv-adiabatic','pv-lbl-adiab'],law:'Все изопроцессы',desc:'Адиабата (пурпур) круче изотермы (оранж). Изобара (синий) горизонталь, изохора (зелёный) вертикаль.'}
+          };
+          var colorMap={isothermal:'#f97316',isobaric:'#3b82f6',isochoric:'#10b981',adiabatic:'#d946ef',all:'#1e293b'};
+          var allIds=['pv-isothermal','pv-lbl-iso','pv-isobaric','pv-lbl-isobar','pv-isochoric','pv-lbl-isochor','pv-adiabatic','pv-lbl-adiab'];
+
+          document.querySelectorAll('.pv-btn').forEach(function(btn){
+            btn.addEventListener('click',function(){
+              var proc=btn.dataset.proc;
+              document.querySelectorAll('.pv-btn').forEach(function(b){
+                b.classList.remove('active');
+                b.style.color='';b.style.borderColor='';b.style.background='';
+              });
+              btn.classList.add('active');
+              var col=colorMap[proc]||'#3b82f6';
+              btn.style.color=col;btn.style.borderColor=col;
+              // hide all
+              allIds.forEach(function(id){var el=document.getElementById(id);if(el)el.setAttribute('opacity','0');});
+              // show selected
+              var p=procs[proc];if(!p)return;
+              p.ids.forEach(function(id){var el=document.getElementById(id);if(el)el.setAttribute('opacity','1');});
+              document.getElementById('pv-law').textContent=p.law;
+              document.getElementById('pv-desc').textContent=p.desc;
+            });
+          });
+          // init
+          document.querySelector('.pv-btn').click();
+        })();
+        </script>
+
+        <!-- ── Алгоритм применения газовых законов ── -->
+        <div class="method-card">
+          <div class="mc-head">
+            <div class="mc-icon">🔧</div>
+            <div class="mc-title">Алгоритм: задача на изопроцесс</div>
+          </div>
+          <ol class="mc-steps">
+            <li><strong>Определить процесс:</strong> что остаётся постоянным — T, p или V?</li>
+            <li><strong>Записать объединённый закон:</strong> <span data-tex="\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}"></span> и зачеркнуть одинаковые величины.</li>
+            <li><strong>Перевести температуру в кельвины:</strong> T = t + 273. Это критически важно!</li>
+            <li><strong>Выразить искомое</strong> и подставить числа.</li>
+            <li><strong>Проверить:</strong> при изотерме p и V обратно пропорциональны; при нагреве объём/давление растёт.</li>
+          </ol>
+        </div>
+
+      </section>
+
+      <!-- ════ S5: Закон Дальтона ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Закон Дальтона</h1>
+          <p class="lead">Давление смеси нереагирующих газов равно сумме парциальных давлений компонентов.</p>
+        </div>
+
+        <div class="fcard" id="f-dalton">
+          <div class="flabel">Закон Дальтона</div>
+          <div class="formula" data-tex="p_{смеси} = p_1 + p_2 + \ldots + p_n"></div>
+          <div class="fdesc">p<sub>i</sub> — парциальное давление i-го газа (давление, которое имел бы этот газ, занимая один весь объём)</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Парциальное давление</div>
+          <div class="text">Парциальное давление i-го газа в смеси: <span data-tex="p_i = \dfrac{\nu_i R T}{V_{смеси}}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Внутренняя энергия ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Внутренняя энергия</h1>
+          <p class="lead">Сумма кинетической энергии хаотического движения молекул и потенциальной энергии их взаимодействия.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Внутренняя энергия</div>
+          <div class="text"><b>Внутренняя энергия U</b> — энергия молекулярного и межмолекулярного движения. В идеальном газе E<sub>п взаим</sub> ≈ 0, поэтому U зависит только от температуры.</div>
+        </div>
+
+        <div class="fcard" id="f-U">
+          <div class="flabel">Внутренняя энергия идеального газа</div>
+          <div class="formula" data-tex="U = \dfrac{i}{2}\,\nu R T = \dfrac{i}{2}\,p V"></div>
+          <div class="fdesc">i — число степеней свободы молекулы</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Газ</th><th>i</th><th>Примеры</th></tr>
+            <tr><td>Одноатомный</td><td>3</td><td>He, Ne, Ar</td></tr>
+            <tr><td>Двухатомный</td><td>5</td><td>H₂, N₂, O₂, воздух</td></tr>
+            <tr><td>Многоатомный</td><td>6</td><td>H₂O (пар), CO₂, NH₃</td></tr>
+          </table>
+        </div>
+
+        <div class="fcard" id="f-dU">
+          <div class="flabel">Изменение внутренней энергии</div>
+          <div class="formula" data-tex="\Delta U = \dfrac{i}{2}\,\nu R\,\Delta T"></div>
+          <div class="fdesc">Зависит только от ΔT! Не зависит от пути процесса.</div>
+        </div>
+
+        <div class="fcard" id="f-dU2">
+          <div class="flabel">ΔU через работу газа (для иде. газа)</div>
+          <div class="formula" data-tex="\Delta U = \dfrac{i}{2}(p_2 V_2 - p_1 V_1)"></div>
+          <div class="fdesc">Удобно, когда даны давления и объёмы в начальном и конечном состояниях</div>
+        </div>
+
+        <h2 id="h-cmolar">Молярные теплоёмкости</h2>
+        <div class="grid-2">
+          <div class="fcard" id="f-Cv">
+            <div class="flabel">При постоянном объёме</div>
+            <div class="formula" data-tex="C_V = \dfrac{i}{2}\,R"></div>
+            <div class="fdesc">Q = C<sub>V</sub>·νΔT при V = const</div>
+          </div>
+          <div class="fcard" id="f-Cp">
+            <div class="flabel">При постоянном давлении</div>
+            <div class="formula" data-tex="C_p = \left(\dfrac{i}{2}+1\right)R"></div>
+            <div class="fdesc">Q = C<sub>p</sub>·νΔT при p = const</div>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-mayer">
+          <div class="flabel">Уравнение Майера</div>
+          <div class="formula" data-tex="C_p - C_V = R"></div>
+          <div class="fdesc">⭐ Связь между молярными теплоёмкостями. Разница идёт на работу газа.</div>
+        </div>
+
+        <div class="fcard" id="f-gamma">
+          <div class="flabel">Показатель адиабаты</div>
+          <div class="formula" data-tex="\gamma = \dfrac{C_p}{C_V} = \dfrac{i+2}{i}"></div>
+          <div class="fdesc">Для одноатомных γ = 5/3, для двухатомных γ = 7/5</div>
+        </div>
+      </section>
+
+      <!-- ════ S7: I закон ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Первый закон термодинамики</h1>
+          <p class="lead">Закон сохранения энергии для тепловых процессов. Связывает теплоту, работу и изменение внутренней энергии.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">I закон термодинамики</div>
+          <div class="text">Количество теплоты, переданное системе, расходуется на изменение её внутренней энергии и на совершение работы против внешних сил.</div>
+        </div>
+
+        <div class="fcard" id="f-1zt">
+          <div class="flabel">I закон термодинамики</div>
+          <div class="formula" data-tex="Q = \Delta U + A_{газа}"></div>
+          <div class="fdesc">Q &gt; 0 — газу сообщили теплоту; A<sub>газа</sub> &gt; 0 — газ расширяется (совершает работу)</div>
+        </div>
+
+        <h2 id="h-1zt-cases">Применение в изопроцессах</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Процесс</th><th>Условие</th><th>Δ U</th><th>A газа</th><th>Q</th></tr>
+            <tr><td>Изотермический</td><td>T = const</td><td>0</td><td>Q</td><td>A</td></tr>
+            <tr><td>Изобарный</td><td>p = const</td><td>iνRΔT/2</td><td>p·ΔV</td><td>ΔU + A</td></tr>
+            <tr><td>Изохорный</td><td>V = const</td><td>iνRΔT/2</td><td>0</td><td>ΔU</td></tr>
+            <tr><td>Адиабатный</td><td>Q = 0</td><td>−A</td><td>−ΔU</td><td>0</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ S8: Работа газа ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Работа газа в изопроцессах</h1>
+          <p class="lead">Работа газа численно равна площади под графиком p(V).</p>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Работа газа в изобарном процессе</div>
+          <div class="formula" data-tex="A_{газа} = p\,\Delta V = \nu R\,\Delta T"></div>
+          <div class="fdesc">При p = const</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Работа газа в изохорном процессе</div>
+          <div class="formula" data-tex="A_{газа} = 0"></div>
+          <div class="fdesc">V = const → ΔV = 0</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Работа газа в произвольном процессе</div>
+          <div class="formula" data-tex="A_{газа} = \pm S_{под\;графиком\;p(V)}"></div>
+          <div class="fdesc">«+» если газ расширяется (V₂ &gt; V₁); «−» если сжимается</div>
+        </div>
+
+        <h2 id="h-adiabat">Адиабатический процесс</h2>
+        <div class="def">
+          <div class="label">Адиабатный процесс</div>
+          <div class="text">Процесс, происходящий <b>без теплообмена</b> с окружающей средой (Q = 0). Происходит в теплоизолированной системе или при очень быстрых изменениях.</div>
+        </div>
+
+        <div class="fcard" id="f-adiabat">
+          <div class="flabel">Адиабатический процесс</div>
+          <div class="formula" data-tex="Q = 0 \quad\Rightarrow\quad A_{газа} = -\Delta U"></div>
+          <div class="fdesc">При расширении газ <b>охлаждается</b>, при сжатии — <b>нагревается</b></div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Адиабатический процесс работает, когда: 1) система теплоизолирована, 2) процесс настолько быстрый, что не успевает произойти теплообмен. Пример — быстрое сжатие воздуха в насосе или дизеле.</div>
+        </div>
+      </section>
+
+      <!-- ════ S9: Тепловые двигатели ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Тепловые двигатели. КПД</h1>
+          <p class="lead">Тепловой двигатель преобразует часть полученной от нагревателя теплоты в полезную механическую работу.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">Тепловой двигатель</div>
+          <div class="text">Система: <b>нагреватель</b> (T<sub>наг</sub>) — <b>рабочее тело</b> (газ) — <b>холодильник</b> (T<sub>хол</sub>). Газ берёт Q<sub>подв</sub> у нагревателя, совершает работу A, отдаёт |Q<sub>отв</sub>| холодильнику.</div>
+        </div>
+
+        <div class="fcard" id="f-eta">
+          <div class="flabel">КПД теплового двигателя</div>
+          <div class="formula" data-tex="\eta = \dfrac{A_{газа}}{Q_{подв}} = 1 - \dfrac{|Q_{отв}|}{Q_{подв}}"></div>
+          <div class="fdesc">A = Q<sub>подв</sub> − |Q<sub>отв</sub>|</div>
+        </div>
+
+        <div class="fcard" id="f-carnot">
+          <div class="flabel">КПД идеальной машины Карно</div>
+          <div class="formula" data-tex="\eta_{Карно} = \dfrac{T_{наг} - T_{хол}}{T_{наг}}"></div>
+          <div class="fdesc">⭐ Максимально возможный КПД при заданных температурах. Температуры — в Кельвинах!</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>КПД любого реального двигателя меньше КПД Карно</b> при тех же T<sub>наг</sub> и T<sub>хол</sub>. Это следствие II начала термодинамики.</div>
+        </div>
+
+        <p>Для циклического процесса:</p>
+        <div class="fcard">
+          <div class="flabel">Работа за цикл</div>
+          <div class="formula" data-tex="A_{цикла} = \pm S_{внутри\;цикла\;p(V)}"></div>
+          <div class="fdesc">«+» если цикл идёт по часовой стрелке (двигатель), «−» против часовой (холодильная машина)</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: Калориметрия ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Калориметрия</h1>
+          <p class="lead">Расчёт теплот при нагревании, фазовых переходах и теплообмене.</p>
+        </div>
+
+        <div class="fcard" id="f-Qct">
+          <div class="flabel">Нагревание/охлаждение</div>
+          <div class="formula" data-tex="Q = c\,m\,\Delta T"></div>
+          <div class="fdesc">c — удельная теплоёмкость, m — масса, ΔT — изменение температуры</div>
+        </div>
+
+        <div class="fcard" id="f-Qmelt">
+          <div class="flabel">Плавление / кристаллизация</div>
+          <div class="formula" data-tex="Q = \lambda\,m"></div>
+          <div class="fdesc">λ — удельная теплота плавления (Дж/кг). При t = t<sub>плавления</sub>, T = const</div>
+        </div>
+
+        <div class="fcard" id="f-Qvap">
+          <div class="flabel">Парообразование / конденсация</div>
+          <div class="formula" data-tex="Q = L\,m"></div>
+          <div class="fdesc">L — удельная теплота парообразования (Дж/кг)</div>
+        </div>
+
+        <div class="fcard" id="f-Qcomb">
+          <div class="flabel">Сгорание топлива</div>
+          <div class="formula" data-tex="Q = q\,m"></div>
+          <div class="fdesc">q — удельная теплота сгорания (Дж/кг)</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Уравнение теплового баланса</div>
+          <div class="text">При теплообмене между телами без потерь: <b>сумма отданных теплот = сумме полученных теплот</b>: <span data-tex="\sum Q_{полученных} + \sum Q_{отданных} = 0"></span></div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Вещество</th><th>c, Дж/(кг·К)</th><th>λ, кДж/кг</th><th>L, МДж/кг</th></tr>
+            <tr><td>Вода</td><td>4200</td><td>—</td><td>2,3</td></tr>
+            <tr><td>Лёд</td><td>2100</td><td>330</td><td>—</td></tr>
+            <tr><td>Алюминий</td><td>920</td><td>390</td><td>—</td></tr>
+            <tr><td>Железо</td><td>460</td><td>270</td><td>—</td></tr>
+            <tr><td>Медь</td><td>400</td><td>180</td><td>—</td></tr>
+            <tr><td>Свинец</td><td>140</td><td>25</td><td>—</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ S11: Влажность ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>11. Влажность и фазовые переходы</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Насыщенный пар</div>
+          <div class="text"><b>Насыщенный пар</b> — пар, находящийся в динамическом равновесии со своей жидкостью. Давление насыщенного пара зависит <b>только от температуры</b>, не зависит от объёма.</div>
+        </div>
+
+        <div class="fcard" id="f-phi">
+          <div class="flabel">Относительная влажность</div>
+          <div class="formula" data-tex="\varphi = \dfrac{p_{пар}}{p_{нас}}\cdot 100\% = \dfrac{\rho_{пар}}{\rho_{нас}}\cdot 100\%"></div>
+          <div class="fdesc">Отношение давления пара в воздухе к давлению насыщенного пара при той же температуре</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Условие кипения</div>
+          <div class="text">Кипение начинается, когда давление насыщенного пара становится равным внешнему (атмосферному) давлению: <span data-tex="p_{нас}(T) = p_{атм}"></span>. Поэтому в горах вода кипит при температуре ниже 100 °C.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Для воды при 100 °C: p<sub>нас</sub> ≈ 10⁵ Па ≈ p<sub>атм</sub>. На горе (давление ниже) вода кипит при меньшей температуре. В скороварке (давление выше) — при более высокой.</div>
+        </div>
+      </section>
+
+      <!-- ════ S12: Разбор задач ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head"><h1>★ Разбор задач</h1></div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">В баллоне объёмом <span data-tex="V = 0{,}02\text{ м}^3"></span> находится кислород массой <span data-tex="m = 16\text{ г}"></span> при температуре <span data-tex="t = 27^\circ\text{C}"></span>. Найти давление газа.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="T = 300\text{ К}"></span>; <span data-tex="M(\text{O}_2) = 32\text{ г/моль}"></span>; <span data-tex="\nu = \dfrac{m}{M} = \dfrac{16}{32} = 0{,}5\text{ моль}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="pV = \nu RT \Rightarrow p = \dfrac{\nu RT}{V} = \dfrac{0{,}5\cdot8{,}31\cdot300}{0{,}02} \approx 62\,325\text{ Па} \approx 62\text{ кПа}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="p \approx 62\text{ кПа}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">При нагревании газа от <span data-tex="t_1 = 27^\circ\text{C}"></span> до <span data-tex="t_2 = 127^\circ\text{C}"></span> при постоянном давлении объём увеличился на <span data-tex="\Delta V = 0{,}1\text{ м}^3"></span>. Найти начальный объём.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="T_1 = 300\text{ К},\quad T_2 = 400\text{ К},\quad V_2 - V_1 = 0{,}1\text{ м}^3"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2} \Rightarrow V_2 = V_1\cdot\dfrac{T_2}{T_1} = \dfrac{4}{3}V_1"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="\dfrac{V_1}{3} = 0{,}1 \Rightarrow V_1 = 0{,}3\text{ м}^3"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="V_1 = 0{,}3\text{ м}^3"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Газу передали <span data-tex="Q = 500\text{ Дж}"></span> теплоты, при этом он совершил работу <span data-tex="A = 200\text{ Дж}"></span>. На сколько изменилась его внутренняя энергия?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="Q = \Delta U + A \Rightarrow \Delta U = Q - A = 500 - 200 = 300\text{ Дж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\Delta U = 300\text{ Дж}"></span> (увеличилась)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Идеальная тепловая машина работает между нагревателем при <span data-tex="T_1 = 500\text{ К}"></span> и холодильником при <span data-tex="T_2 = 300\text{ К}"></span>. Найти КПД.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\eta = \dfrac{T_1 - T_2}{T_1} = \dfrac{500 - 300}{500} = \dfrac{200}{500} = 0{,}4 = 40\%"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\eta = 40\%"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Сколько теплоты нужно, чтобы расплавить <span data-tex="m = 2\text{ кг}"></span> льда, взятого при <span data-tex="t_0 = -10^\circ\text{C}"></span>, и довести воду до <span data-tex="t = 20^\circ\text{C}"></span>? (<span data-tex="c_\text{л} = 2100\text{ Дж/(кг·К)}"></span>, <span data-tex="c_\text{в} = 4200\text{ Дж/(кг·К)}"></span>, <span data-tex="\lambda = 330\text{ кДж/кг}"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Нагрев льда от <span data-tex="-10^\circ\text{C}"></span> до <span data-tex="0^\circ\text{C}"></span>: <span data-tex="Q_1 = c_\text{л}\cdot m\cdot\Delta t = 2100\cdot2\cdot10 = 42\,000\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">2</div>Плавление льда: <span data-tex="Q_2 = \lambda m = 330\,000\cdot2 = 660\,000\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">3</div>Нагрев воды от <span data-tex="0^\circ\text{C}"></span> до <span data-tex="20^\circ\text{C}"></span>: <span data-tex="Q_3 = c_\text{в}\cdot m\cdot\Delta t = 4200\cdot2\cdot20 = 168\,000\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">4</div>Суммарно: <span data-tex="Q = 42\,000 + 660\,000 + 168\,000 = 870\text{ кДж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="Q \approx 870\text{ кДж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Найти среднеквадратичную скорость молекул кислорода при <span data-tex="t = 27^\circ\text{C}"></span>.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="T = 300\text{ К},\quad M = 32\cdot10^{-3}\text{ кг/моль}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="v_\text{кв} = \sqrt{\dfrac{3RT}{M}} = \sqrt{\dfrac{3\cdot 8{,}31\cdot 300}{0{,}032}} \approx \sqrt{233\,906} \approx 484\text{ м/с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v_\text{кв} \approx 484\text{ м/с}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S13: Чек-лист ════ -->
+      <section class="sec" id="s13">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+
+        <h2 id="h-must">Что знать наизусть</h2>
+        <ul>
+          <li>Уравнение Менделеева–Клапейрона: pV = νRT</li>
+          <li>p = nkT</li>
+          <li>Объединённый закон: pV/T = const</li>
+          <li>Изопроцессы: Бойль–Мариотт, Гей-Люссак, Шарль</li>
+          <li>Основное уравнение МКТ: <span data-tex="p = \tfrac{2}{3}n\bar{E}_к"></span></li>
+          <li>Средняя кинетическая: <span data-tex="\bar{E}_к = \tfrac{3}{2}kT"></span></li>
+          <li>Внутренняя энергия идеального газа: <span data-tex="U = \tfrac{i}{2}\nu RT"></span></li>
+          <li>I закон термодинамики: Q = ΔU + A</li>
+          <li>Работа газа изобарно: A = pΔV</li>
+          <li>КПД: η = A/Q<sub>подв</sub></li>
+          <li>Карно: η = (T₁−T₂)/T₁</li>
+          <li>Калориметрия: Q = cmΔT, Q = λm, Q = Lm, Q = qm</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Использовать температуру в Цельсиях в pV = νRT. Только Кельвины!</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать, что в КПД Карно температуры можно в Цельсиях. Только Кельвины!</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Применять pV = νRT к смеси газов как к одному газу — нужен закон Дальтона.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Забывать, что при плавлении/кипении T = const (теплота идёт на разрыв связей, а не на нагрев).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать удельную теплоёмкость c (Дж/(кг·К)) с молярной C<sub>M</sub>.</div></div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">06 Электростатика</div>
+            <div class="tp-desc">Закон Кулона, электрическое поле, конденсаторы</div>
+          </div>
+          <a class="tp-btn" href="06_elektrostatika.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы МКТ и термодинамики</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-NA"><div class="ri-name">Число Авогадро</div><div class="ri-formula">N_A ≈ 6,02·10²³</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-T"><div class="ri-name">Перевод T</div><div class="ri-formula">T = t + 273</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-mendeleev"><div class="ri-name">Менделеев–Клапейрон</div><div class="ri-formula">pV = νRT</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-mendeleev"><div class="ri-name">Через концентрацию</div><div class="ri-formula">p = nkT</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-mkt-main"><div class="ri-name">Основное уравнение МКТ</div><div class="ri-formula">p = (2/3)·n·E_к</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-Ek-mol"><div class="ri-name">E кин молекулы</div><div class="ri-formula">E_к = (3/2)kT</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-mkt-rho"><div class="ri-name">МКТ через плотность</div><div class="ri-formula">p = (1/3)ρ·v²</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-Cv"><div class="ri-name">Молярная C при V=const</div><div class="ri-formula">C_V = (i/2)R</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-Cp"><div class="ri-name">Молярная C при p=const</div><div class="ri-formula">C_p = (i/2+1)R</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-mayer"><div class="ri-name">Уравнение Майера</div><div class="ri-formula">C_p − C_V = R</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-gamma"><div class="ri-name">Показатель адиабаты</div><div class="ri-formula">γ = C_p/C_V</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-united"><div class="ri-name">Объединённый закон</div><div class="ri-formula">pV/T = const</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="h-iso"><div class="ri-name">Бойль–Мариотт</div><div class="ri-formula">p₁V₁ = p₂V₂</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="h-iso"><div class="ri-name">Гей-Люссак</div><div class="ri-formula">V₁/T₁ = V₂/T₂</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="h-iso"><div class="ri-name">Шарль</div><div class="ri-formula">p₁/T₁ = p₂/T₂</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-dalton"><div class="ri-name">Закон Дальтона</div><div class="ri-formula">p_см = Σp_i</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-U"><div class="ri-name">Внутренняя энергия</div><div class="ri-formula">U = (i/2)·νRT</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-1zt"><div class="ri-name">I закон термодинамики</div><div class="ri-formula">Q = ΔU + A</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-adiabat"><div class="ri-name">Адиабатный процесс</div><div class="ri-formula">Q = 0, A = −ΔU</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-eta"><div class="ri-name">КПД двигателя</div><div class="ri-formula">η = A/Q_подв</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-carnot"><div class="ri-name">КПД Карно</div><div class="ri-formula">η = (T₁−T₂)/T₁</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-Qct"><div class="ri-name">Нагревание</div><div class="ri-formula">Q = cmΔT</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-Qmelt"><div class="ri-name">Плавление</div><div class="ri-formula">Q = λm</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-Qvap"><div class="ri-name">Парообразование</div><div class="ri-formula">Q = Lm</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-Qcomb"><div class="ri-name">Сгорание топлива</div><div class="ri-formula">Q = qm</div></div>
+    <div class="ref-item" data-section="s11" data-anchor="f-phi"><div class="ri-name">Относительная влажность</div><div class="ri-formula">φ = p/p_нас·100%</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

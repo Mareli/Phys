@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Колебания и волны — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t09">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🌊</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Колебания и волны</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 09</span>
+      <h2>Колебания и волны</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Колебания</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">📊</span>Основные понятия</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">🌊</span>Гармонические колебания</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">🪀</span>Пружинный маятник</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">⏰</span>Математический маятник</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">⚡</span>Энергия колебаний</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">📡</span>Затухающие. Резонанс</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Электромагнитные</div>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">🔋</span>Колебательный контур</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">⚡</span>Переменный ток</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Волны</div>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">🌊</span>Механические волны</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">🔊</span>Звук</button>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">📶</span>Электромагнитные волны</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s13"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1 ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Основные понятия колебаний</h1>
+          <p class="lead">Колебания — повторяющиеся во времени процессы. Описываются периодом, частотой, амплитудой и фазой.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Колебания</div>
+          <div class="text"><b>Колебания</b> — точное или приближённое повторение какого-либо процесса с течением времени. Бывают механическими, электромагнитными и т. д.</div>
+        </div>
+
+        <div class="fcard" id="f-T">
+          <div class="flabel">Период колебаний</div>
+          <div class="formula" data-tex="T = \dfrac{t}{N}"></div>
+          <div class="fdesc">Минимальное время одного полного колебания. Единица: <b>1 с</b></div>
+        </div>
+
+        <div class="fcard" id="f-nu">
+          <div class="flabel">Частота колебаний</div>
+          <div class="formula" data-tex="\nu = \dfrac{1}{T} = \dfrac{N}{t}"></div>
+          <div class="fdesc">Число колебаний в секунду. Единица: <b>1 Гц = 1 1/с</b></div>
+        </div>
+
+        <div class="fcard" id="f-omega">
+          <div class="flabel">Циклическая (круговая) частота</div>
+          <div class="formula" data-tex="\omega = \dfrac{2\pi}{T} = 2\pi\nu"></div>
+          <div class="fdesc">Единица: <b>1 рад/с</b></div>
+        </div>
+      </section>
+
+      <!-- ════ S2: Гармонические ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Гармонические колебания</h1>
+          <p class="lead">Колебания, при которых колеблющаяся величина изменяется по закону синуса или косинуса.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="fcard" id="f-harm">
+          <div class="flabel">Уравнение гармонических колебаний</div>
+          <div class="formula" data-tex="x = A\,\cos(\omega t + \varphi_0)"></div>
+          <div class="fdesc">A — амплитуда, ω — циклическая частота, φ₀ — начальная фаза. Полная фаза: φ = ωt + φ₀</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Амплитуда A</div>
+          <div class="text"><b>Амплитуда</b> — максимальное отклонение колеблющейся величины от положения равновесия. Всегда положительна.</div>
+        </div>
+
+        <h2 id="h-vel-acc">Скорость и ускорение при гармонических колебаниях</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Скорость</div>
+            <div class="chip-formula" data-tex="v = -A\omega\sin(\omega t + \varphi_0)"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Ускорение</div>
+            <div class="chip-formula" data-tex="a = -A\omega^2\cos(\omega t + \varphi_0)"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Максимальная скорость</div>
+            <div class="chip-formula" data-tex="v_{max} = A\omega"></div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Максимальное ускорение</div>
+            <div class="chip-formula" data-tex="a_{max} = A\omega^2"></div>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-diffeq">
+          <div class="flabel">Ускорение при колебаниях</div>
+          <div class="formula" data-tex="a = -\omega^2\,x"></div>
+          <div class="fdesc">⭐ Ускорение пропорционально смещению и направлено к положению равновесия</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>В крайних точках</b> (x = ±A): v = 0, |a| = max. <b>В положении равновесия</b> (x = 0): |v| = max, a = 0. Скорость и ускорение сдвинуты по фазе на π/2 относительно координаты.</div>
+        </div>
+      </section>
+
+      <!-- ════ S3: Пружинный ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Пружинный маятник</h1>
+          <p class="lead">Груз на пружине совершает гармонические колебания, если выполняется закон Гука.</p>
+        </div>
+
+        <div class="fcard" id="f-spring">
+          <div class="flabel">Период пружинного маятника</div>
+          <div class="formula" data-tex="T = 2\pi\sqrt{\dfrac{m}{k}}"></div>
+          <div class="fdesc">m — масса груза, k — жёсткость пружины. Период не зависит от амплитуды!</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Циклическая частота</div>
+          <div class="formula" data-tex="\omega = \sqrt{\dfrac{k}{m}}"></div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Период пружинного маятника <b>не зависит от ускорения свободного падения</b>. Он одинаков на Земле, на Луне и в невесомости.</div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Математический ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Математический маятник</h1>
+          <p class="lead">Точечная масса, подвешенная на невесомой нерастяжимой нити. Колеблется в поле тяжести.</p>
+        </div>
+
+        <div class="fcard" id="f-math-pend">
+          <div class="flabel">Период математического маятника</div>
+          <div class="formula" data-tex="T = 2\pi\sqrt{\dfrac{l}{g}}"></div>
+          <div class="fdesc">l — длина нити, g — ускорение свободного падения. Не зависит от массы и амплитуды (при малых углах)</div>
+        </div>
+
+        <h2 id="h-math-spec">Маятник в особых условиях</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h4>В лифте, движущемся вверх с ускорением a</h4>
+            <p><span data-tex="T = 2\pi\sqrt{\dfrac{l}{g + a}}"></span></p>
+            <p>Период уменьшается.</p>
+          </div>
+          <div class="card">
+            <h4>В лифте, движущемся вниз с ускорением a</h4>
+            <p><span data-tex="T = 2\pi\sqrt{\dfrac{l}{g - a}}"></span></p>
+            <p>Период увеличивается. При a = g — период бесконечен (невесомость).</p>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Формула <span data-tex="T = 2\pi\sqrt{l/g}"></span> справедлива только для <b>малых углов отклонения</b> (в пределах ~5°). При больших углах период зависит от амплитуды.</div>
+        </div>
+      </section>
+
+      <!-- ════ S5: Энергия ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Энергия колебаний</h1>
+          <p class="lead">При гармонических колебаниях кинетическая и потенциальная энергии непрерывно превращаются друг в друга, но их сумма остаётся постоянной.</p>
+        </div>
+
+        <div class="fcard" id="f-energy">
+          <div class="flabel">Полная энергия пружинного маятника</div>
+          <div class="formula" data-tex="E = \dfrac{k\,A^2}{2} = \dfrac{m\,v_{max}^2}{2}"></div>
+          <div class="fdesc">Сохраняется в любой момент времени</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Закон сохранения для колебаний</div>
+          <div class="formula" data-tex="\dfrac{k x^2}{2} + \dfrac{m v^2}{2} = \dfrac{k A^2}{2} = const"></div>
+          <div class="fdesc">Используй для нахождения скорости в любой точке</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Полная энергия колебаний <b>пропорциональна квадрату амплитуды</b>. Если амплитуда удвоится — энергия вырастет в 4 раза.</div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Затухающие, резонанс ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Затухающие и вынужденные колебания. Резонанс</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Виды колебаний</div>
+          <div class="text">
+          <b>Свободные</b> — после однократного выведения из равновесия. Без потерь идут с частотой ω₀.<br>
+          <b>Затухающие</b> — со временем амплитуда уменьшается из-за потерь энергии (трение, сопротивление).<br>
+          <b>Вынужденные</b> — под действием периодической внешней силы. Частота равна частоте вынуждающей силы.
+          </div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Резонанс</div>
+          <div class="text"><b>Резонанс</b> — резкое увеличение амплитуды вынужденных колебаний при совпадении частоты вынуждающей силы с собственной частотой системы (ω = ω₀).</div>
+        </div>
+
+        <p>Применения резонанса: радиоприёмники (настройка на частоту станции), музыкальные инструменты, СВЧ-печи.<br>
+        Опасность: разрушение мостов и зданий при резонансе с частотой ветра, шагов, сейсмических колебаний.</p>
+      </section>
+
+      <!-- ════ S7: Колебательный контур ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Колебательный контур</h1>
+          <p class="lead">Электрическая цепь из конденсатора и катушки. В ней происходят электромагнитные колебания.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">Колебательный контур</div>
+          <div class="text">Электрическая цепь из конденсатора (C) и катушки индуктивности (L). Если зарядить конденсатор и замкнуть цепь, в ней возникнут электромагнитные колебания: заряд конденсатора и ток в катушке периодически меняются.</div>
+        </div>
+
+        <div class="fcard" id="f-thomson">
+          <div class="flabel">Формула Томсона (период электромагнитных колебаний)</div>
+          <div class="formula" data-tex="T = 2\pi\sqrt{LC}"></div>
+          <div class="fdesc">L — индуктивность, C — электроёмкость. Циклическая частота: <span data-tex="\omega = 1/\sqrt{LC}"></span></div>
+        </div>
+
+        <div class="fcard" id="f-conserv">
+          <div class="flabel">Закон сохранения для контура</div>
+          <div class="formula" data-tex="\dfrac{q^2}{2C} + \dfrac{L\,I^2}{2} = \dfrac{q_{max}^2}{2C} = \dfrac{L\,I_{max}^2}{2}"></div>
+          <div class="fdesc">Энергия конденсатора + энергия катушки = const</div>
+        </div>
+
+        <div class="fcard" id="f-Imax">
+          <div class="flabel">Связь максимальных значений</div>
+          <div class="formula" data-tex="I_{max} = q_{max}\,\omega = \dfrac{q_{max}}{\sqrt{LC}}"></div>
+          <div class="fdesc">Также: <span data-tex="U_{max} = \dfrac{q_{max}}{C}"></span></div>
+        </div>
+
+        <h2 id="h-loop-eqs">Уравнения колебаний в контуре</h2>
+        <div class="grid-2">
+          <div class="fcard" id="f-q-t">
+            <div class="flabel">Заряд конденсатора</div>
+            <div class="formula" data-tex="q = q_{max}\cos\omega t"></div>
+            <div class="fdesc">Если в момент t = 0 конденсатор полностью заряжен</div>
+          </div>
+          <div class="fcard" id="f-I-t">
+            <div class="flabel">Сила тока в катушке</div>
+            <div class="formula" data-tex="I = -q_{max}\,\omega\sin\omega t"></div>
+            <div class="fdesc">Сдвиг по фазе на π/2 относительно q</div>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-U-t">
+          <div class="flabel">Напряжение на конденсаторе</div>
+          <div class="formula" data-tex="U = U_{max}\cos\omega t = \dfrac{q_{max}}{C}\cos\omega t"></div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Аналогии для контура:</b><br>
+          • заряд q ↔ координата x<br>
+          • ток I ↔ скорость v<br>
+          • индуктивность L ↔ масса m<br>
+          • 1/C ↔ жёсткость k<br>
+          • E пружины kx²/2 ↔ E конд. q²/(2C)<br>
+          • E кин. mv²/2 ↔ E катушки LI²/2</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Аналогия с пружинным маятником:</b> ёмкость C ↔ 1/k, индуктивность L ↔ m, заряд q ↔ x, ток I ↔ v.</div>
+        </div>
+      </section>
+
+      <!-- ════ S8: Переменный ток ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Переменный ток</h1>
+          <p class="lead">Электрический ток, изменяющийся со временем по гармоническому закону.</p>
+        </div>
+
+        <div class="fcard" id="f-acI">
+          <div class="flabel">Мгновенные значения</div>
+          <div class="formula" data-tex="i = I_{max}\sin\omega t, \quad u = U_{max}\sin\omega t"></div>
+          <div class="fdesc">Промышленная частота: 50 Гц. В США: 60 Гц</div>
+        </div>
+
+        <div class="fcard" id="f-rms">
+          <div class="flabel">Действующие (эффективные) значения</div>
+          <div class="formula" data-tex="I_{дейст} = \dfrac{I_{max}}{\sqrt{2}}, \quad U_{дейст} = \dfrac{U_{max}}{\sqrt{2}}"></div>
+          <div class="fdesc">Это те значения, которые показывают амперметр и вольтметр. На розетке 220 В — это U<sub>дейст</sub>, а U<sub>max</sub> ≈ 311 В</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Средняя мощность</div>
+          <div class="formula" data-tex="\bar{P} = I_{дейст}\,U_{дейст}\,\cos\varphi"></div>
+          <div class="fdesc">cos φ — коэффициент мощности (для активной нагрузки cos φ = 1)</div>
+        </div>
+
+        <h2 id="h-trans">Трансформатор</h2>
+        <div class="def">
+          <div class="label">Трансформатор</div>
+          <div class="text"><b>Трансформатор</b> — устройство для изменения напряжения переменного тока. Состоит из двух катушек на общем сердечнике.</div>
+        </div>
+
+        <div class="fcard" id="f-trans">
+          <div class="flabel">Коэффициент трансформации</div>
+          <div class="formula" data-tex="k = \dfrac{N_1}{N_2} = \dfrac{U_1}{U_2} = \dfrac{I_2}{I_1}"></div>
+          <div class="fdesc">N — число витков. При повышении U во столько же раз падает I</div>
+        </div>
+      </section>
+
+      <!-- ════ S9: Механические волны ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Механические волны</h1>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Волна</div>
+          <div class="text"><b>Волна</b> — процесс распространения колебаний в среде с течением времени. Энергия передаётся от точки к точке, но <b>сама среда не переносится</b>.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>📈 Поперечная волна</h4>
+            <p>Частицы колеблются <b>перпендикулярно</b> направлению распространения волны.</p>
+            <p>Возникает в твёрдых телах. Пример: волна в шнуре.</p>
+          </div>
+          <div class="card">
+            <h4>📊 Продольная волна</h4>
+            <p>Частицы колеблются <b>вдоль</b> направления распространения волны.</p>
+            <p>Возникает в любых средах. Пример: звук в воздухе, пружина.</p>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-lambda">
+          <div class="flabel">Длина волны</div>
+          <div class="formula" data-tex="\lambda = v\cdot T = \dfrac{v}{\nu}"></div>
+          <div class="fdesc">λ — минимальное расстояние между точками, колеблющимися в одинаковой фазе. v — скорость волны.</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Уравнение бегущей волны</div>
+          <div class="formula" data-tex="x(r,t) = A\cos\left(\omega t - \dfrac{2\pi}{\lambda}r\right)"></div>
+          <div class="fdesc">r — расстояние от источника, t — время</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: Звук ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Звук</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Звук</div>
+          <div class="text"><b>Звук</b> — продольная механическая волна с частотой от <b>16 Гц до 20 000 Гц</b>. Распространяется в любой упругой среде.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Среда</th><th>Скорость звука, м/с</th></tr>
+            <tr><td>Воздух (20 °C)</td><td>343</td></tr>
+            <tr><td>Вода</td><td>≈ 1500</td></tr>
+            <tr><td>Сталь</td><td>≈ 5000</td></tr>
+            <tr><td>Алюминий</td><td>≈ 6400</td></tr>
+            <tr><td>Вакуум</td><td>0 (звук не распространяется)</td></tr>
+          </table>
+        </div>
+
+        <div class="def">
+          <div class="label">Характеристики звука</div>
+          <div class="text">
+          <b>Высота</b> — определяется частотой (выше частота → выше тон).<br>
+          <b>Громкость</b> — связана с амплитудой колебаний и интенсивностью.<br>
+          <b>Тембр</b> — определяется наличием обертонов.
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="label">Диапазоны</div>
+          <div class="text">
+          <b>Инфразвук</b> — менее 16 Гц (землетрясения, ветер).<br>
+          <b>Слышимый звук</b> — 16 Гц – 20 кГц.<br>
+          <b>Ультразвук</b> — выше 20 кГц (УЗИ, эхолоты, чистка).
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ S11: Электромагнитные волны ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>11. Электромагнитные волны</h1>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Электромагнитная волна</div>
+          <div class="text"><b>Электромагнитная волна</b> — распространяющееся в пространстве колебание электрического и магнитного полей. <b>Поперечная волна</b>: векторы E и B перпендикулярны направлению распространения и друг другу.</div>
+        </div>
+
+        <div class="fcard" id="f-c">
+          <div class="flabel">Скорость в вакууме</div>
+          <div class="formula" data-tex="c \approx 3\cdot 10^8\;\text{м/с}"></div>
+          <div class="fdesc">⭐ Максимальная скорость во Вселенной (по теории Эйнштейна)</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Длина электромагнитной волны</div>
+          <div class="formula" data-tex="\lambda = \dfrac{c}{\nu}"></div>
+        </div>
+
+        <h2 id="h-spectrum">Шкала электромагнитных волн</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Тип</th><th>λ</th><th>ν, Гц</th><th>Применение</th></tr>
+            <tr><td>Радиоволны</td><td>&gt; 10 см</td><td>&lt; 3·10⁹</td><td>Связь, радио</td></tr>
+            <tr><td>СВЧ</td><td>1 мм – 10 см</td><td>10⁹–10¹¹</td><td>Радар, СВЧ-печи</td></tr>
+            <tr><td>Инфракрасные</td><td>0,8 мкм – 1 мм</td><td>10¹¹–4·10¹⁴</td><td>Тепло, ночное видение</td></tr>
+            <tr><td>Видимые</td><td>0,4–0,8 мкм</td><td>4·10¹⁴–8·10¹⁴</td><td>Зрение</td></tr>
+            <tr><td>Ультрафиолет</td><td>10–400 нм</td><td>10¹⁵–10¹⁶</td><td>Загар, стерилизация</td></tr>
+            <tr><td>Рентген</td><td>0,01–10 нм</td><td>10¹⁶–10¹⁹</td><td>Медицина</td></tr>
+            <tr><td>Гамма</td><td>&lt; 0,01 нм</td><td>&gt; 10¹⁹</td><td>Ядерная физика</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ S12: Разбор задач ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head"><h1>★ Разбор задач</h1></div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Математический маятник длиной <span data-tex="1\text{ м}"></span> совершает колебания. Найти период. (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="T = 2\pi\sqrt{\dfrac{l}{g}} = 2\pi\sqrt{\dfrac{1}{10}} = 2\pi\cdot0{,}316 \approx 1{,}99\text{ с} \approx 2\text{ с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="T \approx 2\text{ с}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Груз массой <span data-tex="0{,}5\text{ кг}"></span> на пружине жёсткостью <span data-tex="200\text{ Н/м}"></span>. Найти период колебаний.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="T = 2\pi\sqrt{\dfrac{m}{k}} = 2\pi\sqrt{\dfrac{0{,}5}{200}} = 2\pi\sqrt{0{,}0025} = 2\pi\cdot0{,}05 \approx 0{,}314\text{ с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="T \approx 0{,}31\text{ с}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">В колебательном контуре <span data-tex="L = 0{,}1\text{ Гн}"></span>, <span data-tex="C = 10\text{ мкФ}"></span>. Найти период электромагнитных колебаний.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="T = 2\pi\sqrt{LC} = 2\pi\sqrt{0{,}1\cdot10^{-5}} = 2\pi\sqrt{10^{-6}} = 2\pi\cdot10^{-3}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="T \approx 6{,}28\cdot10^{-3}\text{ с} \approx 6{,}28\text{ мс}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="T \approx 6{,}3\text{ мс}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Источник звука создаёт колебания частотой <span data-tex="500\text{ Гц}"></span>. Найти длину звуковой волны в воздухе. (<span data-tex="v = 340\text{ м/с}"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\lambda = \dfrac{v}{\nu} = \dfrac{340}{500} = 0{,}68\text{ м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\lambda = 0{,}68\text{ м}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Радиостанция работает на длине волны <span data-tex="3\text{ м}"></span>. Какова частота её колебаний?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\nu = \dfrac{c}{\lambda} = \dfrac{3\cdot10^8}{3} = 10^8\text{ Гц} = 100\text{ МГц}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\nu = 100\text{ МГц}"></span> (FM-диапазон)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Пружинный маятник имеет жёсткость <span data-tex="k = 100\text{ Н/м}"></span> и амплитуду <span data-tex="0{,}1\text{ м}"></span>. Найти полную энергию колебаний.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="E = \dfrac{kA^2}{2} = \dfrac{100\cdot0{,}01}{2} = 0{,}5\text{ Дж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="E = 0{,}5\text{ Дж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Первичная обмотка имеет <span data-tex="1000\text{ витков}"></span>, вторичная — <span data-tex="200\text{ витков}"></span>. На первичную подано <span data-tex="220\text{ В}"></span>. Какое напряжение на вторичной?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2} \;\Rightarrow\; U_2 = U_1\cdot\dfrac{N_2}{N_1} = 220\cdot\dfrac{200}{1000} = 44\text{ В}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="U_2 = 44\text{ В}"></span> (понижающий трансформатор)</div>
+        </div>
+      </section>
+
+      <!-- ════ S13: Чек-лист ════ -->
+      <section class="sec" id="s13">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+        <h2 id="h-must">Формулы наизусть</h2>
+        <ul>
+          <li>Период и частота: T = 1/ν; ω = 2π/T = 2πν</li>
+          <li>Уравнение гармонических колебаний: x = A·cos(ωt + φ₀)</li>
+          <li>Связь: a = −ω²x; v<sub>max</sub> = Aω; a<sub>max</sub> = Aω²</li>
+          <li>Пружинный маятник: <span data-tex="T = 2\pi\sqrt{m/k}"></span></li>
+          <li>Математический маятник: <span data-tex="T = 2\pi\sqrt{l/g}"></span></li>
+          <li>Энергия пружинного: E = kA²/2</li>
+          <li>Контур (Томсон): <span data-tex="T = 2\pi\sqrt{LC}"></span></li>
+          <li>Действующее значение: I<sub>д</sub> = I<sub>max</sub>/√2</li>
+          <li>Трансформатор: U₁/U₂ = N₁/N₂</li>
+          <li>Длина волны: λ = vT = v/ν</li>
+          <li>Скорость света: c ≈ 3·10⁸ м/с</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Применять формулу математического маятника при больших углах отклонения.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Думать, что период пружинного маятника зависит от g — нет, не зависит.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать действующее и максимальное значения переменного тока (220 В — действующее).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать, что в волне переносится среда. Переносится энергия, а не вещество.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать, что E пропорциональна A. На самом деле — A².</div></div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">10 Оптика</div>
+            <div class="tp-desc">Отражение, преломление, линзы, дифракция</div>
+          </div>
+          <a class="tp-btn" href="10_optika.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы колебаний и волн</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-T"><div class="ri-name">Период</div><div class="ri-formula">T = t/N</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-nu"><div class="ri-name">Частота</div><div class="ri-formula">ν = 1/T</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-omega"><div class="ri-name">Циклическая частота</div><div class="ri-formula">ω = 2π/T = 2πν</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-harm"><div class="ri-name">Уравнение колебаний</div><div class="ri-formula">x = A·cos(ωt + φ₀)</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="h-vel-acc"><div class="ri-name">v_max</div><div class="ri-formula">v_max = Aω</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="h-vel-acc"><div class="ri-name">a_max</div><div class="ri-formula">a_max = Aω²</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-diffeq"><div class="ri-name">Дифф. уравнение</div><div class="ri-formula">a = −ω²x</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-spring"><div class="ri-name">Пружинный маятник</div><div class="ri-formula">T = 2π√(m/k)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-math-pend"><div class="ri-name">Математический маятник</div><div class="ri-formula">T = 2π√(l/g)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-energy"><div class="ri-name">Энергия колебаний</div><div class="ri-formula">E = kA²/2</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-thomson"><div class="ri-name">Формула Томсона</div><div class="ri-formula">T = 2π√(LC)</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-conserv"><div class="ri-name">Закон сохранения для контура</div><div class="ri-formula">q²/2C + LI²/2 = const</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-Imax"><div class="ri-name">Связь максимумов</div><div class="ri-formula">I_max = ω·q_max</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-q-t"><div class="ri-name">Заряд в контуре</div><div class="ri-formula">q = q_max·cos(ωt)</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-I-t"><div class="ri-name">Ток в контуре</div><div class="ri-formula">I = −q_max·ω·sin(ωt)</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-rms"><div class="ri-name">Действующее значение</div><div class="ri-formula">I_д = I_max/√2</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-trans"><div class="ri-name">Трансформатор</div><div class="ri-formula">U₁/U₂ = N₁/N₂</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-lambda"><div class="ri-name">Длина волны</div><div class="ri-formula">λ = vT = v/ν</div></div>
+    <div class="ref-item" data-section="s11" data-anchor="f-c"><div class="ri-name">Скорость света</div><div class="ri-formula">c ≈ 3·10⁸ м/с</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

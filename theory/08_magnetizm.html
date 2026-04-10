@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Магнетизм — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t08">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🧲</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Магнетизм</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 08</span>
+      <h2>Магнетизм</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Магнитное поле</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">🧲</span>Магнитное поле. Индукция</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">🎯</span>Сила Лоренца</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">⚙</span>Сила Ампера</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">⭕</span>Движение зарядов в поле</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">📡</span>Поля типичных токов</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">📦</span>Рамка с током</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Электромагнитная индукция</div>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">📊</span>Магнитный поток</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">⚡</span>Закон Фарадея. Правило Ленца</button>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">📏</span>ЭДС в движущемся проводнике</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">🔄</span>Самоиндукция. Индуктивность</button>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">💾</span>Энергия магнитного поля</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s13"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1: Магнитное поле ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Магнитное поле. Магнитная индукция</h1>
+          <p class="lead">Магнитное поле существует вокруг движущихся электрических зарядов и действует на другие движущиеся заряды.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Магнитное поле</div>
+          <div class="text"><b>Магнитное поле</b> — особый вид материи, возникающий вокруг движущихся электрических зарядов (токов) и действующий магнитными силами на другие движущиеся заряды (токи).</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Магнитная индукция</div>
+          <div class="text"><b>Магнитная индукция B</b> — векторная характеристика магнитного поля. Численно равна максимальной силе, действующей на единицу заряда, движущегося со скоростью 1 м/с.</div>
+        </div>
+
+        <p>Единица измерения: <b>1 Тл (тесла)</b>. <span data-tex="1\;\text{Тл} = 1\;\text{Н}/(\text{А}\cdot\text{м}) = 1\;\text{Н}\cdot\text{с}/(\text{Кл}\cdot\text{м})"></span></p>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Магнитное поле Земли ≈ 5·10⁻⁵ Тл (50 мкТл). Поле постоянного магнита ≈ 0,01–1 Тл. Сильные исследовательские магниты — до 30 Тл.</div>
+        </div>
+
+        <h2 id="h-lines">Магнитные линии</h2>
+        <div class="def">
+          <div class="label">Линии магнитной индукции</div>
+          <div class="text"><b>Магнитные линии</b> — линии, касательные к которым в каждой точке совпадают с направлением вектора B. Они <b>замкнуты</b> (выходят из N-полюса, входят в S-полюс снаружи магнита, замыкаются внутри).</div>
+        </div>
+      </section>
+
+      <!-- ════ S2: Сила Лоренца ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Сила Лоренца</h1>
+          <p class="lead">Сила, действующая со стороны магнитного поля на отдельный движущийся заряд.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="fcard" id="f-lor">
+          <div class="flabel">Сила Лоренца</div>
+          <div class="formula" data-tex="F_{л} = |q|\,v\,B\,\sin\alpha"></div>
+          <div class="fdesc">α — угол между скоростью v и вектором B</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Свойства силы Лоренца</div>
+          <div class="text">
+          <b>1.</b> F<sub>л</sub> <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span> v и F<sub>л</sub> <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span> B (всегда перпендикулярна и скорости, и индукции).<br>
+          <b>2.</b> Если v <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">∥</span> B (α = 0°), то F<sub>л</sub> = 0.<br>
+          <b>3.</b> Сила Лоренца <b>не совершает работы</b> (так как <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span> скорости).<br>
+          <b>4.</b> Меняет только направление скорости, не меняя её модуль.
+          </div>
+        </div>
+
+        <h2 id="h-left">Правило левой руки</h2>
+        <div class="card">
+          <h4>Для определения направления F<sub>л</sub></h4>
+          <p>Расположи левую ладонь так, чтобы:</p>
+          <ul>
+            <li>Линии магнитного поля <b>входили в ладонь</b></li>
+            <li>Четыре пальца — по направлению скорости <b>положительного</b> заряда</li>
+            <li>Большой палец укажет направление силы Лоренца</li>
+          </ul>
+          <p>Для отрицательного заряда — направление силы <b>противоположно</b>.</p>
+        </div>
+      </section>
+
+      <!-- ════ S3: Сила Ампера ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Сила Ампера</h1>
+          <p class="lead">Сила, действующая со стороны магнитного поля на проводник с током.</p>
+        </div>
+
+        <div class="fcard" id="f-amp">
+          <div class="flabel">Сила Ампера</div>
+          <div class="formula" data-tex="F_{А} = I\,l\,B\,\sin\alpha"></div>
+          <div class="fdesc">I — сила тока, l — длина проводника, α — угол между током и B</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Сила Ампера — это <b>сумма сил Лоренца</b>, действующих на все носители тока в проводнике. Поэтому правило левой руки одинаково для обеих сил.</div>
+        </div>
+
+        <h2 id="h-amp-rule">Правило левой руки для силы Ампера</h2>
+        <p>Расположи левую ладонь так, чтобы B входил в ладонь, а четыре пальца показывали направление <b>тока</b>. Тогда большой палец укажет направление силы Ампера.</p>
+      </section>
+
+      <!-- ════ S4: Движение зарядов ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Движение зарядов в магнитном поле</h1>
+        </div>
+
+        <h2 id="h-circle">Случай v <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span> B</h2>
+        <p>Сила Лоренца перпендикулярна скорости и постоянна по модулю → траектория частицы — <b>окружность</b>. Сила Лоренца играет роль центростремительной.</p>
+
+        <div class="fcard" id="f-Rorbit">
+          <div class="flabel">Радиус окружности</div>
+          <div class="formula" data-tex="R = \dfrac{m\,v}{|q|\,B}"></div>
+          <div class="fdesc">Из условия <span data-tex="qvB = \dfrac{mv^2}{R}"></span></div>
+        </div>
+
+        <div class="fcard" id="f-Torbit">
+          <div class="flabel">Период обращения</div>
+          <div class="formula" data-tex="T = \dfrac{2\pi m}{|q|\,B}"></div>
+          <div class="fdesc">⭐ Не зависит от скорости частицы! На этом основан принцип работы циклотрона.</div>
+        </div>
+
+        <h2 id="h-spiral">Случай v под углом к B</h2>
+        <p>Скорость раскладывается на v<sub><span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">∥</span></sub> (вдоль B) и v<sub><span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span></sub> (поперёк). Параллельная компонента не меняется (сила = 0), перпендикулярная вызывает вращение. Результат: движение по <b>спирали</b>.</p>
+
+        <div class="fcard">
+          <div class="flabel">Шаг спирали</div>
+          <div class="formula" data-tex="h = v_{\|}\,T = v\,\cos\alpha\cdot\dfrac{2\pi m}{|q|\,B}"></div>
+          <div class="fdesc">Расстояние, на которое смещается частица за один оборот</div>
+        </div>
+      </section>
+
+      <!-- ════ S5: Поля токов ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Магнитные поля типичных токов</h1>
+        </div>
+
+        <h2 id="h-line">Прямой длинный проводник</h2>
+        <div class="fcard" id="f-Bwire">
+          <div class="flabel">B на расстоянии r от прямого тока</div>
+          <div class="formula" data-tex="B = \dfrac{\mu_0\,I}{2\pi r}"></div>
+          <div class="fdesc">μ₀ = 4π·10⁻⁷ Тл·м/А — магнитная постоянная</div>
+        </div>
+
+        <h2 id="h-loop">В центре кругового витка радиуса R</h2>
+        <div class="fcard" id="f-Bloop">
+          <div class="flabel">B в центре витка</div>
+          <div class="formula" data-tex="B = \dfrac{\mu_0\,I}{2R}"></div>
+        </div>
+
+        <h2 id="h-sol">Длинный соленоид (катушка)</h2>
+        <div class="fcard" id="f-Bsol">
+          <div class="flabel">B внутри соленоида</div>
+          <div class="formula" data-tex="B = \mu_0\,n\,I = \mu_0\,\dfrac{N}{l}\,I"></div>
+          <div class="fdesc">n = N/l — число витков на единицу длины. Поле внутри однородно, снаружи близко к нулю.</div>
+        </div>
+
+        <h2 id="h-wires">Взаимодействие параллельных токов</h2>
+        <div class="fcard" id="f-wires">
+          <div class="flabel">Сила на единицу длины</div>
+          <div class="formula" data-tex="\dfrac{F}{l} = \dfrac{\mu_0\,I_1\,I_2}{2\pi\,d}"></div>
+          <div class="fdesc">d — расстояние между проводниками. Одинаковые токи — притягиваются, противоположные — отталкиваются. На этом основано определение ампера.</div>
+        </div>
+
+        <h2 id="h-right">Правило правой руки</h2>
+        <div class="card">
+          <h4>Для прямого тока</h4>
+          <p>Большой палец правой руки — по направлению тока. Остальные пальцы (загнутые) показывают направление магнитных линий вокруг провода.</p>
+        </div>
+        <div class="card">
+          <h4>Для катушки (соленоида)</h4>
+          <p>Пальцы правой руки — по направлению тока в витках. Большой палец укажет направление вектора B внутри катушки (направление к северному полюсу).</p>
+        </div>
+      </section>
+
+      <!-- ════ S6: Рамка с током ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Рамка с током в магнитном поле</h1>
+        </div>
+
+        <p>Силы Ампера, действующие на стороны рамки, создают <b>вращающий момент</b>. Рамка стремится повернуться так, чтобы её собственное магнитное поле совпало с внешним.</p>
+
+        <div class="fcard" id="f-Mrim">
+          <div class="flabel">Вращающий момент рамки с током</div>
+          <div class="formula" data-tex="M = I\,S\,B\,\sin\alpha"></div>
+          <div class="fdesc">S — площадь рамки, α — угол между B и нормалью к рамке</div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Магнитный момент</div>
+          <div class="text">Произведение <span data-tex="p_m = I\,S"></span> называется <b>магнитным моментом</b> рамки. Тогда <span data-tex="M = p_m\,B\,\sin\alpha"></span>.</div>
+        </div>
+
+        <p>Это принцип работы электродвигателей и измерительных приборов с подвижной рамкой (амперметры, вольтметры).</p>
+      </section>
+
+      <!-- ════ S7: Магнитный поток ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Магнитный поток</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Магнитный поток Φ</b> через поверхность — количество линий магнитной индукции, пронизывающих эту поверхность.</div>
+        </div>
+
+        <div class="fcard" id="f-Phi">
+          <div class="flabel">Магнитный поток</div>
+          <div class="formula" data-tex="\Phi = B\,S\,\cos\alpha"></div>
+          <div class="fdesc">S — площадь, α — угол между B и нормалью к поверхности. Единица: <b>1 Вб (вебер) = 1 Тл·м²</b></div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Когда B перпендикулярен поверхности (α = 0): Φ = BS — максимум. Когда B параллелен поверхности (α = 90°): Φ = 0.</div>
+        </div>
+      </section>
+
+      <!-- ════ S8: Электромагнитная индукция ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Электромагнитная индукция</h1>
+          <p class="lead">При изменении магнитного потока через контур в нём возникает ЭДС индукции.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Закон электромагнитной индукции (Фарадей)</div>
+          <div class="text">ЭДС индукции, возникающая в замкнутом контуре, равна скорости изменения магнитного потока через этот контур, взятой со знаком минус.</div>
+        </div>
+
+        <div class="fcard" id="f-faraday">
+          <div class="flabel">Закон Фарадея</div>
+          <div class="formula" data-tex="\varepsilon_i = -\dfrac{\Delta\Phi}{\Delta t}"></div>
+          <div class="fdesc">Знак минус отражает <b>правило Ленца</b></div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Для катушки с N витками</div>
+          <div class="formula" data-tex="\varepsilon_i = -N\,\dfrac{\Delta\Phi}{\Delta t}"></div>
+        </div>
+
+        <h2 id="h-lenz">Правило Ленца</h2>
+        <div class="def acc">
+          <div class="label">Правило Ленца</div>
+          <div class="text">Индукционный ток в замкнутом контуре имеет такое направление, при котором созданный им магнитный поток <b>противодействует</b> изменению потока, вызвавшего этот ток.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Правило Ленца — следствие закона сохранения энергии. Если бы индукционный ток помогал изменению потока, мы получили бы вечный двигатель.</div>
+        </div>
+      </section>
+
+      <!-- ════ S9: ЭДС в движущемся проводнике ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. ЭДС в проводнике, движущемся в магнитном поле</h1>
+        </div>
+
+        <p>Если проводник длиной l движется со скоростью v перпендикулярно линиям магнитного поля, в нём возникает ЭДС:</p>
+
+        <div class="fcard" id="f-emf-mov">
+          <div class="flabel">ЭДС в движущемся проводнике</div>
+          <div class="formula" data-tex="\varepsilon = B\,l\,v\,\sin\alpha"></div>
+          <div class="fdesc">α — угол между скоростью и вектором B. При v <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span> B: ε = Blv</div>
+        </div>
+
+        <p>Это принцип работы генератора электрического тока.</p>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Сторонними силами здесь являются силы Лоренца, действующие на свободные электроны в проводнике, движущемся в магнитном поле.</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: Самоиндукция ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Самоиндукция. Индуктивность</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Самоиндукция</div>
+          <div class="text"><b>Самоиндукция</b> — возникновение ЭДС индукции в контуре при изменении силы тока в этом же контуре. Изменение тока меняет собственный магнитный поток.</div>
+        </div>
+
+        <div class="fcard" id="f-L">
+          <div class="flabel">Индуктивность</div>
+          <div class="formula" data-tex="\Phi_{собст} = L\,I"></div>
+          <div class="fdesc">L — индуктивность контура (Гн = генри). 1 Гн = 1 Вб/А</div>
+        </div>
+
+        <div class="fcard" id="f-eml">
+          <div class="flabel">ЭДС самоиндукции</div>
+          <div class="formula" data-tex="\varepsilon_{сам} = -L\,\dfrac{\Delta I}{\Delta t}"></div>
+          <div class="fdesc">Препятствует изменению тока (это «электрическая инерция»)</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>При резком размыкании цепи с катушкой возникает большая ЭДС самоиндукции, способная пробить воздух и вызвать искру или повредить элементы цепи. Поэтому в индуктивных схемах ставят защитные диоды.</div>
+        </div>
+      </section>
+
+      <!-- ════ S11: Энергия магнитного поля ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>11. Энергия магнитного поля</h1>
+        </div>
+
+        <div class="fcard" id="f-Wmag">
+          <div class="flabel">Энергия магнитного поля катушки</div>
+          <div class="formula" data-tex="W = \dfrac{L\,I^2}{2}"></div>
+          <div class="fdesc">Аналог кинетической энергии: масса ↔ L, скорость ↔ I</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Энергия магнитного поля сохраняется в индуктивности, как в кинетической энергии тела. При выключении цепи эта энергия выделяется (искра, нагрев).</div>
+        </div>
+
+        <h2 id="h-analogy">Электромеханическая аналогия</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Механика</th><th>Электричество</th></tr>
+            <tr><td>Масса m</td><td>Индуктивность L</td></tr>
+            <tr><td>Скорость v</td><td>Сила тока I</td></tr>
+            <tr><td>Импульс mv</td><td>Магнитный поток LI</td></tr>
+            <tr><td>Кинетическая E = mv²/2</td><td>Энергия LI²/2</td></tr>
+            <tr><td>Сила F = ma</td><td>ЭДС самоиндукции −L·dI/dt</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ S12: Разбор задач ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head"><h1>★ Разбор задач</h1></div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Электрон влетает в магнитное поле <span data-tex="B = 0{,}02\text{ Тл}"></span> перпендикулярно линиям индукции со скоростью <span data-tex="10^5\text{ м/с}"></span>. Найти силу Лоренца. (<span data-tex="e = 1{,}6\cdot10^{-19}\text{ Кл}"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="F = |q|\cdot v\cdot B \quad (\sin 90^\circ = 1)"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="F = 1{,}6\cdot10^{-19}\cdot10^5\cdot0{,}02 = 3{,}2\cdot10^{-16}\text{ Н}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="F \approx 3{,}2\cdot10^{-16}\text{ Н}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Протон движется в магнитном поле <span data-tex="0{,}1\text{ Тл}"></span> по окружности радиуса <span data-tex="10\text{ см}"></span>. Найти скорость протона. (<span data-tex="m_p = 1{,}67\cdot10^{-27}\text{ кг}"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="R = \dfrac{mv}{qB} \;\Rightarrow\; v = \dfrac{qBR}{m}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="v = \dfrac{1{,}6\cdot10^{-19}\cdot0{,}1\cdot0{,}1}{1{,}67\cdot10^{-27}} \approx 9{,}6\cdot10^5\text{ м/с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v \approx 9{,}6\cdot10^5\text{ м/с}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">В однородном магнитном поле <span data-tex="B = 0{,}5\text{ Тл}"></span> находится прямой проводник длиной <span data-tex="20\text{ см}"></span>, по которому течёт ток <span data-tex="4\text{ А}"></span>. Найти силу Ампера, если проводник перпендикулярен полю.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="F = B\cdot I\cdot l = 0{,}5\cdot4\cdot0{,}2 = 0{,}4\text{ Н}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="F = 0{,}4\text{ Н}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Контур площадью <span data-tex="0{,}1\text{ м}^2"></span> расположен в магнитном поле <span data-tex="B = 0{,}4\text{ Тл}"></span> под углом <span data-tex="30^\circ"></span> к плоскости контура. Найти магнитный поток.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Угол между B и <b>нормалью</b>: <span data-tex="\alpha = 90^\circ - 30^\circ = 60^\circ"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\Phi = B\cdot S\cdot\cos\alpha = 0{,}4\cdot0{,}1\cdot\cos60^\circ = 0{,}4\cdot0{,}1\cdot0{,}5 = 0{,}02\text{ Вб}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\Phi = 0{,}02\text{ Вб}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Магнитный поток через контур равномерно изменяется с <span data-tex="0{,}1\text{ Вб}"></span> до <span data-tex="0{,}3\text{ Вб}"></span> за <span data-tex="0{,}2\text{ с}"></span>. Найти ЭДС индукции.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\Delta\Phi = 0{,}2\text{ Вб}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="|\varepsilon| = \dfrac{\Delta\Phi}{\Delta t} = \dfrac{0{,}2}{0{,}2} = 1\text{ В}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\varepsilon = 1\text{ В}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Проводник длиной <span data-tex="50\text{ см}"></span> движется со скоростью <span data-tex="4\text{ м/с}"></span> перпендикулярно линиям магнитного поля <span data-tex="0{,}8\text{ Тл}"></span>. Найти ЭДС в проводнике.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\varepsilon = Blv = 0{,}8\cdot0{,}5\cdot4 = 1{,}6\text{ В}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\varepsilon = 1{,}6\text{ В}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Через катушку индуктивностью <span data-tex="0{,}5\text{ Гн}"></span> идёт ток <span data-tex="2\text{ А}"></span>. Какова энергия её магнитного поля?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="W = \dfrac{LI^2}{2} = \dfrac{0{,}5\cdot4}{2} = 1\text{ Дж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="W = 1\text{ Дж}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S13: Чек-лист ════ -->
+      <section class="sec" id="s13">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+        <h2 id="h-must">Формулы наизусть</h2>
+        <ul>
+          <li>Сила Лоренца: F = |q|vB·sin α</li>
+          <li>Сила Ампера: F = IlB·sin α</li>
+          <li>Радиус окружности: R = mv/(|q|B)</li>
+          <li>Период: T = 2πm/(|q|B)</li>
+          <li>Поле прямого тока: B = μ₀I/(2πr)</li>
+          <li>Поле в центре витка: B = μ₀I/(2R)</li>
+          <li>Поле соленоида: B = μ₀nI</li>
+          <li>Магнитный поток: Φ = BS·cos α</li>
+          <li>Закон Фарадея: ε = −ΔΦ/Δt</li>
+          <li>ЭДС в движущемся проводнике: ε = Blv</li>
+          <li>Самоиндукция: ε<sub>L</sub> = −L·dI/dt</li>
+          <li>Энергия катушки: W = LI²/2</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Применять правило левой руки для отрицательного заряда без учёта знака.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать, что сила Лоренца совершает работу. Никогда!</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать угол между B и плоскостью контура с углом между B и нормалью к контуру (отличаются на 90°).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Забывать знак минус в законе Фарадея (правило Ленца).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Применять формулу B = μ₀nI для соленоида с малым числом витков (она для длинного).</div></div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">09 Колебания и волны</div>
+            <div class="tp-desc">Маятники, контур, переменный ток, волны</div>
+          </div>
+          <a class="tp-btn" href="09_kolebaniya_volny.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы магнетизма</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s2" data-anchor="f-lor"><div class="ri-name">Сила Лоренца</div><div class="ri-formula">F = |q|vB·sin α</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-amp"><div class="ri-name">Сила Ампера</div><div class="ri-formula">F = IlB·sin α</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-Rorbit"><div class="ri-name">Радиус окружности</div><div class="ri-formula">R = mv/(|q|B)</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-Torbit"><div class="ri-name">Период обращения</div><div class="ri-formula">T = 2πm/(|q|B)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-Bwire"><div class="ri-name">Поле прямого тока</div><div class="ri-formula">B = μ₀I/(2πr)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-Bloop"><div class="ri-name">Поле в центре витка</div><div class="ri-formula">B = μ₀I/(2R)</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-Bsol"><div class="ri-name">Поле соленоида</div><div class="ri-formula">B = μ₀nI</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-wires"><div class="ri-name">Сила параллельных токов</div><div class="ri-formula">F/l = μ₀I₁I₂/(2πd)</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-Mrim"><div class="ri-name">Момент рамки с током</div><div class="ri-formula">M = ISB·sin α</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-Phi"><div class="ri-name">Магнитный поток</div><div class="ri-formula">Φ = BS·cos α</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-faraday"><div class="ri-name">Закон Фарадея</div><div class="ri-formula">ε = −ΔΦ/Δt</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-emf-mov"><div class="ri-name">ЭДС в движущемся проводнике</div><div class="ri-formula">ε = Blv·sin α</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-L"><div class="ri-name">Индуктивность</div><div class="ri-formula">Φ = LI</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-eml"><div class="ri-name">ЭДС самоиндукции</div><div class="ri-formula">ε = −L·ΔI/Δt</div></div>
+    <div class="ref-item" data-section="s11" data-anchor="f-Wmag"><div class="ri-name">Энергия катушки</div><div class="ri-formula">W = LI²/2</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

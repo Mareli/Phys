@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Законы сохранения — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t04">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">💥</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Законы сохранения</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 04</span>
+      <h2>Законы сохранения</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Импульс</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">💨</span>Импульс тела и системы</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">💥</span>II закон в форме импульса</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">🔒</span>Закон сохранения импульса</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">💢</span>Соударения</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Энергия</div>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">⚒</span>Работа силы</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">⚙</span>Мощность</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">🏃</span>Кинетическая энергия</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">📦</span>Потенциальная энергия</button>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">🔄</span>Закон сохранения энергии</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">📊</span>КПД и потери</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1: Импульс ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Импульс тела и системы</h1>
+          <p class="lead">Импульс — векторная характеристика движения, равная произведению массы на скорость.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ База</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Импульс материальной точки</div>
+          <div class="text"><b>Импульсом материальной точки</b> называется векторная величина, равная произведению массы тела на его скорость. Направление импульса совпадает с направлением скорости.</div>
+        </div>
+
+        <div class="fcard" id="f-p">
+          <div class="flabel">Импульс точки</div>
+          <div class="formula" data-tex="\vec{p} = m\vec{v}"></div>
+          <div class="fdesc">Единица измерения: <b>1 кг·м/с = 1 Н·с</b>. Импульс всегда направлен по скорости.</div>
+        </div>
+
+        <div class="fcard" id="f-psys">
+          <div class="flabel">Импульс системы</div>
+          <div class="formula" data-tex="\vec{p}_{сист} = \vec{p}_1 + \vec{p}_2 + \ldots + \vec{p}_n"></div>
+          <div class="fdesc">Векторная сумма импульсов всех тел системы</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Импульс системы из <b>двух тел равной массы</b>, движущихся навстречу с одинаковыми скоростями, равен <b>нулю</b>. Хотя кинетическая энергия каждого ≠ 0!</div>
+        </div>
+      </section>
+
+      <!-- ════ S2: II закон в форме импульса ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. II закон Ньютона в форме импульса</h1>
+          <p class="lead">Изменение импульса тела равно импульсу действующей на него силы.</p>
+        </div>
+
+        <div class="fcard" id="f-impulse">
+          <div class="flabel">Теорема об изменении импульса</div>
+          <div class="formula" data-tex="\Delta \vec{p} = \vec{F}\cdot\Delta t"></div>
+          <div class="fdesc">F·Δt — <b>импульс силы</b>. Δp — изменение импульса тела.</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Для системы тел</div>
+          <div class="formula" data-tex="\Delta \vec{p}_{сист} = \sum \vec{F}_{внеш}\cdot\Delta t"></div>
+          <div class="fdesc">Внутренние силы (между телами системы) <b>не изменяют</b> суммарный импульс системы (по III закону Ньютона)</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Средняя сила удара</div>
+          <div class="formula" data-tex="\vec{F}_{ср} = \dfrac{\Delta \vec{p}}{\Delta t}"></div>
+          <div class="fdesc">При ударе/толчке — измеряемая величина</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Связь с II законом Ньютона:</b> формула <span data-tex="\vec{F}=m\vec{a}"></span> эквивалентна <span data-tex="\vec{F}=\dfrac{\Delta\vec{p}}{\Delta t}"></span> при постоянной массе.</div>
+        </div>
+      </section>
+
+      <!-- ════ S3: ЗСИ ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Закон сохранения импульса</h1>
+          <p class="lead">Один из фундаментальных законов природы. Применяется даже там, где не работает закон сохранения энергии.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">ЗСИ</div>
+          <div class="text">Импульс <b>замкнутой системы</b> тел сохраняется во времени. Замкнутая система — система, на которую не действуют внешние силы (или их сумма равна нулю).</div>
+        </div>
+
+        <div class="fcard" id="f-zsi">
+          <div class="flabel">Закон сохранения импульса</div>
+          <div class="formula" data-tex="\vec{p}_{сист}^{нач} = \vec{p}_{сист}^{кон}"></div>
+          <div class="fdesc">⭐ Векторное равенство → решается через проекции на оси</div>
+        </div>
+
+        <h2 id="h-conditions">Когда работает ЗСИ</h2>
+        <ol>
+          <li>Сумма внешних сил равна нулю (например, гладкий горизонтальный стол).</li>
+          <li>Время взаимодействия очень мало (выстрелы, взрывы, удары) — внешние силы не успевают изменить импульс.</li>
+          <li>Внешние силы много меньше внутренних — то же.</li>
+        </ol>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Сохранение по проекции:</b> если внешние силы есть, но перпендикулярны какой-то оси, то <b>проекция импульса на эту ось</b> сохраняется.</div>
+        </div>
+
+        <h2 id="h-recoil">Реактивное движение и отдача</h2>
+        <p>Если изначально неподвижная система разделяется на две части, импульсы разлетающихся частей <b>равны по модулю и противоположны</b>:</p>
+        <div class="fcard">
+          <div class="flabel">Отдача (выстрел, взрыв)</div>
+          <div class="formula" data-tex="m_1 v_1 = m_2 v_2"></div>
+          <div class="fdesc">v₁ и v₂ направлены в противоположные стороны. Чем тяжелее тело — тем меньше его скорость.</div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Соударения ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Соударения тел</h1>
+          <p class="lead">Кратковременное взаимодействие двух тел. Два главных типа: упругое и неупругое.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ-классика</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card accent">
+            <h4>🎱 Абсолютно упругий удар</h4>
+            <p>Сохраняется <b>и импульс, и кинетическая энергия</b>.</p>
+            <p>Тела разлетаются с разными скоростями.</p>
+            <p><span data-tex="m_1 v_1 + m_2 v_2 = m_1 u_1 + m_2 u_2"></span></p>
+            <p><span data-tex="\dfrac{m_1 v_1^2}{2} + \dfrac{m_2 v_2^2}{2} = \dfrac{m_1 u_1^2}{2} + \dfrac{m_2 u_2^2}{2}"></span></p>
+          </div>
+          <div class="card">
+            <h4>🪨 Абсолютно неупругий удар</h4>
+            <p>После удара тела движутся <b>как единое целое</b>.</p>
+            <p>Сохраняется только <b>импульс</b>, часть энергии переходит в тепло.</p>
+            <p><span data-tex="m_1 v_1 + m_2 v_2 = (m_1 + m_2)\,u"></span></p>
+          </div>
+        </div>
+
+        <h2 id="h-elastic-equal">Упругий удар равных масс</h2>
+        <div class="card">
+          <h4>Особый случай: m₁ = m₂</h4>
+          <p>Тела <b>обмениваются скоростями</b>: u₁ = v₂, u₂ = v₁. Если одно тело покоилось, после удара покоится первое, а второе уезжает с его прежней скоростью.</p>
+        </div>
+
+        <h2 id="h-inelastic-Q">Энергия, ушедшая в тепло при неупругом ударе</h2>
+        <div class="fcard">
+          <div class="flabel">Тепло при неупругом ударе</div>
+          <div class="formula" data-tex="Q = E_к^{нач} - E_к^{кон}"></div>
+          <div class="fdesc">Часть кинетической энергии превращается во внутреннюю (нагрев, деформация)</div>
+        </div>
+
+        <p>Для случая, когда второе тело неподвижно (v₂ = 0):</p>
+        <div class="fcard">
+          <div class="flabel">Q при ударе о покоящееся тело</div>
+          <div class="formula" data-tex="Q = \dfrac{m_1 m_2 v_1^2}{2(m_1 + m_2)}"></div>
+        </div>
+      </section>
+
+      <!-- ════ S5: Работа ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Работа силы</h1>
+          <p class="lead">Работа — мера действия силы вдоль траектории движения.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Работа постоянной силы</div>
+          <div class="text"><b>Работа силы F на перемещении Δr</b> равна произведению модулей силы и перемещения на косинус угла между ними.</div>
+        </div>
+
+        <div class="fcard" id="f-A">
+          <div class="flabel">Работа постоянной силы</div>
+          <div class="formula" data-tex="A = F\cdot\Delta r\cdot\cos\alpha"></div>
+          <div class="fdesc">α — угол между F и Δr. Единица: <b>1 Дж = 1 Н·м</b></div>
+        </div>
+
+        <h2 id="h-A-sign">Знак работы</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h4>A &gt; 0</h4>
+            <p>α — острый (0° ≤ α &lt; 90°). Сила <b>помогает</b> движению.</p>
+          </div>
+          <div class="card">
+            <h4>A = 0</h4>
+            <p>α = 90° (сила <span style="font-family:'Cambria Math','STIX Two Math','Times New Roman',serif">⊥</span> перемещению). Например, центростремительная сила, реакция опоры при горизонтальном движении.</p>
+          </div>
+          <div class="card">
+            <h4>A &lt; 0</h4>
+            <p>α — тупой (90° &lt; α ≤ 180°). Сила <b>мешает</b> движению (например, трение).</p>
+          </div>
+        </div>
+
+        <h2 id="h-A-special">Работа отдельных сил</h2>
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Силы тяжести</div>
+            <div class="chip-formula" data-tex="A_{тяж} = mg(h_1 - h_2)"></div>
+            <div class="chip-desc">Зависит только от разности высот</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Силы упругости</div>
+            <div class="chip-formula" data-tex="A_{упр} = \dfrac{k}{2}(\Delta l_1^2 - \Delta l_2^2)"></div>
+            <div class="chip-desc">Δl — растяжения в начале и в конце</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Силы трения</div>
+            <div class="chip-formula" data-tex="A_{тр} = -\mu N \cdot s"></div>
+            <div class="chip-desc">s — путь (всегда A &lt; 0)</div>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Работа силы тяжести зависит только от <b>разности высот</b>, а не от траектории. Это свойство <b>консервативной силы</b>. Сила трения — неконсервативная: её работа зависит от пути.</div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Мощность ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Мощность</h1>
+          <p class="lead">Мощность — быстрота совершения работы.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Мощность N</b> — физическая величина, равная отношению работы ко времени, за которое она совершена.</div>
+        </div>
+
+        <div class="fcard" id="f-N">
+          <div class="flabel">Средняя мощность</div>
+          <div class="formula" data-tex="N_{ср} = \dfrac{A}{t}"></div>
+          <div class="fdesc">Единица: <b>1 Вт = 1 Дж/с</b></div>
+        </div>
+
+        <div class="fcard" id="f-Nv">
+          <div class="flabel">Мгновенная мощность</div>
+          <div class="formula" data-tex="N = F\cdot v\cdot\cos\alpha"></div>
+          <div class="fdesc">α — угол между F и v. Если F ↑↑ v: N = Fv</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Единица</th><th>Значение</th></tr>
+            <tr><td>1 Вт</td><td>1 Дж/с</td></tr>
+            <tr><td>1 кВт</td><td>1000 Вт</td></tr>
+            <tr><td>1 МВт</td><td>10⁶ Вт</td></tr>
+            <tr><td>1 л.с.</td><td>≈ 735 Вт</td></tr>
+            <tr><td>1 кВт·ч</td><td>3,6·10⁶ Дж</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ S7: Кинетическая ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Кинетическая энергия</h1>
+          <p class="lead">Энергия движения. Основной инструмент решения задач на работу и движение.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Кинетическая энергия E<sub>к</sub></b> — энергия, которой обладает тело благодаря своему движению. Скаляр, всегда ≥ 0.</div>
+        </div>
+
+        <div class="fcard" id="f-Ek">
+          <div class="flabel">Кинетическая энергия</div>
+          <div class="formula" data-tex="E_к = \dfrac{m v^2}{2}"></div>
+          <div class="fdesc">Можно также записать через импульс: <span data-tex="E_к = \dfrac{p^2}{2m}"></span></div>
+        </div>
+
+        <div class="fcard" id="f-Ek-theorem">
+          <div class="flabel">Теорема о кинетической энергии</div>
+          <div class="formula" data-tex="\Delta E_к = A_{всех\;сил}"></div>
+          <div class="fdesc">Изменение кинетической энергии тела равно работе всех действующих на него сил</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Теорема о кинетической энергии — мощный инструмент. Часто проще, чем II закон Ньютона: <b>не нужно знать ускорение</b>, достаточно начальной и конечной скоростей.</div>
+        </div>
+      </section>
+
+      <!-- ════ S8: Потенциальная ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Потенциальная энергия</h1>
+          <p class="lead">Энергия взаимодействия. Связана с положением тела в поле консервативных сил.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Потенциальная энергия E<sub>п</sub></b> — энергия, обусловленная взаимодействием тел или частей одного тела. Зависит только от <b>взаимного расположения</b> тел.</div>
+        </div>
+
+        <h2 id="h-Ep-grav">Энергия в поле тяжести (у поверхности Земли)</h2>
+        <div class="fcard" id="f-Epgrav">
+          <div class="flabel">Потенциальная энергия в поле тяжести</div>
+          <div class="formula" data-tex="E_п = m g h"></div>
+          <div class="fdesc">h — высота над выбранным <b>нулевым уровнем</b>. Может быть положительной или отрицательной.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>Нулевой уровень выбираешь <b>сам</b>. Главное — чтобы во всех расчётах он был один и тот же. Удобно брать самое нижнее положение тела.</div>
+        </div>
+
+        <h2 id="h-Ep-spring">Энергия упругой деформации</h2>
+        <div class="fcard" id="f-Epspring">
+          <div class="flabel">Энергия пружины</div>
+          <div class="formula" data-tex="E_п = \dfrac{k\,(\Delta l)^2}{2}"></div>
+          <div class="fdesc">k — жёсткость, Δl — деформация (растяжение/сжатие)</div>
+        </div>
+
+        <h2 id="h-Ep-grav-far">Гравитационная (для космических задач)</h2>
+        <div class="fcard">
+          <div class="flabel">Гравитационная энергия двух тел</div>
+          <div class="formula" data-tex="E_п = -\dfrac{\gamma\,M\,m}{r}"></div>
+          <div class="fdesc">Нулевой уровень — на бесконечности (E<sub>п</sub>(∞) = 0)</div>
+        </div>
+      </section>
+
+      <!-- ════ S9: ЗСЭ ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Закон сохранения механической энергии</h1>
+          <p class="lead">Суммарная механическая энергия замкнутой консервативной системы сохраняется.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Полная механическая энергия</div>
+          <div class="text"><span data-tex="E_{мех} = E_к + E_п"></span> — сумма кинетической и потенциальной энергий системы.</div>
+        </div>
+
+        <div class="fcard" id="f-zse">
+          <div class="flabel">Закон сохранения механической энергии</div>
+          <div class="formula" data-tex="E_{мех}^{нач} = E_{мех}^{кон}"></div>
+          <div class="fdesc">⭐ Если работают только консервативные силы (тяжести, упругости, гравитации) — энергия сохраняется</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Развёрнутая запись</div>
+          <div class="formula" data-tex="\dfrac{m v_1^2}{2} + m g h_1 = \dfrac{m v_2^2}{2} + m g h_2"></div>
+          <div class="fdesc">Для тела в поле тяжести</div>
+        </div>
+
+        <h2 id="h-noncons">Если есть неконсервативные силы</h2>
+        <div class="fcard" id="f-noncons">
+          <div class="flabel">Теорема об изменении механической энергии</div>
+          <div class="formula" data-tex="\Delta E_{мех} = A_{неконс}"></div>
+          <div class="fdesc">Работа неконсервативных сил (трение, сопротивление) меняет полную энергию системы — обычно делая её меньше</div>
+        </div>
+
+        <p>Для задач с трением:</p>
+        <div class="fcard">
+          <div class="flabel">Энергия с учётом трения</div>
+          <div class="formula" data-tex="E_{мех}^{нач} = E_{мех}^{кон} + Q"></div>
+          <div class="fdesc">Q — выделившееся тепло (работа сил трения, взятая по модулю)</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div>ЗСЭ работает только если в системе действуют <b>только консервативные силы</b>: тяжесть, упругость, гравитация. Если есть трение или сопротивление — энергия не сохраняется!</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: КПД ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. КПД и потери</h1>
+          <p class="lead">Коэффициент полезного действия показывает, какая доля затраченной энергии превратилась в полезную.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">КПД</div>
+          <div class="text"><b>КПД (η)</b> — отношение полезной работы (или энергии) к затраченной.</div>
+        </div>
+
+        <div class="fcard" id="f-efficiency">
+          <div class="flabel">КПД</div>
+          <div class="formula" data-tex="\eta = \dfrac{A_{полезн}}{A_{затрач}}\cdot 100\%"></div>
+          <div class="fdesc">КПД всегда меньше 100%, потому что часть энергии теряется на трение, нагрев и т.д.</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Машина / процесс</th><th>η</th></tr>
+            <tr><td>Электромотор</td><td>80–95%</td></tr>
+            <tr><td>Тепловоз (дизель)</td><td>30–40%</td></tr>
+            <tr><td>Бензиновый двигатель</td><td>20–30%</td></tr>
+            <tr><td>Лампа накаливания</td><td>≈ 5%</td></tr>
+            <tr><td>LED-лампа</td><td>≈ 40%</td></tr>
+            <tr><td>Электростанция (тепловая)</td><td>30–40%</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ════ S11: Разбор задач ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head"><h1>★ Разбор задач</h1></div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Тело массой <span data-tex="m = 2\text{ кг}"></span> движется со скоростью <span data-tex="v = 3\text{ м/с}"></span>. Какова величина его импульса?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="p = m \cdot v = 2 \cdot 3 = 6\text{ кг·м/с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="p = 6\text{ кг·м/с}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Тележка массой <span data-tex="m_1 = 2\text{ кг}"></span> едет со скоростью <span data-tex="v_1 = 4\text{ м/с}"></span> и сталкивается с неподвижной тележкой массой <span data-tex="m_2 = 3\text{ кг}"></span>. После удара они движутся вместе. Найти их скорость и количество выделившегося тепла.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>ЗСИ: <span data-tex="m_1 v_1 = (m_1 + m_2)\cdot u \Rightarrow 2\cdot4 = 5\cdot u \Rightarrow u = 1{,}6\text{ м/с}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="E_{k\,\text{нач}} = \dfrac{m_1 v_1^2}{2} = \dfrac{2\cdot16}{2} = 16\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="E_{k\,\text{кон}} = \dfrac{(m_1+m_2)\cdot u^2}{2} = \dfrac{5\cdot2{,}56}{2} = 6{,}4\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="Q = 16 - 6{,}4 = 9{,}6\text{ Дж}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="u = 1{,}6\text{ м/с}"></span>, <span data-tex="Q = 9{,}6\text{ Дж}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">С высоты <span data-tex="h = 5\text{ м}"></span> уронили тело без начальной скорости. Найти скорость в момент удара о землю. (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>ЗСЭ: <span data-tex="mgh = \dfrac{mv^2}{2} \Rightarrow v = \sqrt{2gh}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="v = \sqrt{2\cdot10\cdot5} = \sqrt{100} = 10\text{ м/с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v = 10\text{ м/с}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Тележка массой <span data-tex="m = 1\text{ кг}"></span>, движущаяся со скоростью <span data-tex="v = 6\text{ м/с}"></span>, сталкивается с пружиной жёсткостью <span data-tex="k = 600\text{ Н/м}"></span>, прикреплённой к стене. Найти максимальное сжатие пружины.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>В момент максимального сжатия скорость = 0. Кинетическая энергия → энергия пружины:</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\dfrac{mv^2}{2} = \dfrac{kx^2}{2} \Rightarrow x = v\sqrt{\dfrac{m}{k}}"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="x = 6\cdot\sqrt{\dfrac{1}{600}} = 6\cdot0{,}0408 \approx 0{,}245\text{ м}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x \approx 24{,}5\text{ см}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Из ружья массой <span data-tex="M = 4\text{ кг}"></span> выстрелили пулей массой <span data-tex="m = 10\text{ г}"></span>. Скорость пули после вылета — <span data-tex="v = 500\text{ м/с}"></span>. Найти скорость отдачи ружья.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>До выстрела <span data-tex="p = 0"></span>. После: <span data-tex="mv + MV = 0"></span> (направления противоположны).</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="V = \dfrac{m\cdot v}{M} = \dfrac{0{,}01\cdot500}{4} = 1{,}25\text{ м/с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="V = 1{,}25\text{ м/с}"></span> в обратную сторону</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Автомобиль массой <span data-tex="m = 1000\text{ кг}"></span> едет со скоростью <span data-tex="v = 20\text{ м/с}"></span> с постоянной скоростью. Сила сопротивления — <span data-tex="F_\text{сопр} = 500\text{ Н}"></span>. Найти мощность двигателя.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>При <span data-tex="v = \text{const}"></span> сила тяги = силе сопротивления: <span data-tex="F = 500\text{ Н}"></span>.</div>
+            <div class="step"><div class="stepn">2</div><span data-tex="N = F\cdot v = 500\cdot20 = 10\,000\text{ Вт} = 10\text{ кВт}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="N = 10\text{ кВт}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Брусок массы <span data-tex="m = 2\text{ кг}"></span> поднимают по наклонной плоскости длиной <span data-tex="l = 5\text{ м}"></span> и углом <span data-tex="\alpha = 30^\circ"></span>. Коэффициент трения <span data-tex="\mu = 0{,}3"></span>. Найти работу, затраченную на подъём, и КПД. (<span data-tex="g = 10\text{ м/с}^2"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Полезная работа (поднять груз на <span data-tex="h = l\cdot\sin\alpha = 2{,}5\text{ м}"></span>): <span data-tex="A_\text{пол} = mgh = 2\cdot10\cdot2{,}5 = 50\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">2</div>Работа против трения: <span data-tex="F_\text{тр} = \mu mg\cos\alpha = 0{,}3\cdot20\cdot\dfrac{\sqrt{3}}{2} \approx 5{,}2\text{ Н}"></span>; <span data-tex="A_\text{тр} = F_\text{тр}\cdot l \approx 26\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">3</div>Полная затраченная: <span data-tex="A_\text{зат} = A_\text{пол} + A_\text{тр} \approx 76\text{ Дж}"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="\eta = \dfrac{50}{76} \approx 66\%"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="A_\text{зат} \approx 76\text{ Дж}"></span>, <span data-tex="\eta \approx 66\%"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S12: Чек-лист ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+
+        <h2 id="h-form">Формулы наизусть</h2>
+        <ul>
+          <li>Импульс: <span data-tex="p = mv"></span></li>
+          <li>Изменение импульса: <span data-tex="\Delta p = F \cdot \Delta t"></span></li>
+          <li>ЗСИ: <span data-tex="\sum m_i \vec{v}_i = \mathrm{const}"></span></li>
+          <li>Работа: <span data-tex="A = F \cdot s \cdot \cos\alpha"></span></li>
+          <li>Работа тяжести: <span data-tex="A = mg(h_1 - h_2)"></span></li>
+          <li>Кинетическая: <span data-tex="E_\text{к} = \dfrac{mv^2}{2}"></span></li>
+          <li>Потенциальная (тяжести): <span data-tex="E_\text{п} = mgh"></span></li>
+          <li>Потенциальная (пружины): <span data-tex="E_\text{п} = \dfrac{kx^2}{2}"></span></li>
+          <li>Мощность: <span data-tex="N = A/t = Fv\cos\alpha"></span></li>
+          <li>Теорема о кин. энергии: <span data-tex="\Delta E_\text{к} = A_\text{всех сил}"></span></li>
+          <li>ЗСЭ: <span data-tex="E_\text{мех}^\text{нач} = E_\text{мех}^\text{кон}"></span></li>
+          <li>КПД: <span data-tex="\eta = \dfrac{A_\text{пол}}{A_\text{зат}} \cdot 100\%"></span></li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Применять ЗСЭ при наличии трения. С трением нужно учитывать тепло Q.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать импульс скалярно: <span data-tex="|p_1|+|p_2|"></span> вместо векторной суммы.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать упругий и неупругий удар. При упругом сохраняется ОБА закона, при неупругом — ТОЛЬКО импульс.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Брать разные нулевые уровни для <span data-tex="E_\text{п}"></span> в начальном и конечном состоянии.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Считать, что N = A/t можно всегда — для постоянной мощности да, для мгновенной нужно N = F·v.</div></div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">05 МКТ и термодинамика</div>
+            <div class="tp-desc">Идеальный газ, изопроцессы, КПД</div>
+          </div>
+          <a class="tp-btn" href="05_mkt_termodinamika.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы законов сохранения</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-p"><div class="ri-name">Импульс точки</div><div class="ri-formula">p = mv</div></div>
+    <div class="ref-item" data-section="s1" data-anchor="f-psys"><div class="ri-name">Импульс системы</div><div class="ri-formula">p = Σpᵢ</div></div>
+    <div class="ref-item" data-section="s2" data-anchor="f-impulse"><div class="ri-name">Изменение импульса</div><div class="ri-formula">Δp = F·Δt</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-zsi"><div class="ri-name">Закон сохранения импульса</div><div class="ri-formula">pнач = pкон</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="h-elastic-equal"><div class="ri-name">Упругий удар (равные массы)</div><div class="ri-formula">обмен скоростями</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="h-inelastic-Q"><div class="ri-name">Тепло при неупругом ударе</div><div class="ri-formula">Q = m₁m₂v²/(2(m₁+m₂))</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-A"><div class="ri-name">Работа постоянной силы</div><div class="ri-formula">A = F·s·cos α</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-N"><div class="ri-name">Средняя мощность</div><div class="ri-formula">N = A/t</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-Nv"><div class="ri-name">Мгновенная мощность</div><div class="ri-formula">N = F·v·cos α</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-Ek"><div class="ri-name">Кинетическая энергия</div><div class="ri-formula">E_к = mv²/2</div></div>
+    <div class="ref-item" data-section="s7" data-anchor="f-Ek-theorem"><div class="ri-name">Теорема о кинетической энергии</div><div class="ri-formula">ΔE_к = ΣA</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-Epgrav"><div class="ri-name">Энергия в поле тяжести</div><div class="ri-formula">E_п = mgh</div></div>
+    <div class="ref-item" data-section="s8" data-anchor="f-Epspring"><div class="ri-name">Энергия пружины</div><div class="ri-formula">E_п = k(Δl)²/2</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-zse"><div class="ri-name">Закон сохранения энергии</div><div class="ri-formula">E_мех = const</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-noncons"><div class="ri-name">С неконсервативными силами</div><div class="ri-formula">ΔE_мех = A_неконс</div></div>
+    <div class="ref-item" data-section="s10" data-anchor="f-efficiency"><div class="ri-name">КПД</div><div class="ri-formula">η = A_пол/A_зат·100%</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

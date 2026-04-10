@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Оптика — Физика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>.flash{animation:flash 1.5s ease}@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}</style>
+</head>
+<body data-topic="t10">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">💡</span>
+    <span><b>Физика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Оптика</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 10</span>
+      <h2>Оптика</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Геометрическая оптика</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">🔄</span>Закон отражения</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">🪞</span>Плоское зеркало</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">💡</span>Закон преломления</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">💎</span>Полное отражение</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">🔍</span>Линзы</button>
+      <button class="nav-item" data-target="s6"><span class="nav-ico">📐</span>Формула тонкой линзы</button>
+      <button class="nav-item" data-target="s7"><span class="nav-ico">🎯</span>Построение изображений</button>
+      <button class="nav-item" data-target="s8"><span class="nav-ico">👁</span>Глаз и оптические приборы</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Волновая оптика</div>
+      <button class="nav-item" data-target="s9"><span class="nav-ico">🌈</span>Интерференция</button>
+      <button class="nav-item" data-target="s10"><span class="nav-ico">〰</span>Дифракция</button>
+      <button class="nav-item" data-target="s11"><span class="nav-ico">📊</span>Дифракционная решётка</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s12"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s13"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════ S1: Закон отражения ════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Закон отражения света</h1>
+          <p class="lead">Самый простой закон оптики: угол падения равен углу отражения.</p>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Закон отражения</div>
+          <div class="text">
+          <b>1.</b> Падающий луч, отражённый луч и нормаль к поверхности в точке падения лежат в одной плоскости.<br>
+          <b>2.</b> Угол падения равен углу отражения: <span data-tex="\alpha = \beta"></span>
+          </div>
+        </div>
+
+        <div class="fcard" id="f-refl">
+          <div class="flabel">Закон отражения</div>
+          <div class="formula" data-tex="\alpha = \beta"></div>
+          <div class="fdesc">Углы отсчитываются от <b>нормали</b> к поверхности</div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="170" x2="340" y2="170" stroke="#6b7280" stroke-width="3"/>
+            <pattern id="hatch" patternUnits="userSpaceOnUse" width="10" height="10">
+              <line x1="0" y1="10" x2="10" y2="0" stroke="#9ca3af" stroke-width="1"/>
+            </pattern>
+            <rect x="20" y="170" width="320" height="20" fill="url(#hatch)"/>
+            <line x1="180" y1="20" x2="180" y2="200" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="80" y1="50" x2="180" y2="170" stroke="#f59e0b" stroke-width="2.5"/>
+            <polygon points="180,170 168,156 158,168" fill="#f59e0b"/>
+            <line x1="180" y1="170" x2="280" y2="50" stroke="#3b82f6" stroke-width="2.5"/>
+            <polygon points="280,50 268,52 271,60" fill="#3b82f6"/>
+            <text x="100" y="90" font-size="12" font-style="italic" fill="#f59e0b" font-weight="700">падающий</text>
+            <text x="245" y="90" font-size="12" font-style="italic" fill="#3b82f6" font-weight="700">отражённый</text>
+            <path d="M 165 145 A 20 20 0 0 0 175 130" fill="none" stroke="#6b7280"/>
+            <text x="155" y="140" font-size="11" font-style="italic" fill="#6b7280">α</text>
+            <path d="M 195 130 A 20 20 0 0 0 210 145" fill="none" stroke="#6b7280"/>
+            <text x="200" y="140" font-size="11" font-style="italic" fill="#6b7280">β</text>
+            <text x="186" y="32" font-size="11" fill="#475569">нормаль</text>
+          </svg>
+          <div class="caption">Падающий и отражённый лучи симметричны относительно нормали</div>
+        </div>
+      </section>
+
+      <!-- ════ S2: Плоское зеркало ════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Изображение в плоском зеркале</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Свойства изображения</div>
+          <div class="text">
+          <b>1.</b> Изображение <b>мнимое</b> (за зеркалом, лучи там не пересекаются).<br>
+          <b>2.</b> <b>Прямое</b> (не перевёрнуто).<br>
+          <b>3.</b> Равно по размеру предмету.<br>
+          <b>4.</b> Симметрично относительно плоскости зеркала.<br>
+          <b>5.</b> Расстояние от предмета до зеркала = расстоянию от изображения до зеркала.
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>В зеркале «лево» и «право» меняются местами, но «верх» и «низ» — нет. Это потому, что зеркало переворачивает направление вдоль своей нормали.</div>
+        </div>
+      </section>
+
+      <!-- ════ S3: Закон преломления ════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Закон преломления света</h1>
+          <p class="lead">При переходе из одной среды в другую направление луча меняется. Отношение синусов углов постоянно.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ ЦТ</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Закон Снеллиуса</div>
+          <div class="text">
+          <b>1.</b> Падающий, преломлённый луч и нормаль лежат в одной плоскости.<br>
+          <b>2.</b> Отношение синуса угла падения к синусу угла преломления — величина постоянная для данных двух сред.
+          </div>
+        </div>
+
+        <div class="fcard" id="f-snell">
+          <div class="flabel">Закон преломления (Снеллиус)</div>
+          <div class="formula" data-tex="\dfrac{\sin\alpha}{\sin\beta} = n_{21} = \dfrac{n_2}{n_1} = \dfrac{v_1}{v_2}"></div>
+          <div class="fdesc">n₂₁ — относительный показатель преломления (второй среды относительно первой)</div>
+        </div>
+
+        <div class="fcard" id="f-snell2">
+          <div class="flabel">Симметричная форма</div>
+          <div class="formula" data-tex="n_1\,\sin\alpha_1 = n_2\,\sin\alpha_2 = const"></div>
+          <div class="fdesc">⭐ Удобно для нескольких сред подряд</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Абсолютный показатель преломления</div>
+          <div class="text"><b>n</b> — отношение скорости света в вакууме к скорости света в данной среде:</div>
+        </div>
+
+        <div class="fcard" id="f-n">
+          <div class="flabel">Абсолютный показатель преломления</div>
+          <div class="formula" data-tex="n = \dfrac{c}{v}"></div>
+          <div class="fdesc">Всегда n &gt; 1 (для всех сред, кроме вакуума)</div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Среда</th><th>n</th><th>v света, км/с</th></tr>
+            <tr><td>Вакуум, воздух</td><td>1</td><td>≈ 300 000</td></tr>
+            <tr><td>Лёд</td><td>1,31</td><td>229 000</td></tr>
+            <tr><td>Вода</td><td>1,33</td><td>225 000</td></tr>
+            <tr><td>Стекло</td><td>1,5</td><td>200 000</td></tr>
+            <tr><td>Алмаз</td><td>2,42</td><td>124 000</td></tr>
+          </table>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Запомни:</b><br>
+          • Из менее плотной среды в более плотную (n₂ &gt; n₁): луч <b>приближается</b> к нормали (α &gt; β).<br>
+          • Из более плотной в менее плотную: луч <b>отдаляется</b> от нормали (α &lt; β).</div>
+        </div>
+      </section>
+
+      <!-- ════ S4: Полное отражение ════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Полное внутреннее отражение</h1>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Полное отражение</div>
+          <div class="text">При переходе из оптически более плотной среды в менее плотную (n₂ &lt; n₁) при углах падения α ≥ α₀ луч полностью отражается от границы и не проходит во вторую среду.</div>
+        </div>
+
+        <div class="fcard" id="f-tir">
+          <div class="flabel">Угол полного внутреннего отражения</div>
+          <div class="formula" data-tex="\sin\alpha_0 = \dfrac{n_2}{n_1}"></div>
+          <div class="fdesc">При выходе в воздух (n₂ = 1): <span data-tex="\sin\alpha_0 = 1/n_1"></span></div>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Среда → воздух</th><th>α₀</th></tr>
+            <tr><td>Вода (n = 1,33)</td><td>≈ 49°</td></tr>
+            <tr><td>Стекло (n = 1,5)</td><td>≈ 42°</td></tr>
+            <tr><td>Алмаз (n = 2,42)</td><td>≈ 24°</td></tr>
+          </table>
+        </div>
+
+        <p>Применения: <b>оптоволокно</b> (свет идёт по волокну за счёт многократного полного отражения), <b>призмы биноклей</b>, <b>обработка алмазов</b> (большое число граней даёт игру света).</p>
+      </section>
+
+      <!-- ════ S5: Линзы ════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Линзы</h1>
+          <p class="lead">Прозрачные тела, ограниченные двумя сферическими поверхностями. Преломляют световые лучи.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card accent">
+            <h4>🔎 Собирающая (выпуклая)</h4>
+            <p>Толще в середине, тоньше по краям. Параллельные лучи <b>собираются</b> в фокусе.</p>
+            <p>F &gt; 0, D &gt; 0</p>
+          </div>
+          <div class="card">
+            <h4>🔎 Рассеивающая (вогнутая)</h4>
+            <p>Тоньше в середине, толще по краям. Параллельные лучи <b>расходятся</b>, фокус <b>мнимый</b>.</p>
+            <p>F &lt; 0, D &lt; 0</p>
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="label">Основные понятия</div>
+          <div class="text">
+          <b>Главная оптическая ось</b> — прямая, проходящая через центры сферических поверхностей линзы.<br>
+          <b>Оптический центр O</b> — центр линзы (лучи через него проходят без преломления).<br>
+          <b>Главный фокус F</b> — точка, где сходятся лучи, шедшие параллельно оси.<br>
+          <b>Фокусное расстояние F</b> — расстояние от линзы до фокуса.
+          </div>
+        </div>
+
+        <div class="fcard" id="f-D">
+          <div class="flabel">Оптическая сила линзы</div>
+          <div class="formula" data-tex="D = \dfrac{1}{F}"></div>
+          <div class="fdesc">Единица: <b>1 диоптрия = 1/м</b>. Для собирающей D &gt; 0, для рассеивающей D &lt; 0.</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Оптическая сила через радиусы</div>
+          <div class="formula" data-tex="D = \left(\dfrac{n_{линзы}}{n_{среды}} - 1\right)\left(\dfrac{1}{R_1} + \dfrac{1}{R_2}\right)"></div>
+          <div class="fdesc">R берётся «+», если поверхность выпуклая, «−» если вогнутая</div>
+        </div>
+      </section>
+
+      <!-- ════ S6: Формула тонкой линзы ════ -->
+      <section class="sec" id="s6">
+        <div class="sec-head">
+          <h1>6. Формула тонкой линзы</h1>
+          <p class="lead">Связывает расстояние от линзы до предмета (d), до изображения (f) и фокусное расстояние (F).</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Must-have</span></div>
+        </div>
+
+        <div class="fcard hero" id="f-thin-lens">
+          <div class="flabel">Формула тонкой линзы</div>
+          <div class="formula" data-tex="\dfrac{1}{F} = \dfrac{1}{d} + \dfrac{1}{f}"></div>
+          <div class="fdesc">d — расстояние до предмета, f — до изображения, F — фокусное расстояние</div>
+          <div class="fcard-when"><strong>Применять:</strong> когда известны d и F — найти f (или наоборот). Из f = Fd/(d−F)</div>
+        </div>
+
+        <div class="fcard" id="f-magn">
+          <div class="flabel">Линейное увеличение</div>
+          <div class="formula" data-tex="\Gamma = \dfrac{H}{h} = \dfrac{f}{d}"></div>
+          <div class="fdesc">H — размер изображения, h — размер предмета</div>
+          <div class="fcard-when"><strong>Применять:</strong> после нахождения f — определить увеличение. |Γ| &gt; 1 — изображение больше предмета</div>
+        </div>
+
+        <h2 id="h-signs">Правила знаков</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Величина</th><th>Знак «+»</th><th>Знак «−»</th></tr>
+            <tr><td>F</td><td>собирающая линза</td><td>рассеивающая</td></tr>
+            <tr><td>d</td><td>предмет действительный (обычно)</td><td>предмет мнимый (редко)</td></tr>
+            <tr><td>f</td><td>изображение действительное</td><td>изображение мнимое</td></tr>
+          </table>
+        </div>
+
+        <!-- ── Интерактивная линза ── -->
+        <div class="sim-wrap">
+          <div class="sim-head">
+            <div class="sim-label">🎮 Интерактив</div>
+            <div class="sim-name">Тонкая собирающая линза — двигай предмет</div>
+          </div>
+          <div class="sim-display">
+            <svg id="lens-svg" viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg">
+              <!-- optical axis -->
+              <line x1="10" y1="110" x2="550" y2="110" stroke="#e2e8f0" stroke-width="1.5"/>
+              <!-- lens (vertical line at x=280) -->
+              <line id="lens-body" x1="280" y1="30" x2="280" y2="190" stroke="#0891b2" stroke-width="4" stroke-linecap="round"/>
+              <polygon points="280,30 274,46 286,46" fill="#0891b2"/>
+              <polygon points="280,190 274,174 286,174" fill="#0891b2"/>
+              <text x="285" y="22" font-size="11" fill="#0891b2" font-weight="700">Линза</text>
+              <!-- focal points F and F' (at ±90px from lens = F=90px→ F≈3 units in virtual space) -->
+              <circle id="fp1" cx="190" cy="110" r="4" fill="#f59e0b"/>
+              <text id="fp1-label" x="186" y="127" font-size="10" fill="#f59e0b" font-weight="700">F</text>
+              <circle id="fp2" cx="370" cy="110" r="4" fill="#f59e0b"/>
+              <text id="fp2-label" x="366" y="127" font-size="10" fill="#f59e0b" font-weight="700">F'</text>
+              <!-- 2F marks -->
+              <line id="2f1" x1="100" y1="107" x2="100" y2="113" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text id="2f1-l" x="92" y="123" font-size="9" fill="#94a3b8">2F</text>
+              <line id="2f2" x1="460" y1="107" x2="460" y2="113" stroke="#cbd5e1" stroke-width="1.5"/>
+              <text id="2f2-l" x="452" y="123" font-size="9" fill="#94a3b8">2F'</text>
+              <!-- Object arrow -->
+              <line id="obj-line" x1="120" y1="110" x2="120" y2="55" stroke="#1e293b" stroke-width="2.5"/>
+              <polygon id="obj-head" points="120,55 116,67 124,67" fill="#1e293b"/>
+              <!-- Image arrow (hidden by default) -->
+              <line id="img-line" x1="440" y1="110" x2="440" y2="165" stroke="#ef4444" stroke-width="2.5" opacity="0.9"/>
+              <polygon id="img-head" points="440,165 436,153 444,153" fill="#ef4444"/>
+              <!-- Rays -->
+              <!-- Ray 1: parallel to axis → through F' -->
+              <line id="ray1a" x1="120" y1="55" x2="280" y2="55" stroke="#3b82f6" stroke-width="1.5" opacity="0.6" stroke-dasharray="0"/>
+              <line id="ray1b" x1="280" y1="55" x2="440" y2="165" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+              <!-- Ray 2: through center O -->
+              <line id="ray2" x1="120" y1="55" x2="440" y2="165" stroke="#10b981" stroke-width="1.5" opacity="0.6"/>
+              <!-- Image label -->
+              <text id="img-label" x="445" y="170" font-size="10" fill="#ef4444" font-weight="700">изобр.</text>
+            </svg>
+          </div>
+          <div class="sim-controls">
+            <label>
+              <div class="ctrl-label">Расстояние до предмета d <span class="ctrl-val" id="lens-d-val">3.0</span> F</div>
+              <input type="range" id="lens-d-slider" min="11" max="60" value="30" step="1">
+            </label>
+          </div>
+          <div class="sim-output">
+            <div class="sim-out-item">
+              <div class="out-key">d / F</div>
+              <div class="out-val" id="lens-d-out">3.0</div>
+              <div class="out-unit">относит. ед.</div>
+            </div>
+            <div class="sim-out-item">
+              <div class="out-key">f / F</div>
+              <div class="out-val" id="lens-f-out">1.5</div>
+              <div class="out-unit">относит. ед.</div>
+            </div>
+            <div class="sim-out-item">
+              <div class="out-key">Увеличение |Γ|</div>
+              <div class="out-val" id="lens-g-out">0.50</div>
+              <div class="out-unit">раз</div>
+            </div>
+            <div class="sim-out-item" style="flex:2">
+              <div class="out-key">Характер изображения</div>
+              <div class="out-val" id="lens-type-out" style="font-family:inherit;font-size:.85rem;font-weight:600;color:var(--text2)">Действительное, перевёрнутое, уменьшенное</div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+          // F = 1 unit, SVG: lens at x=280, F'=280+90=370, F=280-90=190
+          // d slider value: 11..60 mapped to d/F: 1.1..6.0
+          var Lpx=280, Fpx=90; // F in pixels
+          function upd(){
+            var raw=parseInt(document.getElementById('lens-d-slider').value);
+            var dF=raw/10; // e.g. 30→3.0
+            document.getElementById('lens-d-val').textContent=dF.toFixed(1);
+            document.getElementById('lens-d-out').textContent=dF.toFixed(1);
+
+            // f = d*F/(d-F) = dF/(dF-1) * F (in F units)
+            var fF=dF/(dF-1);
+            var gam=Math.abs(fF/dF);
+            document.getElementById('lens-f-out').textContent=fF.toFixed(2);
+            document.getElementById('lens-g-out').textContent=gam.toFixed(2);
+
+            // Image type
+            var typeStr='';
+            if(dF>2)typeStr='Действительное, перевёрнутое, уменьшенное';
+            else if(Math.abs(dF-2)<0.05)typeStr='Действительное, перевёрнутое, равное предмету';
+            else if(dF>1&&dF<2)typeStr='Действительное, перевёрнутое, увеличенное';
+            else if(Math.abs(dF-1)<0.05)typeStr='В бесконечности (лучи параллельны после линзы)';
+            else typeStr='Мнимое, прямое, увеличенное (как в лупе)';
+            document.getElementById('lens-type-out').textContent=typeStr;
+
+            // SVG positions
+            var objX=Lpx-dF*Fpx; // x of object (left of lens)
+            objX=Math.max(20,Math.min(Lpx-15,objX));
+            var objTopY=50; // fixed object height
+
+            // image x
+            var real=dF>1;
+            var imgX,imgTopY;
+            if(real){
+              imgX=Lpx+fF*Fpx;
+              imgTopY=110+gam*(110-objTopY); // flipped (below axis)
+            } else {
+              // virtual: image on same side as object
+              imgX=Lpx+fF*Fpx; // fF<0 so imgX<Lpx
+              imgTopY=110-gam*(110-objTopY); // same side (above axis)
+            }
+            imgX=Math.max(Lpx+5,Math.min(545,imgX));
+            imgTopY=Math.max(20,Math.min(195,imgTopY));
+
+            // update object
+            document.getElementById('obj-line').setAttribute('x1',objX);
+            document.getElementById('obj-line').setAttribute('x2',objX);
+            document.getElementById('obj-line').setAttribute('y2',objTopY);
+            document.getElementById('obj-head').setAttribute('points',objX+','+objTopY+' '+(objX-4)+','+(objTopY+12)+' '+(objX+4)+','+(objTopY+12));
+
+            // update image
+            document.getElementById('img-line').setAttribute('x1',imgX);
+            document.getElementById('img-line').setAttribute('x2',imgX);
+            document.getElementById('img-line').setAttribute('y2',imgTopY);
+            document.getElementById('img-head').setAttribute('points',imgX+','+imgTopY+' '+(imgX-4)+','+(imgTopY-12)+' '+(imgX+4)+','+(imgTopY-12));
+            document.getElementById('img-label').setAttribute('x',imgX+4);
+            document.getElementById('img-label').setAttribute('y',imgTopY+4);
+
+            // update rays
+            // Ray1: parallel from obj top → lens → F'
+            document.getElementById('ray1a').setAttribute('x1',objX);
+            document.getElementById('ray1a').setAttribute('y1',objTopY);
+            document.getElementById('ray1a').setAttribute('x2',Lpx);
+            document.getElementById('ray1a').setAttribute('y2',objTopY);
+            // after lens: from (Lpx, objTopY) through F'(Lpx+Fpx,110) to imgX
+            var ray1slope=(110-objTopY)/Fpx;
+            var ray1EndY=objTopY+ray1slope*(imgX-Lpx);
+            document.getElementById('ray1b').setAttribute('x1',Lpx);
+            document.getElementById('ray1b').setAttribute('y1',objTopY);
+            document.getElementById('ray1b').setAttribute('x2',imgX);
+            document.getElementById('ray1b').setAttribute('y2',ray1EndY);
+
+            // Ray2: straight through center O(Lpx,110)
+            var ray2slope=(110-objTopY)/(Lpx-objX);
+            var ray2EndY=110+ray2slope*(imgX-Lpx);
+            document.getElementById('ray2').setAttribute('x1',objX);
+            document.getElementById('ray2').setAttribute('y1',objTopY);
+            document.getElementById('ray2').setAttribute('x2',imgX);
+            document.getElementById('ray2').setAttribute('y2',ray2EndY);
+          }
+          document.getElementById('lens-d-slider').addEventListener('input',upd);
+          upd();
+        })();
+        </script>
+
+        <!-- ── Алгоритм задач на линзу ── -->
+        <div class="method-card">
+          <div class="mc-head">
+            <div class="mc-icon">🔧</div>
+            <div class="mc-title">Алгоритм: задача на тонкую линзу</div>
+          </div>
+          <ol class="mc-steps">
+            <li><strong>Определить тип линзы:</strong> собирающая (F &gt; 0) или рассеивающая (F &lt; 0).</li>
+            <li><strong>Найти f:</strong> из формулы <span data-tex="f = \dfrac{Fd}{d - F}"></span>. Знак f укажет тип изображения.</li>
+            <li><strong>Найти увеличение:</strong> <span data-tex="\Gamma = f/d"></span>. Знак «−» → перевёрнутое, «+» → прямое.</li>
+            <li><strong>Определить характер изображения</strong> по знаку f: f &gt; 0 → действительное (за линзой), f &lt; 0 → мнимое (с той же стороны, что предмет).</li>
+            <li><strong>Если задача на очки:</strong> оптическая сила D = 1/F в диоптриях. Близорукость → D &lt; 0, дальнозоркость → D &gt; 0.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ════ S7: Построение изображений ════ -->
+      <section class="sec" id="s7">
+        <div class="sec-head">
+          <h1>7. Построение изображений в линзе</h1>
+        </div>
+
+        <h2 id="h-rules">Три «волшебных луча»</h2>
+        <div class="card accent">
+          <h4>Запомни три луча, которые легко строить</h4>
+          <ol>
+            <li><b>Луч, параллельный главной оси</b> → после преломления проходит через фокус (для собирающей)</li>
+            <li><b>Луч через фокус</b> (с одной стороны) → после преломления идёт параллельно оси</li>
+            <li><b>Луч через оптический центр</b> O → проходит без преломления</li>
+          </ol>
+          <p>Достаточно построить любые <b>два</b> из них — точка их пересечения и есть изображение.</p>
+        </div>
+
+        <h2 id="h-cases">Случаи расположения предмета (собирающая линза)</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Положение d</th><th>Положение f</th><th>Изображение</th><th>Где встречается</th></tr>
+            <tr><td>d → ∞</td><td>f = F</td><td>точка в фокусе</td><td>—</td></tr>
+            <tr><td>d &gt; 2F</td><td>F &lt; f &lt; 2F</td><td>действ., перевёрн., уменьш.</td><td>фотоаппарат</td></tr>
+            <tr><td>d = 2F</td><td>f = 2F</td><td>действ., перевёрн., равное</td><td>—</td></tr>
+            <tr><td>F &lt; d &lt; 2F</td><td>f &gt; 2F</td><td>действ., перевёрн., увелич.</td><td>проектор, кино</td></tr>
+            <tr><td>d = F</td><td>f → ∞</td><td>в бесконечности</td><td>—</td></tr>
+            <tr><td>d &lt; F</td><td>f &lt; 0</td><td>мнимое, прямое, увелич.</td><td>лупа</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h4>Рассеивающая линза (любое d &gt; 0)</h4>
+          <p>Изображение всегда: <b>мнимое, прямое, уменьшенное</b>.</p>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Правило для собирающей линзы:</b> чем ближе предмет к фокусу, тем дальше от линзы и больше его действительное изображение. При d &lt; F изображение становится мнимым и прямым (как в лупе).</div>
+        </div>
+      </section>
+
+      <!-- ════ S8: Глаз и приборы ════ -->
+      <section class="sec" id="s8">
+        <div class="sec-head">
+          <h1>8. Глаз и оптические приборы</h1>
+          <p class="lead">Глаз, лупа, фотоаппарат, проектор, микроскоп, телескоп — всё это применение формулы тонкой линзы.</p>
+        </div>
+
+        <h2 id="h-eye">Глаз</h2>
+        <div class="def">
+          <div class="label">Глаз как оптическая система</div>
+          <div class="text">Глаз — естественный оптический прибор. Хрусталик играет роль <b>собирающей линзы с переменной оптической силой</b> (аккомодация). Изображение формируется на сетчатке: действительное, перевёрнутое, уменьшенное. Мозг «переворачивает» картинку.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>👁️ Близорукость (миопия)</h4>
+            <p>Изображение формируется <b>перед</b> сетчаткой (глаз слишком «сильный» или длинный).</p>
+            <p>Корректируется <b>рассеивающими</b> линзами: D &lt; 0 (диоптрии с «–»).</p>
+            <p><span data-tex="D_\text{очков} = \dfrac{1}{d_\text{ДТЗ}} - \dfrac{1}{d_\text{нужное}}"></span></p>
+          </div>
+          <div class="card">
+            <h4>👓 Дальнозоркость (гиперметропия)</h4>
+            <p>Изображение формируется <b>за</b> сетчаткой (глаз слишком «слабый» или короткий).</p>
+            <p>Корректируется <b>собирающими</b> линзами: D &gt; 0 (диоптрии с «+»).</p>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Дальняя точка ясного зрения (ДТЗ)</b> нормального глаза — бесконечность. При близорукости ДТЗ ограничена (например, 25 см). Оптическая сила очков: <span data-tex="D = \dfrac{1}{F_\text{очков}}"></span>, где F находится по условию задачи (обычно ДТЗ).</div>
+        </div>
+
+        <h2 id="h-instr">Оптические приборы — сводная таблица</h2>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Прибор</th><th>d (предмет)</th><th>Изображение</th><th>Характер</th></tr>
+            <tr><td>📷 Фотоаппарат / глаз</td><td>d &gt; 2F</td><td>F &lt; f &lt; 2F</td><td>Действ., перевёрн., уменьш.</td></tr>
+            <tr><td>🎬 Проектор (слайды, кино)</td><td>F &lt; d &lt; 2F</td><td>f &gt; 2F</td><td>Действ., перевёрн., увелич.</td></tr>
+            <tr><td>🔍 Лупа</td><td>d &lt; F</td><td>f &lt; 0 (мнимое)</td><td>Мнимое, прямое, увелич.</td></tr>
+            <tr><td>🔬 Микроскоп (объектив)</td><td>F₁ &lt; d &lt; 2F₁</td><td>f₁ &gt; 2F₁</td><td>Действ., перевёрн., сильно увелич.</td></tr>
+            <tr><td>🔭 Телескоп (объектив)</td><td>d ≈ ∞</td><td>f₁ ≈ F₁</td><td>Действ., в фокусе объектива</td></tr>
+          </table>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>🔬 Микроскоп</h4>
+            <p><b>Объектив</b> (короткое F₁): предмет чуть дальше F₁ → даёт промежуточное увеличенное изображение.</p>
+            <p><b>Окуляр</b> (длинное F₂): рассматривает промежуточное изображение как лупа → итоговое увеличение очень большое.</p>
+            <p>Увеличение: <span data-tex="\Gamma = \Gamma_1 \cdot \Gamma_2"></span></p>
+          </div>
+          <div class="card">
+            <h4>🔭 Телескоп (астрономический)</h4>
+            <p><b>Объектив</b> (длинное F₁): принимает параллельные лучи от звезды → изображение в фокусе F₁.</p>
+            <p><b>Окуляр</b> (короткое F₂): рассматривает изображение из фокуса объектива.</p>
+            <p>Увеличение: <span data-tex="\Gamma = \dfrac{F_1}{F_2}"></span></p>
+            <p>Угловое расстояние между объектами увеличивается в Γ раз.</p>
+          </div>
+        </div>
+
+        <div class="tip info">
+          <span class="ico">💡</span>
+          <div><b>Мнемоника для ЦТ:</b> чем ближе предмет к фокусу (но снаружи), тем <b>дальше</b> от линзы и <b>больше</b> его действительное изображение. Проектор = «предмет почти у фокуса». Фотоаппарат = «предмет далеко».</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Не путать:</b> у микроскопа объектив — коротко фокусный (F мал), окуляр — длинно фокусный. У телескопа — наоборот: объектив длинно фокусный (собирает больше света), окуляр — коротко фокусный.</div>
+        </div>
+      </section>
+
+      <!-- ════ S9: Интерференция ════ -->
+      <section class="sec" id="s9">
+        <div class="sec-head">
+          <h1>9. Интерференция света</h1>
+          <p class="lead">Сложение когерентных волн, при котором в одних точках они усиливают, а в других — ослабляют друг друга.</p>
+        </div>
+
+        <div class="def">
+          <div class="label">Когерентность</div>
+          <div class="text"><b>Когерентные</b> волны — волны с одинаковой частотой и постоянной разностью фаз. Только когерентные волны дают устойчивую интерференционную картину.</div>
+        </div>
+
+        <div class="fcard" id="f-delta">
+          <div class="flabel">Оптическая разность хода (опыт Юнга)</div>
+          <div class="formula" data-tex="\Delta = \dfrac{d\,x}{L}"></div>
+          <div class="fdesc">d — расстояние между щелями, x — расстояние от центра до точки на экране, L — расстояние до экрана</div>
+        </div>
+
+        <div class="fcard" id="f-max">
+          <div class="flabel">Условие максимума интерференции</div>
+          <div class="formula" data-tex="\Delta = m\,\lambda"></div>
+          <div class="fdesc">m = 0, 1, 2, … — порядок максимума. Δ — оптическая разность хода</div>
+        </div>
+
+        <div class="fcard" id="f-min">
+          <div class="flabel">Условие минимума интерференции</div>
+          <div class="formula" data-tex="\Delta = (2m - 1)\,\dfrac{\lambda}{2}"></div>
+          <div class="fdesc">m = 1, 2, 3, … . Разность хода = нечётному числу полуволн</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Ширина интерференционной полосы</div>
+          <div class="formula" data-tex="h = \dfrac{\lambda L}{d}"></div>
+          <div class="fdesc">L — расстояние от источников до экрана, d — расстояние между источниками</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Применения интерференции: <b>просветление оптики</b> (плёнки на линзах), <b>интерферометры</b> (точные измерения), <b>цвета мыльных плёнок</b> и <b>масляных пятен</b> на воде.</div>
+        </div>
+      </section>
+
+      <!-- ════ S10: Дифракция ════ -->
+      <section class="sec" id="s10">
+        <div class="sec-head">
+          <h1>10. Дифракция света</h1>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Дифракция</div>
+          <div class="text"><b>Дифракция</b> — отклонение волн от прямолинейного распространения при огибании препятствий или прохождении отверстий, сравнимых по размеру с длиной волны.</div>
+        </div>
+
+        <div class="def">
+          <div class="label">Принцип Гюйгенса–Френеля</div>
+          <div class="text">Каждая точка волнового фронта является источником вторичных волн. Огибающая всех вторичных волн образует новый фронт волны.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Дифракция света объясняет, почему свет частично попадает в область геометрической тени за непрозрачной преградой. Чем меньше препятствие или чем больше λ, тем сильнее дифракция.</div>
+        </div>
+      </section>
+
+      <!-- ════ S11: Дифракционная решётка ════ -->
+      <section class="sec" id="s11">
+        <div class="sec-head">
+          <h1>11. Дифракционная решётка</h1>
+        </div>
+
+        <div class="def">
+          <div class="label">Дифракционная решётка</div>
+          <div class="text"><b>Дифракционная решётка</b> — совокупность большого числа узких параллельных щелей, расположенных на одинаковом расстоянии друг от друга. Используется для разложения света в спектр.</div>
+        </div>
+
+        <div class="fcard" id="f-grating">
+          <div class="flabel">Условие максимумов решётки</div>
+          <div class="formula" data-tex="d\,\sin\varphi_k = k\,\lambda"></div>
+          <div class="fdesc">d — период решётки, k = 0, 1, 2, … — порядок максимума, φ — угол дифракции</div>
+        </div>
+
+        <div class="fcard">
+          <div class="flabel">Период решётки</div>
+          <div class="formula" data-tex="d = \dfrac{1}{N_0}"></div>
+          <div class="fdesc">N₀ — число штрихов на единицу длины</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Дифракционная решётка раскладывает белый свет в спектр: фиолетовый отклоняется меньше всего (λ ≈ 400 нм), красный — больше всего (λ ≈ 700 нм). Это противоположно стеклянной призме.</div>
+        </div>
+      </section>
+
+      <!-- ════ S12: Разбор задач ════ -->
+      <section class="sec" id="s12">
+        <div class="sec-head"><h1>★ Разбор задач</h1></div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Луч света падает из воздуха в воду под углом <span data-tex="30^\circ"></span>. Найти угол преломления. (<span data-tex="n_\text{в} = 1{,}33"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="n_1 \cdot \sin\alpha = n_2 \cdot \sin\beta \;\Rightarrow\; \sin\beta = \dfrac{\sin 30^\circ}{1{,}33} = \dfrac{0{,}5}{1{,}33} \approx 0{,}376"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\beta \approx 22^\circ"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\beta \approx 22^\circ"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Найти угол полного внутреннего отражения для перехода свет/воздух из стекла. (<span data-tex="n_\text{с} = 1{,}5"></span>)</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\sin\alpha_0 = \dfrac{1}{n} = \dfrac{1}{1{,}5} \approx 0{,}667"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\alpha_0 \approx 42^\circ"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\alpha_0 \approx 42^\circ"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Фокусное расстояние линзы <span data-tex="F = 25\text{ см}"></span>. Найти оптическую силу.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="F = 0{,}25\text{ м}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="D = \dfrac{1}{F} = \dfrac{1}{0{,}25} = 4\text{ дптр}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="D = 4\text{ дптр}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Предмет находится на расстоянии <span data-tex="30\text{ см}"></span> от собирающей линзы с фокусным расстоянием <span data-tex="20\text{ см}"></span>. Где находится изображение?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\dfrac{1}{F} = \dfrac{1}{d} + \dfrac{1}{f} \;\Rightarrow\; \dfrac{1}{f} = \dfrac{1}{F} - \dfrac{1}{d} = \dfrac{1}{20} - \dfrac{1}{30} = \dfrac{1}{60}"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="f = 60\text{ см}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="f = 60\text{ см}"></span> (действительное)</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 5 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Линза даёт изображение предмета с увеличением <span data-tex="\Gamma = 4"></span>. Расстояние от линзы до изображения <span data-tex="40\text{ см}"></span>. Найти расстояние до предмета.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="\Gamma = \dfrac{f}{d} \;\Rightarrow\; d = \dfrac{f}{\Gamma} = \dfrac{40}{4} = 10\text{ см}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="d = 10\text{ см}"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 6 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">На решётку с периодом <span data-tex="d = 2\text{ мкм}"></span> падает свет с длиной волны <span data-tex="500\text{ нм}"></span>. Найти угол дифракции для максимума 1-го порядка.</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="d\cdot\sin\varphi = k\cdot\lambda \;\Rightarrow\; \sin\varphi = \dfrac{k\cdot\lambda}{d} = \dfrac{1\cdot500\cdot10^{-9}}{2\cdot10^{-6}} = 0{,}25"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="\varphi \approx 14{,}5^\circ"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="\varphi \approx 14{,}5^\circ"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 7 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Какова скорость света в стекле с показателем преломления <span data-tex="n = 1{,}5"></span>?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div><span data-tex="v = \dfrac{c}{n} = \dfrac{3\cdot10^8}{1{,}5} = 2\cdot10^8\text{ м/с}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="v = 2\cdot10^8\text{ м/с}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════ S13: Чек-лист ════ -->
+      <section class="sec" id="s13">
+        <div class="sec-head"><h1>✓ Чек-лист</h1></div>
+        <h2 id="h-must">Формулы наизусть</h2>
+        <ul>
+          <li>Закон отражения: α = β</li>
+          <li>Закон преломления: <span data-tex="n_1\sin\alpha_1 = n_2\sin\alpha_2"></span></li>
+          <li>Показатель преломления: n = c/v</li>
+          <li>Полное отражение: <span data-tex="\sin\alpha_0 = n_2/n_1"></span></li>
+          <li>Оптическая сила: D = 1/F</li>
+          <li>Формула линзы: <span data-tex="1/F = 1/d + 1/f"></span></li>
+          <li>Увеличение: Γ = H/h = f/d</li>
+          <li>Условие максимума: Δ = mλ</li>
+          <li>Условие минимума: Δ = (2m−1)λ/2</li>
+          <li>Дифракционная решётка: d·sin φ = kλ</li>
+        </ul>
+
+        <h2 id="h-mistakes">Типичные ошибки</h2>
+        <div class="tip error"><span class="ico">❌</span><div>Отсчитывать угол от поверхности, а не от нормали.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Применять полное отражение в направлении из менее плотной среды в более плотную.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Подставлять расстояние в см в формулу D = 1/F (нужны метры).</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Забывать про знаки в формуле линзы для рассеивающей или для мнимого изображения.</div></div>
+        <div class="tip error"><span class="ico">❌</span><div>Путать линейное увеличение и угловое (для лупы и оптических приборов).</div></div>
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">11 Квантовая физика</div>
+            <div class="tp-desc">Фотоэффект, Бор, ядерные реакции, СТО</div>
+          </div>
+          <a class="tp-btn" href="11_kvantovaya.html">Перейти →</a>
+        </div>
+      </section>
+</div>
+
+<button class="ref-toggle"><span class="icn">📋</span>Все формулы</button>
+<div class="ref-overlay"></div>
+<aside class="ref-panel">
+  <div class="ref-head"><h3>Формулы оптики</h3><button class="ref-close">✕</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы..." /></div>
+  <div class="ref-list">
+    <div class="ref-item" data-section="s1" data-anchor="f-refl"><div class="ri-name">Закон отражения</div><div class="ri-formula">α = β</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-snell"><div class="ri-name">Закон Снеллиуса</div><div class="ri-formula">sin α / sin β = n₂/n₁</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-snell2"><div class="ri-name">Закон преломления (симм.)</div><div class="ri-formula">n₁ sin α₁ = n₂ sin α₂</div></div>
+    <div class="ref-item" data-section="s3" data-anchor="f-n"><div class="ri-name">Показатель преломления</div><div class="ri-formula">n = c/v</div></div>
+    <div class="ref-item" data-section="s4" data-anchor="f-tir"><div class="ri-name">Угол полного отражения</div><div class="ri-formula">sin α₀ = n₂/n₁</div></div>
+    <div class="ref-item" data-section="s5" data-anchor="f-D"><div class="ri-name">Оптическая сила</div><div class="ri-formula">D = 1/F</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-thin-lens"><div class="ri-name">Формула тонкой линзы</div><div class="ri-formula">1/F = 1/d + 1/f</div></div>
+    <div class="ref-item" data-section="s6" data-anchor="f-magn"><div class="ri-name">Увеличение</div><div class="ri-formula">Γ = H/h = f/d</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-delta"><div class="ri-name">Разность хода (опыт Юнга)</div><div class="ri-formula">Δ = dx/L</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-max"><div class="ri-name">Условие максимума</div><div class="ri-formula">Δ = mλ</div></div>
+    <div class="ref-item" data-section="s9" data-anchor="f-min"><div class="ri-name">Условие минимума</div><div class="ri-formula">Δ = (2m−1)λ/2</div></div>
+    <div class="ref-item" data-section="s11" data-anchor="f-grating"><div class="ri-name">Дифракционная решётка</div><div class="ri-formula">d·sin φ = kλ</div></div>
+  </div>
+</aside>
+
+<div class="palette"><div class="palette-box"><input class="palette-input" type="text" placeholder="Поиск..." /><div class="palette-list"></div></div></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});PhysCT&&PhysCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Числа и вычисления — Математика ЦТ/ЦЭ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flash{animation:flash 1.5s ease}
+@keyframes flash{0%,100%{background:transparent}30%{background:var(--acc-bg);box-shadow:0 0 0 6px var(--acc-bg)}}
+</style>
+</head>
+<body data-topic="t01">
+
+<nav class="topbar">
+  <a class="brand" href="../index.html">
+    <span class="logo">🔢</span>
+    <span><b>Математика</b> <em>ЦТ/ЦЭ</em></span>
+    <span class="crumb">›</span>
+    <span class="topic">Числа и вычисления</span>
+  </a>
+  <div class="actions">
+    <button class="tb-btn" id="openSearch">🔍 Поиск <span class="kbd">Ctrl K</span></button>
+    <a class="tb-btn icon" href="../index.html" title="На главную">⌂</a>
+  </div>
+</nav>
+
+<button class="mob-toggle" aria-label="Меню">☰</button>
+
+<div class="app">
+  <div class="sidebar-overlay"></div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <span class="badge">Раздел 01</span>
+      <h2>Числа и вычисления</h2>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Теория</div>
+      <button class="nav-item" data-target="s1"><span class="nav-ico">🔵</span>Множества чисел</button>
+      <button class="nav-item" data-target="s2"><span class="nav-ico">⬆</span>Степени и свойства</button>
+      <button class="nav-item" data-target="s3"><span class="nav-ico">√</span>Корни и свойства</button>
+      <button class="nav-item" data-target="s4"><span class="nav-ico">✖</span>Формулы сокращ. умножения</button>
+      <button class="nav-item" data-target="s5"><span class="nav-ico">%</span>Проценты</button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">Практика</div>
+      <button class="nav-item" data-target="s_tasks"><span class="nav-ico">★</span>Разбор задач</button>
+      <button class="nav-item" data-target="s_check"><span class="nav-ico">✓</span>Чек-лист к ЦТ</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ════════════════════════════════════════
+           SECTION 1: Множества чисел
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s1">
+        <div class="sec-head">
+          <h1>1. Множества чисел</h1>
+          <p class="lead">Все числа образуют вложенные множества: натуральные ⊂ целые ⊂ рациональные ⊂ действительные.</p>
+          <div class="tags">
+            <span class="tag acc">Теория</span>
+            <span class="tag green">База</span>
+          </div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">💡</div>
+          <div class="kc-text">
+            <small>Главная идея</small>
+            Числовые множества вложены друг в друга: <b>ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ</b>. Иррациональные числа — это ℝ \ ℚ: числа, не представимые в виде дроби.
+          </div>
+        </div>
+
+        <div class="diagram">
+          <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+            <!-- R -->
+            <ellipse cx="200" cy="130" rx="185" ry="115" fill="none" stroke="#3b82f6" stroke-width="2"/>
+            <text x="370" y="48" font-size="16" font-weight="700" fill="#3b82f6">ℝ</text>
+            <text x="355" y="66" font-size="11" fill="#3b82f6">действительные</text>
+            <!-- I - irrational (left area) -->
+            <text x="22" y="130" font-size="13" font-weight="700" fill="#6366f1">𝕀</text>
+            <text x="14" y="148" font-size="10" fill="#6366f1">иррац.</text>
+            <text x="14" y="162" font-size="10" fill="#6366f1">√2, π, e</text>
+            <!-- Q -->
+            <ellipse cx="220" cy="130" rx="140" ry="88" fill="none" stroke="#10b981" stroke-width="2"/>
+            <text x="340" y="60" font-size="15" font-weight="700" fill="#10b981">ℚ</text>
+            <text x="328" y="76" font-size="10" fill="#10b981">рациональные</text>
+            <!-- Z -->
+            <ellipse cx="225" cy="132" rx="95" ry="60" fill="none" stroke="#f59e0b" stroke-width="2"/>
+            <text x="298" y="88" font-size="14" font-weight="700" fill="#f59e0b">ℤ</text>
+            <text x="287" y="103" font-size="10" fill="#f59e0b">целые</text>
+            <!-- N -->
+            <ellipse cx="230" cy="138" rx="54" ry="34" fill="#fee2e2" fill-opacity="0.6" stroke="#dc2626" stroke-width="2"/>
+            <text x="225" y="143" font-size="15" font-weight="700" fill="#dc2626" text-anchor="middle">ℕ</text>
+            <text x="225" y="158" font-size="9" fill="#dc2626" text-anchor="middle">натуральные</text>
+            <!-- examples -->
+            <text x="160" y="120" font-size="10" fill="#64748b">−3, −1, 0</text>
+            <text x="255" y="110" font-size="10" fill="#64748b">½, ¾</text>
+          </svg>
+          <div class="caption">Вложенность числовых множеств: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>ℕ — Натуральные</h4>
+            <p>Числа для счёта: 1, 2, 3, 4, …</p>
+            <p>Ноль <b>не входит</b> в ℕ по белорусской программе.</p>
+          </div>
+          <div class="card">
+            <h4>ℤ — Целые</h4>
+            <p>…, −3, −2, −1, 0, 1, 2, 3, …</p>
+            <p>Включают отрицательные целые и ноль.</p>
+          </div>
+          <div class="card">
+            <h4>ℚ — Рациональные</h4>
+            <p>Числа вида <span data-tex="\dfrac{p}{q}"></span>, где <span data-tex="p \in \mathbb{Z},\; q \in \mathbb{N}"></span>.</p>
+            <p>Примеры: <span data-tex="\frac{1}{3},\; 0{,}25,\; -\frac{7}{2},\; 5"></span></p>
+          </div>
+          <div class="card">
+            <h4>𝕀 — Иррациональные</h4>
+            <p>Числа, которые <b>нельзя</b> представить в виде дроби <span data-tex="\frac{p}{q}"></span>.</p>
+            <p>Примеры: <span data-tex="\sqrt{2},\; \sqrt{3},\; \pi,\; e"></span></p>
+          </div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Действительные числа ℝ</b> — объединение рациональных и иррациональных чисел. Каждому действительному числу соответствует единственная точка числовой прямой и наоборот.</div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Типичная ошибка ЦТ.</b> Число <span data-tex="\sqrt{4} = 2"></span> — рациональное (и даже натуральное!), а <span data-tex="\sqrt{2}"></span> — иррациональное. Корень рационален, только если подкоренное число является полным квадратом/кубом.</div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div>Периодическая десятичная дробь (например, <span data-tex="0{,}333\ldots = \tfrac{1}{3}"></span>) — это <b>рациональное</b> число. Непериодическая бесконечная дробь — иррациональное.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 2: Степени и свойства
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s2">
+        <div class="sec-head">
+          <h1>2. Степени и их свойства</h1>
+          <p class="lead">7 основных свойств степеней — фундамент всех преобразований с показательными выражениями.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Очень важно</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Степень</b> числа <span data-tex="a"></span> с натуральным показателем <span data-tex="n"></span>: <span data-tex="a^n = \underbrace{a \cdot a \cdots a}_{n \text{ раз}}"></span>, где <span data-tex="a"></span> — основание, <span data-tex="n"></span> — показатель степени.</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Произведение степеней</div>
+            <div class="chip-formula" data-tex="a^m \cdot a^n = a^{m+n}"></div>
+            <div class="chip-desc">основания одинаковы — показатели складываем</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Частное степеней</div>
+            <div class="chip-formula" data-tex="\dfrac{a^m}{a^n} = a^{m-n}"></div>
+            <div class="chip-desc">основания одинаковы — показатели вычитаем</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Степень степени</div>
+            <div class="chip-formula" data-tex="(a^m)^n = a^{mn}"></div>
+            <div class="chip-desc">показатели перемножаем</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Степень произведения</div>
+            <div class="chip-formula" data-tex="(ab)^n = a^n b^n"></div>
+            <div class="chip-desc">степень распределяется по множителям</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Степень дроби</div>
+            <div class="chip-formula" data-tex="\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}"></div>
+            <div class="chip-desc">степень числителя и знаменателя</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Нулевая степень</div>
+            <div class="chip-formula" data-tex="a^0 = 1 \quad (a \neq 0)"></div>
+            <div class="chip-desc">любое ненулевое число в степени 0 равно 1</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Отрицательная степень</div>
+            <div class="chip-formula" data-tex="a^{-n} = \dfrac{1}{a^n} \quad (a \neq 0)"></div>
+            <div class="chip-desc">отрицательная степень — обратная величина</div>
+          </div>
+        </div>
+
+        <h2 id="h-frac-power">Дробный показатель степени</h2>
+        <div class="fcard" id="f-frac-pow">
+          <div class="flabel">Дробная степень</div>
+          <div class="formula" data-tex="a^{\frac{m}{n}} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m \quad (a \geq 0)"></div>
+          <div class="fdesc">Знаменатель дроби — показатель корня, числитель — показатель степени подкоренного выражения</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Примеры</h4>
+            <p><span data-tex="8^{\frac{2}{3}} = (\sqrt[3]{8})^2 = 2^2 = 4"></span></p>
+            <p><span data-tex="16^{\frac{3}{4}} = (\sqrt[4]{16})^3 = 2^3 = 8"></span></p>
+            <p><span data-tex="4^{-\frac{1}{2}} = \dfrac{1}{\sqrt{4}} = \dfrac{1}{2}"></span></p>
+          </div>
+          <div class="card">
+            <h4>Важные случаи</h4>
+            <p><span data-tex="a^{\frac{1}{2}} = \sqrt{a}"></span></p>
+            <p><span data-tex="a^{\frac{1}{3}} = \sqrt[3]{a}"></span></p>
+            <p><span data-tex="a^{\frac{1}{n}} = \sqrt[n]{a}"></span></p>
+          </div>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Не путай!</b> <span data-tex="(a^m)^n = a^{mn}"></span>, но <span data-tex="a^{m^n} \neq a^{mn}"></span>. Например, <span data-tex="(2^3)^2 = 2^6 = 64"></span>, а <span data-tex="2^{3^2} = 2^9 = 512"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 3: Корни и свойства
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s3">
+        <div class="sec-head">
+          <h1>3. Корни и их свойства</h1>
+          <p class="lead">Свойства квадратных и n-х корней, ОДЗ и преобразования с корнями.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">ЦТ-классика</span></div>
+        </div>
+
+        <div class="def acc">
+          <div class="label">Определение</div>
+          <div class="text"><b>Корень n-й степени</b> из числа <span data-tex="a"></span> — это число <span data-tex="b"></span>, такое что <span data-tex="b^n = a"></span>. Обозначается <span data-tex="\sqrt[n]{a}"></span>. Для чётных <span data-tex="n"></span>: <span data-tex="a \geq 0"></span>.</div>
+        </div>
+
+        <div class="fgrid">
+          <div class="fchip">
+            <div class="chip-name">Корень произведения</div>
+            <div class="chip-formula" data-tex="\sqrt{ab} = \sqrt{a}\cdot\sqrt{b}"></div>
+            <div class="chip-desc">a ≥ 0, b ≥ 0</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Корень дроби</div>
+            <div class="chip-formula" data-tex="\sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{a}}{\sqrt{b}}"></div>
+            <div class="chip-desc">a ≥ 0, b > 0</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Степень корня</div>
+            <div class="chip-formula" data-tex="(\sqrt[n]{a})^m = \sqrt[n]{a^m}"></div>
+            <div class="chip-desc">a ≥ 0, n ∈ ℕ</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Корень квадрата</div>
+            <div class="chip-formula" data-tex="\sqrt{a^2} = |a|"></div>
+            <div class="chip-desc">результат всегда неотрицателен!</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Корень n-й степени из степени n</div>
+            <div class="chip-formula" data-tex="\sqrt[n]{a^n} = |a|\text{ (чётное }n\text{)}"></div>
+            <div class="chip-desc">или = a при нечётном n</div>
+          </div>
+          <div class="fchip">
+            <div class="chip-name">Вложенные корни</div>
+            <div class="chip-formula" data-tex="\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}"></div>
+            <div class="chip-desc">a ≥ 0</div>
+          </div>
+        </div>
+
+        <h2 id="h-odz-root">ОДЗ для корней</h2>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <tr><th>Выражение</th><th>ОДЗ</th><th>Пример</th></tr>
+            <tr><td><span data-tex="\sqrt{f(x)}"></span></td><td><span data-tex="f(x) \geq 0"></span></td><td><span data-tex="\sqrt{x-3}"></span>: x ≥ 3</td></tr>
+            <tr><td><span data-tex="\sqrt[3]{f(x)}"></span></td><td>любое x</td><td><span data-tex="\sqrt[3]{x}"></span>: x ∈ ℝ</td></tr>
+            <tr><td><span data-tex="\dfrac{1}{\sqrt{f(x)}}"></span></td><td><span data-tex="f(x) &gt; 0"></span></td><td><span data-tex="\frac{1}{\sqrt{x}}"></span>: x > 0</td></tr>
+          </table>
+        </div>
+
+        <div class="tip warn">
+          <span class="ico">⚠️</span>
+          <div><b>Внимание!</b> <span data-tex="\sqrt{a^2} = |a|"></span>, а не просто <span data-tex="a"></span>. Ошибка <span data-tex="\sqrt{(-3)^2} = -3"></span> — неверно! Правильно: <span data-tex="\sqrt{9} = 3"></span>.</div>
+        </div>
+
+        <h2 id="h-rationalize">Рационализация знаменателя</h2>
+        <div class="fcard" id="f-rationalize">
+          <div class="flabel">Освобождение от иррациональности в знаменателе</div>
+          <div class="formula" data-tex="\dfrac{1}{\sqrt{a}} = \dfrac{\sqrt{a}}{a}; \quad \dfrac{1}{\sqrt{a}+\sqrt{b}} = \dfrac{\sqrt{a}-\sqrt{b}}{a-b}"></div>
+          <div class="fdesc">Умножение числителя и знаменателя на сопряжённое выражение</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 4: Формулы сокращённого умножения
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s4">
+        <div class="sec-head">
+          <h1>4. Формулы сокращённого умножения</h1>
+          <p class="lead">7 ключевых формул — без них не обойтись ни в разложении, ни в вычислениях.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag amber">★ Знать наизусть</span></div>
+        </div>
+
+        <div class="key-concept">
+          <div class="kc-icon">⭐</div>
+          <div class="kc-text">
+            <small>Совет</small>
+            Формулы работают в обе стороны: слева направо — для <b>раскрытия скобок</b>, справа налево — для <b>разложения на множители</b>.
+          </div>
+        </div>
+
+        <div class="fcard" id="f-sq-sum">
+          <div class="flabel">Квадрат суммы</div>
+          <div class="formula" data-tex="(a+b)^2 = a^2 + 2ab + b^2"></div>
+          <div class="fdesc">Квадрат первого + удвоенное произведение + квадрат второго</div>
+        </div>
+
+        <div class="fcard" id="f-sq-diff">
+          <div class="flabel">Квадрат разности</div>
+          <div class="formula" data-tex="(a-b)^2 = a^2 - 2ab + b^2"></div>
+          <div class="fdesc">Знак перед 2ab меняется на минус</div>
+        </div>
+
+        <div class="fcard" id="f-diff-sq">
+          <div class="flabel">Разность квадратов</div>
+          <div class="formula" data-tex="a^2 - b^2 = (a+b)(a-b)"></div>
+          <div class="fdesc">Разность квадратов = произведение суммы и разности</div>
+        </div>
+
+        <div class="fcard" id="f-cube-sum">
+          <div class="flabel">Куб суммы</div>
+          <div class="formula" data-tex="(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3"></div>
+          <div class="fdesc">Коэффициенты: 1, 3, 3, 1 (треугольник Паскаля)</div>
+        </div>
+
+        <div class="fcard" id="f-cube-diff">
+          <div class="flabel">Куб разности</div>
+          <div class="formula" data-tex="(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3"></div>
+          <div class="fdesc">Знаки чередуются: +, −, +, −</div>
+        </div>
+
+        <div class="fcard" id="f-sum-cubes">
+          <div class="flabel">Сумма кубов</div>
+          <div class="formula" data-tex="a^3 + b^3 = (a+b)(a^2 - ab + b^2)"></div>
+          <div class="fdesc">Неполный квадрат трёхчлена — со знаком минус перед ab</div>
+        </div>
+
+        <div class="fcard" id="f-diff-cubes">
+          <div class="flabel">Разность кубов</div>
+          <div class="formula" data-tex="a^3 - b^3 = (a-b)(a^2 + ab + b^2)"></div>
+          <div class="fdesc">Неполный квадрат трёхчлена — со знаком плюс перед ab</div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>На ЦТ часто:</b> задания вида «упростить» или «найти значение», где надо узнать ФСУ. Особенно популярны разность квадратов и квадрат суммы/разности. Учитесь видеть «замаскированные» формулы: <span data-tex="x^4 - 1 = (x^2)^2 - 1^2 = (x^2+1)(x^2-1)"></span>.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION 5: Проценты
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s5">
+        <div class="sec-head">
+          <h1>5. Проценты</h1>
+          <p class="lead">Задачи на проценты — одни из самых частых на ЦТ. Три базовых типа и задачи на изменение.</p>
+          <div class="tags"><span class="tag acc">Теория</span><span class="tag green">Практика ЦТ</span></div>
+        </div>
+
+        <div class="def">
+          <div class="label">Определение</div>
+          <div class="text"><b>Процент</b> — одна сотая часть числа: <span data-tex="1\% = \dfrac{1}{100} = 0{,}01"></span>. Процент обозначает долю от некоторого целого.</div>
+        </div>
+
+        <div class="fcard" id="f-pct-of">
+          <div class="flabel">p% от числа A</div>
+          <div class="formula" data-tex="X = A \cdot \dfrac{p}{100}"></div>
+          <div class="fdesc">Находим часть числа. Пример: 15% от 200 = 200 · 0,15 = 30</div>
+        </div>
+
+        <div class="fcard" id="f-pct-whole">
+          <div class="flabel">Число A, если p% от него равно X</div>
+          <div class="formula" data-tex="A = X \cdot \dfrac{100}{p} = \dfrac{X}{p} \cdot 100"></div>
+          <div class="fdesc">Находим целое по части. Пример: если 20% = 30, то A = 30/0,2 = 150</div>
+        </div>
+
+        <div class="fcard" id="f-pct-ratio">
+          <div class="flabel">Сколько процентов X составляет от A</div>
+          <div class="formula" data-tex="p = \dfrac{X}{A} \cdot 100\%"></div>
+          <div class="fdesc">Находим процентное соотношение</div>
+        </div>
+
+        <h2 id="h-pct-change">Изменение на проценты</h2>
+        <div class="grid-2">
+          <div class="fcard" id="f-pct-inc">
+            <div class="flabel">Увеличить на p%</div>
+            <div class="formula" data-tex="A_{\text{нов}} = A \cdot \left(1 + \dfrac{p}{100}\right)"></div>
+            <div class="fdesc">Напр.: увеличить на 20% → умножить на 1,2</div>
+          </div>
+          <div class="fcard" id="f-pct-dec">
+            <div class="flabel">Уменьшить на p%</div>
+            <div class="formula" data-tex="A_{\text{нов}} = A \cdot \left(1 - \dfrac{p}{100}\right)"></div>
+            <div class="fdesc">Напр.: уменьшить на 30% → умножить на 0,7</div>
+          </div>
+        </div>
+
+        <div class="tip note">
+          <span class="ico">💡</span>
+          <div><b>Последовательные изменения:</b> если цена сначала выросла на 20%, а потом снизилась на 20%, итоговая цена <b>не равна</b> исходной: <span data-tex="A \cdot 1{,}2 \cdot 0{,}8 = 0{,}96A"></span> — цена уменьшилась на 4%!</div>
+        </div>
+
+        <div class="tip exam">
+          <span class="ico">🎯</span>
+          <div><b>Лайфхак:</b> задачи «цена выросла на X%, сколько надо снизить, чтобы вернуться к исходной» — частый тип. Если выросла на 25%, итог = 1,25A. Чтобы вернуться: <span data-tex="1{,}25A \cdot k = A \Rightarrow k = \tfrac{1}{1{,}25} = 0{,}8"></span> — нужно снизить на 20%.</div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION s_tasks: Разбор задач
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_tasks">
+        <div class="sec-head">
+          <h1>★ Разбор типовых задач ЦТ</h1>
+          <p class="lead">Задачи на степени, корни, ФСУ и проценты с подробным решением.</p>
+          <div class="tags"><span class="tag acc">Практика</span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 1 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Вычислите: <span data-tex="27^{\frac{2}{3}} \cdot 4^{-\frac{1}{2}} + \sqrt{0{,}01}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Вычислим каждое слагаемое отдельно. <span data-tex="27^{\frac{2}{3}} = (\sqrt[3]{27})^2 = 3^2 = 9"></span></div>
+            <div class="step"><div class="stepn">2</div><span data-tex="4^{-\frac{1}{2}} = \dfrac{1}{\sqrt{4}} = \dfrac{1}{2}"></span></div>
+            <div class="step"><div class="stepn">3</div><span data-tex="\sqrt{0{,}01} = \sqrt{\dfrac{1}{100}} = \dfrac{1}{10} = 0{,}1"></span></div>
+            <div class="step"><div class="stepn">4</div><span data-tex="9 \cdot \dfrac{1}{2} + 0{,}1 = 4{,}5 + 0{,}1 = 4{,}6"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="4{,}6"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 2 <span class="difficulty easy">базовая</span></span>
+          <div class="ptext">Упростите: <span data-tex="(3x - 2y)^2 - (3x + 2y)(3x - 2y)"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Раскроем квадрат разности: <span data-tex="(3x-2y)^2 = 9x^2 - 12xy + 4y^2"></span></div>
+            <div class="step"><div class="stepn">2</div>Второе слагаемое — разность квадратов: <span data-tex="(3x+2y)(3x-2y) = 9x^2 - 4y^2"></span></div>
+            <div class="step"><div class="stepn">3</div>Разность: <span data-tex="(9x^2 - 12xy + 4y^2) - (9x^2 - 4y^2) = -12xy + 8y^2"></span></div>
+            <div class="step"><div class="stepn">4</div>Выносим за скобки: <span data-tex="4y(-3x + 2y)"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="4y(2y - 3x)"></span></div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 3 <span class="difficulty medium">средняя</span></span>
+          <div class="ptext">Товар подорожал на 15%, затем ещё на 20%. На сколько процентов в итоге подорожал товар от первоначальной цены?</div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Пусть начальная цена = A. После первого повышения: <span data-tex="A \cdot 1{,}15"></span></div>
+            <div class="step"><div class="stepn">2</div>После второго: <span data-tex="A \cdot 1{,}15 \cdot 1{,}20 = A \cdot 1{,}38"></span></div>
+            <div class="step"><div class="stepn">3</div>Итого цена стала <span data-tex="1{,}38A"></span>, то есть выросла на <span data-tex="38\%"></span></div>
+          </div>
+          <div class="ans">Ответ: товар подорожал на 38%</div>
+        </div>
+
+        <div class="problem">
+          <span class="ptag">Задача 4 <span class="difficulty hard">ЦТ-уровень</span></span>
+          <div class="ptext">Упростите: <span data-tex="\dfrac{\sqrt{x+1} - \sqrt{x-1}}{\sqrt{x+1} + \sqrt{x-1}}"></span></div>
+          <div class="psteps">
+            <div class="step"><div class="stepn">1</div>Умножим числитель и знаменатель на сопряжённое выражение знаменателя: <span data-tex="(\sqrt{x+1} - \sqrt{x-1})"></span></div>
+            <div class="step"><div class="stepn">2</div>Знаменатель по формуле разности квадратов: <span data-tex="(\sqrt{x+1})^2 - (\sqrt{x-1})^2 = (x+1)-(x-1) = 2"></span></div>
+            <div class="step"><div class="stepn">3</div>Числитель: <span data-tex="(\sqrt{x+1} - \sqrt{x-1})^2 = (x+1) - 2\sqrt{x^2-1} + (x-1) = 2x - 2\sqrt{x^2-1}"></span></div>
+            <div class="step"><div class="stepn">4</div>Итог: <span data-tex="\dfrac{2x - 2\sqrt{x^2-1}}{2} = x - \sqrt{x^2-1}"></span></div>
+          </div>
+          <div class="ans">Ответ: <span data-tex="x - \sqrt{x^2-1}"></span></div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SECTION s_check: Чек-лист к ЦТ
+           ════════════════════════════════════════ -->
+      <section class="sec" id="s_check">
+        <div class="sec-head">
+          <h1>✓ Чек-лист «Что знать к ЦТ»</h1>
+          <p class="lead">Минимальный набор формул и навыков по теме «Числа и вычисления».</p>
+        </div>
+
+        <div class="summary">
+          <h4>Множества чисел</h4>
+          <ul>
+            <li>Знать вложенность: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ</li>
+            <li>Уметь определить тип числа (рациональное/иррациональное)</li>
+            <li>Помнить: <span data-tex="\sqrt{4} = 2 \in \mathbb{Q}"></span>, а <span data-tex="\sqrt{2} \notin \mathbb{Q}"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Степени</h4>
+          <ul>
+            <li><span data-tex="a^m \cdot a^n = a^{m+n}"></span> — произведение с одинаковыми основаниями</li>
+            <li><span data-tex="(a^m)^n = a^{mn}"></span> — степень степени</li>
+            <li><span data-tex="a^{-n} = \dfrac{1}{a^n}"></span> — отрицательная степень</li>
+            <li><span data-tex="a^{\frac{m}{n}} = \sqrt[n]{a^m}"></span> — дробная степень</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Формулы сокращённого умножения</h4>
+          <ul>
+            <li><span data-tex="(a \pm b)^2 = a^2 \pm 2ab + b^2"></span></li>
+            <li><span data-tex="a^2 - b^2 = (a+b)(a-b)"></span></li>
+            <li><span data-tex="(a \pm b)^3 = a^3 \pm 3a^2b + 3ab^2 \pm b^3"></span></li>
+            <li><span data-tex="a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2)"></span></li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Корни</h4>
+          <ul>
+            <li><span data-tex="\sqrt{ab} = \sqrt{a}\cdot\sqrt{b}"></span> (a, b ≥ 0)</li>
+            <li><span data-tex="\sqrt{a^2} = |a|"></span> — не забываем модуль!</li>
+            <li>ОДЗ: выражение под чётным корнем ≥ 0</li>
+          </ul>
+        </div>
+
+        <div class="summary">
+          <h4>Проценты</h4>
+          <ul>
+            <li>p% от A: <span data-tex="X = A \cdot \tfrac{p}{100}"></span></li>
+            <li>Увеличить на p%: умножить на <span data-tex="1 + \tfrac{p}{100}"></span></li>
+            <li>Уменьшить на p%: умножить на <span data-tex="1 - \tfrac{p}{100}"></span></li>
+            <li>Последовательные изменения перемножаются</li>
+          </ul>
+        </div>
+
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Считать <span data-tex="\sqrt{a^2} = a"></span> без модуля — это неверно при отрицательных a.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>Путать формулы: <span data-tex="a^3 + b^3 \neq (a+b)^3"></span>. Левая часть раскладывается по-другому.</div>
+        </div>
+        <div class="tip error">
+          <span class="ico">❌</span>
+          <div>При последовательном изменении цены на проценты нельзя просто складывать проценты.</div>
+        </div>
+
+        <div class="topic-pager">
+          <a class="tp-btn home" href="../index.html">⌂ К главной</a>
+          <div class="tp-info">
+            <div class="tp-label">Следующий раздел</div>
+            <div class="tp-title">02 Алгебраические выражения</div>
+            <div class="tp-desc">Многочлены, разложение на множители, дроби</div>
+          </div>
+          <a class="tp-btn" href="02_vyrazheniya.html">Перейти →</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- Floating reference panel -->
+<button class="ref-toggle"><span class="icn">ƒ</span> Все формулы</button>
+<div class="ref-overlay"></div>
+<div class="ref-panel">
+  <div class="ref-head"><h3>Все формулы</h3><button class="ref-close">×</button></div>
+  <div class="ref-search"><input type="text" placeholder="Поиск формулы…"></div>
+  <div class="ref-list"></div>
+</div>
+
+<!-- Search palette -->
+<div class="palette">
+  <div class="palette-box">
+    <input class="palette-input" type="text" placeholder="Поиск по разделам и формулам…">
+    <div class="palette-list"></div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="MathCT&&MathCT.renderMath()"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
